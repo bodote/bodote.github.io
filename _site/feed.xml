@@ -1,223 +1,234 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-14T17:54:47+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bodo.te blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Bodo T.</name></author><entry><title type="html">cheat-sheets</title><link href="http://localhost:4000/blog/cheat-sheets/" rel="alternate" type="text/html" title="cheat-sheets" /><published>2020-09-12T00:00:00+00:00</published><updated>2020-09-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/cheat-sheets</id><content type="html" xml:base="http://localhost:4000/blog/cheat-sheets/">&lt;p&gt;My self compiled &lt;strong&gt;cheat sheets&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Bodo T.</name></author><category term="link" /><category term="Post Formats" /><summary type="html">My self compiled cheat sheets.</summary></entry><entry><title type="html">Bodos Github - wiki</title><link href="http://localhost:4000/blog/bodos-github-wiki/" rel="alternate" type="text/html" title="Bodos Github - wiki" /><published>2020-09-12T00:00:00+00:00</published><updated>2020-09-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/bodos-github-wiki</id><content type="html" xml:base="http://localhost:4000/blog/bodos-github-wiki/">&lt;p&gt;Some thoughs in my github wiki.&lt;/p&gt;</content><author><name>Bodo T.</name></author><category term="Post Formats" /><category term="readability" /><category term="standard" /><summary type="html">Some thoughs in my github wiki.</summary></entry><entry><title type="html">Welcome to Jekyll! gh-branch</title><link href="http://localhost:4000/blog/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll! gh-branch" /><published>2019-04-18T19:34:30+00:00</published><updated>2019-04-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/blog/welcome-to-jekyll/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>Bodo T.</name></author><category term="Jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Post: Link</title><link href="http://localhost:4000/blog/post-link/" rel="alternate" type="text/html" title="Post: Link" /><published>2010-03-07T00:00:00+00:00</published><updated>2010-03-07T00:00:00+00:00</updated><id>http://localhost:4000/blog/post-link</id><content type="html" xml:base="http://localhost:4000/blog/post-link/">&lt;p&gt;This theme supports &lt;strong&gt;link posts&lt;/strong&gt;, made famous by John Gruber. To use, just add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;link: http://url-you-want-linked&lt;/code&gt; to the post’s YAML front matter and you’re done.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;And this is how a quote looks.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Some &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt; can also be shown.&lt;/p&gt;
-
-&lt;p&gt;Some other &lt;a href=&quot;http://www.heise.de&quot;&gt;link&lt;/a&gt; can also be shown.&lt;/p&gt;</content><author><name>Bodo T.</name></author><category term="link" /><category term="Post Formats" /><summary type="html">This theme supports link posts, made famous by John Gruber. To use, just add link: http://url-you-want-linked to the post’s YAML front matter and you’re done.</summary></entry><entry><title type="html">Post: Notice</title><link href="http://localhost:4000/blog/post-notice/" rel="alternate" type="text/html" title="Post: Notice" /><published>2010-02-05T00:00:00+00:00</published><updated>2010-02-05T00:00:00+00:00</updated><id>http://localhost:4000/blog/post-notice</id><content type="html" xml:base="http://localhost:4000/blog/post-notice/">&lt;p&gt;A notice displays information that explains nearby content. Often used to call attention to a particular detail.&lt;/p&gt;
-
-&lt;p&gt;When using Kramdown &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{: .notice}&lt;/code&gt; can be added after a sentence to assign the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.notice&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
-
-&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;Changes in Service:&lt;/strong&gt; We just updated our &lt;a href=&quot;#&quot;&gt;privacy policy&lt;/a&gt; here to better service our customers. We recommend reviewing the changes.&lt;/p&gt;
-
-&lt;p class=&quot;notice--primary&quot;&gt;&lt;strong&gt;Primary Notice:&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. &lt;a href=&quot;#&quot;&gt;Praesent libero&lt;/a&gt;. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.&lt;/p&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;Info Notice:&lt;/strong&gt; Lorem ipsum dolor sit amet, &lt;a href=&quot;#&quot;&gt;consectetur adipiscing elit&lt;/a&gt;. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.&lt;/p&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Warning Notice:&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. &lt;a href=&quot;#&quot;&gt;Integer nec odio&lt;/a&gt;. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.&lt;/p&gt;
-
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Danger Notice:&lt;/strong&gt; Lorem ipsum dolor sit amet, &lt;a href=&quot;#&quot;&gt;consectetur adipiscing&lt;/a&gt; elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.&lt;/p&gt;
-
-&lt;p class=&quot;notice--success&quot;&gt;&lt;strong&gt;Success Notice:&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at &lt;a href=&quot;#&quot;&gt;nibh elementum&lt;/a&gt; imperdiet.&lt;/p&gt;
-
-&lt;p&gt;Want to wrap several paragraphs or other elements in a notice? Using Liquid to capture the content and then filter it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;markdownify&lt;/code&gt; is a good way to go.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% capture notice-2 %}
-#### New Site Features
-
-* You can now have cover images on blog pages
-* Drafts will now auto-save while writing
-{% endcapture %}
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;notice&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ notice-2 | markdownify }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;notice&quot;&gt;
-  
-&lt;h4 id=&quot;new-site-features&quot;&gt;New Site Features&lt;/h4&gt;
-
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-20T12:54:24+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Bodos unwissenschaftliche Argumente für TDD</title><link href="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/" rel="alternate" type="text/html" title="Bodos unwissenschaftliche Argumente für TDD" /><published>2020-09-18T19:34:30+00:00</published><updated>2020-09-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente</id><content type="html" xml:base="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/">&lt;p&gt;Vorweg eine Frage: Sind wir uns einig, dass Unittest mit angemessener
+Testabdeckung sehr wünschenswert sind ? (es geht hier zunächst mal nur
+um Unittest, nicht um Integrationstest oder um Akzeptanztests und der
+gleichen)&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;You can now have cover images on blog pages&lt;/li&gt;
-  &lt;li&gt;Drafts will now auto-save while writing&lt;/li&gt;
+  &lt;li&gt;Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehe
+keine 4.000,- Euro ein.…oder so ähnlich.&lt;/li&gt;
+  &lt;li&gt;Wenn ja: Gut, dann ist diese
+Hürde ja schon mal aus dem Weg geräumt.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;/div&gt;
+&lt;h3 id=&quot;meine_motivation_tdd_wo_immer_erlaubt_und_möglich_einzusetzen_ist_folgende&quot;&gt;Meine Motivation, TDD wo immer erlaubt und möglich einzusetzen, ist folgende:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;es macht mir einfach viel mehr Spaß so zu programmieren&lt;/li&gt;
+  &lt;li&gt;ich bin sicher: mit TDD geschriebene Software bekommt &lt;del&gt;fast&lt;/del&gt; schon
+automatisch eine bessere Architektur/Design, zumindest auf unterster
+Ebene (also für alle Klassen innerhalb eines Packages oder eines
+Modules )&lt;/li&gt;
+  &lt;li&gt;mit dem konsequenten &quot;test first&quot;-Ansatz von TDD ergibt sich ein
+geringere Zeitaufwand gegenüber nachträglich gebauten Unittests:
+    &lt;ul&gt;
+      &lt;li&gt;Weil ich dann während des Schreibens der eigentlich
+Klasse/Methode ja keine &lt;strong&gt;manuellen&lt;/strong&gt; Test mehr mache.&lt;/li&gt;
+      &lt;li&gt;Denn: wenn ich noch keinen Unittest habe, wie teste ich eine
+Klasse/Methode die ich grad geschrieben oder verändert hat?
+durch bloses hinschauen (ist fehleranfällig) oder durch
+manuelles Testen, das kostet jedes mal wieder Zeit!&lt;/li&gt;
+      &lt;li&gt;Weil ich gedanklich praktisch gleichzeitig eigentlichen Code und
+TestCode erfinde, ich bin also beim schreiben des Tests schon
+gedanklich in der Thematik drin bin.&lt;/li&gt;
+      &lt;li&gt;Schreibe ich dagegen den Unittest erst später, dann muss ich
+mich ja ins Thema erst wieder neu eindenken. Schlimmstenfalls
+müsste ich sogar meine Klassen/Methoden-Design ändern, was ich
+natürlich im nach hinein nicht mehr mache.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ich habe keinen Zeitdruck mehr beim &quot;nachziehen&quot; von Test: wir
+sind uns doch einig, dass wie wenigsten Menschen/Teams wirklich die
+Disziplin immer aufbringen die Tests &quot;nachzuziehen&quot; obwohl der
+    &lt;ul&gt;
+      &lt;li&gt;Sprint schon vorbei ist&lt;/li&gt;
+      &lt;li&gt;der PO oder der Kunden mit neuen Feature wünschen drängt&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Und die &lt;strong&gt;Testabdeckung&lt;/strong&gt;: Ehrlich gesagt ist mir die komplett egal!
+Denn: ich weiß ja von vornherein, dass ich alle Methoden in allen
+Klassen, die auch nur minimale Logic enthalten, mit Unittests zu
+100% abgedeckt habe. Ob die gesamte Testabdeckung dann bei 80, 90
+oder 95 % liegt (weil halt Glue-Code ohne Logik und Setter/Getter
+nicht abgedeckt sind), ist dann komplett irrelevant.&lt;/li&gt;
+  &lt;li&gt;hab ich in meinen Unittests doch mal einen Fall vergessen, der dann
+im Integrationstest oder noch später aufgedeckt wird, dann und nur
+dann ziehe ich zuerst den Unittest nach und dann &lt;strong&gt;und erst dann&lt;/strong&gt;
+fixe ich den eigentlichen Code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fast_keine_motivation_für_tdd_bringe_ich_auf_...&quot;&gt;Fast keine Motivation für TDD bringe ich auf ...&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;wenn es schon nennenswert Codeteile gibt, die ohne Unittests sind&lt;/li&gt;
+  &lt;li&gt;wenn diese Codeteile geändert werden müssen&lt;/li&gt;
+  &lt;li&gt;wenn es keine Option ist, neue Features mit komplett neuen
+Klassen/Modulen zur realisieren, sondern alte Klassen erweitert
+werden müssen.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;... ganz ehrlich: dann hab ich auch keine Lust auf TDD, denn das ist
+dann nur noch frustrierender.&lt;/p&gt;
+
+&lt;p&gt;Denn dann ist TDD:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;extrem mühsam: ich muss mich in Codeteile von anderen Entwickler
+reindenken, ohne Unittest und ohne Doku ist das doppelt schwer&lt;/li&gt;
+  &lt;li&gt;extrem zeitaufwändig ohne unmittelbaren Gewinn für PO und Kunden&lt;/li&gt;
+  &lt;li&gt;macht einfach keinen Spaß&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Übrigens: das heißt dann logischerweise auch, dass es keinen Sinn macht
+TDD an einem Projekt mit wenig Unittests neu lernen zu wollen, das geht
+ziemlich sicher schief.&lt;/p&gt;
+
+&lt;p&gt;Wer sich an so einem &quot;dicken Brett&quot; mit TDD versuchen will, der muss
+schon sehr TDD-Sattelfest sein und die Randbedingungen (Zeit, Geld)
+müssen außerdem noch stimmen.&lt;/p&gt;
+
+&lt;h3 id=&quot;wo_ich_tdd_schwierig_finde_es_aber_gerne_besser_machen_möchte&quot;&gt;Wo ich TDD schwierig finde, es aber gerne besser machen möchte&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bei (Script) - Code der direkt auf betriebssystemnahen Funktionen
+operiert&lt;/li&gt;
+  &lt;li&gt;beim testen von Networking oder bei DB- Code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, wenn es nicht einfach gelingt, die externen Dinge (z.B.
+betriebssystemnahen Funktionen) sinnvoll zu mocken.&lt;/p&gt;
+
+&lt;h3 id=&quot;die_wette&quot;&gt;Die Wette&lt;/h3&gt;
+
+&lt;p&gt;Ich möchte mit euch eine Wette abschließen:&lt;/p&gt;
+
+&lt;p&gt;Ich wette, dass es keinem von euch gelingt im großen weiten Internet
+eine Empfehlung eines SWentwickler, der sich ernsthaft und tief mit TDD
+auseinandergesetzt hat, zu finden, die bei neuen (größeren,
+nichttrivialen) Projekten ausdrücklich von TDD abrät.&lt;/p&gt;
+
+&lt;p&gt;Gegenprobe: es ist rel. leicht Aussagen zu finden, die von dieser oder
+jeder SW-Technologie, Architekturstil, Programmiersprache etc.
+ausdrücklich und auch begründet abraten. Außer bei TDD (angewendet bei
+neuen Projekten) eben.&lt;/p&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Design" /><summary type="html">Vorweg eine Frage: Sind wir uns einig, dass Unittest mit angemessener Testabdeckung sehr wünschenswert sind ? (es geht hier zunächst mal nur um Unittest, nicht um Integrationstest oder um Akzeptanztests und der gleichen) Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehe keine 4.000,- Euro ein.…oder so ähnlich. Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.</summary></entry><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-09-18T19:34:30+00:00</published><updated>2020-09-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;p&gt;Dies ist &lt;strong&gt;KEINE&lt;/strong&gt; Linkliste zu TDD-Bücher, mit denen ich bei Amazon noch nebenher Affiliate-Provision kassieren möchte!&lt;/p&gt;
+
+&lt;p&gt;Ich bin ja ein enthusuastischer Beführworter von Test Driven Design (TDD), insbesondere von dem “test first” Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die Wissenschaftliche Literatur zu dem Thema hergibt. Also habe ich gegoogelt, die Fundstellen studiert und die für jeweils wichtigsten Ergebnisse der jeweiligen Studio hier zusammengetragen. Angeregt wurde ich dazu übrigens, als ich das Buch &lt;a href=&quot;https://langlebige-softwarearchitekturen.de&quot;&gt;Langlebige Softwarearchitekturen&lt;/a&gt; von Carola Lilienthal las. Sie hat nämlich an einige Stellen auf auf systematische Studien verwiesen, die Ihre jeweilige Aussagen im Buch belegen sollen. Übrigens schreibt sie auch sehr positiv über TDD in dem Buch, wie man hier gleich in der ersten Fundstelle sieht.&lt;/p&gt;
+
+&lt;h3 id=&quot;aus_langlebige_softwarearchitekturen&quot;&gt;Aus &lt;a href=&quot;https://langlebige-softwarearchitekturen.de&quot;&gt;Langlebige Softwarearchitekturen&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Or you could skip the capture and stick with straight HTML.&lt;/p&gt;
+&lt;h4 id=&quot;abschnitt_9.1.1&quot;&gt;Abschnitt 9.1.1:&lt;/h4&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;notice&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;Message&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;A basic message.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&quot;Für Klassen, die in Zyklen sind, existieren in den meisten Systemen
+keine direkten Unit-Testklassen. Wollte man die Unit Tests program-
+mieren, müsste man alle im Zyklus verflochtenen Klassen durch einen Mock
+ersetzen oder Objekte von ihnen erzeugen. Das ist sehr viel Auf- wand,
+den die meisten Entwicklungsteams und Projektleiter scheuen.&quot;&lt;/p&gt;
 
-&lt;div class=&quot;notice&quot;&gt;
-  &lt;h4&gt;Message&lt;/h4&gt;
-  &lt;p&gt;A basic message.&lt;/p&gt;
-&lt;/div&gt;</content><author><name>Bodo T.</name></author><category term="Post Formats" /><category term="notice" /><summary type="html">A notice displays information that explains nearby content. Often used to call attention to a particular detail.</summary></entry><entry><title type="html">Post: Quote</title><link href="http://localhost:4000/blog/post-quote/" rel="alternate" type="text/html" title="Post: Quote" /><published>2010-02-05T00:00:00+00:00</published><updated>2010-02-05T00:00:00+00:00</updated><id>http://localhost:4000/blog/post-quote</id><content type="html" xml:base="http://localhost:4000/blog/post-quote/">&lt;blockquote&gt;
-  &lt;p&gt;Only one thing is impossible for God: To find any sense in any copyright law on the planet.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Bodos Kommentar:&lt;/dt&gt;
+  &lt;dd&gt;Ich hoffe, wir sind uns einig, dass Zyklen, egal ob auf
+Modul/Package-Ebene oder auf Ebene von Klassen innerhalb eines
+Packages böse sind. Daher:&lt;/dd&gt;
+  &lt;dd&gt;Das heißt im Umkehrschluss: wenn ich mit TDD anfange, kann mir das
+nicht passieren. Im Gegenteil: TDD hindert mich direkt daran, solche
+Fehler zu machen und zwingt mich, vor schreiben von Classen und
+Methode mir Gedanken über die Microarchitektur (also die Architektur
+von Klassen, die zu einem Bounded Context gehören, die zu einem
+Package gehören oder sonst eng zusammengehören.)&lt;/dd&gt;
+&lt;/dl&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;cite&gt;&lt;a href=&quot;http://www.brainyquote.com/quotes/quotes/m/marktwain163473.html&quot;&gt;Mark Twain&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Bodo T.</name></author><category term="Post Formats" /><category term="quote" /><summary type="html">Only one thing is impossible for God: To find any sense in any copyright law on the planet. Mark Twain</summary></entry><entry><title type="html">Post: Chat</title><link href="http://localhost:4000/blog/post-chat/" rel="alternate" type="text/html" title="Post: Chat" /><published>2010-01-08T00:00:00+00:00</published><updated>2010-01-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/post-chat</id><content type="html" xml:base="http://localhost:4000/blog/post-chat/">&lt;p&gt;Abbott: Strange as it may seem, they give ball players nowadays very peculiar names.&lt;/p&gt;
+&lt;h3 id=&quot;aus_test_driven_java_development___second_edition&quot;&gt;aus &lt;a href=&quot;https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111&quot;&gt;Test-Driven Java Development - Second Edition&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Costello: Funny names?&lt;/p&gt;
+&lt;h4 id=&quot;kapitel_1_abschnitt_why_tdd&quot;&gt;Kapitel 1 , Abschnitt &quot;Why TDD?&quot;:&lt;/h4&gt;
 
-&lt;p&gt;Abbott: Nicknames, nicknames. Now, on the St. Louis team we have Who’s on first, What’s on second, I Don’t Know is on third–&lt;/p&gt;
+&lt;p&gt;&quot;It's not an easy thing to master TDD. Even after learning all the
+theory and going through best practices and anti-patterns, the journey
+is only just beginning. TDD requires time and a lot of practice. It's a
+long trip that does not stop with this book. As a matter of fact, it
+never truly ends. There are always new ways to become more proficient
+and faster. However, even though the cost is high, the benefits are even
+higher. &lt;strong&gt;People who have spent enough time with TDD claim that there is
+no other way to develop a software.&lt;/strong&gt; We are one of them and we're sure
+that you will be too.&quot;&lt;/p&gt;
 
-&lt;p&gt;Costello: That’s what I want to find out. I want you to tell me the names of the fellows on the St. Louis team.&lt;/p&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Bodos Kommentar:&lt;/dt&gt;
+  &lt;dd&gt;den fett gedruckte Satz kann ich aus eigener Erfahrung bestätigen.&lt;/dd&gt;
+&lt;/dl&gt;
 
-&lt;p&gt;Abbott: I’m telling you. Who’s on first, What’s on second, I Don’t Know is on third–&lt;/p&gt;
+&lt;h2 id=&quot;wissenschaftliche_studien_zu_tdd&quot;&gt;Wissenschaftliche Studien zu TDD&lt;/h2&gt;
 
-&lt;p&gt;Costello: You know the fellows’ names?&lt;/p&gt;
+&lt;h3 id=&quot;assessing_test_driven_development_at_ibm&quot;&gt;&lt;a href=&quot;https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF&quot;&gt;Assessing test-driven development at IBM&lt;/a&gt;:&lt;/h3&gt;
 
-&lt;p&gt;Abbott: Yes.&lt;/p&gt;
+&lt;p&gt;&quot;... we reduced our defect rate by about 50 percent compared to a
+similar system that was built using an ad-hoc unit testing approach. The
+project completed on time with minimal development productivity impact.
+Additionally, the suite of automated unit test cases created via TDD is
+a reusable and extendable asset that will continue to improve quality
+over the lifetime of the software system. The test suite will be the
+basis for quality checks and will serve as a quality contract between
+all members of the team.&quot;&lt;/p&gt;
 
-&lt;p&gt;Costello: Well, then who’s playing first?&lt;/p&gt;
+&lt;h3 id=&quot;evaluating_the_efficacy_of_test_driven_development_industrial_case_studies_microsoft&quot;&gt;&lt;a href=&quot;https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&amp;amp;response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&amp;amp;Expires=1599907639&amp;amp;Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&amp;amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA&quot;&gt;Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies (Microsoft)&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Abbott: Yes.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;2,6-4,2 mal mehr Bugs , wenn KEIN TDD verwendet. oder anders
+gerechnet Bugrate sinkt mit TDD um 62%-77% .&lt;/li&gt;
+  &lt;li&gt;15% -35% mehr Zeit für TDD notwendig.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Costello: I mean the fellow’s name on first base.&lt;/p&gt;
+&lt;p&gt;&quot; The results summarized ... indicate that while the development of
+both the systems utilizing TDD took extra time upfront the resulting
+quality was higher than teams that adopted a non-TDD approach by an
+order of at least two times. &quot;&lt;/p&gt;
 
-&lt;p&gt;Abbott: Who.&lt;/p&gt;
+&lt;h3 id=&quot;metastudie_does_test_driven_development_really_improve_software_design_quality&quot;&gt;Metastudie: &lt;a href=&quot;https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&amp;amp;context=csse_fac&quot;&gt;Does Test-Driven Development Really Improve Software Design Quality?&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Costello: The fellow playin’ first base.&lt;/p&gt;
+&lt;p&gt;&quot;... Our results indicate that test-first programmers are more likely
+to write software in more and smaller units that are less complex and
+more highly tested.…&quot;&lt;/p&gt;
 
-&lt;p&gt;Abbott: Who.&lt;/p&gt;
+&lt;h3 id=&quot;an_experimental_evaluation_of_the_effectiveness_and_efficiency_of_the_test_driven_development&quot;&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/4343756&quot;&gt;An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Costello: The guy on first base.&lt;/p&gt;
+&lt;p&gt;&quot;Our results suggest that TDD helps in reducing overall development
+effort and improving developer's productivity whereas the code quality
+seems to be affected by the actual testing efforts applied during a
+development-style.&quot;&lt;/p&gt;
 
-&lt;p&gt;Abbott: Who is on first.&lt;/p&gt;
+&lt;h3 id=&quot;metastudie_how_effective_is_test_driven_development&quot;&gt;Metastudie: &lt;a href=&quot;https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf&quot;&gt;How Effective is Test-Driven Development?&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Costello: Well, what are you askin’ me for?&lt;/p&gt;
+&lt;p&gt;&quot;Is it for everyone?&lt;/p&gt;
 
-&lt;p&gt;Abbott: I’m not asking you–I’m telling you. Who is on first.&lt;/p&gt;
+&lt;p&gt;One basic fact on which almost everyone agrees is that TDD is difficult
+to learn. It involves a steep learning curve that requires skill,
+maturity, and time, particularly when developers are entrenched in the
+code-then-test paradigm. Better tool support for test-case generation
+and early exposure in the classroom to a test-then-code mentality may
+encourage TDD adoption.&quot;&lt;/p&gt;
 
-&lt;p&gt;Costello: I’m asking you–who’s on first?&lt;/p&gt;
+&lt;p&gt;&quot;Could it be addictive?&lt;/p&gt;
 
-&lt;p&gt;Abbott: That’s the man’s name.&lt;/p&gt;
+&lt;p&gt;Personal communications with TDD developers suggest that it is an
+addictive practice. It changes the way people think and their approach
+to coding in a way that is difficult to roll back. Therefore, leaving
+TDD practices may be as difficult as adopting them.&quot;&lt;/p&gt;
 
-&lt;p&gt;Costello: That’s who’s name?&lt;/p&gt;
+&lt;p&gt;Fazit: Empfehlung für TDD&lt;/p&gt;
 
-&lt;p&gt;Abbott: Yes.&lt;/p&gt;
+&lt;h3 id=&quot;comparing_the_defect_reduction_benefits_of_..._test_driven_development&quot;&gt;&lt;a href=&quot;http://ibiai.mg.gov.br/wp-content/uploads/2019/08/05750007-1.pdf&quot;&gt;Comparing the Defect Reduction Benefits of ... Test-Driven Development&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Costello: When you pay off the first baseman every month, who gets the money?&lt;/p&gt;
+&lt;p&gt;&quot;TDD has several purported benefits—only one of which is software
+defect reduction ... We found that code inspection is more effective
+than TDD at reducing defects, but that code inspection is also more
+expensive to implement. We also found some evidence to indicate that TDD
+may result in an implementation cost savings, ...&quot;&lt;/p&gt;
 
-&lt;p&gt;Abbott: Every dollar of it. And why not, the man’s entitled to it.&lt;/p&gt;
+&lt;h3 id=&quot;test_driven_development&quot;&gt;&lt;a href=&quot;https://link.springer.com/book/10.1007%2F978-3-642-04288-1&quot;&gt;Test-Driven Development&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Costello: Who is?&lt;/p&gt;
+&lt;p&gt;Empirical studies by Madeyski (Madeyski, 2010a) showed that TDD is
+better in producing loosely coupled software in comparison with
+traditional test last software development practice.&lt;/p&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Design" /><summary type="html">Dies ist KEINE Linkliste zu TDD-Bücher, mit denen ich bei Amazon noch nebenher Affiliate-Provision kassieren möchte!</summary></entry><entry><title type="html">(Video)Test Driven Development und Test-First Tutorial</title><link href="http://localhost:4000/blog/TDD-Tutorial/" rel="alternate" type="text/html" title="(Video)Test Driven Development und Test-First Tutorial" /><published>2020-09-10T19:34:30+00:00</published><updated>2020-09-10T19:34:30+00:00</updated><id>http://localhost:4000/blog/TDD-Tutorial</id><content type="html" xml:base="http://localhost:4000/blog/TDD-Tutorial/">&lt;p&gt;Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First&lt;/p&gt;
 
-&lt;p&gt;Abbott: Yes.&lt;/p&gt;
+&lt;!-- Courtesy of embedresponsively.com //--&gt;
 
-&lt;p&gt;Costello: So who gets it?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Why shouldn’t he? Sometimes his wife comes down and collects it.&lt;/p&gt;
-
-&lt;p&gt;Costello: Who’s wife?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Yes. After all, the man earns it.&lt;/p&gt;
-
-&lt;p&gt;Costello: Who does?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Absolutely.&lt;/p&gt;
-
-&lt;p&gt;Costello: Well, all I’m trying to find out is what’s the guy’s name on first base?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Oh, no, no. What is on second base.&lt;/p&gt;
-
-&lt;p&gt;Costello: I’m not asking you who’s on second.&lt;/p&gt;
-
-&lt;p&gt;Abbott: Who’s on first!&lt;/p&gt;
-
-&lt;p&gt;Costello: St. Louis has a good outfield?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Oh, absolutely.&lt;/p&gt;
-
-&lt;p&gt;Costello: The left fielder’s name?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Why.&lt;/p&gt;
-
-&lt;p&gt;Costello: I don’t know, I just thought I’d ask.&lt;/p&gt;
-
-&lt;p&gt;Abbott: Well, I just thought I’d tell you.&lt;/p&gt;
-
-&lt;p&gt;Costello: Then tell me who’s playing left field?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Who’s playing first.&lt;/p&gt;
-
-&lt;p&gt;Costello: Stay out of the infield! The left fielder’s name?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Why.&lt;/p&gt;
-
-&lt;p&gt;Costello: Because.&lt;/p&gt;
-
-&lt;p&gt;Abbott: Oh, he’s center field.&lt;/p&gt;
-
-&lt;p&gt;Costello: Wait a minute. You got a pitcher on this team?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Wouldn’t this be a fine team without a pitcher?&lt;/p&gt;
-
-&lt;p&gt;Costello: Tell me the pitcher’s name.&lt;/p&gt;
-
-&lt;p&gt;Abbott: Tomorrow.&lt;/p&gt;
-
-&lt;p&gt;Costello: Now, when the guy at bat bunts the ball–me being a good catcher–I want to throw the guy out at first base, so I pick up the ball and throw it to who?&lt;/p&gt;
-
-&lt;p&gt;Abbott: Now, that’s he first thing you’ve said right.&lt;/p&gt;
-
-&lt;p&gt;Costello: I DON’T EVEN KNOW WHAT I’M TALKING ABOUT!&lt;/p&gt;
-
-&lt;p&gt;Abbott: Don’t get excited. Take it easy.&lt;/p&gt;
-
-&lt;p&gt;Costello: I throw the ball to first base, whoever it is grabs the ball, so the guy runs to second. Who picks up the ball and throws it to what. What throws it to I don’t know. I don’t know throws it back to tomorrow–a triple play.&lt;/p&gt;
-
-&lt;p&gt;Abbott: Yeah, it could be.&lt;/p&gt;
-
-&lt;p&gt;Costello: Another guy gets up and it’s a long ball to center.&lt;/p&gt;
-
-&lt;p&gt;Abbott: Because.&lt;/p&gt;
-
-&lt;p&gt;Costello: Why? I don’t know. And I don’t care.&lt;/p&gt;
-
-&lt;p&gt;Abbott: What was that?&lt;/p&gt;
-
-&lt;p&gt;Costello: I said, I DON’T CARE!&lt;/p&gt;
-
-&lt;p&gt;Abbott: Oh, that’s our shortstop!&lt;/p&gt;</content><author><name>Bodo T.</name></author><category term="chat" /><category term="Post Formats" /><summary type="html">Abbott: Strange as it may seem, they give ball players nowadays very peculiar names.</summary></entry><entry><title type="html">Post: Standard</title><link href="http://localhost:4000/blog/post-standard/" rel="alternate" type="text/html" title="Post: Standard" /><published>2010-01-07T00:00:00+00:00</published><updated>2010-01-07T00:00:00+00:00</updated><id>http://localhost:4000/blog/post-standard</id><content type="html" xml:base="http://localhost:4000/blog/post-standard/">&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.&lt;/p&gt;
-
-&lt;p&gt;Mrs. Darling first heard of Peter when she was tidying up her children’s minds. It is the nightly custom of every good mother after her children are asleep to rummage in their minds and put things straight for next morning, repacking into their proper places the many articles that have wandered during the day.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;This post has a manual excerpt &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt; set after the second paragraph. The following YAML Front Matter has also be applied:&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;excerpt_separator&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;lt;!--more--&amp;gt;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you could keep awake (but of course you can’t) you would see your own mother doing this, and you would find it very interesting to watch her. It is quite like tidying up drawers. You would see her on her knees, I expect, lingering humorously over some of your contents, wondering where on earth you had picked this thing up, making discoveries sweet and not so sweet, pressing this to her cheek as if it were as nice as a kitten, and hurriedly stowing that out of sight. When you wake in the morning, the naughtiness and evil passions with which you went to bed have been folded up small and placed at the bottom of your mind and on the top, beautifully aired, are spread out your prettier thoughts, ready for you to put on.&lt;/p&gt;
-
-&lt;p&gt;I don’t know whether you have ever seen a map of a person’s mind. Doctors sometimes draw maps of other parts of you, and your own map can become intensely interesting, but catch them trying to draw a map of a child’s mind, which is not only confused, but keeps going round all the time. There are zigzag lines on it, just like your temperature on a card, and these are probably roads in the island, for the Neverland is always more or less an island, with astonishing splashes of colour here and there, and coral reefs and rakish-looking craft in the offing, and savages and lonely lairs, and gnomes who are mostly tailors, and caves through which a river runs, and princes with six elder brothers, and a hut fast going to decay, and one very small old lady with a hooked nose. It would be an easy map if that were all, but there is also first day at school, religion, fathers, the round pond, needle-work, murders, hangings, verbs that take the dative, chocolate pudding day, getting into braces, say ninety-nine, three-pence for pulling out your tooth yourself, and so on, and either these are part of the island or they are another map showing through, and it is all rather confusing, especially as nothing will stand still.&lt;/p&gt;
-
-&lt;p&gt;Of course the Neverlands vary a good deal. John’s, for instance, had a lagoon with flamingoes flying over it at which John was shooting, while Michael, who was very small, had a flamingo with lagoons flying over it. John lived in a boat turned upside down on the sands, Michael in a wigwam, Wendy in a house of leaves deftly sewn together. John had no friends, Michael had friends at night, Wendy had a pet wolf forsaken by its parents, but on the whole the Neverlands have a family resemblance, and if they stood still in a row you could say of them that they have each other’s nose, and so forth. On these magic shores children at play are for ever beaching their coracles [simple boat]. We too have been there; we can still hear the sound of the surf, though we shall land no more.&lt;/p&gt;
-
-&lt;p&gt;Of all delectable islands the Neverland is the snuggest and most compact, not large and sprawly, you know, with tedious distances between one adventure and another, but nicely crammed. When you play at it by day with the chairs and table-cloth, it is not in the least alarming, but in the two minutes before you go to sleep it becomes very real. That is why there are night-lights.&lt;/p&gt;
-
-&lt;p&gt;Occasionally in her travels through her children’s minds Mrs. Darling found things she could not understand, and of these quite the most perplexing was the word Peter. She knew of no Peter, and yet he was here and there in John and Michael’s minds, while Wendy’s began to be scrawled all over with him. The name stood out in bolder letters than any of the other words, and as Mrs. Darling gazed she felt that it had an oddly cocky appearance.&lt;/p&gt;</content><author><name>Bodo T.</name></author><category term="Post Formats" /><category term="readability" /><category term="standard" /><summary type="html">All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end. Mrs. Darling first heard of Peter when she was tidying up her children’s minds. It is the nightly custom of every good mother after her children are asleep to rummage in their minds and put things straight for next morning, repacking into their proper places the many articles that have wandered during the day.</summary></entry><entry><title type="html">Post: Modified Date</title><link href="http://localhost:4000/blog/post-modified/" rel="alternate" type="text/html" title="Post: Modified Date" /><published>2010-01-07T00:00:00+00:00</published><updated>2016-03-09T21:20:02+00:00</updated><id>http://localhost:4000/blog/post-modified</id><content type="html" xml:base="http://localhost:4000/blog/post-modified/">&lt;p&gt;This post has been updated and should show a modified date if used in a layout.&lt;/p&gt;
-
-&lt;p&gt;All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, “Oh, why can’t you remain like this for ever!” This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.&lt;/p&gt;</content><author><name>Bodo T.</name></author><category term="Post Formats" /><category term="readability" /><category term="standard" /><summary type="html">This post has been updated and should show a modified date if used in a layout.</summary></entry></feed>
+&lt;div class=&quot;responsive-video-container&quot;&gt;
+    &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/8v4PixvHk18&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Design" /><summary type="html">Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First</summary></entry></feed>

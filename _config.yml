@@ -1,4 +1,3 @@
-
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -14,15 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: bodo.te blog
-email: bodo.te@gmail.com
+title: Bodos Software Blog
+email: bodo.teichmann@brandad-systems.de
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  'Gedanken und Ideen zu Softwareentwicklung'
 twitter_username: BodoTe
 github_username: bodote
-minimal_mistakes_skin: default
+minimal_mistakes_skin: "default" # "default" , "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 search: true
 
 # Build settings
@@ -59,17 +56,20 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Bodo T."
+  name   : "Bodo Teichmann"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Developing software since 1980"
+  bio    : "'Talk is cheap. Show me the code.' ― Linus Torvalds"
   links:
+    - label: "Website von BAS"
+      icon: "fas fa-fw fa-link"
+      url: "https://brandad-systems.de"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/BodoTe"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/bodote"
-
+    
 
 footer:
   links:
@@ -79,7 +79,7 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/bodote"
-
+    
 
 defaults:
   # _posts
@@ -107,4 +107,3 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-

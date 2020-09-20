@@ -1,0 +1,666 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Bodos unwissenschaftliche Argumente für TDD - Bodos Software Blog</title>
+<meta name="description" content="Vorweg eine Frage: Sind wir uns einig, dass Unittest mit angemessener Testabdeckung sehr wünschenswert sind ? (es geht hier zunächst mal nur um Unittest, nicht um Integrationstest oder um Akzeptanztests und der gleichen)    Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehe keine 4.000,- Euro ein.…oder so ähnlich.   Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.">
+
+
+  <meta name="author" content="Bodo Teichmann">
+  
+  <meta property="article:author" content="Bodo Teichmann">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Bodos Software Blog">
+<meta property="og:title" content="Bodos unwissenschaftliche Argumente für TDD">
+<meta property="og:url" content="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/">
+
+
+  <meta property="og:description" content="Vorweg eine Frage: Sind wir uns einig, dass Unittest mit angemessener Testabdeckung sehr wünschenswert sind ? (es geht hier zunächst mal nur um Unittest, nicht um Integrationstest oder um Akzeptanztests und der gleichen)    Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehe keine 4.000,- Euro ein.…oder so ähnlich.   Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-09-18T19:34:30+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Bodos Software Blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Bodos Software Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/impressum/">Impressum</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="Bodo Teichmann" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Bodo Teichmann</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>‘Talk is cheap. Show me the code.’ ― Linus Torvalds</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://brandad-systems.de" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website von BAS</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/BodoTe" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/bodote" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Bodos unwissenschaftliche Argumente für TDD">
+    <meta itemprop="description" content="Vorweg eine Frage: Sind wir uns einig, dass Unittest mit angemessenerTestabdeckung sehr wünschenswert sind ? (es geht hier zunächst mal nurum Unittest, nicht um Integrationstest oder um Akzeptanztests und dergleichen)  Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehekeine 4.000,- Euro ein.…oder so ähnlich.  Wenn ja: Gut, dann ist dieseHürde ja schon mal aus dem Weg geräumt.">
+    <meta itemprop="datePublished" content="2020-09-18T19:34:30+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Bodos unwissenschaftliche Argumente für TDD
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Vorweg eine Frage: Sind wir uns einig, dass Unittest mit angemessener
+Testabdeckung sehr wünschenswert sind ? (es geht hier zunächst mal nur
+um Unittest, nicht um Integrationstest oder um Akzeptanztests und der
+gleichen)</p>
+<ul>
+  <li>Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehe
+keine 4.000,- Euro ein.…oder so ähnlich.</li>
+  <li>Wenn ja: Gut, dann ist diese
+Hürde ja schon mal aus dem Weg geräumt.</li>
+</ul>
+
+<h3 id="meine_motivation_tdd_wo_immer_erlaubt_und_möglich_einzusetzen_ist_folgende">Meine Motivation, TDD wo immer erlaubt und möglich einzusetzen, ist folgende:</h3>
+
+<ul>
+  <li>es macht mir einfach viel mehr Spaß so zu programmieren</li>
+  <li>ich bin sicher: mit TDD geschriebene Software bekommt <del>fast</del> schon
+automatisch eine bessere Architektur/Design, zumindest auf unterster
+Ebene (also für alle Klassen innerhalb eines Packages oder eines
+Modules )</li>
+  <li>mit dem konsequenten "test first"-Ansatz von TDD ergibt sich ein
+geringere Zeitaufwand gegenüber nachträglich gebauten Unittests:
+    <ul>
+      <li>Weil ich dann während des Schreibens der eigentlich
+Klasse/Methode ja keine <strong>manuellen</strong> Test mehr mache.</li>
+      <li>Denn: wenn ich noch keinen Unittest habe, wie teste ich eine
+Klasse/Methode die ich grad geschrieben oder verändert hat?
+durch bloses hinschauen (ist fehleranfällig) oder durch
+manuelles Testen, das kostet jedes mal wieder Zeit!</li>
+      <li>Weil ich gedanklich praktisch gleichzeitig eigentlichen Code und
+TestCode erfinde, ich bin also beim schreiben des Tests schon
+gedanklich in der Thematik drin bin.</li>
+      <li>Schreibe ich dagegen den Unittest erst später, dann muss ich
+mich ja ins Thema erst wieder neu eindenken. Schlimmstenfalls
+müsste ich sogar meine Klassen/Methoden-Design ändern, was ich
+natürlich im nach hinein nicht mehr mache.</li>
+    </ul>
+  </li>
+  <li>Ich habe keinen Zeitdruck mehr beim "nachziehen" von Test: wir
+sind uns doch einig, dass wie wenigsten Menschen/Teams wirklich die
+Disziplin immer aufbringen die Tests "nachzuziehen" obwohl der
+    <ul>
+      <li>Sprint schon vorbei ist</li>
+      <li>der PO oder der Kunden mit neuen Feature wünschen drängt</li>
+    </ul>
+  </li>
+  <li>Und die <strong>Testabdeckung</strong>: Ehrlich gesagt ist mir die komplett egal!
+Denn: ich weiß ja von vornherein, dass ich alle Methoden in allen
+Klassen, die auch nur minimale Logic enthalten, mit Unittests zu
+100% abgedeckt habe. Ob die gesamte Testabdeckung dann bei 80, 90
+oder 95 % liegt (weil halt Glue-Code ohne Logik und Setter/Getter
+nicht abgedeckt sind), ist dann komplett irrelevant.</li>
+  <li>hab ich in meinen Unittests doch mal einen Fall vergessen, der dann
+im Integrationstest oder noch später aufgedeckt wird, dann und nur
+dann ziehe ich zuerst den Unittest nach und dann <strong>und erst dann</strong>
+fixe ich den eigentlichen Code.</li>
+</ul>
+
+<h3 id="fast_keine_motivation_für_tdd_bringe_ich_auf_...">Fast keine Motivation für TDD bringe ich auf ...</h3>
+
+<ul>
+  <li>wenn es schon nennenswert Codeteile gibt, die ohne Unittests sind</li>
+  <li>wenn diese Codeteile geändert werden müssen</li>
+  <li>wenn es keine Option ist, neue Features mit komplett neuen
+Klassen/Modulen zur realisieren, sondern alte Klassen erweitert
+werden müssen.</li>
+</ul>
+
+<p>... ganz ehrlich: dann hab ich auch keine Lust auf TDD, denn das ist
+dann nur noch frustrierender.</p>
+
+<p>Denn dann ist TDD:</p>
+
+<ul>
+  <li>extrem mühsam: ich muss mich in Codeteile von anderen Entwickler
+reindenken, ohne Unittest und ohne Doku ist das doppelt schwer</li>
+  <li>extrem zeitaufwändig ohne unmittelbaren Gewinn für PO und Kunden</li>
+  <li>macht einfach keinen Spaß</li>
+</ul>
+
+<p>Übrigens: das heißt dann logischerweise auch, dass es keinen Sinn macht
+TDD an einem Projekt mit wenig Unittests neu lernen zu wollen, das geht
+ziemlich sicher schief.</p>
+
+<p>Wer sich an so einem "dicken Brett" mit TDD versuchen will, der muss
+schon sehr TDD-Sattelfest sein und die Randbedingungen (Zeit, Geld)
+müssen außerdem noch stimmen.</p>
+
+<h3 id="wo_ich_tdd_schwierig_finde_es_aber_gerne_besser_machen_möchte">Wo ich TDD schwierig finde, es aber gerne besser machen möchte</h3>
+
+<ul>
+  <li>bei (Script) - Code der direkt auf betriebssystemnahen Funktionen
+operiert</li>
+  <li>beim testen von Networking oder bei DB- Code</li>
+</ul>
+
+<p>Also, wenn es nicht einfach gelingt, die externen Dinge (z.B.
+betriebssystemnahen Funktionen) sinnvoll zu mocken.</p>
+
+<h3 id="die_wette">Die Wette</h3>
+
+<p>Ich möchte mit euch eine Wette abschließen:</p>
+
+<p>Ich wette, dass es keinem von euch gelingt im großen weiten Internet
+eine Empfehlung eines SWentwickler, der sich ernsthaft und tief mit TDD
+auseinandergesetzt hat, zu finden, die bei neuen (größeren,
+nichttrivialen) Projekten ausdrücklich von TDD abrät.</p>
+
+<p>Gegenprobe: es ist rel. leicht Aussagen zu finden, die von dieser oder
+jeder SW-Technologie, Architekturstil, Programmiersprache etc.
+ausdrücklich und auch begründet abraten. Außer bei TDD (angewendet bei
+neuen Projekten) eben.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#tdd" class="page__taxonomy-item" rel="tag">TDD</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#test-driven-design" class="page__taxonomy-item" rel="tag">Test Driven Design</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-09-18T19:34:30+00:00">September 18, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Bodos+unwissenschaftliche+Argumente+f%C3%BCr+TDD%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBodos-unwissenschaftliche-TDD-Argumente%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBodos-unwissenschaftliche-TDD-Argumente%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FBodos-unwissenschaftliche-TDD-Argumente%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/TDD-Tutorial/" class="pagination--pager" title="(Video)Test Driven Development und Test-First Tutorial
+">Previous</a>
+    
+    
+      <a href="/blog/Literaturrecherche-TDD/" class="pagination--pager" title="Literaturrecherche zu TDD
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/Literaturrecherche-TDD/" rel="permalink">Literaturrecherche zu TDD
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Dies ist KEINE Linkliste zu TDD-Bücher, mit denen ich bei Amazon noch nebenher Affiliate-Provision kassieren möchte!
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/TDD-Tutorial/" rel="permalink">(Video)Test Driven Development und Test-First Tutorial
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/BodoTe" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/bodote" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Bodos Software Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
