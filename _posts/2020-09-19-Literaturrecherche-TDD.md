@@ -80,7 +80,7 @@ both the systems utilizing TDD took extra time upfront the resulting
 quality was higher than teams that adopted a non-TDD approach by an
 order of at least two times. \"
 
-### Metastudie: [Does Test-Driven Development Really Improve Software Design Quality?](https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&context=csse_fac) {#metastudie_does_test_driven_development_really_improve_software_design_quality}
+### Metastudie, die 6 unterschiedliche Studien ausgewertet hat: [Does Test-Driven Development Really Improve Software Design Quality?](https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&context=csse_fac) {#metastudie_does_test_driven_development_really_improve_software_design_quality}
 
 \"\... Our results indicate that test-first programmers are more likely
 to write software in more and smaller units that are less complex and
