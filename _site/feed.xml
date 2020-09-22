@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-20T19:15:05+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Bodos unwissenschaftliche Argumente für TDD</title><link href="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/" rel="alternate" type="text/html" title="Bodos unwissenschaftliche Argumente für TDD" /><published>2020-09-18T19:34:30+00:00</published><updated>2020-09-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente</id><content type="html" xml:base="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/">&lt;p&gt;Vorweg eine Frage: Sind wir uns einig, dass Unittest mit angemessener
-Testabdeckung sehr wünschenswert sind ? (es geht hier zunächst mal nur
-um Unittest, nicht um Integrationstest oder um Akzeptanztests und der
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-22T18:31:10+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Bodos unwissenschaftliche Argumente für TDD</title><link href="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/" rel="alternate" type="text/html" title="Bodos unwissenschaftliche Argumente für TDD" /><published>2020-09-18T19:34:30+00:00</published><updated>2020-09-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente</id><content type="html" xml:base="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/">&lt;p&gt;Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener
+Testabdeckung sehr wünschenswert sind ? (Es geht hier zunächst mal nur
+um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der
 gleichen)&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehe
@@ -17,100 +17,81 @@ Hürde ja schon mal aus dem Weg geräumt.&lt;/li&gt;
 automatisch eine bessere Architektur/Design, zumindest auf unterster
 Ebene (also für alle Klassen innerhalb eines Packages oder eines
 Modules )&lt;/li&gt;
-  &lt;li&gt;mit dem konsequenten &quot;test first&quot;-Ansatz von TDD ergibt sich ein
-geringere Zeitaufwand gegenüber nachträglich gebauten Unittests:
+  &lt;li&gt;mit dem konsequenten “test first”-Ansatz von TDD ergibt sich ein
+geringerer Zeitaufwand gegenüber nachträglich gebauten Unittests:
     &lt;ul&gt;
-      &lt;li&gt;Weil ich dann während des Schreibens der eigentlich
-Klasse/Methode ja keine &lt;strong&gt;manuellen&lt;/strong&gt; Test mehr mache.&lt;/li&gt;
+      &lt;li&gt;Weil ich dann während des Schreibens der eigentlichen
+Klasse/Methode ja keine &lt;strong&gt;manuellen&lt;/strong&gt; Tests mehr mache.&lt;/li&gt;
       &lt;li&gt;Denn: wenn ich noch keinen Unittest habe, wie teste ich eine
 Klasse/Methode die ich grad geschrieben oder verändert hat?
 durch bloses hinschauen (ist fehleranfällig) oder durch
 manuelles Testen, das kostet jedes mal wieder Zeit!&lt;/li&gt;
-      &lt;li&gt;Weil ich gedanklich praktisch gleichzeitig eigentlichen Code und
-TestCode erfinde, ich bin also beim schreiben des Tests schon
-gedanklich in der Thematik drin bin.&lt;/li&gt;
+      &lt;li&gt;Weil ich gedanklich praktisch gleichzeitig eigentlichen Code und TestCode erfinde, ich bin also beim Schreiben des Tests schon gedanklich in der Thematik drin bin.&lt;/li&gt;
       &lt;li&gt;Schreibe ich dagegen den Unittest erst später, dann muss ich
 mich ja ins Thema erst wieder neu eindenken. Schlimmstenfalls
 müsste ich sogar meine Klassen/Methoden-Design ändern, was ich
-natürlich im nach hinein nicht mehr mache.&lt;/li&gt;
+natürlich im nach hinein eher nicht mehr mache.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Ich habe keinen Zeitdruck mehr beim &quot;nachziehen&quot; von Test: wir
-sind uns doch einig, dass wie wenigsten Menschen/Teams wirklich die
-Disziplin immer aufbringen die Tests &quot;nachzuziehen&quot; obwohl der
+  &lt;li&gt;Ich habe keinen Zeitdruck mehr beim “nachziehen” von Test: wir
+sind uns doch einig, dass wie wenigsten Menschen/Teams wirklich immer die Disziplin  aufbringen, die Tests “nachzuziehen” obwohl:
     &lt;ul&gt;
-      &lt;li&gt;Sprint schon vorbei ist&lt;/li&gt;
-      &lt;li&gt;der PO oder der Kunden mit neuen Feature wünschen drängt&lt;/li&gt;
+      &lt;li&gt;der Sprint schon vorbei ist&lt;/li&gt;
+      &lt;li&gt;der PO oder der Kunden mit neuen Featurewünschen drängt&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Und die &lt;strong&gt;Testabdeckung&lt;/strong&gt;: Ehrlich gesagt ist mir die komplett egal!
-Denn: ich weiß ja von vornherein, dass ich alle Methoden in allen
-Klassen, die auch nur minimale Logic enthalten, mit Unittests zu
-100% abgedeckt habe. Ob die gesamte Testabdeckung dann bei 80, 90
-oder 95 % liegt (weil halt Glue-Code ohne Logik und Setter/Getter
-nicht abgedeckt sind), ist dann komplett irrelevant.&lt;/li&gt;
-  &lt;li&gt;hab ich in meinen Unittests doch mal einen Fall vergessen, der dann
-im Integrationstest oder noch später aufgedeckt wird, dann und nur
-dann ziehe ich zuerst den Unittest nach und dann &lt;strong&gt;und erst dann&lt;/strong&gt;
-fixe ich den eigentlichen Code.&lt;/li&gt;
+  &lt;li&gt;Übrigens zur heiligen &lt;strong&gt;Testabdeckung&lt;/strong&gt;: Ehrlich gesagt ist mir die komplett egal wenn ich “test first” mache ! Denn: ich weiß ja von vornherein, dass ich alle Methoden in allen Klassen, die auch nur minimale Logic enthalten, mit Unittests zu 100% abgedeckt habe. Ob die gesamte Testabdeckung dann bei 80, 90 oder 95 % liegt (weil halt Glue-Code ohne Logik und Setter/Getter nicht abgedeckt sind), ist doch dann komplett irrelevant.&lt;/li&gt;
+  &lt;li&gt;Falls ich  ich in meinen Unittests doch mal einen Fall vergessen habe, der dann im Integrationstest oder noch später aufgedeckt wird, dann und nur dann ziehe ich zuerst den Unittests nach und dann &lt;strong&gt;und erst da nach&lt;/strong&gt; fixe ich den eigentlichen Code.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;fast_keine_motivation_für_tdd_bringe_ich_auf_...&quot;&gt;Fast keine Motivation für TDD bringe ich auf ...&lt;/h3&gt;
+&lt;h3 id=&quot;fast_keine_motivation_für_tdd_bringe_ich_auf_...&quot;&gt;Ich persönlich bringe fast keine Motivation für TDD/Unittest mehr auf, wenn …&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;wenn es schon nennenswert Codeteile gibt, die ohne Unittests sind&lt;/li&gt;
-  &lt;li&gt;wenn diese Codeteile geändert werden müssen&lt;/li&gt;
-  &lt;li&gt;wenn es keine Option ist, neue Features mit komplett neuen
-Klassen/Modulen zur realisieren, sondern alte Klassen erweitert
+  &lt;li&gt;und wenn gerade diese Codeteile geändert werden müssen&lt;/li&gt;
+  &lt;li&gt;wenn es nicht einfach möglich ist, neue Features mit komplett neuen Klassen/Modulen zur realisieren, sondern alte Klassen erweitert
 werden müssen.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;... ganz ehrlich: dann hab ich auch keine Lust auf TDD, denn das ist
-dann nur noch frustrierender.&lt;/p&gt;
+&lt;p&gt;… ganz ehrlich: dann ist meine Motiviation  TDD durchzuziehen ehr begenzt.&lt;/p&gt;
 
-&lt;p&gt;Denn dann ist TDD:&lt;/p&gt;
-
+&lt;h3 id=&quot;denn-unter-solchen-widrigen-randbedingungen&quot;&gt;Denn unter solchen widrigen Randbedingungen..&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;extrem mühsam: ich muss mich in Codeteile von anderen Entwickler
-reindenken, ohne Unittest und ohne Doku ist das doppelt schwer&lt;/li&gt;
-  &lt;li&gt;extrem zeitaufwändig ohne unmittelbaren Gewinn für PO und Kunden&lt;/li&gt;
-  &lt;li&gt;macht einfach keinen Spaß&lt;/li&gt;
+  &lt;li&gt;..ist TDD extrem mühsam: ich muss mich in Codeteile von anderen Entwicklern reindenken, ohne Unittests und ohne Doku. Das ist das doppelt schwer&lt;/li&gt;
+  &lt;li&gt;und sochen Randbedingungen ist TDD extrem zeitaufwändig ohne vor allem ohne unmittelbaren Gewinn für PO und Kunden.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Übrigens: das heißt dann logischerweise auch, dass es keinen Sinn macht
-TDD an einem Projekt mit wenig Unittests neu lernen zu wollen, das geht
-ziemlich sicher schief.&lt;/p&gt;
+&lt;p&gt;Übrigens: das heißt dann logischerweise auch, dass es keinen Sinn macht TDD an einem Projekt mit kaum Unittests neu lernen zu wollen. Denn das geht ziemlich sicher schief.&lt;/p&gt;
 
-&lt;p&gt;Wer sich an so einem &quot;dicken Brett&quot; mit TDD versuchen will, der muss
+&lt;p&gt;Wer sich an so einem “dicken Brett” mit TDD versuchen will, der muss
 schon sehr TDD-Sattelfest sein und die Randbedingungen (Zeit, Geld)
-müssen außerdem noch stimmen.&lt;/p&gt;
+müssen außerdem sehr optimal sein.&lt;/p&gt;
 
 &lt;h3 id=&quot;wo_ich_tdd_schwierig_finde_es_aber_gerne_besser_machen_möchte&quot;&gt;Wo ich TDD schwierig finde, es aber gerne besser machen möchte&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;bei (Script) - Code der direkt auf betriebssystemnahen Funktionen
+  &lt;li&gt;bei (Script) - Code, der direkt auf betriebssystemnahen Funktionen
 operiert&lt;/li&gt;
-  &lt;li&gt;beim testen von Networking oder bei DB- Code&lt;/li&gt;
+  &lt;li&gt;beim Testen von Networking oder bei DB- Code&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Also, wenn es nicht einfach gelingt, die externen Dinge (z.B.
+&lt;p&gt;Also, wenn es nicht einfach gelingt, die externen Objekte (z.B.
 betriebssystemnahen Funktionen) sinnvoll zu mocken.&lt;/p&gt;
 
-&lt;h3 id=&quot;die_wette&quot;&gt;Die Wette&lt;/h3&gt;
+&lt;h3 id=&quot;die_wette&quot;&gt;Meine Wette&lt;/h3&gt;
 
 &lt;p&gt;Ich möchte mit euch eine Wette abschließen:&lt;/p&gt;
 
 &lt;p&gt;Ich wette, dass es keinem von euch gelingt im großen weiten Internet
-eine Empfehlung eines SWentwickler, der sich ernsthaft und tief mit TDD
-auseinandergesetzt hat, zu finden, die bei neuen (größeren,
-nichttrivialen) Projekten ausdrücklich von TDD abrät.&lt;/p&gt;
+eine Empfehlung eines SWentwicklerIn, der sich ernsthaft und tief mit TDD auseinandergesetzt hat, zu finden, umd bei neuen (größeren,
+nichttrivialen) Projekten von TDD abrät. Im Gegenteil. Nach meinen Recherchen ist jeder, der mal tief in das TDD - Konzept eingetaucht ist, kaum noch bereit das wieder aufzugeben. Man könnte also sagen TDD macht nach längerer Anwendung süchtig!&lt;/p&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Design" /><summary type="html">Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener Testabdeckung sehr wünschenswert sind ? (Es geht hier zunächst mal nur um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der gleichen) Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehe keine 4.000,- Euro ein.…oder so ähnlich. Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.</summary></entry><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-09-18T19:34:30+00:00</published><updated>2020-09-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;p&gt;Dies ist &lt;strong&gt;KEINE&lt;/strong&gt; Linkliste zu TDD-Bücher, mit denen ich bei Amazon noch nebenher Affiliate-Provision kassieren möchte!&lt;/p&gt;
 
-&lt;p&gt;Gegenprobe: es ist rel. leicht Aussagen zu finden, die von dieser oder
-jeder SW-Technologie, Architekturstil, Programmiersprache etc.
-ausdrücklich und auch begründet abraten. Außer bei TDD (angewendet bei
-neuen Projekten) eben.&lt;/p&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Design" /><summary type="html">Vorweg eine Frage: Sind wir uns einig, dass Unittest mit angemessener Testabdeckung sehr wünschenswert sind ? (es geht hier zunächst mal nur um Unittest, nicht um Integrationstest oder um Akzeptanztests und der gleichen) Wenn nicht, dann gehe zurück auf LOS …gehe direkt dort hin, ziehe keine 4.000,- Euro ein.…oder so ähnlich. Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.</summary></entry><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-09-18T19:34:30+00:00</published><updated>2020-09-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;p&gt;Dies ist &lt;strong&gt;KEINE&lt;/strong&gt; Linkliste zu TDD-Bücher, mit denen ich bei Amazon noch nebenher Affiliate-Provision kassieren möchte!&lt;/p&gt;
-
-&lt;p&gt;Ich bin ja ein enthusuastischer Beführworter von Test Driven Design (TDD), insbesondere von dem “test first” Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die Wissenschaftliche Literatur zu dem Thema hergibt. Also habe ich gegoogelt, die Fundstellen studiert und die für jeweils wichtigsten Ergebnisse der jeweiligen Studio hier zusammengetragen. Angeregt wurde ich dazu übrigens, als ich das Buch &lt;a href=&quot;https://langlebige-softwarearchitekturen.de&quot;&gt;Langlebige Softwarearchitekturen&lt;/a&gt; von Carola Lilienthal las. Sie hat nämlich an einige Stellen auf auf systematische Studien verwiesen, die Ihre jeweilige Aussagen im Buch belegen sollen. Übrigens schreibt sie auch sehr positiv über TDD in dem Buch, wie man hier gleich in der ersten Fundstelle sieht.&lt;/p&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Ich bin ja ein enthusuastischer Beführworter von Test Driven Design (TDD), insbesondere von dem “test first” Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die wissenschaftliche Literatur zu dem Thema hergibt. Also habe ich gegoogelt, die Fundstellen studiert und die für jeweils wichtigsten Ergebnisse der jeweiligen Studien hier zusammengetragen.&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;(Angeregt wurde ich dazu übrigens, als ich das Buch &lt;a href=&quot;https://langlebige-softwarearchitekturen.de&quot;&gt;Langlebige Softwarearchitekturen&lt;/a&gt; von Carola Lilienthal las. Sie hat nämlich an einige Stellen auf auf systematische Studien verwiesen, die Ihre jeweilige Aussagen im Buch belegen sollen. Übrigens schreibt sie auch sehr positiv über TDD in dem Buch, wie man hier gleich in der ersten Fundstelle sieht.)&lt;/p&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
 
 &lt;h3 id=&quot;aus_langlebige_softwarearchitekturen&quot;&gt;Aus &lt;a href=&quot;https://langlebige-softwarearchitekturen.de&quot;&gt;Langlebige Softwarearchitekturen&lt;/a&gt;&lt;/h3&gt;
 
@@ -124,9 +105,11 @@ den die meisten Entwicklungsteams und Projektleiter scheuen.&quot;&lt;/p&gt;
 
 &lt;dl&gt;
   &lt;dt&gt;Bodos Kommentar:&lt;/dt&gt;
-  &lt;dd&gt;Ich hoffe, wir sind uns einig, dass Zyklen, egal ob auf
+  &lt;dd&gt;
+    &lt;p&gt;Ich hoffe, wir sind uns einig, dass Zyklen, egal ob auf
 Modul/Package-Ebene oder auf Ebene von Klassen innerhalb eines
-Packages böse sind. Daher:&lt;/dd&gt;
+Packages böse sind. Daher:&lt;/p&gt;
+  &lt;/dd&gt;
   &lt;dd&gt;Das heißt im Umkehrschluss: wenn ich mit TDD anfange, kann mir das
 nicht passieren. Im Gegenteil: TDD hindert mich direkt daran, solche
 Fehler zu machen und zwingt mich, vor schreiben von Classen und
@@ -154,7 +137,7 @@ that you will be too.&quot;&lt;/p&gt;
   &lt;dd&gt;den fett gedruckte Satz kann ich aus eigener Erfahrung bestätigen.&lt;/dd&gt;
 &lt;/dl&gt;
 
-&lt;h2 id=&quot;wissenschaftliche_studien_zu_tdd&quot;&gt;Wissenschaftliche Studien zu TDD&lt;/h2&gt;
+&lt;h2 id=&quot;wissenschaftliche_studien_zu_tdd&quot;&gt;Wissenschaftliche oder zumindst systematische Studien zu TDD&lt;/h2&gt;
 
 &lt;h3 id=&quot;assessing_test_driven_development_at_ibm&quot;&gt;&lt;a href=&quot;https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF&quot;&gt;Assessing test-driven development at IBM&lt;/a&gt;:&lt;/h3&gt;
 

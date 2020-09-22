@@ -11,7 +11,9 @@ tags:
 
 Dies ist **KEINE** Linkliste zu TDD-Bücher, mit denen ich bei Amazon noch nebenher Affiliate-Provision kassieren möchte!
 
-Ich bin ja ein enthusuastischer Beführworter von Test Driven Design (TDD), insbesondere von dem "test first" Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die Wissenschaftliche Literatur zu dem Thema hergibt. Also habe ich gegoogelt, die Fundstellen studiert und die für jeweils wichtigsten Ergebnisse der jeweiligen Studio hier zusammengetragen. Angeregt wurde ich dazu übrigens, als ich das Buch [Langlebige Softwarearchitekturen](https://langlebige-softwarearchitekturen.de) von Carola Lilienthal las. Sie hat nämlich an einige Stellen auf auf systematische Studien verwiesen, die Ihre jeweilige Aussagen im Buch belegen sollen. Übrigens schreibt sie auch sehr positiv über TDD in dem Buch, wie man hier gleich in der ersten Fundstelle sieht.
+Ich bin ja ein enthusuastischer Beführworter von Test Driven Design (TDD), insbesondere von dem "test first" Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die wissenschaftliche Literatur zu dem Thema hergibt. Also habe ich gegoogelt, die Fundstellen studiert und die für jeweils wichtigsten Ergebnisse der jeweiligen Studien hier zusammengetragen.
+
+:   (Angeregt wurde ich dazu übrigens, als ich das Buch [Langlebige Softwarearchitekturen](https://langlebige-softwarearchitekturen.de) von Carola Lilienthal las. Sie hat nämlich an einige Stellen auf auf systematische Studien verwiesen, die Ihre jeweilige Aussagen im Buch belegen sollen. Übrigens schreibt sie auch sehr positiv über TDD in dem Buch, wie man hier gleich in der ersten Fundstelle sieht.)
 
 ### Aus [Langlebige Softwarearchitekturen](https://langlebige-softwarearchitekturen.de) {#aus_langlebige_softwarearchitekturen}
 
@@ -24,6 +26,7 @@ ersetzen oder Objekte von ihnen erzeugen. Das ist sehr viel Auf- wand,
 den die meisten Entwicklungsteams und Projektleiter scheuen.\"
 
 Bodos Kommentar:
+
 :   Ich hoffe, wir sind uns einig, dass Zyklen, egal ob auf
     Modul/Package-Ebene oder auf Ebene von Klassen innerhalb eines
     Packages böse sind. Daher:
@@ -51,7 +54,7 @@ that you will be too.\"
 Bodos Kommentar:
 :   den fett gedruckte Satz kann ich aus eigener Erfahrung bestätigen.
 
-Wissenschaftliche Studien zu TDD {#wissenschaftliche_studien_zu_tdd}
+Wissenschaftliche oder zumindst systematische Studien zu TDD {#wissenschaftliche_studien_zu_tdd}
 --------------------------------
 
 ### [Assessing test-driven development at IBM](https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF): {#assessing_test_driven_development_at_ibm}
@@ -122,3 +125,4 @@ may result in an implementation cost savings, \...\"
 Empirical studies by Madeyski (Madeyski, 2010a) showed that TDD is
 better in producing loosely coupled software in comparison with
 traditional test last software development practice.
+
