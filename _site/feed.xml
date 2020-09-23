@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-22T18:38:53+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Bodos unwissenschaftliche Argumente für TDD</title><link href="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/" rel="alternate" type="text/html" title="Bodos unwissenschaftliche Argumente für TDD" /><published>2020-09-18T19:34:30+00:00</published><updated>2020-09-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente</id><content type="html" xml:base="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/">&lt;p&gt;Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-23T07:51:14+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Bodos unwissenschaftliche Argumente für TDD</title><link href="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/" rel="alternate" type="text/html" title="Bodos unwissenschaftliche Argumente für TDD" /><published>2020-09-18T19:34:30+00:00</published><updated>2020-09-18T19:34:30+00:00</updated><id>http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente</id><content type="html" xml:base="http://localhost:4000/blog/Bodos-unwissenschaftliche-TDD-Argumente/">&lt;p&gt;Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener
 Testabdeckung sehr wünschenswert sind ? (Es geht hier zunächst mal nur
 um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der
 gleichen)&lt;/p&gt;
@@ -98,9 +98,9 @@ nichttrivialen) Projekten von TDD abrät. Im Gegenteil. Nach meinen Recherchen i
 &lt;h4 id=&quot;abschnitt_9.1.1&quot;&gt;Abschnitt 9.1.1:&lt;/h4&gt;
 
 &lt;p&gt;&quot;Für Klassen, die in Zyklen sind, existieren in den meisten Systemen
-keine direkten Unit-Testklassen. Wollte man die Unit Tests program-
-mieren, müsste man alle im Zyklus verflochtenen Klassen durch einen Mock
-ersetzen oder Objekte von ihnen erzeugen. Das ist sehr viel Auf- wand,
+keine direkten Unit-Testklassen. Wollte man die Unit Tests programmieren, 
+müsste man alle im Zyklus verflochtenen Klassen durch einen Mock
+ersetzen oder Objekte von ihnen erzeugen. Das ist sehr viel Aufwand,
 den die meisten Entwicklungsteams und Projektleiter scheuen.&quot;&lt;/p&gt;
 
 &lt;dl&gt;
@@ -141,14 +141,13 @@ that you will be too.&quot;&lt;/p&gt;
 
 &lt;h3 id=&quot;assessing_test_driven_development_at_ibm&quot;&gt;&lt;a href=&quot;https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF&quot;&gt;Assessing test-driven development at IBM&lt;/a&gt;:&lt;/h3&gt;
 
-&lt;p&gt;&quot;... we reduced our defect rate by about 50 percent compared to a
+&lt;p&gt;“… we reduced our &lt;strong&gt;defect rate by about 50 percent&lt;/strong&gt; compared to a
 similar system that was built using an ad-hoc unit testing approach. The
-project completed on time with minimal development productivity impact.
+project completed on time with &lt;strong&gt;minimal development productivity impact.&lt;/strong&gt;
 Additionally, the suite of automated unit test cases created via TDD is
 a reusable and extendable asset that will continue to improve quality
-over the lifetime of the software system. The test suite will be the
-basis for quality checks and will serve as a quality contract between
-all members of the team.&quot;&lt;/p&gt;
+over the lifetime of the software system. The test suite &lt;strong&gt;will be the basis for quality checks&lt;/strong&gt; 
+and will serve as a quality contract between all members of the team.”&lt;/p&gt;
 
 &lt;h3 id=&quot;evaluating_the_efficacy_of_test_driven_development_industrial_case_studies_microsoft&quot;&gt;&lt;a href=&quot;https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&amp;amp;response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&amp;amp;Expires=1599907639&amp;amp;Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&amp;amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA&quot;&gt;Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies (Microsoft)&lt;/a&gt;&lt;/h3&gt;
 
@@ -158,56 +157,54 @@ gerechnet Bugrate sinkt mit TDD um 62%-77% .&lt;/li&gt;
   &lt;li&gt;15% -35% mehr Zeit für TDD notwendig.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&quot; The results summarized ... indicate that while the development of
+&lt;p&gt;” The results summarized … indicate that while the development of
 both the systems utilizing TDD took extra time upfront the resulting
 quality was higher than teams that adopted a non-TDD approach by an
-order of at least two times. &quot;&lt;/p&gt;
+order of at least two times. “&lt;/p&gt;
 
 &lt;h3 id=&quot;metastudie_does_test_driven_development_really_improve_software_design_quality&quot;&gt;Metastudie, die 6 unterschiedliche Studien ausgewertet hat: &lt;a href=&quot;https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&amp;amp;context=csse_fac&quot;&gt;Does Test-Driven Development Really Improve Software Design Quality?&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;&quot;... Our results indicate that test-first programmers are more likely
-to write software in more and smaller units that are less complex and
-more highly tested.…&quot;&lt;/p&gt;
+&lt;p&gt;“… Our results indicate that &lt;strong&gt;test-first programmers&lt;/strong&gt; are more likely
+to write software in more and smaller units that are &lt;strong&gt;less complex and more highly tested&lt;/strong&gt; ….”&lt;/p&gt;
 
 &lt;h3 id=&quot;an_experimental_evaluation_of_the_effectiveness_and_efficiency_of_the_test_driven_development&quot;&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/4343756&quot;&gt;An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;&quot;Our results suggest that TDD helps in reducing overall development
-effort and improving developer's productivity whereas the code quality
+&lt;p&gt;“Our results suggest that TDD helps in reducing overall development
+effort and improving developer’s productivity whereas the code quality
 seems to be affected by the actual testing efforts applied during a
-development-style.&quot;&lt;/p&gt;
+development-style.”&lt;/p&gt;
 
 &lt;h3 id=&quot;metastudie_how_effective_is_test_driven_development&quot;&gt;Metastudie: &lt;a href=&quot;https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf&quot;&gt;How Effective is Test-Driven Development?&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;&quot;Is it for everyone?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“Is it for everyone?”&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;One basic fact on which almost everyone agrees is that TDD is difficult
-to learn. It involves a steep learning curve that requires skill,
+&lt;p&gt;“One basic fact on which almost everyone agrees is that &lt;strong&gt;TDD is difficult to learn&lt;/strong&gt;. It involves a steep learning curve that requires skill,
 maturity, and time, particularly when developers are entrenched in the
 code-then-test paradigm. Better tool support for test-case generation
 and early exposure in the classroom to a test-then-code mentality may
-encourage TDD adoption.&quot;&lt;/p&gt;
+encourage TDD adoption.”&lt;/p&gt;
 
-&lt;p&gt;&quot;Could it be addictive?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“Could it be addictive?”&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Personal communications with TDD developers suggest that it is an
+&lt;p&gt;“Personal communications with TDD developers suggest that it is an
 addictive practice. It changes the way people think and their approach
 to coding in a way that is difficult to roll back. Therefore, leaving
-TDD practices may be as difficult as adopting them.&quot;&lt;/p&gt;
+TDD practices may be as difficult as adopting them.”&lt;/p&gt;
 
-&lt;p&gt;Fazit: Empfehlung für TDD&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fazit: Empfehlung für TDD&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;comparing_the_defect_reduction_benefits_of_..._test_driven_development&quot;&gt;&lt;a href=&quot;http://ibiai.mg.gov.br/wp-content/uploads/2019/08/05750007-1.pdf&quot;&gt;Comparing the Defect Reduction Benefits of ... Test-Driven Development&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;&quot;TDD has several purported benefits—only one of which is software
-defect reduction ... We found that code inspection is more effective
+&lt;p&gt;“TDD has several purported benefits—only one of which is software
+defect reduction … We found that code inspection is more effective
 than TDD at reducing defects, but that code inspection is also more
 expensive to implement. We also found some evidence to indicate that TDD
-may result in an implementation cost savings, ...&quot;&lt;/p&gt;
+may result in an implementation cost savings, …”&lt;/p&gt;
 
 &lt;h3 id=&quot;test_driven_development&quot;&gt;&lt;a href=&quot;https://link.springer.com/book/10.1007%2F978-3-642-04288-1&quot;&gt;Test-Driven Development&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Empirical studies by Madeyski (Madeyski, 2010a) showed that TDD is
-better in producing loosely coupled software in comparison with
+&lt;strong&gt;better&lt;/strong&gt; in producing &lt;strong&gt;loosely coupled&lt;/strong&gt; software in comparison with
 traditional test last software development practice.&lt;/p&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Design" /><summary type="html">Dies ist KEINE Linkliste zu TDD-Bücher, mit denen ich bei Amazon noch nebenher Affiliate-Provision kassieren möchte!</summary></entry><entry><title type="html">(Video)Test Driven Development und Test-First Tutorial</title><link href="http://localhost:4000/blog/TDD-Tutorial/" rel="alternate" type="text/html" title="(Video)Test Driven Development und Test-First Tutorial" /><published>2020-09-10T19:34:30+00:00</published><updated>2020-09-10T19:34:30+00:00</updated><id>http://localhost:4000/blog/TDD-Tutorial</id><content type="html" xml:base="http://localhost:4000/blog/TDD-Tutorial/">&lt;p&gt;Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First&lt;/p&gt;
 
 &lt;!-- Courtesy of embedresponsively.com //--&gt;
