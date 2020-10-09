@@ -6,6 +6,8 @@ categories:
 tags:
   - TDD
   - Test Driven Design
+toc: true
+classes: wide
 ---
 
 
