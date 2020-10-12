@@ -28,3 +28,5 @@ If you have a question about using Jekyll, start a discussion on the [Jekyll For
 
 ## local test server
 ```bundle exec jekyll serve```
+
+wenn das nicht geht , versuche ein ```gem install bundler```

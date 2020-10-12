@@ -1,6 +1,6 @@
 ---
 title: "TDD? aber richtig!"
-date: 2020-10-09T17:00:00+2:00
+date: 2020-10-09
 categories:
   - blog
 tags:
@@ -17,7 +17,7 @@ um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der
 gleichen)
  
 - Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.
-- Wenn nein, dann[^2].....
+- Wenn nein, dann[^1].....
 
 ## Aber was **GENAU** ist hier mit >>Unittests<< gemeint ?? 
 
@@ -28,7 +28,7 @@ Mit Unittests meine ich hier immer "White Box" - Tests und immer automatisiert.
 Ich halte die Testabdeckung im Sinn von 'x %' der Codezeilen ehr für fast nebensächlich. Auf keinen Fall darf sie als Hauptkriterium für die Qualität der Tests missverstanden werden. Ich kann dir mühelos eine 100% Testabdeckung erzielen ohne dass ich auch nur jemals einen Fehler damit finde. 
 
 ## Also was ist >>Test Driven Development<< eigentlich und warum ist das hilfreich?
-Mit geht es hier um TDD im Sinne von z.B.  "[dem Buch Test Driven Java Development](https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111)".[^1] 
+Mit geht es hier um TDD im Sinne von z.B.  "[dem Buch Test Driven Java Development](https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111)".[^2] 
 
 Nämlich: **TEST FIRST**
 
@@ -99,5 +99,5 @@ müssen außerdem sehr optimal sein.
 Also , wenn es nur schwer gelingt, die externen Objekte (z.B.
 betriebssystemnahen Funktionen) sinnvoll zu mocken.
 
-[^1]: Die Grundidee ist auch abseits von Java in anderen Programmiersprachen die gleiche. 
-[^2]: ...bin ich auch ratlos...
+[^1]: ...bin ich auch ratlos...
+[^2]:  Die Grundidee ist auch abseits von Java in anderen Programmiersprachen die gleiche. 

@@ -1,6 +1,7 @@
 ---
 permalink: /about_long/
 title: "Über mich(lange Version):"
+date: 2020-09-10
 ---
 [zurück zur kurzen Version](about.md)
 
