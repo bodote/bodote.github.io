@@ -349,28 +349,28 @@ gleichen)</p>
 
 <ul>
   <li>Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.</li>
-  <li>Wenn nein, dann<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>…..</li>
+  <li>Wenn nein, dann …..<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></li>
 </ul>
 
 <h2 id="aber-was-genau-ist-hier-mitunittestsgemeint-">Aber was <strong>GENAU</strong> ist hier mit »Unittests« gemeint ??</h2>
 
-<p>Mit Unittests meine ich hier immer “White Box” - Tests und immer automatisiert.</p>
+<p>Mit Unittests meine ich hier immer “White Box” - Tests die immer automatisiert sind.</p>
 <ul>
-  <li>Whiteboxtest: der, der den Test schreibt, plant oder kennt immer auch die Internas der Test-Classe(n) (andernfalls wäre es ja ein Black-Box-Test)</li>
+  <li>Whiteboxtest: derjenige, der den Test schreibt, plant oder kennt immer auch die Internas der Test-Klasse(n) (andernfalls wäre es ja ein “Black-Box-Test”)</li>
 </ul>
 
 <h2 id="testabdeckung-ist-sehr-wichtig-oder-doch-nicht-">Testabdeckung ist sehr wichtig oder doch nicht ?</h2>
-<p>Ich halte die Testabdeckung im Sinn von ‘x %’ der Codezeilen ehr für fast nebensächlich. Auf keinen Fall darf sie als Hauptkriterium für die Qualität der Tests missverstanden werden. Ich kann dir mühelos eine 100% Testabdeckung erzielen ohne dass ich auch nur jemals einen Fehler damit finde.</p>
+<p>Ich halte die Testabdeckung im Sinn von ‘x %’ der Codezeilen ehr für fast nebensächlich. Auf keinen Fall darf sie als Hauptkriterium für die Qualität der Tests missverstanden werden. Ich kann dir mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde.</p>
 
 <h2 id="also-was-isttest-driven-developmenteigentlich-und-warum-ist-das-hilfreich">Also was ist »Test Driven Development« eigentlich und warum ist das hilfreich?</h2>
-<p>Mit geht es hier um TDD im Sinne von z.B.  “<a href="https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111">dem Buch Test Driven Java Development</a>”.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>Mit geht es hier um TDD im Sinne von z.B.  dem Buch “<a href="https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111">Test Driven Java Development</a>”.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <p>Nämlich: <strong>TEST FIRST</strong></p>
 
 <h1 id="warum-isttest-firstso-wichtig-und-warum-isttest-lastso-viel-weniger-hilfreich">Warum ist »Test First« so wichtig und warum ist »test last« so viel weniger hilfreich?</h1>
 
 <ul>
-  <li><strong>Test first</strong> zwingt vor dem schreiben des eigentlich Code und der eigentelichen Unittests dazu,  sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) nachzudenken</li>
+  <li><strong>Test first</strong> zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu,  sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) nachzudenken</li>
   <li><strong>Test first</strong> trägt dann fast automatisch zu einer klareren Softwarearchitektur auf Klassen/Interface- Ebene bei.</li>
   <li><strong>Test zuerst</strong> zu schreiben geht nur , wenn ich genau die Anforderungen verstanden und wenn ich genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll</li>
   <li><strong>Test first</strong> Code braucht weniger spätes  Refactoring (also Refactoring dessen Notwendigkeit erst später offensichtlich wird)</li>
@@ -400,7 +400,7 @@ geringerer Zeitaufwand gegenüber nachträglich gebauten Unittests:
 Klasse/Methode ja keine <strong>manuellen</strong> Tests mehr mache.</li>
       <li>Denn: wenn ich noch keinen Unittest habe, wie teste ich eine
 Klasse/Methode die ich grad geschrieben oder verändert hat?
-durch bloses hinschauen (ist fehleranfällig) oder durch
+durch bloßes hinschauen (ist fehleranfällig) oder durch
 manuelles Testen, das kostet jedes mal wieder Zeit!</li>
       <li>Weil ich gedanklich praktisch gleichzeitig eigentlichen Code und TestCode erfinde, ich bin also beim Schreiben des Tests schon gedanklich in der Thematik drin bin.</li>
       <li>Schreibe ich dagegen den Unittest erst später, dann muss ich
@@ -431,7 +431,7 @@ werden müssen.</li>
 <h2 id="denn-unter-solchen-widrigen-randbedingungen">Denn unter solchen widrigen Randbedingungen..</h2>
 <ul>
   <li>..ist TDD extrem mühsam: ich muss mich in Codeteile von anderen Entwicklern reindenken, ohne Unittests und ohne Doku. Das ist das doppelt schwer</li>
-  <li>und sochen Randbedingungen ist TDD extrem zeitaufwändig ohne vor allem ohne unmittelbaren Gewinn für PO und Kunden.</li>
+  <li>und solchen Randbedingungen ist TDD extrem zeitaufwändig ohne vor allem ohne unmittelbaren Gewinn für PO und Kunden.</li>
 </ul>
 
 <p>Übrigens: das heißt dann logischerweise auch, dass es keinen Sinn macht TDD an einem Projekt mit kaum Unittests <strong>neu lernen</strong> zu wollen. Denn das geht ziemlich sicher schief.</p>

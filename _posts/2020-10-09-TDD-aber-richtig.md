@@ -17,24 +17,24 @@ um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der
 gleichen)
  
 - Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.
-- Wenn nein, dann[^1].....
+- Wenn nein, dann .....[^1]
 
 ## Aber was **GENAU** ist hier mit >>Unittests<< gemeint ?? 
 
-Mit Unittests meine ich hier immer "White Box" - Tests und immer automatisiert.
-* Whiteboxtest: der, der den Test schreibt, plant oder kennt immer auch die Internas der Test-Classe(n) (andernfalls wäre es ja ein Black-Box-Test)
+Mit Unittests meine ich hier immer "White Box" - Tests die immer automatisiert sind.
+* Whiteboxtest: derjenige, der den Test schreibt, plant oder kennt immer auch die Internas der Test-Klasse(n) (andernfalls wäre es ja ein "Black-Box-Test")
 
 ## Testabdeckung ist sehr wichtig oder doch nicht ? 
-Ich halte die Testabdeckung im Sinn von 'x %' der Codezeilen ehr für fast nebensächlich. Auf keinen Fall darf sie als Hauptkriterium für die Qualität der Tests missverstanden werden. Ich kann dir mühelos eine 100% Testabdeckung erzielen ohne dass ich auch nur jemals einen Fehler damit finde. 
+Ich halte die Testabdeckung im Sinn von 'x %' der Codezeilen ehr für fast nebensächlich. Auf keinen Fall darf sie als Hauptkriterium für die Qualität der Tests missverstanden werden. Ich kann dir mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde. 
 
 ## Also was ist >>Test Driven Development<< eigentlich und warum ist das hilfreich?
-Mit geht es hier um TDD im Sinne von z.B.  "[dem Buch Test Driven Java Development](https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111)".[^2] 
+Mit geht es hier um TDD im Sinne von z.B.  dem Buch "[Test Driven Java Development](https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111)".[^2] 
 
 Nämlich: **TEST FIRST**
 
 # Warum ist >>Test First<< so wichtig und warum ist >>test last<< so viel weniger hilfreich?
 
-* **Test first** zwingt vor dem schreiben des eigentlich Code und der eigentelichen Unittests dazu,  sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) nachzudenken
+* **Test first** zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu,  sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) nachzudenken
 * **Test first** trägt dann fast automatisch zu einer klareren Softwarearchitektur auf Klassen/Interface- Ebene bei. 
 * **Test zuerst** zu schreiben geht nur , wenn ich genau die Anforderungen verstanden und wenn ich genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll 
 * **Test first** Code braucht weniger spätes  Refactoring (also Refactoring dessen Notwendigkeit erst später offensichtlich wird)
@@ -59,7 +59,7 @@ ok, beweisen im strengen Sinn lässt sich das vieleicht nicht ohne weiteres, abe
         Klasse/Methode ja keine **manuellen** Tests mehr mache.
     -   Denn: wenn ich noch keinen Unittest habe, wie teste ich eine
         Klasse/Methode die ich grad geschrieben oder verändert hat?
-        durch bloses hinschauen (ist fehleranfällig) oder durch
+        durch bloßes hinschauen (ist fehleranfällig) oder durch
         manuelles Testen, das kostet jedes mal wieder Zeit!
     -   Weil ich gedanklich praktisch gleichzeitig eigentlichen Code und TestCode erfinde, ich bin also beim Schreiben des Tests schon gedanklich in der Thematik drin bin.
     -   Schreibe ich dagegen den Unittest erst später, dann muss ich
@@ -82,7 +82,7 @@ werden müssen.
 
 ## Denn unter solchen widrigen Randbedingungen..
 -   ..ist TDD extrem mühsam: ich muss mich in Codeteile von anderen Entwicklern reindenken, ohne Unittests und ohne Doku. Das ist das doppelt schwer
--   und sochen Randbedingungen ist TDD extrem zeitaufwändig ohne vor allem ohne unmittelbaren Gewinn für PO und Kunden.
+-   und solchen Randbedingungen ist TDD extrem zeitaufwändig ohne vor allem ohne unmittelbaren Gewinn für PO und Kunden.
 
 Übrigens: das heißt dann logischerweise auch, dass es keinen Sinn macht TDD an einem Projekt mit kaum Unittests **neu lernen** zu wollen. Denn das geht ziemlich sicher schief.
 
