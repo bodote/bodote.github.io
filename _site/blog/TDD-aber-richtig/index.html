@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>TDD? aber richtig! - Bodos Software Blog</title>
-<meta name="description" content="Was ist genau »TDD« und warum ist dabei »Test First« so wichtig?">
+<meta name="description" content="»TDD« und  »Test First«">
 
 
   <meta name="author" content="Bodo Teichmann">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/blog/TDD-aber-richtig/">
 
 
-  <meta property="og:description" content="Was ist genau »TDD« und warum ist dabei »Test First« so wichtig?">
+  <meta property="og:description" content="»TDD« und  »Test First«">
 
 
 
@@ -276,7 +276,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="TDD? aber richtig!">
-    <meta itemprop="description" content="Was ist genau »TDD« und warum ist dabei »Test First« so wichtig?">
+    <meta itemprop="description" content="»TDD« und  »Test First«">
     <meta itemprop="datePublished" content="2020-10-09T00:00:00+00:00">
     
 
@@ -315,16 +315,16 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
               <ul class="toc__menu">
-  <li><a href="#was-ist-genautddund-warum-ist-dabeitest-firstso-wichtig">Was ist genau »TDD« und warum ist dabei »Test First« so wichtig?</a>
+  <li><a href="#tddund-test-first">»TDD« und  »Test First«</a>
     <ul>
-      <li><a href="#aber-was-genau-ist-hier-mitunittestsgemeint-">Aber was GENAU ist hier mit »Unittests« gemeint ??</a></li>
-      <li><a href="#testabdeckung-ist-sehr-wichtig-oder-doch-nicht-">Testabdeckung ist sehr wichtig oder doch nicht ?</a></li>
-      <li><a href="#also-was-isttest-driven-developmenteigentlich-und-warum-ist-das-hilfreich">Also was ist »Test Driven Development« eigentlich und warum ist das hilfreich?</a></li>
+      <li><a href="#was-genau-sindunittests">Was GENAU sind »Unittests« ??</a></li>
+      <li><a href="#testabdeckung-ist-sehr-wichtig-richtig-">Testabdeckung ist sehr wichtig, richtig ?</a></li>
+      <li><a href="#was-isttest-driven-development">Was ist »Test Driven Development« ?</a></li>
     </ul>
   </li>
-  <li><a href="#warum-isttest-firstso-wichtig-und-warum-isttest-lastso-viel-weniger-hilfreich">Warum ist »Test First« so wichtig und warum ist »test last« so viel weniger hilfreich?</a>
+  <li><a href="#warum-isttest-first-entscheidend">Warum ist »Test First«  entscheidend?</a>
     <ul>
-      <li><a href="#warum-machen-das-dann-so-viele-entwickler-anders-und-schreiben-die-tests-erst-hinterher">Warum machen das dann so viele Entwickler anders und schreiben die Tests erst hinterher?</a></li>
+      <li><a href="#was-ist-falsch-mit-test-last-">Was ist falsch mit “test last” ?</a></li>
     </ul>
   </li>
   <li><a href="#beweise--beweise-">Beweise , Beweise !</a></li>
@@ -340,7 +340,7 @@
             </nav>
           </aside>
         
-        <h1 id="was-ist-genautddund-warum-ist-dabeitest-firstso-wichtig">Was ist genau »TDD« und warum ist dabei »Test First« so wichtig?</h1>
+        <h1 id="tddund-test-first">»TDD« und  »Test First«</h1>
 
 <p>Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener
 Testabdeckung sehr wünschenswert sind ? (Es geht hier zunächst mal nur
@@ -352,22 +352,22 @@ gleichen)</p>
   <li>Wenn nein, dann …..<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></li>
 </ul>
 
-<h2 id="aber-was-genau-ist-hier-mitunittestsgemeint-">Aber was <strong>GENAU</strong> ist hier mit »Unittests« gemeint ??</h2>
+<h2 id="was-genau-sindunittests">Was <strong>GENAU</strong> sind »Unittests« ??</h2>
 
 <p>Mit Unittests meine ich hier immer “White Box” - Tests die immer automatisiert sind.</p>
 <ul>
-  <li>Whiteboxtest: derjenige, der den Test schreibt, plant oder kennt immer auch die Internas der Test-Klasse(n) (andernfalls wäre es ja ein “Black-Box-Test”)</li>
+  <li>Whiteboxtest: derjenige, der den Test schreibt oder plant,  kennt immer auch die Internas der Test-Klasse(n) (andernfalls wäre es ja ein “Black-Box-Test”)</li>
 </ul>
 
-<h2 id="testabdeckung-ist-sehr-wichtig-oder-doch-nicht-">Testabdeckung ist sehr wichtig oder doch nicht ?</h2>
+<h2 id="testabdeckung-ist-sehr-wichtig-richtig-">Testabdeckung ist sehr wichtig, richtig ?</h2>
 <p>Ich halte die Testabdeckung im Sinn von ‘x %’ der Codezeilen ehr für fast nebensächlich. Auf keinen Fall darf sie als Hauptkriterium für die Qualität der Tests missverstanden werden. Ich kann dir mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde.</p>
 
-<h2 id="also-was-isttest-driven-developmenteigentlich-und-warum-ist-das-hilfreich">Also was ist »Test Driven Development« eigentlich und warum ist das hilfreich?</h2>
+<h2 id="was-isttest-driven-development">Was ist »Test Driven Development« ?</h2>
 <p>Mit geht es hier um TDD im Sinne von z.B.  dem Buch “<a href="https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111">Test Driven Java Development</a>”.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <p>Nämlich: <strong>TEST FIRST</strong></p>
 
-<h1 id="warum-isttest-firstso-wichtig-und-warum-isttest-lastso-viel-weniger-hilfreich">Warum ist »Test First« so wichtig und warum ist »test last« so viel weniger hilfreich?</h1>
+<h1 id="warum-isttest-first-entscheidend">Warum ist »Test First«  entscheidend?</h1>
 
 <ul>
   <li><strong>Test first</strong> zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu,  sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) nachzudenken</li>
@@ -378,7 +378,7 @@ gleichen)</p>
   <li><strong>Test first</strong> spart am Ende Zeit und liefert höhere Code-Qualität</li>
 </ul>
 
-<h2 id="warum-machen-das-dann-so-viele-entwickler-anders-und-schreiben-die-tests-erst-hinterher">Warum machen das dann so viele Entwickler anders und schreiben die Tests erst hinterher?</h2>
+<h2 id="was-ist-falsch-mit-test-last-">Was ist falsch mit “test last” ?</h2>
 <ul>
   <li><strong>Test first</strong> - denken zu lernen ist schwer und kostet erstmal Zeit</li>
   <li><strong>Test first</strong> lässt sich vor allem in altem Legacy-Code kaum nachträglich einführen und schon gar nicht kann man mit Legacy-Code neu lernen.</li>

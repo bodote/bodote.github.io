@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "TDD? aber richtig!",
-        "excerpt":"Was ist genau »TDD« und warum ist dabei »Test First« so wichtig? Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener Testabdeckung sehr wünschenswert sind ? (Es geht hier zunächst mal nur um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der gleichen) Wenn ja: Gut, dann ist diese Hürde ja schon...","categories": ["blog"],
+        "excerpt":"»TDD« und  »Test First« Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener Testabdeckung sehr wünschenswert sind ? (Es geht hier zunächst mal nur um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der gleichen) Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt....","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],
         "url": "http://localhost:4000/blog/TDD-aber-richtig/",
         "teaser": null
