@@ -1,3 +1,5 @@
+HEADER FEHLT UND IN ".md" umbenennen , wenns fertig ist.
+
 # Das Problem
 Im Rahmen von Webapps braucht das SW-Entwicklerteam  zum Debuggen die "echten" Daten der Datenbank, 
 diese ist aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß. Demzufolge braucht das Exportieren der Produktivdatenbank viele Stunden.

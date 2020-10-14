@@ -12,11 +12,11 @@ classes: wide
 # >>TDD<< und  >>Test First<< 
 
 Vorweg eine Frage: Sind wir uns eigentlich einig, dass Unittests mit angemessener
-Testabdeckung sehr wünschenswert sind ? (Wober es mir hier tatsächlich erstmal nur
+Testabdeckung sehr wünschenswert sind ? (Wobei es mir hier tatsächlich erstmal **nur**
 um Unittests geht, nicht um Integrationstests oder um Akzeptanztests oder der
 gleichen)
  
-- Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.
+- Wenn ja: Gut, dann haben wir diese Hürde ja schon mal aus dem Weg geräumt.
 - Wenn nein: Weil du Unittests nicht für wichtig hälst oder das  das Messen der Testabdeckung ? [^1]
 
 ## Was **GENAU** sind >>Unittests<< ?? 
@@ -30,32 +30,41 @@ Na ja, ich halte die Testabdeckung im Sinn von 'x %' der Codezeilen ehr für fas
 ## Was ist >>Test Driven Development<< ?
 Mit geht es hier um TDD im Sinne von z.B.  dem Buch "[Test Driven Java Development](https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111)".[^2] Gibt natürlich viele andere Bücher Tutorials und ONline-Kurse zum Thema.
 
-Also das wichtige und entscheidende ist für mich das  **TEST FIRST** Prinzip.
+Also das wichtige und entscheidende ist für mich das  **TEST FIRST** Prinzip. Daher kommt ja auch das **DRIVEN** in TDD.
 
 #  >>Test First<<  ist deswegen entscheidend, weil... 
 
-* **Test first** zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) Gedanken zu machen.
+* **Test first** zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr klar über die Anforderungen und das Softwaredesign und zwar auf Klassen/Interface- Ebene Gedanken zu machen.
 * **Test first** trägt dann fast automatisch zu einer klareren Softwarearchitektur auf Klassen/Interface- Ebene bei. 
-* **Test zuerst** zu schreiben geht nur , wenn ich genau die fachlichen Anforderungen verstanden und wenn ich genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mehr Gedanken zu machen.
-* **Test first**- Code braucht meiner Erfahrung nach weniger späteres  Refactoring (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszykluns oder späteren Sprint offensichtlich wird)
+* **Test zuerst** zu schreiben geht aber nur, wenn ich nicht nur die **fachlichen** Anforderungen genau verstanden sondern, wenn ich auch genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mehr Gedanken zu machen.
+* **Test first**- Code braucht meiner Erfahrung nach weniger späteres  Refactoring (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszyklus oder in einem späteren Sprint offensichtlich wird)
 * **Test first** führt zu kleineren Klassen und Methoden, fördert automatisch das [Single-Responsibility-Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist. 
 * **Test first** spart am Ende halt doch Zeit und liefert höhere Code-Qualität.
 
 ## Das Gegenteil von **Test First** ist ja dann "test last"
 Also die Frage ist ja, warum wird "test last" so häufig praktiziert? obwohl man mit "test last" kaum die gerade genannte Vorteile erzielt.
 Ich denke das liegt daran, dass ...
-* **Test first** - denken zu lernen  halt erstmal sehr schwer ist und es kostet einiges an Zeit um das zu lernen.
+* **Test first** - zu denken halt erstmal sehr schwer zu lernen ist und es kostet einiges an Zeit um das zu lernen.
 * **Test first** lässt sich vor allem in altem Legacy-Code kaum nachträglich einführen und es macht schon gar keinen Sinn **Test First** im Umfeld von altem Legacy-Code neu lernen zu wollen, das geht aus meiner Erfahrung schief. Ja und...
 * **Test first** spielt leider in der Ausbildung oder Studium nach wie vor kaum eine Rolle, gleiches gilt für die meisten Fachbücher und Tutorials
 * also **Test First** kann/muss  man daher leider also erst immer "zusätzlich" lernen, nachdem man die jeweilige Programmiersprache oder Framework schon quasi "falsch" nämlich "test last" gelernt hat. Das macht es Neulingen leider zusätzlich unnötig schwer.
 
 Ich behaupte, wenn man jede neue Programmiersprache oder jedes neue Framework von vornherein mit **Test First** lernen würden, würde es viel mehr praktiziert und wäre einfach viel selbstverständlicher.
 
-
+Jetzt könnt Ihr sagen: "Der Bodo kann uns viel erzählen, wo sind die Beweise?"
 # Beweise , Beweise !
 
-ok, beweisen im strengen mathematische Sinn lässt sich das nicht ohne weiteres. ABER: es gibt doch eine größere Zahl an [Vergleichsstudien zum Thema TDD](../Literaturrecherche-TDD)! die ich für euch recherchiert habe. 
-Lasst und die zusammen mal durchgehen.
+ok, beweisen im strengen mathematische Sinn lässt sich das nicht ohne weiteres. ABER: es gibt doch eine größere Zahl an [Vergleichsstudien zum Thema TDD und andere interessante Zitate](../Literaturrecherche-TDD)! die ich für euch recherchiert habe. 
+
+Wer jetzt schon überzeugt ist, der kann sich die restlichen 10-15 min sparen. 
+
+Bevor Ihr geht, fragt Ihr euch wahrscheinlich , wie geht's jetzt weiter ?
+Der kurze Termin sollte ja erstmal das Thema nur anteasern. 
+Die Frage ist dann, wie groß ist bei euch das Interesse und die Bereitschaft Zeit in das Thema zu stecken? und vor allem wann wollt Ihr das dann machen? 
+
+So. Und alle die von euch die noch nicht überzeugt sind, lade ich jetzt ein mit mir meine [Fundstellen zu TDD](../Literaturrecherche-TDD) durchzugegen. Wie gesagt so ca 10-15 minuten.
+
+
 
 # Meine persönliche Erfahrung mit TDD:
 
