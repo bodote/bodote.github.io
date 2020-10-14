@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-12T15:26:50+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-10-12T00:00:00+00:00</published><updated>2020-10-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;h1 id=&quot;bücher&quot;&gt;Bücher:&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-14T15:48:28+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-10-12T00:00:00+00:00</published><updated>2020-10-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;h1 id=&quot;bücher&quot;&gt;Bücher:&lt;/h1&gt;
 &lt;p&gt;Ich bin ja ein enthusiastischer Befürworter von Test Driven Design (TDD), insbesondere von dem “test first” Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die wissenschaftliche Literatur zu dem Thema hergibt. Hier ist, was sich dazu gefunden habe:&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;aus-langlebige-softwarearchitekturen&quot;&gt;Aus &lt;a href=&quot;https://langlebige-softwarearchitekturen.de&quot;&gt;Langlebige Softwarearchitekturen&lt;/a&gt;&lt;/h2&gt;
 
 &lt;h3 id=&quot;abschnitt-911&quot;&gt;Abschnitt 9.1.1:&lt;/h3&gt;
 
-&lt;p&gt;&quot;Für Klassen, die in Zyklen sind, existieren in den meisten Systemen
+&lt;p&gt;&quot;Für Klassen, die in &lt;strong&gt;Zyklen&lt;/strong&gt; sind, existieren in den meisten Systemen
 keine direkten Unit-Testklassen. Wollte man die Unit Tests programmieren, 
 müsste man alle im Zyklus verflochtenen Klassen durch einen Mock
 ersetzen oder Objekte von ihnen erzeugen. Das ist sehr viel Aufwand,
@@ -17,7 +17,7 @@ den die meisten Entwicklungsteams und Projektleiter scheuen.&quot;&lt;sup id=&qu
 
 &lt;p&gt;&quot;It's not an easy thing to master TDD. Even after learning all the
 theory and going through best practices and anti-patterns, the journey
-is only just beginning. TDD requires time and a lot of practice. It's a
+is only just beginning. &lt;strong&gt;TDD requires time and a lot of practice&lt;/strong&gt;. It's a
 long trip that does not stop with this book. As a matter of fact, it
 never truly ends. There are always new ways to become more proficient
 and faster. However, even though the cost is high, the benefits are even
@@ -41,13 +41,13 @@ and will serve as a quality contract between all members of the team.”&lt;/p&g
 
 &lt;ul&gt;
   &lt;li&gt;2,6-4,2 mal mehr Bugs , wenn KEIN TDD verwendet. oder anders
-gerechnet Bugrate sinkt mit TDD um 62%-77% .&lt;/li&gt;
+gerechnet &lt;strong&gt;Bugrate sinkt mit TDD um 62%-77%&lt;/strong&gt; .&lt;/li&gt;
   &lt;li&gt;15% -35% mehr Zeit für TDD notwendig.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;” The results summarized … indicate that while the development of
-both the systems utilizing TDD took extra time upfront the resulting
-quality was higher than teams that adopted a non-TDD approach by an
+both the systems utilizing TDD took extra time upfront the &lt;strong&gt;resulting quality was higher&lt;/strong&gt; 
+than teams that adopted a non-TDD approach by an
 order of at least two times. “&lt;/p&gt;
 
 &lt;h2 id=&quot;metastudie-die-6-unterschiedliche-studien-ausgewertet-hat-does-test-driven-development-really-improve-software-design-quality&quot;&gt;Metastudie, die 6 unterschiedliche Studien ausgewertet hat: &lt;a href=&quot;https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&amp;amp;context=csse_fac&quot;&gt;Does Test-Driven Development Really Improve Software Design Quality?&lt;/a&gt;&lt;/h2&gt;
@@ -57,8 +57,8 @@ to write software in more and smaller units that are &lt;strong&gt;less complex 
 
 &lt;h2 id=&quot;an-experimental-evaluation-of-the-effectiveness-and-efficiency-of-the-test-driven-development&quot;&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/4343756&quot;&gt;An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p&gt;“Our results suggest that TDD helps in reducing overall development
-effort and improving developer’s productivity whereas the code quality
+&lt;p&gt;“Our results suggest that &lt;strong&gt;TDD&lt;/strong&gt; helps in &lt;strong&gt;reducing overall development effort&lt;/strong&gt; 
+and &lt;strong&gt;improving developer’s productivity&lt;/strong&gt; whereas the code quality
 seems to be affected by the actual testing efforts applied during a
 development-style.”&lt;/p&gt;
 
@@ -66,7 +66,8 @@ development-style.”&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;“Is it for everyone?”&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;“One basic fact on which almost everyone agrees is that &lt;strong&gt;TDD is difficult to learn&lt;/strong&gt;. It involves a steep learning curve that requires skill,
+&lt;p&gt;“One basic fact on which almost everyone agrees is that &lt;strong&gt;TDD is difficult to learn&lt;/strong&gt;. 
+It involves a steep learning curve that requires skill,
 maturity, and time, particularly when developers are entrenched in the
 code-then-test paradigm. Better tool support for test-case generation
 and early exposure in the classroom to a test-then-code mentality may
@@ -74,8 +75,8 @@ encourage TDD adoption.”&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;“Could it be addictive?”&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;“Personal communications with TDD developers suggest that it is an
-addictive practice. It changes the way people think and their approach
+&lt;p&gt;“Personal communications with TDD developers suggest that it is an addictive practice. 
+It &lt;strong&gt;changes the way people think&lt;/strong&gt; and their approach
 to coding in a way that is difficult to roll back. Therefore, leaving
 TDD practices may be as difficult as adopting them.”&lt;/p&gt;
 
@@ -84,9 +85,9 @@ TDD practices may be as difficult as adopting them.”&lt;/p&gt;
 &lt;h2 id=&quot;comparing-the-defect-reduction-benefits-of--test-driven-development&quot;&gt;&lt;a href=&quot;http://ibiai.mg.gov.br/wp-content/uploads/2019/08/05750007-1.pdf&quot;&gt;Comparing the Defect Reduction Benefits of ... Test-Driven Development&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;“TDD has several purported benefits—only one of which is software
-defect reduction … We found that code inspection is more effective
-than TDD at reducing defects, but that code inspection is also more
-expensive to implement. We also found some evidence to indicate that TDD
+defect reduction … We found that &lt;strong&gt;code inspection [=review?] is more effective than TDD&lt;/strong&gt; 
+at reducing defects, but that &lt;strong&gt;code inspection is also more expensive&lt;/strong&gt; 
+to implement. We also found some evidence to indicate that TDD
 may result in an implementation cost savings, …”&lt;/p&gt;
 
 &lt;h2 id=&quot;test-driven-development&quot;&gt;&lt;a href=&quot;https://link.springer.com/book/10.1007%2F978-3-642-04288-1&quot;&gt;Test-Driven Development&lt;/a&gt;&lt;/h2&gt;
@@ -96,9 +97,23 @@ may result in an implementation cost savings, …”&lt;/p&gt;
 traditional test last software development practice.&lt;/p&gt;
 
 &lt;h1 id=&quot;sonstige-links&quot;&gt;Sonstige Links:&lt;/h1&gt;
-&lt;h2 id=&quot;aus-large-scale-scrum-less&quot;&gt;aus &lt;a href=&quot;https://less.works/de/less/technical-excellence/test-driven-development&quot;&gt;Large-Scale Scrum LeSS&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;aus-large-scale-scrumless&quot;&gt;aus &lt;a href=&quot;https://less.works/de/less/technical-excellence/test-driven-development&quot;&gt;Large-Scale Scrum »LeSS«&lt;/a&gt;:&lt;/h2&gt;
 
-&lt;p&gt;“We rarely meet people who were able to adopt this by self-education. Most developers need a coach to pair-program with them for days or weeks.”&lt;/p&gt;
+&lt;p&gt;“We &lt;strong&gt;rarely&lt;/strong&gt; meet people who were able to adopt this by &lt;strong&gt;self-education&lt;/strong&gt;. Most developers &lt;strong&gt;need a coach&lt;/strong&gt; to pair-program with them for days or weeks.”&lt;/p&gt;
+
+&lt;p&gt;und:&lt;/p&gt;
+
+&lt;p&gt;“Test-driven development might be the &lt;strong&gt;hardest agile practice&lt;/strong&gt; to adopt, but it is also &lt;strong&gt;one of the biggest opportunities&lt;/strong&gt; for improving the quality of the design and code. “&lt;/p&gt;
+
+&lt;p&gt;und weiter:&lt;/p&gt;
+
+&lt;p&gt;“TDD can help improve the architecture of a system. How?&lt;/p&gt;
+
+&lt;p&gt;When we are coaching, a frequent request is help for dealing with our client’s “inflexible architecture.” This most often boils down to problems in &lt;strong&gt;high coupling between components&lt;/strong&gt; —a common problem in legacy code written &lt;strong&gt;without TDD&lt;/strong&gt; because the original developer did not try to test the component in isolation.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, when a developer creates a new component (such as a class) &lt;strong&gt;with TDD&lt;/strong&gt;, or refactors a legacy component to be unit-testable, they must break the dependencies of that component so that it is testable in isolation. That requires &lt;strong&gt;designing (or refactoring) for dependency&lt;/strong&gt; injection and &lt;strong&gt;increased use of mechanisms for flexibility&lt;/strong&gt;: interfaces, polymorphism, design patterns, dependency injection frameworks, function pointers, and more.&lt;/p&gt;
+
+&lt;p&gt;In this way, &lt;strong&gt;TDD&lt;/strong&gt; encourages &lt;strong&gt;lower coupling&lt;/strong&gt; and simple, flexible configuration—qualities of a &lt;strong&gt;good architecture.&lt;/strong&gt;”&lt;/p&gt;
 
 &lt;hr /&gt;
 

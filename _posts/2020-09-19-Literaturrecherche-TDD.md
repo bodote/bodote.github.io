@@ -16,7 +16,7 @@ Ich bin ja ein enthusiastischer Befürworter von Test Driven Design (TDD), insbe
 
 ### Abschnitt 9.1.1: 
 
-\"Für Klassen, die in Zyklen sind, existieren in den meisten Systemen
+\"Für Klassen, die in **Zyklen** sind, existieren in den meisten Systemen
 keine direkten Unit-Testklassen. Wollte man die Unit Tests programmieren, 
 müsste man alle im Zyklus verflochtenen Klassen durch einen Mock
 ersetzen oder Objekte von ihnen erzeugen. Das ist sehr viel Aufwand,
@@ -28,7 +28,7 @@ den die meisten Entwicklungsteams und Projektleiter scheuen.\"[^2]
 
 \"It\'s not an easy thing to master TDD. Even after learning all the
 theory and going through best practices and anti-patterns, the journey
-is only just beginning. TDD requires time and a lot of practice. It\'s a
+is only just beginning. **TDD requires time and a lot of practice**. It\'s a
 long trip that does not stop with this book. As a matter of fact, it
 never truly ends. There are always new ways to become more proficient
 and faster. However, even though the cost is high, the benefits are even
@@ -54,12 +54,12 @@ and will serve as a quality contract between all members of the team."
 ## [Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies (Microsoft)](https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&Expires=1599907639&Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) 
 
 -   2,6-4,2 mal mehr Bugs , wenn KEIN TDD verwendet. oder anders
-    gerechnet Bugrate sinkt mit TDD um 62%-77% .
+    gerechnet **Bugrate sinkt mit TDD um 62%-77%** .
 -   15% -35% mehr Zeit für TDD notwendig.
 
 " The results summarized ... indicate that while the development of
-both the systems utilizing TDD took extra time upfront the resulting
-quality was higher than teams that adopted a non-TDD approach by an
+both the systems utilizing TDD took extra time upfront the **resulting quality was higher** 
+than teams that adopted a non-TDD approach by an
 order of at least two times. "
 
 ## Metastudie, die 6 unterschiedliche Studien ausgewertet hat: [Does Test-Driven Development Really Improve Software Design Quality?](https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&context=csse_fac) 
@@ -69,8 +69,8 @@ to write software in more and smaller units that are **less complex and more hig
 
 ## [An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development](https://ieeexplore.ieee.org/abstract/document/4343756) 
 
-"Our results suggest that TDD helps in reducing overall development
-effort and improving developer's productivity whereas the code quality
+"Our results suggest that **TDD** helps in **reducing overall development effort** 
+and **improving developer's productivity** whereas the code quality
 seems to be affected by the actual testing efforts applied during a
 development-style."
 
@@ -78,7 +78,8 @@ development-style."
 
 **"Is it for everyone?"**
 
-"One basic fact on which almost everyone agrees is that **TDD is difficult to learn**. It involves a steep learning curve that requires skill,
+"One basic fact on which almost everyone agrees is that **TDD is difficult to learn**. 
+It involves a steep learning curve that requires skill,
 maturity, and time, particularly when developers are entrenched in the
 code-then-test paradigm. Better tool support for test-case generation
 and early exposure in the classroom to a test-then-code mentality may
@@ -86,8 +87,8 @@ encourage TDD adoption."
 
 **"Could it be addictive?"**
 
-"Personal communications with TDD developers suggest that it is an
-addictive practice. It changes the way people think and their approach
+"Personal communications with TDD developers suggest that it is an addictive practice. 
+It **changes the way people think** and their approach
 to coding in a way that is difficult to roll back. Therefore, leaving
 TDD practices may be as difficult as adopting them."
 
@@ -96,9 +97,9 @@ TDD practices may be as difficult as adopting them."
 ## [Comparing the Defect Reduction Benefits of \... Test-Driven Development](http://ibiai.mg.gov.br/wp-content/uploads/2019/08/05750007-1.pdf) 
 
 "TDD has several purported benefits---only one of which is software
-defect reduction ... We found that code inspection is more effective
-than TDD at reducing defects, but that code inspection is also more
-expensive to implement. We also found some evidence to indicate that TDD
+defect reduction ... We found that **code inspection \[=review?\] is more effective than TDD** 
+at reducing defects, but that **code inspection is also more expensive** 
+to implement. We also found some evidence to indicate that TDD
 may result in an implementation cost savings, ..."
 
 ## [Test-Driven Development](https://link.springer.com/book/10.1007%2F978-3-642-04288-1) 
@@ -108,9 +109,23 @@ Empirical studies by Madeyski (Madeyski, 2010a) showed that TDD is
 traditional test last software development practice.
 
 # Sonstige Links:
-## aus [Large-Scale Scrum LeSS](https://less.works/de/less/technical-excellence/test-driven-development)
+## aus [Large-Scale Scrum >>LeSS<<](https://less.works/de/less/technical-excellence/test-driven-development):
 
-"We rarely meet people who were able to adopt this by self-education. Most developers need a coach to pair-program with them for days or weeks." 
+"We **rarely** meet people who were able to adopt this by **self-education**. Most developers **need a coach** to pair-program with them for days or weeks."
+
+und: 
+
+"Test-driven development might be the **hardest agile practice** to adopt, but it is also **one of the biggest opportunities** for improving the quality of the design and code. "
+
+und weiter:
+
+"TDD can help improve the architecture of a system. How?
+
+When we are coaching, a frequent request is help for dealing with our client’s “inflexible architecture.” This most often boils down to problems in **high coupling between components** —a common problem in legacy code written **without TDD** because the original developer did not try to test the component in isolation.
+
+On the other hand, when a developer creates a new component (such as a class) **with TDD**, or refactors a legacy component to be unit-testable, they must break the dependencies of that component so that it is testable in isolation. That requires **designing (or refactoring) for dependency** injection and **increased use of mechanisms for flexibility**: interfaces, polymorphism, design patterns, dependency injection frameworks, function pointers, and more.
+
+In this way, **TDD** encourages **lower coupling** and simple, flexible configuration—qualities of a **good architecture.**"
 
 ********************
 
