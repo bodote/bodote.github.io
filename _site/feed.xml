@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-14T15:48:28+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-10-12T00:00:00+00:00</published><updated>2020-10-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;h1 id=&quot;bücher&quot;&gt;Bücher:&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-14T15:50:30+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-10-12T00:00:00+00:00</published><updated>2020-10-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;h1 id=&quot;bücher&quot;&gt;Bücher:&lt;/h1&gt;
 &lt;p&gt;Ich bin ja ein enthusiastischer Befürworter von Test Driven Design (TDD), insbesondere von dem “test first” Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die wissenschaftliche Literatur zu dem Thema hergibt. Hier ist, was sich dazu gefunden habe:&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;aus-langlebige-softwarearchitekturen&quot;&gt;Aus &lt;a href=&quot;https://langlebige-softwarearchitekturen.de&quot;&gt;Langlebige Softwarearchitekturen&lt;/a&gt;&lt;/h2&gt;
@@ -141,52 +141,58 @@ Package gehören oder sonst eng zusammengehören.) &lt;a href=&quot;#fnref:2&qu
   &lt;/ol&gt;
 &lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Development" /><summary type="html">Bücher: Ich bin ja ein enthusiastischer Befürworter von Test Driven Design (TDD), insbesondere von dem “test first” Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die wissenschaftliche Literatur zu dem Thema hergibt. Hier ist, was sich dazu gefunden habe:1 Angeregt wurde ich dazu übrigens, als ich das Buch Langlebige Softwarearchitekturen von Carola Lilienthal las. Sie hat nämlich an einige Stellen auf auf systematische Studien verwiesen, die Ihre jeweilige Aussagen im Buch belegen sollen. Übrigens schreibt sie auch sehr positiv über TDD in dem Buch, wie man hier gleich in der ersten Fundstelle sieht. &amp;#8617;</summary></entry><entry><title type="html">TDD? aber richtig!</title><link href="http://localhost:4000/blog/TDD-aber-richtig/" rel="alternate" type="text/html" title="TDD? aber richtig!" /><published>2020-10-09T00:00:00+00:00</published><updated>2020-10-09T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-aber-richtig</id><content type="html" xml:base="http://localhost:4000/blog/TDD-aber-richtig/">&lt;h1 id=&quot;tddund-test-first&quot;&gt;»TDD« und  »Test First«&lt;/h1&gt;
 
-&lt;p&gt;Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener
-Testabdeckung sehr wünschenswert sind ? (Es geht hier zunächst mal nur
-um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der
+&lt;p&gt;Vorweg eine Frage: Sind wir uns eigentlich einig, dass Unittests mit angemessener
+Testabdeckung sehr wünschenswert sind ? (Wober es mir hier tatsächlich erstmal nur
+um Unittests geht, nicht um Integrationstests oder um Akzeptanztests oder der
 gleichen)&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.&lt;/li&gt;
-  &lt;li&gt;Wenn nein, dann …..&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;Wenn nein: Weil du Unittests nicht für wichtig hälst oder das  das Messen der Testabdeckung ? &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;was-genau-sindunittests&quot;&gt;Was &lt;strong&gt;GENAU&lt;/strong&gt; sind »Unittests« ??&lt;/h2&gt;
 
-&lt;p&gt;Mit Unittests meine ich hier immer “White Box” - Tests die immer automatisiert sind.&lt;/p&gt;
+&lt;p&gt;Mit Unittests meine ich hier immer “White Box” - Tests,  die außerdem immer automatisiert sind.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Whiteboxtest: derjenige, der den Test schreibt oder plant,  kennt immer auch die Internas der Test-Klasse(n) (andernfalls wäre es ja ein “Black-Box-Test”)&lt;/li&gt;
+  &lt;li&gt;Whiteboxtest heißt ja: derjenige, der den Test schreibt oder plant,  kennt immer auch die Internas der zu testenden Klasse(n) (andernfalls wäre es ja ein “Black-Box-Test”)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;testabdeckung-ist-sehr-wichtig-richtig-&quot;&gt;Testabdeckung ist sehr wichtig, richtig ?&lt;/h2&gt;
-&lt;p&gt;Ich halte die Testabdeckung im Sinn von ‘x %’ der Codezeilen ehr für fast nebensächlich. Auf keinen Fall darf sie als Hauptkriterium für die Qualität der Tests missverstanden werden. Ich kann dir mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde.&lt;/p&gt;
+&lt;p&gt;Na ja, ich halte die Testabdeckung im Sinn von ‘x %’ der Codezeilen ehr für fast nebensächlich. Weil, wenn du sie als Hauptkriterium für die Qualität der Tests missverstehst, da bin ich wirklich anderer Meinung. Ich kann dir nämlich mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde. Wie? Indem ich einfach alle “assert…” Statements im Unittest vergesse.&lt;/p&gt;
 
 &lt;h2 id=&quot;was-isttest-driven-development&quot;&gt;Was ist »Test Driven Development« ?&lt;/h2&gt;
-&lt;p&gt;Mit geht es hier um TDD im Sinne von z.B.  dem Buch “&lt;a href=&quot;https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111&quot;&gt;Test Driven Java Development&lt;/a&gt;”.&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Mit geht es hier um TDD im Sinne von z.B.  dem Buch “&lt;a href=&quot;https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111&quot;&gt;Test Driven Java Development&lt;/a&gt;”.&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Gibt natürlich viele andere Bücher Tutorials und ONline-Kurse zum Thema.&lt;/p&gt;
 
-&lt;p&gt;Nämlich: &lt;strong&gt;TEST FIRST&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Also das wichtige und entscheidende ist für mich das  &lt;strong&gt;TEST FIRST&lt;/strong&gt; Prinzip.&lt;/p&gt;
 
-&lt;h1 id=&quot;warum-isttest-first-entscheidend&quot;&gt;Warum ist »Test First«  entscheidend?&lt;/h1&gt;
+&lt;h1 id=&quot;test-first-ist-deswegen-entscheidend-weil&quot;&gt;»Test First«  ist deswegen entscheidend, weil…&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu,  sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) nachzudenken&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) Gedanken zu machen.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; trägt dann fast automatisch zu einer klareren Softwarearchitektur auf Klassen/Interface- Ebene bei.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Test zuerst&lt;/strong&gt; zu schreiben geht nur , wenn ich genau die Anforderungen verstanden und wenn ich genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; Code braucht weniger spätes  Refactoring (also Refactoring dessen Notwendigkeit erst später offensichtlich wird)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; führt zu kleineren Klassen und Methoden, förder automatisch das &lt;a href=&quot;https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip&quot;&gt;Single-Responsibility-Prinzip&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; spart am Ende Zeit und liefert höhere Code-Qualität&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Test zuerst&lt;/strong&gt; zu schreiben geht nur , wenn ich genau die fachlichen Anforderungen verstanden und wenn ich genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mehr Gedanken zu machen.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt;- Code braucht meiner Erfahrung nach weniger späteres  Refactoring (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszykluns oder späteren Sprint offensichtlich wird)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; führt zu kleineren Klassen und Methoden, fördert automatisch das &lt;a href=&quot;https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip&quot;&gt;Single-Responsibility-Prinzip&lt;/a&gt;, damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; spart am Ende halt doch Zeit und liefert höhere Code-Qualität.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;was-ist-falsch-mit-test-last-&quot;&gt;Was ist falsch mit “test last” ?&lt;/h2&gt;
+&lt;h2 id=&quot;das-gegenteil-von-test-first-ist-ja-dann-test-last&quot;&gt;Das Gegenteil von &lt;strong&gt;Test First&lt;/strong&gt; ist ja dann “test last”&lt;/h2&gt;
+&lt;p&gt;Also die Frage ist ja, warum wird “test last” so häufig praktiziert? obwohl man mit “test last” kaum die gerade genannte Vorteile erzielt.
+Ich denke das liegt daran, dass …&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; - denken zu lernen ist schwer und kostet erstmal Zeit&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; lässt sich vor allem in altem Legacy-Code kaum nachträglich einführen und schon gar nicht kann man mit Legacy-Code neu lernen.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; spielt in der Ausbildung oder Studium nach wie vor kaum eine Rolle&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; - denken zu lernen  halt erstmal sehr schwer ist und es kostet einiges an Zeit um das zu lernen.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; lässt sich vor allem in altem Legacy-Code kaum nachträglich einführen und es macht schon gar keinen Sinn &lt;strong&gt;Test First&lt;/strong&gt; im Umfeld von altem Legacy-Code neu lernen zu wollen, das geht aus meiner Erfahrung schief. Ja und…&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Test first&lt;/strong&gt; spielt leider in der Ausbildung oder Studium nach wie vor kaum eine Rolle, gleiches gilt für die meisten Fachbücher und Tutorials&lt;/li&gt;
+  &lt;li&gt;also &lt;strong&gt;Test First&lt;/strong&gt; kann/muss  man daher leider also erst immer “zusätzlich” lernen, nachdem man die jeweilige Programmiersprache oder Framework schon quasi “falsch” nämlich “test last” gelernt hat. Das macht es Neulingen leider zusätzlich unnötig schwer.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Ich behaupte, wenn man jede neue Programmiersprache oder jedes neue Framework von vornherein mit &lt;strong&gt;Test First&lt;/strong&gt; lernen würden, würde es viel mehr praktiziert und wäre einfach viel selbstverständlicher.&lt;/p&gt;
 
 &lt;h1 id=&quot;beweise--beweise-&quot;&gt;Beweise , Beweise !&lt;/h1&gt;
 
-&lt;p&gt;ok, beweisen im strengen Sinn lässt sich das vieleicht nicht ohne weiteres, aber es gibt doch eine größere Zahl an &lt;a href=&quot;../Literaturrecherche-TDD&quot;&gt;Vergleichsstudien zum Thema TDD&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;ok, beweisen im strengen mathematische Sinn lässt sich das nicht ohne weiteres. ABER: es gibt doch eine größere Zahl an &lt;a href=&quot;../Literaturrecherche-TDD&quot;&gt;Vergleichsstudien zum Thema TDD&lt;/a&gt;! die ich für euch recherchiert habe. 
+Lasst und die zusammen mal durchgehen.&lt;/p&gt;
 
 &lt;h1 id=&quot;meine-persönliche-erfahrung-mit-tdd&quot;&gt;Meine persönliche Erfahrung mit TDD:&lt;/h1&gt;
 
@@ -253,7 +259,7 @@ betriebssystemnahen Funktionen) sinnvoll zu mocken.&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;…bin ich auch ratlos… &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Unittests sind gut und richtig, aber die Qualität von Unittest an der Testabdeckung zu messen halte ich für falsch. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
       &lt;p&gt;Die Grundidee ist auch abseits von Java in anderen Programmiersprachen die gleiche. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;

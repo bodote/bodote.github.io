@@ -299,7 +299,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          5 minute read
         
       </span>
     
@@ -322,9 +322,9 @@
       <li><a href="#was-isttest-driven-development">Was ist »Test Driven Development« ?</a></li>
     </ul>
   </li>
-  <li><a href="#warum-isttest-first-entscheidend">Warum ist »Test First«  entscheidend?</a>
+  <li><a href="#test-first-ist-deswegen-entscheidend-weil">»Test First«  ist deswegen entscheidend, weil…</a>
     <ul>
-      <li><a href="#was-ist-falsch-mit-test-last-">Was ist falsch mit “test last” ?</a></li>
+      <li><a href="#das-gegenteil-von-test-first-ist-ja-dann-test-last">Das Gegenteil von Test First ist ja dann “test last”</a></li>
     </ul>
   </li>
   <li><a href="#beweise--beweise-">Beweise , Beweise !</a></li>
@@ -342,52 +342,58 @@
         
         <h1 id="tddund-test-first">»TDD« und  »Test First«</h1>
 
-<p>Vorweg eine Frage: Sind wir uns einig, dass Unittests mit angemessener
-Testabdeckung sehr wünschenswert sind ? (Es geht hier zunächst mal nur
-um Unittests, nicht um Integrationstests oder um Akzeptanztests oder der
+<p>Vorweg eine Frage: Sind wir uns eigentlich einig, dass Unittests mit angemessener
+Testabdeckung sehr wünschenswert sind ? (Wober es mir hier tatsächlich erstmal nur
+um Unittests geht, nicht um Integrationstests oder um Akzeptanztests oder der
 gleichen)</p>
 
 <ul>
   <li>Wenn ja: Gut, dann ist diese Hürde ja schon mal aus dem Weg geräumt.</li>
-  <li>Wenn nein, dann …..<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></li>
+  <li>Wenn nein: Weil du Unittests nicht für wichtig hälst oder das  das Messen der Testabdeckung ? <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></li>
 </ul>
 
 <h2 id="was-genau-sindunittests">Was <strong>GENAU</strong> sind »Unittests« ??</h2>
 
-<p>Mit Unittests meine ich hier immer “White Box” - Tests die immer automatisiert sind.</p>
+<p>Mit Unittests meine ich hier immer “White Box” - Tests,  die außerdem immer automatisiert sind.</p>
 <ul>
-  <li>Whiteboxtest: derjenige, der den Test schreibt oder plant,  kennt immer auch die Internas der Test-Klasse(n) (andernfalls wäre es ja ein “Black-Box-Test”)</li>
+  <li>Whiteboxtest heißt ja: derjenige, der den Test schreibt oder plant,  kennt immer auch die Internas der zu testenden Klasse(n) (andernfalls wäre es ja ein “Black-Box-Test”)</li>
 </ul>
 
 <h2 id="testabdeckung-ist-sehr-wichtig-richtig-">Testabdeckung ist sehr wichtig, richtig ?</h2>
-<p>Ich halte die Testabdeckung im Sinn von ‘x %’ der Codezeilen ehr für fast nebensächlich. Auf keinen Fall darf sie als Hauptkriterium für die Qualität der Tests missverstanden werden. Ich kann dir mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde.</p>
+<p>Na ja, ich halte die Testabdeckung im Sinn von ‘x %’ der Codezeilen ehr für fast nebensächlich. Weil, wenn du sie als Hauptkriterium für die Qualität der Tests missverstehst, da bin ich wirklich anderer Meinung. Ich kann dir nämlich mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde. Wie? Indem ich einfach alle “assert…” Statements im Unittest vergesse.</p>
 
 <h2 id="was-isttest-driven-development">Was ist »Test Driven Development« ?</h2>
-<p>Mit geht es hier um TDD im Sinne von z.B.  dem Buch “<a href="https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111">Test Driven Java Development</a>”.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>Mit geht es hier um TDD im Sinne von z.B.  dem Buch “<a href="https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111">Test Driven Java Development</a>”.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> Gibt natürlich viele andere Bücher Tutorials und ONline-Kurse zum Thema.</p>
 
-<p>Nämlich: <strong>TEST FIRST</strong></p>
+<p>Also das wichtige und entscheidende ist für mich das  <strong>TEST FIRST</strong> Prinzip.</p>
 
-<h1 id="warum-isttest-first-entscheidend">Warum ist »Test First«  entscheidend?</h1>
+<h1 id="test-first-ist-deswegen-entscheidend-weil">»Test First«  ist deswegen entscheidend, weil…</h1>
 
 <ul>
-  <li><strong>Test first</strong> zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu,  sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) nachzudenken</li>
+  <li><strong>Test first</strong> zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr klar über die Anforderungen und das Softwaredesign (auf Klassen/Interface- Ebene) Gedanken zu machen.</li>
   <li><strong>Test first</strong> trägt dann fast automatisch zu einer klareren Softwarearchitektur auf Klassen/Interface- Ebene bei.</li>
-  <li><strong>Test zuerst</strong> zu schreiben geht nur , wenn ich genau die Anforderungen verstanden und wenn ich genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll</li>
-  <li><strong>Test first</strong> Code braucht weniger spätes  Refactoring (also Refactoring dessen Notwendigkeit erst später offensichtlich wird)</li>
-  <li><strong>Test first</strong> führt zu kleineren Klassen und Methoden, förder automatisch das <a href="https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip">Single-Responsibility-Prinzip</a></li>
-  <li><strong>Test first</strong> spart am Ende Zeit und liefert höhere Code-Qualität</li>
+  <li><strong>Test zuerst</strong> zu schreiben geht nur , wenn ich genau die fachlichen Anforderungen verstanden und wenn ich genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mehr Gedanken zu machen.</li>
+  <li><strong>Test first</strong>- Code braucht meiner Erfahrung nach weniger späteres  Refactoring (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszykluns oder späteren Sprint offensichtlich wird)</li>
+  <li><strong>Test first</strong> führt zu kleineren Klassen und Methoden, fördert automatisch das <a href="https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip">Single-Responsibility-Prinzip</a>, damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist.</li>
+  <li><strong>Test first</strong> spart am Ende halt doch Zeit und liefert höhere Code-Qualität.</li>
 </ul>
 
-<h2 id="was-ist-falsch-mit-test-last-">Was ist falsch mit “test last” ?</h2>
+<h2 id="das-gegenteil-von-test-first-ist-ja-dann-test-last">Das Gegenteil von <strong>Test First</strong> ist ja dann “test last”</h2>
+<p>Also die Frage ist ja, warum wird “test last” so häufig praktiziert? obwohl man mit “test last” kaum die gerade genannte Vorteile erzielt.
+Ich denke das liegt daran, dass …</p>
 <ul>
-  <li><strong>Test first</strong> - denken zu lernen ist schwer und kostet erstmal Zeit</li>
-  <li><strong>Test first</strong> lässt sich vor allem in altem Legacy-Code kaum nachträglich einführen und schon gar nicht kann man mit Legacy-Code neu lernen.</li>
-  <li><strong>Test first</strong> spielt in der Ausbildung oder Studium nach wie vor kaum eine Rolle</li>
+  <li><strong>Test first</strong> - denken zu lernen  halt erstmal sehr schwer ist und es kostet einiges an Zeit um das zu lernen.</li>
+  <li><strong>Test first</strong> lässt sich vor allem in altem Legacy-Code kaum nachträglich einführen und es macht schon gar keinen Sinn <strong>Test First</strong> im Umfeld von altem Legacy-Code neu lernen zu wollen, das geht aus meiner Erfahrung schief. Ja und…</li>
+  <li><strong>Test first</strong> spielt leider in der Ausbildung oder Studium nach wie vor kaum eine Rolle, gleiches gilt für die meisten Fachbücher und Tutorials</li>
+  <li>also <strong>Test First</strong> kann/muss  man daher leider also erst immer “zusätzlich” lernen, nachdem man die jeweilige Programmiersprache oder Framework schon quasi “falsch” nämlich “test last” gelernt hat. Das macht es Neulingen leider zusätzlich unnötig schwer.</li>
 </ul>
+
+<p>Ich behaupte, wenn man jede neue Programmiersprache oder jedes neue Framework von vornherein mit <strong>Test First</strong> lernen würden, würde es viel mehr praktiziert und wäre einfach viel selbstverständlicher.</p>
 
 <h1 id="beweise--beweise-">Beweise , Beweise !</h1>
 
-<p>ok, beweisen im strengen Sinn lässt sich das vieleicht nicht ohne weiteres, aber es gibt doch eine größere Zahl an <a href="../Literaturrecherche-TDD">Vergleichsstudien zum Thema TDD</a>!</p>
+<p>ok, beweisen im strengen mathematische Sinn lässt sich das nicht ohne weiteres. ABER: es gibt doch eine größere Zahl an <a href="../Literaturrecherche-TDD">Vergleichsstudien zum Thema TDD</a>! die ich für euch recherchiert habe. 
+Lasst und die zusammen mal durchgehen.</p>
 
 <h1 id="meine-persönliche-erfahrung-mit-tdd">Meine persönliche Erfahrung mit TDD:</h1>
 
@@ -454,7 +460,7 @@ betriebssystemnahen Funktionen) sinnvoll zu mocken.</p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
-      <p>…bin ich auch ratlos… <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p>Unittests sind gut und richtig, aber die Qualität von Unittest an der Testabdeckung zu messen halte ich für falsch. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
     <li id="fn:2" role="doc-endnote">
       <p>Die Grundidee ist auch abseits von Java in anderen Programmiersprachen die gleiche. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
