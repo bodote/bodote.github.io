@@ -17,7 +17,7 @@ um Unittests geht, nicht um Integrationstests oder um Akzeptanztests oder der
 gleichen)
  
 - Wenn ja: Gut, dann haben wir diese Hürde ja schon mal aus dem Weg geräumt.
-- Wenn nein: Weil du Unittests nicht für wichtig hälst oder das  das Messen der Testabdeckung ? [^1]
+- Wenn nein: Weil Ihr Unittests nicht für wichtig hälst oder das  das Messen der Testabdeckung ? [^1]
 
 ## Was **GENAU** sind >>Unittests<< ?? 
 
@@ -25,7 +25,7 @@ Mit Unittests meine ich hier immer "White Box" - Tests,  die außerdem immer aut
 * Whiteboxtest heißt ja: derjenige, der den Test schreibt oder plant,  kennt immer auch die Internas der zu testenden Klasse(n) (andernfalls wäre es ja ein "Black-Box-Test")
 
 ## Testabdeckung ist sehr wichtig, richtig ?  
-Na ja, ich halte die Testabdeckung im Sinn von 'x %' der Codezeilen ehr für fast nebensächlich. Weil, wenn du sie als Hauptkriterium für die Qualität der Tests missverstehst, da bin ich wirklich anderer Meinung. Ich kann dir nämlich mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde. Wie? Indem ich einfach alle "assert..." Statements im Unittest vergesse. 
+Na ja, ich halte die Testabdeckung im Sinn von 'x %' der Codezeilen ehr für fast nebensächlich. Weil, wenn Ihr sie als Hauptkriterium für die Qualität der Tests missverstehst, da bin ich wirklich anderer Meinung. Ich kann euch nämlich mühelos eine 100% Testabdeckung erzielen, ohne dass ich auch nur jemals einen Fehler damit finde. Wie? Indem ich einfach alle "assert..." Statements im Unittest vergesse. 
 
 ## Was ist >>Test Driven Development<< ?
 Mit geht es hier um TDD im Sinne von z.B.  dem Buch "[Test Driven Java Development](https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111)".[^2] Gibt natürlich viele andere Bücher Tutorials und ONline-Kurse zum Thema.
