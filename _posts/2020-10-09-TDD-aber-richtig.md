@@ -56,26 +56,7 @@ Jetzt könnt Ihr sagen: "Der Bodo kann uns viel erzählen, wo sind die Beweise?"
 
 ok, beweisen im strengen mathematische Sinn lässt sich das nicht ohne weiteres. ABER: es gibt doch eine größere Zahl an [Vergleichsstudien zum Thema TDD und andere interessante Zitate](../Literaturrecherche-TDD)! die ich für euch recherchiert habe. 
 
-Wer jetzt schon überzeugt ist, der kann sich die restlichen 10-15 min sparen. 
 
-Bevor Ihr geht, fragt Ihr euch wahrscheinlich , wie geht's jetzt weiter ?
-Der kurze Termin sollte ja erstmal das Thema nur anteasern. 
-Die Frage ist dann, wie groß ist bei euch das Interesse und die Bereitschaft Zeit in das Thema zu stecken? und vor allem wann wollt Ihr das dann machen? 
-
-So. Und alle die von euch die noch nicht überzeugt sind, lade ich jetzt ein mit mir meine [Fundstellen zu TDD](../Literaturrecherche-TDD) durchzugegen. Wie gesagt so ca 10-15 minuten.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
 
 
 # Meine persönliche Erfahrung mit TDD:
