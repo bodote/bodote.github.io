@@ -41,7 +41,7 @@ Also das wichtige und entscheidende ist für mich das  **TEST FIRST** Prinzip. D
 * **Test first** führt zu kleineren Klassen und Methoden, fördert automatisch das [Single-Responsibility-Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist. 
 * **Test first** spart am Ende halt doch Zeit und liefert höhere Code-Qualität.
 
-## Das Gegenteil von **Test First** ist ja dann "test last"
+## Warum  so häufig "test last" statt >>Test First<< ?
 Also die Frage ist ja, warum wird "test last" so häufig praktiziert? obwohl man mit "test last" kaum die gerade genannte Vorteile erzielt.
 Ich denke das liegt daran, dass ...
 * **Test first** - zu denken halt erstmal sehr schwer zu lernen ist und es kostet einiges an Zeit um das zu lernen.
