@@ -9,7 +9,7 @@ tags:
 toc: true
 classes: wide
 ---
-# >>TDD<< und  >>Test First<< 
+# Warum >>TDD<< und >>Test First<< ?
 
 Vorweg eine Frage: Sind wir uns eigentlich einig, dass Unittests mit angemessener
 Testabdeckung sehr wünschenswert sind ? (Wobei es mir hier tatsächlich erstmal **nur**
@@ -63,7 +63,19 @@ Der kurze Termin sollte ja erstmal das Thema nur anteasern.
 Die Frage ist dann, wie groß ist bei euch das Interesse und die Bereitschaft Zeit in das Thema zu stecken? und vor allem wann wollt Ihr das dann machen? 
 
 So. Und alle die von euch die noch nicht überzeugt sind, lade ich jetzt ein mit mir meine [Fundstellen zu TDD](../Literaturrecherche-TDD) durchzugegen. Wie gesagt so ca 10-15 minuten.
-
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
 
 
 # Meine persönliche Erfahrung mit TDD:
