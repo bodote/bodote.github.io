@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "TDD? aber richtig!",
-        "excerpt":"»TDD« und  »Test First« Vorweg eine Frage: Sind wir uns eigentlich einig, dass Unittests mit angemessener Testabdeckung sehr wünschenswert sind ? (Wobei es mir hier tatsächlich erstmal nur um Unittests geht, nicht um Integrationstests oder um Akzeptanztests oder der gleichen) Wenn ja: Gut, dann haben wir diese Hürde ja schon mal...","categories": ["blog"],
+        "excerpt":"Warum »TDD« und »Test First« ? Vorweg eine Frage: Sind wir uns eigentlich einig, dass Unittests mit angemessener Testabdeckung sehr wünschenswert sind ? (Wobei es mir hier tatsächlich erstmal nur um Unittests geht, nicht um Integrationstests oder um Akzeptanztests oder der gleichen) Wenn ja: Gut, dann haben wir diese Hürde ja schon mal aus...","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],
         "url": "http://localhost:4000/blog/TDD-aber-richtig/",
         "teaser": null
@@ -15,5 +15,11 @@ var store = [{
         "excerpt":"Bücher: Ich bin ja ein enthusiastischer Befürworter von Test Driven Design (TDD), insbesondere von dem “test first” Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die wissenschaftliche Literatur zu dem Thema hergibt. Hier ist, was sich dazu gefunden habe:1 Aus Langlebige Softwarearchitekturen...","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],
         "url": "http://localhost:4000/blog/Literaturrecherche-TDD/",
+        "teaser": null
+      },{
+        "title": "Tdd Mit Angular",
+        "excerpt":"Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwende hier aber jasmine statt Jest Setup git clone git@github.com:bodote/tdd-angular.git git checkout v1.0 Aufgabe 1 füge eine Compomenten namens “favorite-movies” hinzu die eine Headline mit dem Titel “My Favorite Movies” anzeigt. das heißt für TDD: schreibe zuerst den...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/TDD-mit-Angular/",
         "teaser": null
       }]
