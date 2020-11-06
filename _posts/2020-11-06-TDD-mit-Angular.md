@@ -15,7 +15,7 @@ git checkout v1.0
 * Anmerkung: `@Input()` vor der `favoriteMovies` property der Klasse `FavoriteMoviesComponent` ist für den Unittest unnötig, geht auch ohne
 ## Aufgabe 3
 * nehmen wir an die `favoriteMovies` sollen durch einen `Service` asynchron bereit gestellt werden. Teste ob der Service richtig verwendet wird. Dazu den Service "mocken" und prüfe ob er richtig aufgerufen wurde.
-* refactore den gesamten Code, sodass auch die ersten 2 Tests wieder laufen
+* refactore den gesamten Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen
 * Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch **entweder** mit `@Input()` Decorator **oder** mit dem `Service` funktioniert? Wenn ja wie ?
 
 
