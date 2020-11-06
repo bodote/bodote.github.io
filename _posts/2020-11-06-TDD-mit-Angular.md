@@ -17,3 +17,12 @@ git checkout v1.0
 * nehmen wir an die `favoriteMovies` sollen durch einen `Service` asynchron bereit gestellt werden. Teste ob der Service richtig verwendet wird. Dazu den Service "mocken" und prüfe ob er richtig aufgerufen wurde.
 * refactore den gesamten Code, sodass auch die ersten 2 Tests wieder laufen
 * Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch **entweder** mit `@Input()` Decorator **oder** mit dem `Service` funktioniert? Wenn ja wie ?
+
+
+
+## Lösungen
+sind [hier](https://github.com/bodote/tdd-angular) zu finden und zwar je Aufgabe ein git-Tag:
+* Aufgabe 1 <=> v1.0, 
+* Aufgabe 2 <=> v1.2, z.B.: [Lösung zu Aufgabe 2](https://github.com/bodote/tdd-angular/tree/v1.2)
+* Aufgabe 3 <=> v1.3, 
+* etc.
