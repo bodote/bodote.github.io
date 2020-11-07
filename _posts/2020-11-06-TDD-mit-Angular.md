@@ -18,6 +18,12 @@ git checkout v1.0
 * refactore den gesamten Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen
 * Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch **entweder** mit `@Input()` Decorator **oder** mit dem `Service` funktioniert? Wenn ja wie ?
 
+## Aufgabe 4
+Vermutlich hast du in Aufgabe 3 in der `ngOnInit()` methode auf das `Observable` , welches du von `FavoriteMovieService` bekommst direkt subscribed, richtig ?
+Wenn ja , dann ändere den Code, sodass du in `ngOnInit()` nur das `Observable` selbst holst und es als solches in `FavoriteMoviesComponent` als property speicherst (Verwende auch die übliche Schreibweise der Property mit dem "$" am Ende). Laufen die Tests noch alle ?
+Eigentlich müsste jetzt zwar der der neue Test auf Aufgabe 3 noch grün sein, aber der Test aus Aufgabe 2 funktioniert nicht mehr, Jedenfalls , wenn du in der `ngOnInit()` methode direkt auf das `Observable` subscribed hattest und dir nur das Ergebniss `<string[]>` der Movies gemerkt hattes. Du musst also jetzt noch den Test aus Aufgabe 2 Anpassen, und vor allem dein Template ändern, damit es direkt das `Observable<string[]>`  statt dem `<string[]>` verwendet. **TIP**: verwende eine sogenannte "async pipe" mit `*ngIf = "myobservable$ | async as myArray"`
+
+
 
 
 ## Lösungen
