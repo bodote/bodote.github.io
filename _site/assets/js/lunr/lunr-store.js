@@ -5,6 +5,12 @@ var store = [{
         "url": "http://localhost:4000/blog/TDD-Tutorial/",
         "teaser": null
       },{
+        "title": "Sehr große Datenbanken sehr schnell kopieren",
+        "excerpt":"Sehr große produktive Datenbanken als schreibbarte Test-DB den Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen von Webapps braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß ist, führt das zu sehr langen Wartezeiten in der...","categories": ["blog"],
+        "tags": ["Testing"],
+        "url": "http://localhost:4000/blog/Big-DB-Copy-in-Seconds/",
+        "teaser": null
+      },{
         "title": "TDD? aber richtig!",
         "excerpt":"Warum »TDD« und »Test First« ? Vorweg eine Frage: Sind wir uns eigentlich einig, dass Unittests mit angemessener Testabdeckung sehr wünschenswert sind ? (Wobei es mir hier tatsächlich erstmal nur um Unittests geht, nicht um Integrationstests oder um Akzeptanztests oder der gleichen) Wenn ja: Gut, dann haben wir diese Hürde ja schon mal aus...","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],

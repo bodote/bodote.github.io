@@ -336,8 +336,20 @@ git checkout v1.0
 
 <h2 id="aufgabe-4">Aufgabe 4</h2>
 <p>Vermutlich hast du in Aufgabe 3 in der <code class="language-plaintext highlighter-rouge">ngOnInit()</code> methode auf das <code class="language-plaintext highlighter-rouge">Observable</code> , welches du von <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code> bekommst direkt subscribed, richtig ?
-Wenn ja , dann ändere den Code, sodass du in <code class="language-plaintext highlighter-rouge">ngOnInit()</code> nur das <code class="language-plaintext highlighter-rouge">Observable</code> selbst holst und es als solches in <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> als property speicherst (Verwende auch die übliche Schreibweise der Property mit dem “$” am Ende). Laufen die Tests noch alle ?
-Eigentlich müsste jetzt zwar der der neue Test auf Aufgabe 3 noch grün sein, aber der Test aus Aufgabe 2 funktioniert nicht mehr, Jedenfalls , wenn du in der <code class="language-plaintext highlighter-rouge">ngOnInit()</code> methode direkt auf das <code class="language-plaintext highlighter-rouge">Observable</code> subscribed hattest und dir nur das Ergebniss <code class="language-plaintext highlighter-rouge">&lt;string[]&gt;</code> der Movies gemerkt hattes. Du musst also jetzt noch den Test aus Aufgabe 2 Anpassen, und vor allem dein Template ändern, damit es direkt das <code class="language-plaintext highlighter-rouge">Observable&lt;string[]&gt;</code>  statt dem <code class="language-plaintext highlighter-rouge">&lt;string[]&gt;</code> verwendet. <strong>TIP</strong>: verwende eine sogenannte “async pipe” mit <code class="language-plaintext highlighter-rouge">*ngIf = "myobservable$ | async as myArray"</code></p>
+Wenn ja , dann</p>
+<ul>
+  <li>ändere den Code, sodass du in <code class="language-plaintext highlighter-rouge">ngOnInit()</code> nur das <code class="language-plaintext highlighter-rouge">Observable</code> selbst holst und es als solches in <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> als property speicherst (Verwende auch die übliche Schreibweise der Property mit dem “$” am Ende).</li>
+  <li>Laufen die Tests noch alle ?</li>
+  <li>Eigentlich müsste jetzt zwar der der neue Test auf Aufgabe 3 noch grün sein, aber der Test aus Aufgabe 2 funktioniert nicht mehr, Jedenfalls , wenn du in der <code class="language-plaintext highlighter-rouge">ngOnInit()</code> methode direkt auf das <code class="language-plaintext highlighter-rouge">Observable</code> subscribed hattest und dir nur das Ergebniss <code class="language-plaintext highlighter-rouge">&lt;string[]&gt;</code> der Movies gemerkt hattes.</li>
+  <li>Du musst also jetzt noch den Test aus Aufgabe 2 Anpassen, und vor allem dein Template ändern, damit es direkt das <code class="language-plaintext highlighter-rouge">Observable&lt;string[]&gt;</code>  statt dem <code class="language-plaintext highlighter-rouge">&lt;string[]&gt;</code> verwendet. <strong>TIP</strong>: verwende eine sogenannte “async pipe” mit <code class="language-plaintext highlighter-rouge">*ngIf = "myobservable$ | async as myArray"</code></li>
+</ul>
+
+<h2 id="aufgabe-5">Aufgabe 5</h2>
+<p>Was ist aber, wenn das <code class="language-plaintext highlighter-rouge">Observable</code>, von dem wir die ‘Favorite Movies’ bekommen einen Fehler wirft ?</p>
+<ul>
+  <li>Wie kannst du das im Test “simulieren”</li>
+  <li>und wie kannst du im Test abtesten ob deine <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> den Fehler korrekt verarbeitet und auch in der View richtig anzeigt ?</li>
+</ul>
 
 <h2 id="lösungen">Lösungen</h2>
 <p>sind <a href="https://github.com/bodote/tdd-angular">hier</a> zu finden und zwar je Aufgabe ein git-Tag:</p>
@@ -472,6 +484,47 @@ Ich bin ja ein enthusiastischer Befürworter von Test Driven Design (TDD), insbe
     <p class="archive__item-excerpt" itemprop="description">Warum »TDD« und »Test First« ?
 
 </p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/Big-DB-Copy-in-Seconds/" rel="permalink">Sehr große Datenbanken sehr schnell kopieren
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen
+Das Problem
+Im Rahmen von Webapps braucht das SW-...</p>
   </article>
 </div>
 
