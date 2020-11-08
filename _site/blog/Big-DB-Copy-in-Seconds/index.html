@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Sehr große Datenbanken sehr schnell kopieren - Bodos Software Blog</title>
-<meta name="description" content="Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen von Webapps braucht das SW-Entwicklerteam  zum Debuggen die “echten” Daten der Datenbank.  Wenn diese aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß ist, führt das zu sehr langen Wartezeiten  in der Größenordnung von Stunden oder Tagen, bis die DB vom Prodsystem  exportiert und im Test-System wieder importiert ist.  Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.">
+<meta name="description" content="Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank.  Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten  in der Größenordnung von Stunden oder Tagen, bis die DB vom Produktionssystem  exportiert und im Test-System wieder importiert ist.  Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.">
 
 
   <meta name="author" content="Bodo Teichmann">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/blog/Big-DB-Copy-in-Seconds/">
 
 
-  <meta property="og:description" content="Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen von Webapps braucht das SW-Entwicklerteam  zum Debuggen die “echten” Daten der Datenbank.  Wenn diese aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß ist, führt das zu sehr langen Wartezeiten  in der Größenordnung von Stunden oder Tagen, bis die DB vom Prodsystem  exportiert und im Test-System wieder importiert ist.  Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.">
+  <meta property="og:description" content="Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank.  Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten  in der Größenordnung von Stunden oder Tagen, bis die DB vom Produktionssystem  exportiert und im Test-System wieder importiert ist.  Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.">
 
 
 
@@ -276,7 +276,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Sehr große Datenbanken sehr schnell kopieren">
-    <meta itemprop="description" content="Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellenDas ProblemIm Rahmen von Webapps braucht das SW-Entwicklerteam  zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß ist, führt das zu sehr langen Wartezeiten in der Größenordnung von Stunden oder Tagen, bis die DB vom Prodsystem exportiert und im Test-System wieder importiert ist. Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.">
+    <meta itemprop="description" content="Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellenDas ProblemIm Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten in der Größenordnung von Stunden oder Tagen, bis die DB vom Produktionssystem exportiert und im Test-System wieder importiert ist. Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.">
     <meta itemprop="datePublished" content="2020-10-08T00:00:00+00:00">
     
 
@@ -328,16 +328,16 @@
         
         <h1 id="sehr-große-produktive-datenbanken-als-schreibbarte-test-db-den--entwickler-in-sekunden-zu-verfügung-stellen">Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen</h1>
 <h2 id="das-problem">Das Problem</h2>
-<p>Im Rahmen von Webapps braucht das SW-Entwicklerteam  zum Debuggen die “echten” Daten der Datenbank. 
-Wenn diese aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß ist, führt das zu sehr langen Wartezeiten 
-in der Größenordnung von Stunden oder Tagen, bis die DB vom Prodsystem 
+<p>Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. 
+Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten 
+in der Größenordnung von Stunden oder Tagen, bis die DB vom Produktionssystem 
 exportiert und im Test-System wieder importiert ist. 
 Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.</p>
 
 <h2 id="die-lösung-zfs-und-docker">Die Lösung: ZFS und Docker</h2>
 <p>Kurz skiziert funktioniert das so:</p>
 <ul>
-  <li>ZFS erstellt Snapshots des Dateisystem auf dem die Datenbankengine operiert. (Dauert unter einer Sekunde)</li>
+  <li>Ein ZFS-Dateisystem<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> (z.B. “ZFS on Linux”<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>) erstellt Snapshots des Dateisystem auf dem die Datenbankengine operiert. (Dauert unter einer Sekunde)</li>
   <li>Aus dem ZFS - Snapshot wird eine lese- und schreibbarer “Clone” des Dateisystem erzeugt (Dauerte unter einer Sekunde)</li>
   <li>dieser Clone wird einem Dockerconteiner mit der DB-Engine (z.B. ein MySql-Dockercontainer)</li>
   <li>Der Dockercontainer wird gestartet und seine IP - Adresse in einem Nameserver registiriert (z.B. mit “Bind”)</li>
@@ -348,6 +348,16 @@ schreibbarten DB-test - Clone der Produktiven Daten erzeugen.</li>
   <li>ggf. lässt sich ein Anonymisierungsscript sehr leicht via Script noch ergänzen.</li>
 </ul>
 
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://de.wikipedia.org/wiki/ZFS_(Dateisystem)#:~:text=ZFS%20ist%20ein%20von%20Sun,im%20Server%2D%20und%20Rechenzentrumsbereich%20enth%C3%A4lt.">ZFS Dateisystem</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://openzfs.github.io/openzfs-docs/Project%20and%20Community/Admin%20Documentation.html">ZFS on Linux</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
         
       </section>
@@ -365,6 +375,10 @@ schreibbarten DB-test - Clone der Produktiven Daten erzeugen.</li>
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#devops" class="page__taxonomy-item" rel="tag">DevOps</a><span class="sep">, </span>
     
       
       
@@ -444,7 +458,7 @@ schreibbarten DB-test - Clone der Produktiven Daten erzeugen.</li>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/TDD-mit-Angular/" rel="permalink">Tdd Mit Angular
+        <a href="/blog/TDD-mit-Angular/" rel="permalink">Test Driven Development mit Angular
 </a>
       
     </h2>

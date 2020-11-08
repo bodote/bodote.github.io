@@ -6,8 +6,8 @@ var store = [{
         "teaser": null
       },{
         "title": "Sehr große Datenbanken sehr schnell kopieren",
-        "excerpt":"Sehr große produktive Datenbanken als schreibbarte Test-DB den Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen von Webapps braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß ist, führt das zu sehr langen Wartezeiten in der...","categories": ["blog"],
-        "tags": ["Testing"],
+        "excerpt":"Sehr große produktive Datenbanken als schreibbarte Test-DB den Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten in...","categories": ["blog"],
+        "tags": ["Testing","DevOps"],
         "url": "http://localhost:4000/blog/Big-DB-Copy-in-Seconds/",
         "teaser": null
       },{
@@ -23,9 +23,9 @@ var store = [{
         "url": "http://localhost:4000/blog/Literaturrecherche-TDD/",
         "teaser": null
       },{
-        "title": "Tdd Mit Angular",
-        "excerpt":"Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwende hier aber jasmine statt Jest Setup git clone git@github.com:bodote/tdd-angular.git git checkout v1.0 Aufgabe 1 füge eine Compomenten namens “favorite-movies” hinzu die eine Headline mit dem Titel “My Favorite Movies” anzeigt. das heißt für TDD: schreibe zuerst den...","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/TDD-mit-Angular/",
+        "title": "Test Driven Development mit Angular",
+        "excerpt":"Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwende hier aber jasmine statt Jest Setup git clone git@github.com:bodote/tdd-angular.git git checkout v1.0 Aufgabe 1 füge eine Compomenten namens “favorite-movies” hinzu die eine Headline mit dem Titel “My Favorite Movies” anzeigt. das heißt für TDD: schreibe zuerst den...","categories": ["blog"],
+        "tags": ["TDD","Test Driven Development"],
+        "url": "http://localhost:4000/blog/TDD-mit-Angular/",
         "teaser": null
       }]

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-08T10:01:04+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Tdd Mit Angular</title><link href="http://localhost:4000/TDD-mit-Angular/" rel="alternate" type="text/html" title="Tdd Mit Angular" /><published>2020-11-06T00:00:00+00:00</published><updated>2020-11-06T00:00:00+00:00</updated><id>http://localhost:4000/TDD-mit-Angular</id><content type="html" xml:base="http://localhost:4000/TDD-mit-Angular/">&lt;h1 id=&quot;angular-tdd-workshop&quot;&gt;Angular TDD Workshop&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-08T10:14:23+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Test Driven Development mit Angular</title><link href="http://localhost:4000/blog/TDD-mit-Angular/" rel="alternate" type="text/html" title="Test Driven Development mit Angular" /><published>2020-11-08T00:00:00+00:00</published><updated>2020-11-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-mit-Angular</id><content type="html" xml:base="http://localhost:4000/blog/TDD-mit-Angular/">&lt;h1 id=&quot;angular-tdd-workshop&quot;&gt;Angular TDD Workshop&lt;/h1&gt;
 &lt;p&gt;Diese Angular-TDD-Workshop ist eine Variante von diesem &lt;a href=&quot;https://itnext.io/test-driven-development-in-an-angular-world-92c0c42a54d0&quot;&gt;Workshop&lt;/a&gt;
 Wir verwende hier aber &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jasmine&lt;/code&gt; statt &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jest&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
@@ -8,17 +8,21 @@ git checkout v1.0
 &lt;h2 id=&quot;aufgabe-1&quot;&gt;Aufgabe 1&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;füge eine Compomenten namens “favorite-movies” hinzu die eine Headline mit dem Titel “My Favorite Movies” anzeigt.&lt;/li&gt;
-  &lt;li&gt;das heißt für TDD:  schreibe zuerst den Test  in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favorite-movies.component.spec.ts&lt;/code&gt; und ergänze dannach das Template &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favorite-movies.component.html&lt;/code&gt; bis der Test grün ist.
-    &lt;h2 id=&quot;aufgabe-2&quot;&gt;Aufgabe 2&lt;/h2&gt;
-  &lt;/li&gt;
+  &lt;li&gt;das heißt für TDD:  schreibe zuerst den Test  in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favorite-movies.component.spec.ts&lt;/code&gt; und ergänze dannach das Template &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favorite-movies.component.html&lt;/code&gt; bis der Test grün ist.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;aufgabe-2&quot;&gt;Aufgabe 2&lt;/h2&gt;
+&lt;ul&gt;
   &lt;li&gt;Angenommen die neue Componente hätte schon eine Liste der Movies bekommen (z.B. von der Parent-Component an die &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FavoriteMoviesComponent&lt;/code&gt;, in dem dessen property mit einem &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Input()&lt;/code&gt; Decorator versehen wird, oder auch durch einen Service), teste, dass diese auch angezeigt werden.&lt;/li&gt;
   &lt;li&gt;Tip: wenn  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;describe&lt;/code&gt; oder &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;it&lt;/code&gt; umbenannt wird in  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fdescribe&lt;/code&gt; oder &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fit&lt;/code&gt;  werden  &lt;strong&gt;NUR&lt;/strong&gt; diese ausgeführt und vor allem sieht man auch die gerenderte Ausgabe des jeweiligen TestBeds in Browser!&lt;/li&gt;
-  &lt;li&gt;Anmerkung: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Input()&lt;/code&gt; vor der &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favoriteMovies&lt;/code&gt; property der Klasse &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FavoriteMoviesComponent&lt;/code&gt; ist für den Unittest unnötig, geht auch ohne
+  &lt;li&gt;Anmerkung: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Input()&lt;/code&gt; vor der &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favoriteMovies&lt;/code&gt; property der Klasse &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FavoriteMoviesComponent&lt;/code&gt; ist für den Unittest unnötig, geht auch ohne&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.2&quot;&gt;Lösung zu Aufgabe 2&lt;/a&gt;
     &lt;h2 id=&quot;aufgabe-3&quot;&gt;Aufgabe 3&lt;/h2&gt;
   &lt;/li&gt;
   &lt;li&gt;nehmen wir an die &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favoriteMovies&lt;/code&gt; sollen durch einen &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Service&lt;/code&gt; asynchron bereit gestellt werden. Teste ob der Service richtig verwendet wird. Dazu den Service “mocken” und prüfe ob er richtig aufgerufen wurde.&lt;/li&gt;
   &lt;li&gt;refactore den gesamten Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen&lt;/li&gt;
   &lt;li&gt;Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch &lt;strong&gt;entweder&lt;/strong&gt; mit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@Input()&lt;/code&gt; Decorator &lt;strong&gt;oder&lt;/strong&gt; mit dem &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Service&lt;/code&gt; funktioniert? Wenn ja wie ?&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.3&quot;&gt;Lösung zu Aufgabe 3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;aufgabe-4&quot;&gt;Aufgabe 4&lt;/h2&gt;
@@ -29,23 +33,15 @@ Wenn ja , dann&lt;/p&gt;
   &lt;li&gt;Laufen die Tests noch alle ?&lt;/li&gt;
   &lt;li&gt;Eigentlich müsste jetzt zwar der der neue Test auf Aufgabe 3 noch grün sein, aber der Test aus Aufgabe 2 funktioniert nicht mehr, Jedenfalls , wenn du in der &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ngOnInit()&lt;/code&gt; methode direkt auf das &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Observable&lt;/code&gt; subscribed hattest und dir nur das Ergebniss &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;string[]&amp;gt;&lt;/code&gt; der Movies gemerkt hattes.&lt;/li&gt;
   &lt;li&gt;Du musst also jetzt noch den Test aus Aufgabe 2 Anpassen, und vor allem dein Template ändern, damit es direkt das &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Observable&amp;lt;string[]&amp;gt;&lt;/code&gt;  statt dem &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;string[]&amp;gt;&lt;/code&gt; verwendet. &lt;strong&gt;TIP&lt;/strong&gt;: verwende eine sogenannte “async pipe” mit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*ngIf = &quot;myobservable$ | async as myArray&quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;aufgabe-5&quot;&gt;Aufgabe 5&lt;/h2&gt;
-&lt;p&gt;Was ist aber, wenn das &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Observable&lt;/code&gt;, von dem wir die ‘Favorite Movies’ bekommen einen Fehler wirft ?&lt;/p&gt;
-&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.4&quot;&gt;Lösung zu Aufgabe 4&lt;/a&gt;
+    &lt;h2 id=&quot;aufgabe-5&quot;&gt;Aufgabe 5&lt;/h2&gt;
+    &lt;p&gt;Was ist aber, wenn das &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Observable&lt;/code&gt;, von dem wir die ‘Favorite Movies’ bekommen einen Fehler wirft ?&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;Wie kannst du das im Test “simulieren”&lt;/li&gt;
   &lt;li&gt;und wie kannst du im Test abtesten ob deine &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FavoriteMoviesComponent&lt;/code&gt; den Fehler korrekt verarbeitet und auch in der View richtig anzeigt ?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;lösungen&quot;&gt;Lösungen&lt;/h2&gt;
-&lt;p&gt;sind &lt;a href=&quot;https://github.com/bodote/tdd-angular&quot;&gt;hier&lt;/a&gt; zu finden und zwar je Aufgabe ein git-Tag:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Aufgabe 1 &amp;lt;=&amp;gt; v1.0,&lt;/li&gt;
-  &lt;li&gt;Aufgabe 2 &amp;lt;=&amp;gt; v1.2, z.B.: &lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.2&quot;&gt;Lösung zu Aufgabe 2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Aufgabe 3 &amp;lt;=&amp;gt; v1.3,&lt;/li&gt;
-  &lt;li&gt;etc.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Bodo Teichmann</name></author><summary type="html">Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwende hier aber jasmine statt Jest Setup git clone git@github.com:bodote/tdd-angular.git git checkout v1.0 Aufgabe 1 füge eine Compomenten namens “favorite-movies” hinzu die eine Headline mit dem Titel “My Favorite Movies” anzeigt. das heißt für TDD: schreibe zuerst den Test in favorite-movies.component.spec.ts und ergänze dannach das Template favorite-movies.component.html bis der Test grün ist. Aufgabe 2 Angenommen die neue Componente hätte schon eine Liste der Movies bekommen (z.B. von der Parent-Component an die FavoriteMoviesComponent, in dem dessen property mit einem @Input() Decorator versehen wird, oder auch durch einen Service), teste, dass diese auch angezeigt werden. Tip: wenn describe oder it umbenannt wird in fdescribe oder fit werden NUR diese ausgeführt und vor allem sieht man auch die gerenderte Ausgabe des jeweiligen TestBeds in Browser! Anmerkung: @Input() vor der favoriteMovies property der Klasse FavoriteMoviesComponent ist für den Unittest unnötig, geht auch ohne Aufgabe 3 nehmen wir an die favoriteMovies sollen durch einen Service asynchron bereit gestellt werden. Teste ob der Service richtig verwendet wird. Dazu den Service “mocken” und prüfe ob er richtig aufgerufen wurde. refactore den gesamten Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch entweder mit @Input() Decorator oder mit dem Service funktioniert? Wenn ja wie ?</summary></entry><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-10-12T00:00:00+00:00</published><updated>2020-10-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;h1 id=&quot;bücher&quot;&gt;Bücher:&lt;/h1&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.5.1&quot;&gt;Lösung zu Aufgabe 5 Variante 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.5.2&quot;&gt;Lösung zu Aufgabe 5 Variante 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Development" /><summary type="html">Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwende hier aber jasmine statt Jest Setup git clone git@github.com:bodote/tdd-angular.git git checkout v1.0 Aufgabe 1 füge eine Compomenten namens “favorite-movies” hinzu die eine Headline mit dem Titel “My Favorite Movies” anzeigt. das heißt für TDD: schreibe zuerst den Test in favorite-movies.component.spec.ts und ergänze dannach das Template favorite-movies.component.html bis der Test grün ist.</summary></entry><entry><title type="html">Literaturrecherche zu TDD</title><link href="http://localhost:4000/blog/Literaturrecherche-TDD/" rel="alternate" type="text/html" title="Literaturrecherche zu TDD" /><published>2020-10-12T00:00:00+00:00</published><updated>2020-10-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/Literaturrecherche-TDD</id><content type="html" xml:base="http://localhost:4000/blog/Literaturrecherche-TDD/">&lt;h1 id=&quot;bücher&quot;&gt;Bücher:&lt;/h1&gt;
 &lt;p&gt;Ich bin ja ein enthusiastischer Befürworter von Test Driven Design (TDD), insbesondere von dem “test first” Ansatz. Daher hat es mich einfach interessiert, was denn andere Autoren und auch (aber nicht nur) die wissenschaftliche Literatur zu dem Thema hergibt. Hier ist, was sich dazu gefunden habe:&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;aus-langlebige-softwarearchitekturen&quot;&gt;Aus &lt;a href=&quot;https://langlebige-softwarearchitekturen.de&quot;&gt;Langlebige Softwarearchitekturen&lt;/a&gt;&lt;/h2&gt;
@@ -314,16 +310,16 @@ betriebssystemnahen Funktionen) sinnvoll zu mocken.&lt;/p&gt;
   &lt;/ol&gt;
 &lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Development" /><summary type="html">Warum »TDD« und »Test First« ?</summary></entry><entry><title type="html">Sehr große Datenbanken sehr schnell kopieren</title><link href="http://localhost:4000/blog/Big-DB-Copy-in-Seconds/" rel="alternate" type="text/html" title="Sehr große Datenbanken sehr schnell kopieren" /><published>2020-10-08T00:00:00+00:00</published><updated>2020-10-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/Big-DB-Copy-in-Seconds</id><content type="html" xml:base="http://localhost:4000/blog/Big-DB-Copy-in-Seconds/">&lt;h1 id=&quot;sehr-große-produktive-datenbanken-als-schreibbarte-test-db-den--entwickler-in-sekunden-zu-verfügung-stellen&quot;&gt;Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen&lt;/h1&gt;
 &lt;h2 id=&quot;das-problem&quot;&gt;Das Problem&lt;/h2&gt;
-&lt;p&gt;Im Rahmen von Webapps braucht das SW-Entwicklerteam  zum Debuggen die “echten” Daten der Datenbank. 
-Wenn diese aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß ist, führt das zu sehr langen Wartezeiten 
-in der Größenordnung von Stunden oder Tagen, bis die DB vom Prodsystem 
+&lt;p&gt;Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. 
+Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten 
+in der Größenordnung von Stunden oder Tagen, bis die DB vom Produktionssystem 
 exportiert und im Test-System wieder importiert ist. 
 Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.&lt;/p&gt;
 
 &lt;h2 id=&quot;die-lösung-zfs-und-docker&quot;&gt;Die Lösung: ZFS und Docker&lt;/h2&gt;
 &lt;p&gt;Kurz skiziert funktioniert das so:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;ZFS erstellt Snapshots des Dateisystem auf dem die Datenbankengine operiert. (Dauert unter einer Sekunde)&lt;/li&gt;
+  &lt;li&gt;Ein ZFS-Dateisystem&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; (z.B. “ZFS on Linux”&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;) erstellt Snapshots des Dateisystem auf dem die Datenbankengine operiert. (Dauert unter einer Sekunde)&lt;/li&gt;
   &lt;li&gt;Aus dem ZFS - Snapshot wird eine lese- und schreibbarer “Clone” des Dateisystem erzeugt (Dauerte unter einer Sekunde)&lt;/li&gt;
   &lt;li&gt;dieser Clone wird einem Dockerconteiner mit der DB-Engine (z.B. ein MySql-Dockercontainer)&lt;/li&gt;
   &lt;li&gt;Der Dockercontainer wird gestartet und seine IP - Adresse in einem Nameserver registiriert (z.B. mit “Bind”)&lt;/li&gt;
@@ -332,7 +328,18 @@ Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werde
   &lt;li&gt;Damit können die Entwickler das ganze mit wenigen Mouseklicks bedienen und jederzeit innerhalb von Sekunden oder wenige Minuten einen 
 schreibbarten DB-test - Clone der Produktiven Daten erzeugen.&lt;/li&gt;
   &lt;li&gt;ggf. lässt sich ein Anonymisierungsscript sehr leicht via Script noch ergänzen.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Bodo Teichmann</name></author><category term="Testing" /><summary type="html">Sehr große produktive Datenbanken als schreibbarte Test-DB den Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen von Webapps braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrer Terabyte groß ist, führt das zu sehr langen Wartezeiten in der Größenordnung von Stunden oder Tagen, bis die DB vom Prodsystem exportiert und im Test-System wieder importiert ist. Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.</summary></entry><entry><title type="html">(Video)Test Driven Development und Test-First Tutorial</title><link href="http://localhost:4000/blog/TDD-Tutorial/" rel="alternate" type="text/html" title="(Video)Test Driven Development und Test-First Tutorial" /><published>2020-09-10T00:00:00+00:00</published><updated>2020-09-10T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-Tutorial</id><content type="html" xml:base="http://localhost:4000/blog/TDD-Tutorial/">&lt;p&gt;Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://de.wikipedia.org/wiki/ZFS_(Dateisystem)#:~:text=ZFS%20ist%20ein%20von%20Sun,im%20Server%2D%20und%20Rechenzentrumsbereich%20enth%C3%A4lt.&quot;&gt;ZFS Dateisystem&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://openzfs.github.io/openzfs-docs/Project%20and%20Community/Admin%20Documentation.html&quot;&gt;ZFS on Linux&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="Testing" /><category term="DevOps" /><summary type="html">Sehr große produktive Datenbanken als schreibbarte Test-DB den Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten in der Größenordnung von Stunden oder Tagen, bis die DB vom Produktionssystem exportiert und im Test-System wieder importiert ist. Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.</summary></entry><entry><title type="html">(Video)Test Driven Development und Test-First Tutorial</title><link href="http://localhost:4000/blog/TDD-Tutorial/" rel="alternate" type="text/html" title="(Video)Test Driven Development und Test-First Tutorial" /><published>2020-09-10T00:00:00+00:00</published><updated>2020-09-10T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-Tutorial</id><content type="html" xml:base="http://localhost:4000/blog/TDD-Tutorial/">&lt;p&gt;Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First&lt;/p&gt;
 
 &lt;!-- Courtesy of embedresponsively.com //--&gt;
 
