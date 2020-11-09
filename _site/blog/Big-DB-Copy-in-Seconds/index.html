@@ -335,7 +335,7 @@ exportiert und im Test-System wieder importiert ist.
 Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.</p>
 
 <h2 id="die-lösung-zfs-und-docker">Die Lösung: ZFS und Docker</h2>
-<p>Kurz skiziert funktioniert das so:</p>
+<p>Die Grundidee ist:</p>
 <ul>
   <li>Ein ZFS-Dateisystem<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> (z.B. “ZFS on Linux”<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>) erstellt Snapshots des Dateisystem auf dem die Datenbankengine operiert. (Dauert unter einer Sekunde)</li>
   <li>Aus dem ZFS - Snapshot wird eine lese- und schreibbarer “Clone” des Dateisystem erzeugt (Dauerte unter einer Sekunde)</li>

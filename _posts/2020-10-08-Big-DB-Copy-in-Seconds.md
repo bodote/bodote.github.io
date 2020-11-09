@@ -19,7 +19,7 @@ exportiert und im Test-System wieder importiert ist.
 Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.
 
 ## Die Lösung: ZFS und Docker
-Kurz skiziert funktioniert das so:
+Die Grundidee ist:
 * Ein ZFS-Dateisystem[^1] (z.B. "ZFS on Linux"[^2]) erstellt Snapshots des Dateisystem auf dem die Datenbankengine operiert. (Dauert unter einer Sekunde)
 * Aus dem ZFS - Snapshot wird eine lese- und schreibbarer "Clone" des Dateisystem erzeugt (Dauerte unter einer Sekunde)
 * dieser Clone wird einem Dockerconteiner mit der DB-Engine (z.B. ein MySql-Dockercontainer)
