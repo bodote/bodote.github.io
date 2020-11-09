@@ -20,6 +20,7 @@ git checkout v1.0
 ## Aufgabe 1
 * füge eine Compomenten namens "favorite-movies" hinzu die eine Headline mit dem Titel "My Favorite Movies" anzeigt. 
 * das heißt für TDD:  schreibe zuerst den Test  in `favorite-movies.component.spec.ts` und ergänze dannach das Template `favorite-movies.component.html` bis der Test grün ist.
+* [Lösung zu Aufgabe 1](https://github.com/bodote/tdd-angular/tree/v1.1)
 
 ## Aufgabe 2
 * Angenommen die neue Componente hätte schon eine Liste der Movies bekommen (z.B. von der Parent-Component an die `FavoriteMoviesComponent`, in dem dessen property mit einem `@Input()` Decorator versehen wird, oder auch durch einen Service), teste, dass diese auch angezeigt werden.
