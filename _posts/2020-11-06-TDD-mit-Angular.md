@@ -11,14 +11,14 @@ classes: wide
 ---
 # Angular TDD Workshop
 Diese Angular-TDD-Workshop ist eine Variante von diesem [Workshop](https://itnext.io/test-driven-development-in-an-angular-world-92c0c42a54d0)
-Wir verwende hier aber `jasmine` statt `Jest`
+Wir verwenden hier aber `jasmine` statt `Jest`
 ## Setup
 ```bash
 git clone git@github.com:bodote/tdd-angular.git 
 git checkout v1.0
 ```
 ## Aufgabe 1
-* füge eine Compomenten namens "favorite-movies" hinzu die eine Headline mit dem Titel "My Favorite Movies" anzeigt. 
+* füge eine Componente namens "favorite-movies" hinzu ( z.B. mit `ng g c ...`), die eine Headline mit dem Titel "My Favorite Movies" anzeigt. 
 * das heißt für TDD:  schreibe zuerst den Test  in `favorite-movies.component.spec.ts` und ergänze dannach das Template `favorite-movies.component.html` bis der Test grün ist.
 * [Lösung zu Aufgabe 1](https://github.com/bodote/tdd-angular/tree/v1.1)
 
@@ -47,3 +47,8 @@ Was ist aber, wenn das `Observable`, von dem wir die 'Favorite Movies' bekommen 
 * und wie kannst du im Test abtesten ob deine `FavoriteMoviesComponent` den Fehler korrekt verarbeitet und auch in der View richtig anzeigt ?
 * [Lösung zu Aufgabe 5 Variante 1](https://github.com/bodote/tdd-angular/tree/v1.5.1)
 * [Lösung zu Aufgabe 5 Variante 2](https://github.com/bodote/tdd-angular/tree/v1.5.2)
+
+## Aufgabe 6
+Wir testen hier den FavoriteMovieService. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welche man in `jasmine` Tests zusammen mit dem `Testbed` verwenden kann, in dem deinem Service statt dem `HttpClient` ein spezieller Test-`HttpClient` untergeschoven wird. Damit kann man Anworten der Remote-Rest-Serivces mocken und zusätzlich prüfen ob und wie der `HttpClient` von deinem Service benutzt wurde.
+* Teste ob unser `FavoriteMoviesService` die richtigen URL mit der richtigen HTTP-Methode (z.B. hier `GET`) aufruft und die dem via `HttpClientTestingModule` untergeschobene `HTTP-RESPONSE` richtig verarbeitet. 
+* Teste konkret ob Fehler in der `HTTP-RESPONSE` richtig von `FavoriteMoviesService` verarbeitet werden.
