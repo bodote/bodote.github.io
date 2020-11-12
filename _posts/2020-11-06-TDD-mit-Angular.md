@@ -55,6 +55,25 @@ Was ist aber, wenn das `Observable`, von dem wir die 'Favorite Movies' bekommen 
 * [Lösung zu Aufgabe 5 Variante 2](https://github.com/bodote/tdd-angular/tree/v1.5.2)
 
 ## Aufgabe 6
-Wir testen hier den FavoriteMovieService. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welche man in `jasmine` Tests zusammen mit dem `Testbed` verwenden kann, in dem deinem Service statt dem `HttpClient` ein spezieller Test-`HttpClient` untergeschoven wird. Damit kann man Anworten der Remote-Rest-Serivces mocken und zusätzlich prüfen ob und wie der `HttpClient` von deinem Service benutzt wurde.
+Wir testen hier den `FavoriteMovieService`. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welche man in `jasmine` Tests zusammen mit dem `Testbed` verwenden kann, in dem deinem Service statt dem `HttpClient` ein spezieller Test-`HttpClient` untergeschoven wird. Damit kann man Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen ob und wie der `HttpClient` von deinem Service benutzt wurde.
 * Teste ob unser `FavoriteMoviesService` die richtigen URL mit der richtigen HTTP-Methode (z.B. hier `GET`) aufruft und die dem via `HttpClientTestingModule` untergeschobene `HTTP-RESPONSE` richtig verarbeitet. 
 * Teste konkret ob Fehler in der `HTTP-RESPONSE` richtig von `FavoriteMoviesService` verarbeitet werden.
+* wenn dieser Test "grün" ist , dann teste wieder **alle bisherigen Tests**. Falls einige jetzt wieder "rot" sind , fixe diese. 
+* Tip: evtl. musst du `TestBed.configureTestingModule..` ergänzen.
+
+## Aufgabe 7
+Genau betrachtet, war die Aufgabe 6 "geschenkt" weil wir eigentlich nur getestet haben ob das Angular Observable Fehler korrekt meldet, was natürlich der Fall ist. Wir haben aber an unserem `FavoriteMovieService` eigentlich gar nicht ändern müssen, um den Test "rot" zu bekommen, richtig ?
+Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 3 Wiederholversuche für jeden ServiceRequest machen. Erst wenn der 3. Versuch auch fehlschlägt, dann soll der Fehler nach oben weitergereicht werden.
+* Was bedeutet das für unseren Test ? 
+* nachdem der Test aus Aufgabe 6 ja streng genommen unser Code bisher gar nicht getestst hat (sondern nur das Angular-Interne Observable-Fehlerhandling), wollen wir diese Test jetzt auf 3 Versuche erweitern. 
+* Tip : du musst jetzt 3 mal  `req.flush()` verwenden.
+
+## Aufgabe 8
+Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern erst gar nicht erreicht werden kann (z.B. überhauptkeine Netzwerkverbindung besteht)?
+* Tip : statt `req.flush()` kann man hier `req.error(errorEvent)` verwenden um eine solchen Fehlermodus zu simulieren.
+
+## Aufgabe 9
+Was , wenn die ersten 2 Versuche fehlschlagen, der dritte aber erfolgreich ist? Schreiben für diesen Fall einen Test
+* refactoriere die Test um unnötige Codeduplizierungen zu beseitigen.
+
+
