@@ -24,7 +24,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Test Driven Development mit Angular",
-        "excerpt":"Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwende hier aber jasmine statt Jest Setup git clone git@github.com:bodote/tdd-angular.git git checkout v1.0 Aufgabe 1 füge eine Compomenten namens “favorite-movies” hinzu die eine Headline mit dem Titel “My Favorite Movies” anzeigt. das heißt für TDD: schreibe zuerst den...","categories": ["blog"],
+        "excerpt":"Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Setup git clone https://github.com/bodote/tdd-angular.git git checkout v1.0 oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , z.B. Lösche alles und setzte &lt;div&gt; app is running!&lt;/div&gt; ein. Aufgabe 1...","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],
         "url": "http://localhost:4000/blog/TDD-mit-Angular/",
         "teaser": null
