@@ -1,6 +1,8 @@
 ---
 title: "Test Driven Development mit Java Teil 2"
 date: 2020-12-12 // zukünftige Datum wir nicht veröffentlicht !
+published: false
+visible: false
 categories:
   - blog
 tags:
