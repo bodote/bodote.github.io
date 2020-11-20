@@ -33,7 +33,9 @@ oder verwende `ng new tdd-angular` und reduziere dann `src/app/app.component.htm
 * [Lösung zu Aufgabe 2](https://github.com/bodote/tdd-angular/tree/v1.2) (Anmerkung zu Lösung: `@Input()` vor der `favoriteMovies` property der Klasse `FavoriteMoviesComponent` ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht) 
 
 ## Aufgabe 3
-* nehmen wir an die `favoriteMovies` sollen durch einen `Service` asynchron bereit gestellt werden. Erzeuge den (leeren) service mit `ng g s favorite-movies`. Teste ob der Service richtig von der `FavoriteMoviesComponent` verwendet wird, (d.h. du sollst **NICHT** den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service "mocken" und prüfe, ob er richtig aufgerufen wurde. 
+* nehmen wir an die `favoriteMovies` sollen alternativ auch durch einen `Service` asynchron bereit gestellt werden. Erzeuge den (leeren) service mit `ng g s favorite-movies`. 
+* Die Idee ist: wenn unsere Componente in `favoriteMovies` kein String Array vorfindet, soll alterntiv der Service gerufen werden.
+* Teste ob der Service richtig von der `FavoriteMoviesComponent` verwendet wird, (d.h. du sollst **NICHT** den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service "mocken" und prüfe, ob er richtig aufgerufen wurde. 
 * Tip: verwende `spyOn()`
 * refactoriere den gesamten Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen
 * Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch **entweder** mit `@Input()` Decorator **oder** mit dem `Service` funktioniert? Wenn ja wie ?

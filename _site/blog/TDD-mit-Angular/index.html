@@ -362,7 +362,9 @@ git checkout v1.0
 
 <h2 id="aufgabe-3">Aufgabe 3</h2>
 <ul>
-  <li>nehmen wir an die <code class="language-plaintext highlighter-rouge">favoriteMovies</code> sollen durch einen <code class="language-plaintext highlighter-rouge">Service</code> asynchron bereit gestellt werden. Erzeuge den (leeren) service mit <code class="language-plaintext highlighter-rouge">ng g s favorite-movies</code>. Teste ob der Service richtig von der <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> verwendet wird, (d.h. du sollst <strong>NICHT</strong> den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service “mocken” und prüfe, ob er richtig aufgerufen wurde.</li>
+  <li>nehmen wir an die <code class="language-plaintext highlighter-rouge">favoriteMovies</code> sollen alternativ auch durch einen <code class="language-plaintext highlighter-rouge">Service</code> asynchron bereit gestellt werden. Erzeuge den (leeren) service mit <code class="language-plaintext highlighter-rouge">ng g s favorite-movies</code>.</li>
+  <li>Die Idee ist: wenn unsere Componente in <code class="language-plaintext highlighter-rouge">favoriteMovies</code> kein String Array vorfindet, soll alterntiv der Service gerufen werden.</li>
+  <li>Teste ob der Service richtig von der <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> verwendet wird, (d.h. du sollst <strong>NICHT</strong> den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service “mocken” und prüfe, ob er richtig aufgerufen wurde.</li>
   <li>Tip: verwende <code class="language-plaintext highlighter-rouge">spyOn()</code></li>
   <li>refactoriere den gesamten Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen</li>
   <li>Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch <strong>entweder</strong> mit <code class="language-plaintext highlighter-rouge">@Input()</code> Decorator <strong>oder</strong> mit dem <code class="language-plaintext highlighter-rouge">Service</code> funktioniert? Wenn ja wie ?</li>
