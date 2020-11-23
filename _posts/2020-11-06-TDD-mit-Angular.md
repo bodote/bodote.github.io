@@ -17,12 +17,14 @@ Wir verwenden hier aber `jasmine` statt `Jest`
 git clone https://github.com/bodote/tdd-angular.git
 git checkout v1.0
 ```
-oder verwende `ng new tdd-angular` und reduziere dann `src/app/app.component.html` auf ein Minimum , z.B. Lösche alles und setzte  `<div>{{ title }} app is running!</div>` ein.
+oder verwende `ng new tdd-angular` und reduziere dann `src/app/app.component.html` auf ein Minimum , z.B. Lösche alles und setzte  `<div class="content"> <span>{{ title }} app is running!</span></div>` ein.
 
 ## Aufgabe 1
-* füge eine Componente namens "favorite-movies" hinzu ( z.B. mit `ng g c ...`). Die Componente `FavoriteMoviesComponent` soll später eine Headline mit dem Titel "My Favorite Movies" anzeigen. 
-* **STOP**: noch nicht `FavoriteMoviesComponent` oder das Template ändern, sondern zuerst den Test schreiben!
-* das heißt für TDD:  schreibe **zuerst** den Test  in `favorite-movies.component.spec.ts` und ergänze **danach** das Template `favorite-movies.component.html` bis der Test grün ist.
+* füge eine Componente namens "favorite-movies" hinzu ( z.B. mit `ng g c ...`). Die Componente `FavoriteMoviesComponent` soll eine Headline mit dem Titel "My Favorite Movies" anzeigen. 
+* **STOP**: noch nicht `FavoriteMoviesComponent` oder das Template ändern, sondern
+  * nur Componente  anlegen (ggf. mit **leeren** Methoden/Properties)
+  * dann den Test schreiben , bzw den Test  in `favorite-movies.component.spec.ts` ergänzen!
+  * dann Lösung implementieren; also erst jetzt das Template `favorite-movies.component.html` ändern bis der Test grün ist.
 * Tip: arbeite mit `fixture.debugElement.query(...)` oder `fixture.debugElement.queryAll(...)`
 * [Lösung zu Aufgabe 1](https://github.com/bodote/tdd-angular/tree/v1.1)
 
@@ -34,11 +36,10 @@ oder verwende `ng new tdd-angular` und reduziere dann `src/app/app.component.htm
 
 ## Aufgabe 3
 * nehmen wir an die `favoriteMovies` sollen alternativ auch durch einen `Service` asynchron bereit gestellt werden. Erzeuge den (leeren) service mit `ng g s favorite-movies`. 
-* Die Idee ist: wenn unsere Componente in `favoriteMovies` kein String Array vorfindet, soll alterntiv der Service gerufen werden.
+* Die Idee ist: wenn unsere Componente bei ihrer Initialisierung in ihrer Properity `favoriteMovies` **kein** String Array vorfindet, nur dann soll alterntiv der Service gerufen werden.
 * Teste ob der Service richtig von der `FavoriteMoviesComponent` verwendet wird, (d.h. du sollst **NICHT** den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service "mocken" und prüfe, ob er richtig aufgerufen wurde. 
 * Tip: verwende `spyOn()`
-* refactoriere den gesamten Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen
-* Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch **entweder** mit `@Input()` Decorator **oder** mit dem `Service` funktioniert? Wenn ja wie ?
+* refactoriere ggf. den Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen
 * [Lösung zu Aufgabe 3](https://github.com/bodote/tdd-angular/tree/v1.3)
 
 ## Aufgabe 4
