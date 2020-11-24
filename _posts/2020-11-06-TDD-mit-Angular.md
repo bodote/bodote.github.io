@@ -17,7 +17,14 @@ Wir verwenden hier aber `jasmine` statt `Jest`
 git clone https://github.com/bodote/tdd-angular.git
 git checkout v1.0
 ```
-oder verwende `ng new tdd-angular` und reduziere dann `src/app/app.component.html` auf ein Minimum , z.B. Lösche alles und setzte  `<div class="content"> <span>{{ title }} app is running!</span></div>` ein.
+oder verwende `ng new tdd-angular` und reduziere dann `src/app/app.component.html` auf ein Minimum , lösche alles und setzte  
+
+```html
+<div class="content"> 
+  <span>{{ title }} app is running!</span>
+</div>
+``` 
+ein.
 
 ## Aufgabe 1
 * füge eine Componente namens "favorite-movies" hinzu ( z.B. mit `ng g c ...`). Die Componente `FavoriteMoviesComponent` soll eine Headline mit dem Titel "My Favorite Movies" anzeigen. 

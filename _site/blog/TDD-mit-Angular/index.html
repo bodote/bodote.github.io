@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Test Driven Development mit Angular - Bodos Software Blog</title>
-<meta name="description" content="Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Setup git clone https://github.com/bodote/tdd-angular.git git checkout v1.0  oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , z.B. Lösche alles und setzte  &lt;div&gt; app is running!&lt;/div&gt; ein.">
+<meta name="description" content="Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Setup git clone https://github.com/bodote/tdd-angular.git git checkout v1.0  oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , lösche alles und setzte">
 
 
   <meta name="author" content="Bodo Teichmann">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/blog/TDD-mit-Angular/">
 
 
-  <meta property="og:description" content="Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Setup git clone https://github.com/bodote/tdd-angular.git git checkout v1.0  oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , z.B. Lösche alles und setzte  &lt;div&gt; app is running!&lt;/div&gt; ein.">
+  <meta property="og:description" content="Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Setup git clone https://github.com/bodote/tdd-angular.git git checkout v1.0  oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , lösche alles und setzte">
 
 
 
@@ -276,7 +276,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Test Driven Development mit Angular">
-    <meta itemprop="description" content="Angular TDD WorkshopDiese Angular-TDD-Workshop ist eine Variante von diesem WorkshopWir verwenden hier aber jasmine statt JestSetupgit clone https://github.com/bodote/tdd-angular.gitgit checkout v1.0oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , z.B. Lösche alles und setzte  &lt;div&gt; app is running!&lt;/div&gt; ein.">
+    <meta itemprop="description" content="Angular TDD WorkshopDiese Angular-TDD-Workshop ist eine Variante von diesem WorkshopWir verwenden hier aber jasmine statt JestSetupgit clone https://github.com/bodote/tdd-angular.gitgit checkout v1.0oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , lösche alles und setzte">
     <meta itemprop="datePublished" content="2020-11-08T00:00:00+00:00">
     
 
@@ -341,13 +341,24 @@ Wir verwenden hier aber <code class="language-plaintext highlighter-rouge">jasmi
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/bodote/tdd-angular.git
 git checkout v1.0
 </code></pre></div></div>
-<p>oder verwende <code class="language-plaintext highlighter-rouge">ng new tdd-angular</code> und reduziere dann <code class="language-plaintext highlighter-rouge">src/app/app.component.html</code> auf ein Minimum , z.B. Lösche alles und setzte  <code class="language-plaintext highlighter-rouge">&lt;div&gt; app is running!&lt;/div&gt;</code> ein.</p>
+<p>oder verwende <code class="language-plaintext highlighter-rouge">ng new tdd-angular</code> und reduziere dann <code class="language-plaintext highlighter-rouge">src/app/app.component.html</code> auf ein Minimum , lösche alles und setzte</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span> 
+  <span class="nt">&lt;span&gt;</span> app is running!<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<p>ein.</p>
 
 <h2 id="aufgabe-1">Aufgabe 1</h2>
 <ul>
-  <li>füge eine Componente namens “favorite-movies” hinzu ( z.B. mit <code class="language-plaintext highlighter-rouge">ng g c ...</code>). Die Componente <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> soll später eine Headline mit dem Titel “My Favorite Movies” anzeigen.</li>
-  <li><strong>STOP</strong>: noch nicht <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> oder das Template ändern, sondern zuerst den Test schreiben!</li>
-  <li>das heißt für TDD:  schreibe <strong>zuerst</strong> den Test  in <code class="language-plaintext highlighter-rouge">favorite-movies.component.spec.ts</code> und ergänze <strong>danach</strong> das Template <code class="language-plaintext highlighter-rouge">favorite-movies.component.html</code> bis der Test grün ist.</li>
+  <li>füge eine Componente namens “favorite-movies” hinzu ( z.B. mit <code class="language-plaintext highlighter-rouge">ng g c ...</code>). Die Componente <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> soll eine Headline mit dem Titel “My Favorite Movies” anzeigen.</li>
+  <li><strong>STOP</strong>: noch nicht <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> oder das Template ändern, sondern
+    <ul>
+      <li>nur Componente  anlegen (ggf. mit <strong>leeren</strong> Methoden/Properties)</li>
+      <li>dann den Test schreiben , bzw den Test  in <code class="language-plaintext highlighter-rouge">favorite-movies.component.spec.ts</code> ergänzen!</li>
+      <li>dann Lösung implementieren; also erst jetzt das Template <code class="language-plaintext highlighter-rouge">favorite-movies.component.html</code> ändern bis der Test grün ist.</li>
+    </ul>
+  </li>
   <li>Tip: arbeite mit <code class="language-plaintext highlighter-rouge">fixture.debugElement.query(...)</code> oder <code class="language-plaintext highlighter-rouge">fixture.debugElement.queryAll(...)</code></li>
   <li><a href="https://github.com/bodote/tdd-angular/tree/v1.1">Lösung zu Aufgabe 1</a></li>
 </ul>
@@ -363,11 +374,10 @@ git checkout v1.0
 <h2 id="aufgabe-3">Aufgabe 3</h2>
 <ul>
   <li>nehmen wir an die <code class="language-plaintext highlighter-rouge">favoriteMovies</code> sollen alternativ auch durch einen <code class="language-plaintext highlighter-rouge">Service</code> asynchron bereit gestellt werden. Erzeuge den (leeren) service mit <code class="language-plaintext highlighter-rouge">ng g s favorite-movies</code>.</li>
-  <li>Die Idee ist: wenn unsere Componente in <code class="language-plaintext highlighter-rouge">favoriteMovies</code> kein String Array vorfindet, soll alterntiv der Service gerufen werden.</li>
+  <li>Die Idee ist: wenn unsere Componente bei ihrer Initialisierung in ihrer Properity <code class="language-plaintext highlighter-rouge">favoriteMovies</code> <strong>kein</strong> String Array vorfindet, nur dann soll alterntiv der Service gerufen werden.</li>
   <li>Teste ob der Service richtig von der <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> verwendet wird, (d.h. du sollst <strong>NICHT</strong> den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service “mocken” und prüfe, ob er richtig aufgerufen wurde.</li>
   <li>Tip: verwende <code class="language-plaintext highlighter-rouge">spyOn()</code></li>
-  <li>refactoriere den gesamten Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen</li>
-  <li>Zusatzfrage: kann man die Componente FavoriteMoviesComponent so bauen , dass sie automatisch <strong>entweder</strong> mit <code class="language-plaintext highlighter-rouge">@Input()</code> Decorator <strong>oder</strong> mit dem <code class="language-plaintext highlighter-rouge">Service</code> funktioniert? Wenn ja wie ?</li>
+  <li>refactoriere ggf. den Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen</li>
   <li><a href="https://github.com/bodote/tdd-angular/tree/v1.3">Lösung zu Aufgabe 3</a></li>
 </ul>
 
