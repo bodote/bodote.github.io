@@ -360,14 +360,29 @@ git checkout v1.0
     </ul>
   </li>
   <li>Tip: arbeite mit <code class="language-plaintext highlighter-rouge">fixture.debugElement.query(...)</code> oder <code class="language-plaintext highlighter-rouge">fixture.debugElement.queryAll(...)</code></li>
-  <li><a href="https://youtu.be/p4kpUTBmYq0">Video hierzu</a></li>
+</ul>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/p4kpUTBmYq0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<p><a href="https://youtu.be/p4kpUTBmYq0">Link zum Video</a></p>
+<ul>
   <li><a href="https://github.com/bodote/tdd-angular/tree/v1.1">Lösung zu Aufgabe 1</a></li>
 </ul>
 
 <h2 id="aufgabe-2">Aufgabe 2</h2>
 <ul>
   <li>Wir planen, dass die <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code>  eine Liste der Movies als property vom typ <code class="language-plaintext highlighter-rouge">sting[]</code> bekommen soll. Diese Property soll später mal von außerhalb der  <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> (z.B. mit einem <code class="language-plaintext highlighter-rouge">@Input()</code>-Decorator) gesetzt werden können. Teste, dass diese Liste deiner Liebligsfilme, wenn sie nicht <code class="language-plaintext highlighter-rouge">undefined</code> ist, auch im HTML unterhalb der Headline aus Aufgabe 1 angezeigt wird.</li>
-  <li><strong>STOP</strong>: noch nicht <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> oder das Template ändern, sondern die Component nur erzeugen, die nötige Property (<strong>OHNE</strong> Initialisierung!) hinzufügen,  und dann den Test schreiben!</li>
+  <li><strong>STOP</strong>: noch nicht die Lösung in <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> oder im  Template einbauen, denke nicht mal darüber nach! Sondern:
+    <ul>
+      <li>überlege welche Klasse(n), Methode(n), oder Properties (<strong>OHNE</strong> Initialisierung!), brauchst du für den Test?</li>
+      <li>dann den Test schreiben!</li>
+      <li>dann die Implementierung bis Test grün ist</li>
+    </ul>
+  </li>
   <li>Tip: wenn  <code class="language-plaintext highlighter-rouge">describe</code> oder <code class="language-plaintext highlighter-rouge">it</code> umbenannt wird in  <code class="language-plaintext highlighter-rouge">fdescribe</code> oder <code class="language-plaintext highlighter-rouge">fit</code>  werden  <strong>NUR</strong> diese ausgeführt und vor allem sieht man auch die gerenderte Ausgabe des jeweiligen TestBeds in Browser!</li>
   <li><a href="https://github.com/bodote/tdd-angular/tree/v1.2">Lösung zu Aufgabe 2</a> (Anmerkung zu Lösung: <code class="language-plaintext highlighter-rouge">@Input()</code> vor der <code class="language-plaintext highlighter-rouge">favoriteMovies</code> property der Klasse <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht)</li>
 </ul>
