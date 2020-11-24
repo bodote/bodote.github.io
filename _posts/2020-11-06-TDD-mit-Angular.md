@@ -38,7 +38,10 @@ ein.
 
 ## Aufgabe 2
 * Wir planen, dass die `FavoriteMoviesComponent`  eine Liste der Movies als property vom typ `sting[]` bekommen soll. Diese Property soll später mal von außerhalb der  `FavoriteMoviesComponent` (z.B. mit einem `@Input()`-Decorator) gesetzt werden können. Teste, dass diese Liste deiner Liebligsfilme, wenn sie nicht `undefined` ist, auch im HTML unterhalb der Headline aus Aufgabe 1 angezeigt wird.
-* **STOP**: noch nicht `FavoriteMoviesComponent` oder das Template ändern, sondern die Component nur erzeugen, die nötige Property (**OHNE** Initialisierung!) hinzufügen,  und dann den Test schreiben!
+* **STOP**: noch nicht die Lösung in `FavoriteMoviesComponent` oder im  Template einbauen, denke nicht mal darüber nach! Sondern:
+  * überlege welche Klasse(n), Methode(n), oder Properties (**OHNE** Initialisierung!), brauchst du für den Test?
+  * dann den Test schreiben!
+  * dann die Implementierung bis Test grün ist
 * Tip: wenn  `describe` oder `it` umbenannt wird in  `fdescribe` oder `fit`  werden  **NUR** diese ausgeführt und vor allem sieht man auch die gerenderte Ausgabe des jeweiligen TestBeds in Browser!
 * [Lösung zu Aufgabe 2](https://github.com/bodote/tdd-angular/tree/v1.2) (Anmerkung zu Lösung: `@Input()` vor der `favoriteMovies` property der Klasse `FavoriteMoviesComponent` ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht) 
 
