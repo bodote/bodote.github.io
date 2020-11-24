@@ -33,11 +33,12 @@ ein.
   * dann den Test schreiben , bzw den Test  in `favorite-movies.component.spec.ts` ergänzen!
   * dann Lösung implementieren; also erst jetzt das Template `favorite-movies.component.html` ändern bis der Test grün ist.
 * Tip: arbeite mit `fixture.debugElement.query(...)` oder `fixture.debugElement.queryAll(...)`
+* [Video hierzu](https://youtu.be/p4kpUTBmYq0)
 * [Lösung zu Aufgabe 1](https://github.com/bodote/tdd-angular/tree/v1.1)
 
 ## Aufgabe 2
 * Wir planen, dass die `FavoriteMoviesComponent`  eine Liste der Movies als property vom typ `sting[]` bekommen soll. Diese Property soll später mal von außerhalb der  `FavoriteMoviesComponent` (z.B. mit einem `@Input()`-Decorator) gesetzt werden können. Teste, dass diese Liste deiner Liebligsfilme, wenn sie nicht `undefined` ist, auch im HTML unterhalb der Headline aus Aufgabe 1 angezeigt wird.
-* **STOP**: noch nicht `FavoriteMoviesComponent` oder das Template ändern, sondern zuerst den Test schreiben!
+* **STOP**: noch nicht `FavoriteMoviesComponent` oder das Template ändern, sondern die Component nur erzeugen, die nötige Property (**OHNE** Initialisierung!) hinzufügen,  und dann den Test schreiben!
 * Tip: wenn  `describe` oder `it` umbenannt wird in  `fdescribe` oder `fit`  werden  **NUR** diese ausgeführt und vor allem sieht man auch die gerenderte Ausgabe des jeweiligen TestBeds in Browser!
 * [Lösung zu Aufgabe 2](https://github.com/bodote/tdd-angular/tree/v1.2) (Anmerkung zu Lösung: `@Input()` vor der `favoriteMovies` property der Klasse `FavoriteMoviesComponent` ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht) 
 
