@@ -33,8 +33,10 @@ ein.
   * dann den Test schreiben , bzw den Test  in `favorite-movies.component.spec.ts` ergänzen!
   * dann Lösung implementieren; also erst jetzt das Template `favorite-movies.component.html` ändern bis der Test grün ist.
 * Tip: arbeite mit `fixture.debugElement.query(...)` oder `fixture.debugElement.queryAll(...)`
-{% include video id="p4kpUTBmYq0" provider="youtube" %} [Link zum Video](https://youtu.be/p4kpUTBmYq0)
-* [Lösung zu Aufgabe 1](https://github.com/bodote/tdd-angular/tree/v1.1)
+## Lösung zu Aufgabe 1
+{% include video id="p4kpUTBmYq0" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/p4kpUTBmYq0)
+* [Lösung im Git Repo](https://github.com/bodote/tdd-angular/tree/v1.1)
 
 
 
@@ -50,7 +52,8 @@ ein.
 ## Aufgabe 3
 * nehmen wir an die `favoriteMovies` sollen alternativ auch durch einen `Service` asynchron bereit gestellt werden. Erzeuge den (leeren) service mit `ng g s favorite-movies`. 
 * Die Idee ist: wenn unsere Componente bei ihrer Initialisierung in ihrer Properity `favoriteMovies` **kein** String Array vorfindet, nur dann soll alterntiv der Service gerufen werden.
-* Teste ob der Service richtig von der `FavoriteMoviesComponent` verwendet wird, (d.h. du sollst **NICHT** den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service "mocken" und prüfe, ob er richtig aufgerufen wurde. 
+* Teste, ob der Service richtig von der `FavoriteMoviesComponent` verwendet wird, (d.h. du sollst **NICHT** den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service "mocken" und prüfe, ob er richtig aufgerufen und verwendet wird.
+* Teste, ob unsere `FavoriteMoviesComponent` die aus dem Observable empfangen Daten sich auch "merkt"! 
 * Tip: verwende `spyOn()`
 * refactoriere ggf. den Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen
 * [Lösung zu Aufgabe 3](https://github.com/bodote/tdd-angular/tree/v1.3)
