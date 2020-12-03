@@ -299,7 +299,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          5 minute read
         
       </span>
     
@@ -318,11 +318,28 @@
   <li><a href="#angular-tdd-workshop">Angular TDD Workshop</a>
     <ul>
       <li><a href="#setup">Setup</a></li>
-      <li><a href="#aufgabe-1">Aufgabe 1</a></li>
-      <li><a href="#lösung-zu-aufgabe-1">Lösung zu Aufgabe 1</a></li>
-      <li><a href="#aufgabe-2">Aufgabe 2</a></li>
-      <li><a href="#aufgabe-3">Aufgabe 3</a></li>
-      <li><a href="#aufgabe-4">Aufgabe 4</a></li>
+      <li><a href="#aufgabe-1">Aufgabe 1</a>
+        <ul>
+          <li><a href="#lösung-zu-aufgabe-1">Lösung zu Aufgabe 1</a></li>
+        </ul>
+      </li>
+      <li><a href="#aufgabe-2">Aufgabe 2</a>
+        <ul>
+          <li><a href="#lösung-zu-aufgabe-2">Lösung zu Aufgabe 2</a></li>
+        </ul>
+      </li>
+      <li><a href="#aufgabe-3">Aufgabe 3</a>
+        <ul>
+          <li><a href="#lösung-zu-aufgabe-3">Lösung zu Aufgabe 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#aufgabe-4">Aufgabe 4</a>
+        <ul>
+          <li><a href="#lösung-zu-aufgabe-4">Lösung zu Aufgabe 4</a></li>
+          <li><a href="#bonusaufgabe">Bonusaufgabe</a></li>
+          <li><a href="#lösung-zu-bonus-aufgabe-4">Lösung zu Bonus-Aufgabe 4</a></li>
+        </ul>
+      </li>
       <li><a href="#aufgabe-5">Aufgabe 5</a></li>
       <li><a href="#aufgabe-6">Aufgabe 6</a></li>
       <li><a href="#aufgabe-7">Aufgabe 7</a></li>
@@ -361,7 +378,7 @@ git checkout v1.0
     </ul>
   </li>
   <li>Tip: arbeite mit <code class="language-plaintext highlighter-rouge">fixture.debugElement.query(...)</code> oder <code class="language-plaintext highlighter-rouge">fixture.debugElement.queryAll(...)</code>
-    <h2 id="lösung-zu-aufgabe-1">Lösung zu Aufgabe 1</h2>
+    <h3 id="lösung-zu-aufgabe-1">Lösung zu Aufgabe 1</h3>
   </li>
 </ul>
 
@@ -386,18 +403,43 @@ git checkout v1.0
       <li>dann die Implementierung bis Test grün ist</li>
     </ul>
   </li>
-  <li>Tip: wenn  <code class="language-plaintext highlighter-rouge">describe</code> oder <code class="language-plaintext highlighter-rouge">it</code> umbenannt wird in  <code class="language-plaintext highlighter-rouge">fdescribe</code> oder <code class="language-plaintext highlighter-rouge">fit</code>  werden  <strong>NUR</strong> diese ausgeführt und vor allem sieht man auch die gerenderte Ausgabe des jeweiligen TestBeds in Browser!</li>
-  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.2">Lösung zu Aufgabe 2</a> (Anmerkung zu Lösung: <code class="language-plaintext highlighter-rouge">@Input()</code> vor der <code class="language-plaintext highlighter-rouge">favoriteMovies</code> property der Klasse <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht)</li>
+  <li>Tip: wenn  <code class="language-plaintext highlighter-rouge">describe</code> oder <code class="language-plaintext highlighter-rouge">it</code> umbenannt wird in  <code class="language-plaintext highlighter-rouge">fdescribe</code> oder <code class="language-plaintext highlighter-rouge">fit</code>  werden  <strong>NUR</strong> diese ausgeführt und vor allem sieht man auch die gerenderte Ausgabe des jeweiligen TestBeds in Browser!
+    <h3 id="lösung-zu-aufgabe-2">Lösung zu Aufgabe 2</h3>
+  </li>
+</ul>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/pozhRdiXkI0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<ul>
+  <li><a href="https://youtu.be/pozhRdiXkI0">Link zum Video</a></li>
+  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.2">Lösung im Git Repo</a> (Anmerkung zu Lösung: <code class="language-plaintext highlighter-rouge">@Input()</code> vor der <code class="language-plaintext highlighter-rouge">favoriteMovies</code> property der Klasse <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht)</li>
 </ul>
 
 <h2 id="aufgabe-3">Aufgabe 3</h2>
 <ul>
   <li>nehmen wir an die <code class="language-plaintext highlighter-rouge">favoriteMovies</code> sollen alternativ auch durch einen <code class="language-plaintext highlighter-rouge">Service</code> asynchron bereit gestellt werden. Erzeuge den (leeren) service mit <code class="language-plaintext highlighter-rouge">ng g s favorite-movies</code>.</li>
   <li>Die Idee ist: wenn unsere Componente bei ihrer Initialisierung in ihrer Properity <code class="language-plaintext highlighter-rouge">favoriteMovies</code> <strong>kein</strong> String Array vorfindet, nur dann soll alterntiv der Service gerufen werden.</li>
-  <li>Teste ob der Service richtig von der <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> verwendet wird, (d.h. du sollst <strong>NICHT</strong> den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service “mocken” und prüfe, ob er richtig aufgerufen wurde.</li>
+  <li>Teste, ob der Service richtig von der <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> verwendet wird, (d.h. du sollst <strong>NICHT</strong> den Service selbst testen, nur seine korrekte Verwendung!). Dazu den Service “mocken” und prüfe, ob er richtig aufgerufen und verwendet wird.</li>
+  <li>Teste, ob unsere <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> die aus dem Observable empfangen Daten sich auch “merkt”!</li>
   <li>Tip: verwende <code class="language-plaintext highlighter-rouge">spyOn()</code></li>
-  <li>refactoriere ggf. den Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen</li>
-  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.3">Lösung zu Aufgabe 3</a></li>
+  <li>refactoriere ggf. den Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen
+    <h3 id="lösung-zu-aufgabe-3">Lösung zu Aufgabe 3</h3>
+  </li>
+</ul>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/s87D_oSc1-o" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<ul>
+  <li><a href="https://youtu.be/s87D_oSc1-o">Link zum Video</a></li>
+  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.3">Lösung im Git Repo</a></li>
 </ul>
 
 <h2 id="aufgabe-4">Aufgabe 4</h2>
@@ -407,11 +449,48 @@ Wenn ja , dann</p>
   <li>ändere den Code, sodass du in <code class="language-plaintext highlighter-rouge">ngOnInit()</code> nur das <code class="language-plaintext highlighter-rouge">Observable</code> selbst holst und es als solches in <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> als property speicherst (Verwende auch die übliche Schreibweise der Property mit dem “$” am Ende).</li>
   <li>Laufen die Tests noch alle ?</li>
   <li>Eigentlich müsste jetzt zwar der der neue Test auf Aufgabe 3 noch grün sein, aber der Test aus Aufgabe 2 funktioniert nicht mehr, Jedenfalls , wenn du in der <code class="language-plaintext highlighter-rouge">ngOnInit()</code> methode direkt auf das <code class="language-plaintext highlighter-rouge">Observable</code> subscribed hattest und dir nur das Ergebniss <code class="language-plaintext highlighter-rouge">&lt;string[]&gt;</code> der Movies gemerkt hattes.</li>
-  <li>Du musst also jetzt noch den Test aus Aufgabe 2 Anpassen, und vor allem dein Template ändern, damit es direkt das <code class="language-plaintext highlighter-rouge">Observable&lt;string[]&gt;</code>  statt dem <code class="language-plaintext highlighter-rouge">&lt;string[]&gt;</code> verwendet. <strong>TIP</strong>: verwende eine sogenannte “async pipe” mit <code class="language-plaintext highlighter-rouge">*ngIf = "myobservable$ | async as myArray"</code></li>
-  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.4">Lösung zu Aufgabe 4</a>
-    <h2 id="aufgabe-5">Aufgabe 5</h2>
-    <p>Was ist aber, wenn das <code class="language-plaintext highlighter-rouge">Observable</code>, von dem wir die ‘Favorite Movies’ bekommen einen Fehler wirft ?</p>
+  <li>Du musst also jetzt noch den Test aus Aufgabe 2 Anpassen, und vor allem dein Template ändern, damit es direkt das <code class="language-plaintext highlighter-rouge">Observable&lt;string[]&gt;</code>  statt dem <code class="language-plaintext highlighter-rouge">&lt;string[]&gt;</code> verwendet. <strong>TIP</strong>: verwende eine sogenannte “async pipe” mit <code class="language-plaintext highlighter-rouge">*ngIf = "myobservable$ | async as myArray"</code>
+    <h3 id="lösung-zu-aufgabe-4">Lösung zu Aufgabe 4</h3>
   </li>
+</ul>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/bnHbEJGnkMk" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<ul>
+  <li><a href="https://youtu.be/bnHbEJGnkMk">Link zum Video</a></li>
+  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.4">Lösung im Git Repo </a>
+    <h3 id="bonusaufgabe">Bonusaufgabe</h3>
+  </li>
+  <li>was passiert, wenn du im gerade erstellten Unittest hier:
+    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">favMovServSpy</span> <span class="o">=</span> <span class="nx">spyOn</span><span class="p">(</span><span class="nx">favoriteMoviesService</span><span class="p">,</span> <span class="dl">'</span><span class="s1">getFavoriteMovies</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">and</span><span class="p">.</span><span class="nx">returnValue</span><span class="p">(</span><span class="k">of</span><span class="p">(</span><span class="nx">favoriteTestMovies</span><span class="p">))</span>
+</code></pre></div>    </div>
+    <p>eine Verzögerung mit <code class="language-plaintext highlighter-rouge">.pipe(delay(100))</code>in das Test-Observables einbaust ? :</p>
+    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">favMovServSpy</span> <span class="o">=</span> <span class="nx">spyOn</span><span class="p">(</span><span class="nx">favoriteMoviesService</span><span class="p">,</span> <span class="dl">'</span><span class="s1">getFavoriteMovies</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">and</span><span class="p">.</span><span class="nx">returnValue</span><span class="p">(</span><span class="k">of</span><span class="p">(</span><span class="nx">favoriteTestMovies</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">)))</span>
+</code></pre></div>    </div>
+    <p>Hinweis : Ergänze oben im *.spec.ts:  <code class="language-plaintext highlighter-rouge">import { delay } from 'rxjs/operators';</code></p>
+    <h3 id="lösung-zu-bonus-aufgabe-4">Lösung zu Bonus-Aufgabe 4</h3>
+  </li>
+</ul>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/UiZbXSXkPR0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<ul>
+  <li><a href="https://youtu.be/UiZbXSXkPR0">Link zum Video</a></li>
+</ul>
+
+<h2 id="aufgabe-5">Aufgabe 5</h2>
+<p>Was ist aber, wenn das <code class="language-plaintext highlighter-rouge">Observable</code>, von dem wir die ‘Favorite Movies’ bekommen einen Fehler wirft ?</p>
+<ul>
   <li>Wie kannst du das im Test “simulieren”</li>
   <li>und wie kannst du im Test abtesten ob deine <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> den Fehler korrekt verarbeitet und auch in der View richtig anzeigt ?</li>
   <li><a href="https://github.com/bodote/tdd-angular/tree/v1.5.1">Lösung zu Aufgabe 5 Variante 1</a></li>

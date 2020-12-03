@@ -71,7 +71,26 @@ Wenn ja , dann
 * Laufen die Tests noch alle ?
 * Eigentlich müsste jetzt zwar der der neue Test auf Aufgabe 3 noch grün sein, aber der Test aus Aufgabe 2 funktioniert nicht mehr, Jedenfalls , wenn du in der `ngOnInit()` methode direkt auf das `Observable` subscribed hattest und dir nur das Ergebniss `<string[]>` der Movies gemerkt hattes. 
 * Du musst also jetzt noch den Test aus Aufgabe 2 Anpassen, und vor allem dein Template ändern, damit es direkt das `Observable<string[]>`  statt dem `<string[]>` verwendet. **TIP**: verwende eine sogenannte "async pipe" mit `*ngIf = "myobservable$ | async as myArray"`
-* [Lösung zu Aufgabe 4](https://github.com/bodote/tdd-angular/tree/v1.4)
+### Lösung zu Aufgabe 4
+{% include video id="bnHbEJGnkMk" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/bnHbEJGnkMk)
+* [Lösung im Git Repo ](https://github.com/bodote/tdd-angular/tree/v1.4)
+### Bonusaufgabe
+* was passiert, wenn du im gerade erstellten Unittest hier:
+```typescript
+const favMovServSpy = spyOn(favoriteMoviesService, 'getFavoriteMovies')
+        .and.returnValue(of(favoriteTestMovies))
+```
+eine Verzögerung mit `.pipe(delay(100))`in das Test-Observables einbaust ? :
+```typescript
+const favMovServSpy = spyOn(favoriteMoviesService, 'getFavoriteMovies')
+        .and.returnValue(of(favoriteTestMovies).pipe(delay(100)))
+```
+Hinweis : Ergänze oben im *.spec.ts:  `import { delay } from 'rxjs/operators';`
+### Lösung zu Bonus-Aufgabe 4
+{% include video id="UiZbXSXkPR0" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/UiZbXSXkPR0)
+
 ## Aufgabe 5
 Was ist aber, wenn das `Observable`, von dem wir die 'Favorite Movies' bekommen einen Fehler wirft ?
 * Wie kannst du das im Test "simulieren" 
