@@ -33,7 +33,7 @@ ein.
   * dann den Test schreiben , bzw den Test  in `favorite-movies.component.spec.ts` ergänzen!
   * dann Lösung implementieren; also erst jetzt das Template `favorite-movies.component.html` ändern bis der Test grün ist.
 * Tip: arbeite mit `fixture.debugElement.query(...)` oder `fixture.debugElement.queryAll(...)`
-## Lösung zu Aufgabe 1
+### Lösung zu Aufgabe 1
 {% include video id="p4kpUTBmYq0" provider="youtube" %} 
 * [Link zum Video](https://youtu.be/p4kpUTBmYq0)
 * [Lösung im Git Repo](https://github.com/bodote/tdd-angular/tree/v1.1)
@@ -47,7 +47,10 @@ ein.
   * dann den Test schreiben!
   * dann die Implementierung bis Test grün ist
 * Tip: wenn  `describe` oder `it` umbenannt wird in  `fdescribe` oder `fit`  werden  **NUR** diese ausgeführt und vor allem sieht man auch die gerenderte Ausgabe des jeweiligen TestBeds in Browser!
-* [Lösung zu Aufgabe 2](https://github.com/bodote/tdd-angular/tree/v1.2) (Anmerkung zu Lösung: `@Input()` vor der `favoriteMovies` property der Klasse `FavoriteMoviesComponent` ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht) 
+### Lösung zu Aufgabe 2
+{% include video id="pozhRdiXkI0" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/pozhRdiXkI0)
+* [Lösung im Git Repo](https://github.com/bodote/tdd-angular/tree/v1.2) (Anmerkung zu Lösung: `@Input()` vor der `favoriteMovies` property der Klasse `FavoriteMoviesComponent` ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht) 
 
 ## Aufgabe 3
 * nehmen wir an die `favoriteMovies` sollen alternativ auch durch einen `Service` asynchron bereit gestellt werden. Erzeuge den (leeren) service mit `ng g s favorite-movies`. 
@@ -56,7 +59,10 @@ ein.
 * Teste, ob unsere `FavoriteMoviesComponent` die aus dem Observable empfangen Daten sich auch "merkt"! 
 * Tip: verwende `spyOn()`
 * refactoriere ggf. den Code, sodass auch die Test aus den ersten 2 Aufgaben wieder laufen
-* [Lösung zu Aufgabe 3](https://github.com/bodote/tdd-angular/tree/v1.3)
+### Lösung zu Aufgabe 3
+{% include video id="s87D_oSc1-o" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/s87D_oSc1-o)
+* [Lösung im Git Repo](https://github.com/bodote/tdd-angular/tree/v1.3)
 
 ## Aufgabe 4
 Vermutlich hast du in Aufgabe 3 in der `ngOnInit()` methode auf das `Observable` , welches du von `FavoriteMovieService` bekommst direkt subscribed, richtig ?
