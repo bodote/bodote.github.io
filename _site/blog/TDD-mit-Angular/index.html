@@ -489,12 +489,14 @@ Wenn ja , dann</p>
 </ul>
 
 <h2 id="aufgabe-5">Aufgabe 5</h2>
-<p>Was ist aber, wenn das <code class="language-plaintext highlighter-rouge">Observable</code>, von dem wir die ‘Favorite Movies’ bekommen einen Fehler wirft ?</p>
+<p>Was ist aber, wenn das <code class="language-plaintext highlighter-rouge">Observable</code> aus unserem <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code>, das uns die ‘Favorite Movies’ liefern soll, einen Fehler wirft ?
+In diesem Fall soll in der Browser-View nach der Überschrift an Stelle der Liste der Filme eine Fehlermeldung angezeigt werden. Die Fehlermeldung soll im HTML mit der CSS-Klasse <code class="language-plaintext highlighter-rouge">error</code> versehen werden (z.B. weil unser Stylesheet einen Text mit dieser <code class="language-plaintext highlighter-rouge">error</code>-Klasse rot anzeigen wird ).</p>
 <ul>
-  <li>Wie kannst du das im Test “simulieren”</li>
-  <li>und wie kannst du im Test abtesten ob deine <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> den Fehler korrekt verarbeitet und auch in der View richtig anzeigt ?</li>
-  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.5.1">Lösung zu Aufgabe 5 Variante 1</a></li>
-  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.5.2">Lösung zu Aufgabe 5 Variante 2</a></li>
+  <li>Wie kannst du das im Test “simulieren” ? Hinweis : verwende wieder einen <code class="language-plaintext highlighter-rouge">spy</code></li>
+  <li>und wie kannst du im Test abtesten ob deine <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> den Fehler korrekt verarbeitet und auch in der Browseransicht richtig anzeigt ?</li>
+  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.5.1">Einfache Lösung zu Aufgabe 5</a></li>
+  <li>Bonusfrage: Der Messagetext der Observerfehlermeldung soll nicht direkt angezeigt werden, sondern eine andere, für den User verständlichere Meldung.</li>
+  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.5.2">Bessere Lösung zu Aufgabe 5</a></li>
 </ul>
 
 <h2 id="aufgabe-6">Aufgabe 6</h2>

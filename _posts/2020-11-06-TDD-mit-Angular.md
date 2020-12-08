@@ -92,11 +92,13 @@ Hinweis : Ergänze oben im *.spec.ts:  `import { delay } from 'rxjs/operators';`
 * [Link zum Video](https://youtu.be/UiZbXSXkPR0)
 
 ## Aufgabe 5
-Was ist aber, wenn das `Observable`, von dem wir die 'Favorite Movies' bekommen einen Fehler wirft ?
-* Wie kannst du das im Test "simulieren" 
-* und wie kannst du im Test abtesten ob deine `FavoriteMoviesComponent` den Fehler korrekt verarbeitet und auch in der View richtig anzeigt ?
-* [Lösung zu Aufgabe 5 Variante 1](https://github.com/bodote/tdd-angular/tree/v1.5.1)
-* [Lösung zu Aufgabe 5 Variante 2](https://github.com/bodote/tdd-angular/tree/v1.5.2)
+Was ist aber, wenn das `Observable` aus unserem `FavoriteMovieService`, das uns die 'Favorite Movies' liefern soll, einen Fehler wirft ?
+In diesem Fall soll in der Browser-View nach der Überschrift an Stelle der Liste der Filme eine Fehlermeldung angezeigt werden. Die Fehlermeldung soll im HTML mit der CSS-Klasse `error` versehen werden (z.B. weil unser Stylesheet einen Text mit dieser `error`-Klasse rot anzeigen wird ).
+* Wie kannst du das im Test "simulieren" ? Hinweis : verwende wieder einen `spy`
+* und wie kannst du im Test abtesten ob deine `FavoriteMoviesComponent` den Fehler korrekt verarbeitet und auch in der Browseransicht richtig anzeigt ?
+* [Einfache Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.1) 
+* Bonusfrage: Der Messagetext der Observerfehlermeldung soll nicht direkt angezeigt werden, sondern eine andere, für den User verständlichere Meldung.
+* [Bessere Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.2)
 
 ## Aufgabe 6
 Wir testen hier den `FavoriteMovieService`. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welche man in `jasmine` Tests zusammen mit dem `Testbed` verwenden kann, in dem deinem Service statt dem `HttpClient` ein spezieller Test-`HttpClient` untergeschoven wird. Damit kann man Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen ob und wie der `HttpClient` von deinem Service benutzt wurde.
