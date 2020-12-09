@@ -127,3 +127,7 @@ Was , wenn die ersten 2 Versuche fehlschlagen, der dritte aber erfolgreich ist? 
 * refactoriere die Test um unnötige Codeduplizierungen zu beseitigen.
 
 
+## Feedback und Kommentare:
+Bitte gib mir dein Feedback! Das hilft uns sehr das Tutorial und die Videos noch besser zu machen.
+
+[Hier gehts zu Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
