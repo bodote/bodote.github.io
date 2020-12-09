@@ -96,6 +96,10 @@ Was ist aber, wenn das `Observable` aus unserem `FavoriteMovieService`, das uns 
 In diesem Fall soll in der Browser-View nach der Überschrift an Stelle der Liste der Filme eine Fehlermeldung angezeigt werden. Die Fehlermeldung soll im HTML mit der CSS-Klasse `error` versehen werden (z.B. weil unser Stylesheet einen Text mit dieser `error`-Klasse rot anzeigen wird ).
 * Wie kannst du das im Test "simulieren" ? Hinweis : verwende wieder einen `spy`
 * und wie kannst du im Test abtesten ob deine `FavoriteMoviesComponent` den Fehler korrekt verarbeitet und auch in der Browseransicht richtig anzeigt ?
+### Lösung zu Aufgabe 5
+{% include video id="zsSAzOFgOoA" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/zsSAzOFgOoA)
+
 * [Einfache Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.1) 
 * Bonusfrage: Der Messagetext der Observerfehlermeldung soll nicht direkt angezeigt werden, sondern eine andere, für den User verständlichere Meldung.
 * [Bessere Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.2)
