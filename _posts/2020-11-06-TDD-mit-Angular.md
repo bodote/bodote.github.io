@@ -37,6 +37,7 @@ ein.
 {% include video id="p4kpUTBmYq0" provider="youtube" %} 
 * [Link zum Video](https://youtu.be/p4kpUTBmYq0)
 * [Lösung im Git Repo](https://github.com/bodote/tdd-angular/tree/v1.1)
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 
 
@@ -51,6 +52,7 @@ ein.
 {% include video id="pozhRdiXkI0" provider="youtube" %} 
 * [Link zum Video](https://youtu.be/pozhRdiXkI0)
 * [Lösung im Git Repo](https://github.com/bodote/tdd-angular/tree/v1.2) (Anmerkung zu Lösung: `@Input()` vor der `favoriteMovies` property der Klasse `FavoriteMoviesComponent` ist für den Unittest unnötig, geht auch ohne, stört aber auch nicht) 
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 3
 * nehmen wir an die `favoriteMovies` sollen alternativ auch durch einen `Service` asynchron bereit gestellt werden. Erzeuge den (leeren) service mit `ng g s favorite-movies`. 
@@ -63,6 +65,7 @@ ein.
 {% include video id="s87D_oSc1-o" provider="youtube" %} 
 * [Link zum Video](https://youtu.be/s87D_oSc1-o)
 * [Lösung im Git Repo](https://github.com/bodote/tdd-angular/tree/v1.3)
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 4
 Vermutlich hast du in Aufgabe 3 in der `ngOnInit()` methode auf das `Observable` , welches du von `FavoriteMovieService` bekommst direkt subscribed, richtig ?
@@ -90,6 +93,7 @@ Hinweis : Ergänze oben im *.spec.ts:  `import { delay } from 'rxjs/operators';`
 ### Lösung zu Bonus-Aufgabe 4
 {% include video id="UiZbXSXkPR0" provider="youtube" %} 
 * [Link zum Video](https://youtu.be/UiZbXSXkPR0)
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 5
 Was ist aber, wenn das `Observable` aus unserem `FavoriteMovieService`, das uns die 'Favorite Movies' liefern soll, einen Fehler wirft ?
@@ -103,6 +107,7 @@ In diesem Fall soll in der Browser-View nach der Überschrift an Stelle der List
 * [Einfache Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.1) 
 werden, sondern eine andere, für den User verständlichere Meldung.
 * [Bessere Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.2)
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 6
 Wir testen hier den `FavoriteMovieService`. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welche man in `jasmine` Tests zusammen mit dem `Testbed` verwenden kann, in dem deinem Service statt dem `HttpClient` ein spezieller Test-`HttpClient` untergeschoven wird. Damit kann man Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen ob und wie der `HttpClient` von deinem Service benutzt wurde.
@@ -110,6 +115,7 @@ Wir testen hier den `FavoriteMovieService`. Services sind in Angular in der Rege
 * Teste konkret ob Fehler in der `HTTP-RESPONSE` richtig von `FavoriteMoviesService` verarbeitet werden.
 * wenn dieser Test "grün" ist , dann teste wieder **alle bisherigen Tests**. Falls einige jetzt wieder "rot" sind , fixe diese. 
 * Tip: evtl. musst du `TestBed.configureTestingModule..` ergänzen.
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 7
 Genau betrachtet, war die Aufgabe 6 "geschenkt" weil wir eigentlich nur getestet haben ob das Angular Observable Fehler korrekt meldet, was natürlich der Fall ist. Wir haben aber an unserem `FavoriteMovieService` eigentlich gar nicht ändern müssen, um den Test "rot" zu bekommen, richtig ?
@@ -130,4 +136,4 @@ Was , wenn die ersten 2 Versuche fehlschlagen, der dritte aber erfolgreich ist? 
 ## Feedback und Kommentare:
 Bitte gib mir dein Feedback! Das hilft uns sehr das Tutorial und die Videos noch besser zu machen.
 
-[Hier gehts zu Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
+[Hier gehts zu Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions) 
