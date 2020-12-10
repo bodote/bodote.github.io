@@ -111,12 +111,28 @@ werden, sondern eine andere, für den User verständlichere Meldung.
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 6
-Wir testen hier den `FavoriteMovieService`. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welche man in `jasmine` Tests zusammen mit dem `Testbed` verwenden kann, in dem deinem Service statt dem `HttpClient` ein spezieller Test-`HttpClient` untergeschoven wird. Damit kann man Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen ob und wie der `HttpClient` von deinem Service benutzt wurde.
-* Teste ob unser `FavoriteMoviesService` die richtigen URL mit der richtigen HTTP-Methode (z.B. hier `GET`) aufruft und die dem via `HttpClientTestingModule` untergeschobene `HTTP-RESPONSE` richtig verarbeitet. 
-* Teste konkret ob Fehler in der `HTTP-RESPONSE` richtig von `FavoriteMoviesService` verarbeitet werden.
+Legen wir unsere `FavoriteMovieComponent` zur Seite und widmen uns jetzt dem `FavoriteMovieService`. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welche man in `jasmine` Tests zusammen mit dem `Testbed` verwenden kann. 
+
+### Hilfreiche Hinweise:
+*  Deinem Service wird statt dem "nomalen" `HttpClient` ein spezieller Test-`HttpClient` untergeschoven . 
+* Dieser besondere Test-Client kommt aus `HttpClientTestingModule`. 
+* Daher muss du im `*.spec.ts` das `TestBed` mit einem zusätzlichen `imports:` so ergänzen: 
+```typescript
+import {HttpClientTestingModule } from '@angular/common/http/testing';
+//...
+TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule]
+    });
+//...
+``` 
+* Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ob und wie der `HttpClient` von deinem Service benutzt wurde. Lass dir vom `TestBed` einen `HttpTestingController` geben, verwende davon `expectOne()` und dessen Return-Objekt `TestRequest`
+### Aufgabestellung:
+* Teste ob unser `FavoriteMoviesService` die richtigen URL mit der richtigen HTTP-Methode (z.B. hier `GET`) aufruft und die dem via `HttpTestingController` untergeschobene `TestRequest` richtig verarbeitet. 
+* Teste konkret ob Fehler in der 'HTTP RESPONSE' richtig von `FavoriteMoviesService` verarbeitet werden. 
 * wenn dieser Test "grün" ist , dann teste wieder **alle bisherigen Tests**. Falls einige jetzt wieder "rot" sind , fixe diese. 
 * Tip: evtl. musst du `TestBed.configureTestingModule..` ergänzen.
-* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
+
+[Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 7
 Genau betrachtet, war die Aufgabe 6 "geschenkt" weil wir eigentlich nur getestet haben ob das Angular Observable Fehler korrekt meldet, was natürlich der Fall ist. Wir haben aber an unserem `FavoriteMovieService` eigentlich gar nicht ändern müssen, um den Test "rot" zu bekommen, richtig ?

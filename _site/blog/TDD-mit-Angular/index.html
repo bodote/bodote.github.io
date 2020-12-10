@@ -299,7 +299,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 minute read
+          6 minute read
         
       </span>
     
@@ -345,7 +345,12 @@
           <li><a href="#lösung-zu-aufgabe-5">Lösung zu Aufgabe 5</a></li>
         </ul>
       </li>
-      <li><a href="#aufgabe-6">Aufgabe 6</a></li>
+      <li><a href="#aufgabe-6">Aufgabe 6</a>
+        <ul>
+          <li><a href="#hilfreiche-hinweise">Hilfreiche Hinweise:</a></li>
+          <li><a href="#aufgabestellung">Aufgabestellung:</a></li>
+        </ul>
+      </li>
       <li><a href="#aufgabe-7">Aufgabe 7</a></li>
       <li><a href="#aufgabe-8">Aufgabe 8</a></li>
       <li><a href="#aufgabe-9">Aufgabe 9</a></li>
@@ -524,14 +529,31 @@ werden, sondern eine andere, für den User verständlichere Meldung.</li>
 </ul>
 
 <h2 id="aufgabe-6">Aufgabe 6</h2>
-<p>Wir testen hier den <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code>. Services sind in Angular in der Regel mit dem <code class="language-plaintext highlighter-rouge">HttpClientModule</code> und dessen <code class="language-plaintext highlighter-rouge">HttpClient</code> implementiert. Passend zu <code class="language-plaintext highlighter-rouge">HttpClientModule</code> gibt es ein <code class="language-plaintext highlighter-rouge">HttpClientTestingModule</code> welche man in <code class="language-plaintext highlighter-rouge">jasmine</code> Tests zusammen mit dem <code class="language-plaintext highlighter-rouge">Testbed</code> verwenden kann, in dem deinem Service statt dem <code class="language-plaintext highlighter-rouge">HttpClient</code> ein spezieller Test-<code class="language-plaintext highlighter-rouge">HttpClient</code> untergeschoven wird. Damit kann man Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen ob und wie der <code class="language-plaintext highlighter-rouge">HttpClient</code> von deinem Service benutzt wurde.</p>
+<p>Legen wir unsere <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> zur Seite und widmen uns jetzt dem <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code>. Services sind in Angular in der Regel mit dem <code class="language-plaintext highlighter-rouge">HttpClientModule</code> und dessen <code class="language-plaintext highlighter-rouge">HttpClient</code> implementiert. Passend zu <code class="language-plaintext highlighter-rouge">HttpClientModule</code> gibt es ein <code class="language-plaintext highlighter-rouge">HttpClientTestingModule</code> welche man in <code class="language-plaintext highlighter-rouge">jasmine</code> Tests zusammen mit dem <code class="language-plaintext highlighter-rouge">Testbed</code> verwenden kann.</p>
+
+<h3 id="hilfreiche-hinweise">Hilfreiche Hinweise:</h3>
 <ul>
-  <li>Teste ob unser <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> die richtigen URL mit der richtigen HTTP-Methode (z.B. hier <code class="language-plaintext highlighter-rouge">GET</code>) aufruft und die dem via <code class="language-plaintext highlighter-rouge">HttpClientTestingModule</code> untergeschobene <code class="language-plaintext highlighter-rouge">HTTP-RESPONSE</code> richtig verarbeitet.</li>
-  <li>Teste konkret ob Fehler in der <code class="language-plaintext highlighter-rouge">HTTP-RESPONSE</code> richtig von <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> verarbeitet werden.</li>
+  <li>Deinem Service wird statt dem “nomalen” <code class="language-plaintext highlighter-rouge">HttpClient</code> ein spezieller Test-<code class="language-plaintext highlighter-rouge">HttpClient</code> untergeschoven .</li>
+  <li>Dieser besondere Test-Client kommt aus <code class="language-plaintext highlighter-rouge">HttpClientTestingModule</code>.</li>
+  <li>Daher muss du im <code class="language-plaintext highlighter-rouge">*.spec.ts</code> das <code class="language-plaintext highlighter-rouge">TestBed</code> mit einem zusätzlichen <code class="language-plaintext highlighter-rouge">imports:</code> so ergänzen:
+    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">HttpClientTestingModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http/testing</span><span class="dl">'</span><span class="p">;</span>
+<span class="c1">//...</span>
+<span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
+    <span class="na">imports</span><span class="p">:</span> <span class="p">[</span><span class="nx">HttpClientTestingModule</span><span class="p">]</span>
+  <span class="p">});</span>
+<span class="c1">//...</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ob und wie der <code class="language-plaintext highlighter-rouge">HttpClient</code> von deinem Service benutzt wurde. Lass dir vom <code class="language-plaintext highlighter-rouge">TestBed</code> einen <code class="language-plaintext highlighter-rouge">HttpTestingController</code> geben, verwende davon <code class="language-plaintext highlighter-rouge">expectOne()</code> und dessen Return-Objekt <code class="language-plaintext highlighter-rouge">TestRequest</code>
+    <h3 id="aufgabestellung">Aufgabestellung:</h3>
+  </li>
+  <li>Teste ob unser <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> die richtigen URL mit der richtigen HTTP-Methode (z.B. hier <code class="language-plaintext highlighter-rouge">GET</code>) aufruft und die dem via <code class="language-plaintext highlighter-rouge">HttpTestingController</code> untergeschobene <code class="language-plaintext highlighter-rouge">TestRequest</code> richtig verarbeitet.</li>
+  <li>Teste konkret ob Fehler in der ‘HTTP RESPONSE’ richtig von <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> verarbeitet werden.</li>
   <li>wenn dieser Test “grün” ist , dann teste wieder <strong>alle bisherigen Tests</strong>. Falls einige jetzt wieder “rot” sind , fixe diese.</li>
   <li>Tip: evtl. musst du <code class="language-plaintext highlighter-rouge">TestBed.configureTestingModule..</code> ergänzen.</li>
-  <li><a href="https://github.com/bodote/bodote.github.io/discussions">Feedback und Kommentare</a></li>
 </ul>
+
+<p><a href="https://github.com/bodote/bodote.github.io/discussions">Feedback und Kommentare</a></p>
 
 <h2 id="aufgabe-7">Aufgabe 7</h2>
 <p>Genau betrachtet, war die Aufgabe 6 “geschenkt” weil wir eigentlich nur getestet haben ob das Angular Observable Fehler korrekt meldet, was natürlich der Fall ist. Wir haben aber an unserem <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code> eigentlich gar nicht ändern müssen, um den Test “rot” zu bekommen, richtig ?
