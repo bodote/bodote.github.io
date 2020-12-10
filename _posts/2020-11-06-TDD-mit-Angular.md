@@ -101,7 +101,7 @@ In diesem Fall soll in der Browser-View nach der Überschrift an Stelle der List
 * Wie kannst du das im Test "simulieren" ? Hinweis : verwende wieder einen `spy`
 * und wie kannst du im Test abtesten ob deine `FavoriteMoviesComponent` den Fehler korrekt verarbeitet und auch in der Browseransicht richtig anzeigt ?
 * Bonusfrage: Der Messagetext der Observerfehlermeldung soll nicht direkt angezeigt 
-* Hinweis: das `fixture.detectChanges()` darf jetzt NICHT mehr im `beforeEach()`, sondern erste in den eigentlichen Unit-Tests und dort im `//act`-Teil ausgeführt werden. 
+* Hinweis: das `fixture.detectChanges()` darf jetzt NICHT mehr im `beforeEach()`, sondern erst in den eigentlichen Unit-Tests und dort im `//act`-Teil ausgeführt werden. 
 ### Lösung zu Aufgabe 5
 {% include video id="zsSAzOFgOoA" provider="youtube" %} 
 * [Link zum Video](https://youtu.be/zsSAzOFgOoA)
