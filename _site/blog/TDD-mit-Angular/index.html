@@ -547,8 +547,9 @@ werden, sondern eine andere, für den User verständlichere Meldung.</li>
   <li>Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ob und wie der <code class="language-plaintext highlighter-rouge">HttpClient</code> von deinem Service benutzt wurde. Lass dir vom <code class="language-plaintext highlighter-rouge">TestBed</code> einen <code class="language-plaintext highlighter-rouge">HttpTestingController</code> geben, verwende davon <code class="language-plaintext highlighter-rouge">expectOne()</code> und dessen Return-Objekt <code class="language-plaintext highlighter-rouge">TestRequest</code>
     <h3 id="aufgabestellung">Aufgabestellung:</h3>
   </li>
-  <li>Teste ob unser <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> die richtigen URL mit der richtigen HTTP-Methode (z.B. hier <code class="language-plaintext highlighter-rouge">GET</code>) aufruft und die dem via <code class="language-plaintext highlighter-rouge">HttpTestingController</code> untergeschobene <code class="language-plaintext highlighter-rouge">TestRequest</code> richtig verarbeitet.</li>
-  <li>Teste konkret ob Fehler in der ‘HTTP RESPONSE’ richtig von <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> verarbeitet werden.</li>
+  <li>Teste ob unser <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> die richtigen URL mit der richtigen HTTP-Methode (z.B. hier <code class="language-plaintext highlighter-rouge">GET</code>) aufruft und</li>
+  <li>ob die  via <code class="language-plaintext highlighter-rouge">TestRequest.flush()</code> untergeschobene Antwort vom <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code>richtig verarbeitet.</li>
+  <li>Optional: Teste konkret ob Fehler in der ‘HTTP RESPONSE’ richtig von <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> verarbeitet werden.</li>
   <li>wenn dieser Test “grün” ist , dann teste wieder <strong>alle bisherigen Tests</strong>. Falls einige jetzt wieder “rot” sind , fixe diese.</li>
 </ul>
 
