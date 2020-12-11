@@ -130,7 +130,7 @@ TestBed.configureTestingModule({
 * Teste ob unser `FavoriteMoviesService` die richtigen URL mit der richtigen HTTP-Methode (z.B. hier `GET`) aufruft und die dem via `HttpTestingController` untergeschobene `TestRequest` richtig verarbeitet. 
 * Teste konkret ob Fehler in der 'HTTP RESPONSE' richtig von `FavoriteMoviesService` verarbeitet werden. 
 * wenn dieser Test "grün" ist , dann teste wieder **alle bisherigen Tests**. Falls einige jetzt wieder "rot" sind , fixe diese. 
-* Tip: evtl. musst du `TestBed.configureTestingModule..` ergänzen.
+
 
 [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
