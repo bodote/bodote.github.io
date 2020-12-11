@@ -128,8 +128,8 @@ TestBed.configureTestingModule({
 * Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ob und wie der `HttpClient` von deinem Service benutzt wurde. Lass dir vom `TestBed` einen `HttpTestingController` geben, verwende davon `expectOne()` und dessen Return-Objekt `TestRequest`
 ### Aufgabestellung:
 * Teste ob unser `FavoriteMoviesService` die richtigen URL mit der richtigen HTTP-Methode (hier: `GET`) aufruft und 
-* ob die  via `TestRequest.flush()` untergeschobene Antwort vom `FavoriteMoviesService`richtig verarbeitet wird. 
-* Optional: Teste  ob Fehler in der 'HTTP RESPONSE' richtig von `FavoriteMoviesService` verarbeitet werden. 
+* ob die  via `TestRequest.flush()` untergeschobene Antwort vom `FavoriteMoviesService` richtig verarbeitet wird. 
+* Teste ob Fehler in der 'HTTP RESPONSE'  von `FavoriteMoviesService` zurückgegeben werden und ob diese gleichzeitig geloggt werden.
 * wenn dieser Test "grün" ist , dann teste wieder **alle bisherigen Tests**. Falls einige jetzt wieder "rot" sind , fixe diese. 
 
 [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
