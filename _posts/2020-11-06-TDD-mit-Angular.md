@@ -131,8 +131,12 @@ TestBed.configureTestingModule({
 * ob er dazu die richtige URL mit der richtigen HTTP-Methode (hier: `GET`) aufruft und 
 * Teste ob Fehler in der 'HTTP RESPONSE'  von `FavoriteMoviesService` zurückgegeben werden und ob diese gleichzeitig auf die Console geloggt werden.
 * wenn diese Tests "grün" sind , dann teste wieder **alle bisherigen Tests**. Falls einige jetzt wieder "rot" sind , fixe diese. 
+### Lösung Aufgabe 6 
+{% include video id="f_aXwbDks0c" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/f_aXwbDks0c)
+* [Lösung zu Aufgabe 6](https://github.com/bodote/tdd-angular/tree/v1.6) 
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
-[Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 7
 Genau betrachtet, war die Aufgabe 6 "geschenkt" weil wir eigentlich nur getestet haben ob das Angular Observable Fehler korrekt meldet, was natürlich der Fall ist. Wir haben aber an unserem `FavoriteMovieService` eigentlich gar nicht ändern müssen, um den Test "rot" zu bekommen, richtig ?
