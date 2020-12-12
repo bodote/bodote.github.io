@@ -111,12 +111,12 @@ werden, sondern eine andere, für den User verständlichere Meldung.
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 6
-Legen wir unsere `FavoriteMovieComponent` zur Seite und widmen uns jetzt dem `FavoriteMovieService`. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welche man in `jasmine` Tests zusammen mit dem `TestBed` verwenden kann. 
+Legen wir unsere `FavoriteMovieComponent` zur Seite und widmen uns jetzt dem `FavoriteMovieService`. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. 
 
 ### Hilfreiche Hinweise:
-*  Deinem Service wird statt dem "nomalen" `HttpClient` ein spezieller Test-`HttpTestingController` untergeschoben . 
-* Dieser besondere Test-Client kommt aus `HttpClientTestingModule`. 
-* Daher muss du im `*.spec.ts` das `TestBed` mit einem zusätzlichen `imports:` so ergänzen: 
+* Passend zu `HttpClientModule` gibt es ein `HttpClientTestingModule` welches man in `jasmine` Tests zusammen mit dem `TestBed` verwenden kann. 
+*  Das kann man dadurch erreichen, dass man dem Service, der zu testen ist,   statt dem "nomalen" `HttpClient` den speziellen `HttpTestingController` unterschiebt, sprich: `inject`-ed . 
+* Dazu muss du im `*.spec.ts` die `TestBed`-Configuration mit einem zusätzlichen `imports:` ergänzen: 
 ```typescript
 import {HttpClientTestingModule } from '@angular/common/http/testing';
 //...
@@ -125,12 +125,12 @@ TestBed.configureTestingModule({
     });
 //...
 ``` 
-* Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ob und wie der `HttpClient` von deinem Service benutzt wurde. Lass dir vom `TestBed` einen `HttpTestingController` geben, verwende davon `expectOne()` und dessen Return-Objekt `TestRequest`
+* Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ähnlich einem `spy`, ob und wie der `HttpClient` von deinem Service benutzt wurde. Lass dir vom `TestBed` einen `HttpTestingController` geben, verwende davon `expectOne()` und dessen Return-Objekt `TestRequest`
 ### Aufgabestellung:
-* Teste ob unser `FavoriteMoviesService` die richtigen URL mit der richtigen HTTP-Methode (hier: `GET`) aufruft und 
-* ob die  via `TestRequest.flush()` untergeschobene Antwort vom `FavoriteMoviesService` richtig verarbeitet wird. 
-* Teste ob Fehler in der 'HTTP RESPONSE'  von `FavoriteMoviesService` zurückgegeben werden und ob diese gleichzeitig geloggt werden.
-* wenn dieser Test "grün" ist , dann teste wieder **alle bisherigen Tests**. Falls einige jetzt wieder "rot" sind , fixe diese. 
+* Teste, ob unser `FavoriteMoviesService` , die Favorite Movies per Observable zurückgibt und 
+* ob er dazu die richtige URL mit der richtigen HTTP-Methode (hier: `GET`) aufruft und 
+* Teste ob Fehler in der 'HTTP RESPONSE'  von `FavoriteMoviesService` zurückgegeben werden und ob diese gleichzeitig auf die Console geloggt werden.
+* wenn diese Tests "grün" sind , dann teste wieder **alle bisherigen Tests**. Falls einige jetzt wieder "rot" sind , fixe diese. 
 
 [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 

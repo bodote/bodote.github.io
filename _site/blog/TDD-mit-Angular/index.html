@@ -529,13 +529,13 @@ werden, sondern eine andere, für den User verständlichere Meldung.</li>
 </ul>
 
 <h2 id="aufgabe-6">Aufgabe 6</h2>
-<p>Legen wir unsere <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> zur Seite und widmen uns jetzt dem <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code>. Services sind in Angular in der Regel mit dem <code class="language-plaintext highlighter-rouge">HttpClientModule</code> und dessen <code class="language-plaintext highlighter-rouge">HttpClient</code> implementiert. Passend zu <code class="language-plaintext highlighter-rouge">HttpClientModule</code> gibt es ein <code class="language-plaintext highlighter-rouge">HttpClientTestingModule</code> welche man in <code class="language-plaintext highlighter-rouge">jasmine</code> Tests zusammen mit dem <code class="language-plaintext highlighter-rouge">TestBed</code> verwenden kann.</p>
+<p>Legen wir unsere <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> zur Seite und widmen uns jetzt dem <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code>. Services sind in Angular in der Regel mit dem <code class="language-plaintext highlighter-rouge">HttpClientModule</code> und dessen <code class="language-plaintext highlighter-rouge">HttpClient</code> implementiert.</p>
 
 <h3 id="hilfreiche-hinweise">Hilfreiche Hinweise:</h3>
 <ul>
-  <li>Deinem Service wird statt dem “nomalen” <code class="language-plaintext highlighter-rouge">HttpClient</code> ein spezieller Test-<code class="language-plaintext highlighter-rouge">HttpTestingController</code> untergeschoben .</li>
-  <li>Dieser besondere Test-Client kommt aus <code class="language-plaintext highlighter-rouge">HttpClientTestingModule</code>.</li>
-  <li>Daher muss du im <code class="language-plaintext highlighter-rouge">*.spec.ts</code> das <code class="language-plaintext highlighter-rouge">TestBed</code> mit einem zusätzlichen <code class="language-plaintext highlighter-rouge">imports:</code> so ergänzen:
+  <li>Passend zu <code class="language-plaintext highlighter-rouge">HttpClientModule</code> gibt es ein <code class="language-plaintext highlighter-rouge">HttpClientTestingModule</code> welches man in <code class="language-plaintext highlighter-rouge">jasmine</code> Tests zusammen mit dem <code class="language-plaintext highlighter-rouge">TestBed</code> verwenden kann.</li>
+  <li>Das kann man dadurch erreichen, dass man dem Service, der zu testen ist,   statt dem “nomalen” <code class="language-plaintext highlighter-rouge">HttpClient</code> den speziellen <code class="language-plaintext highlighter-rouge">HttpTestingController</code> unterschiebt, sprich: <code class="language-plaintext highlighter-rouge">inject</code>-ed .</li>
+  <li>Dazu muss du im <code class="language-plaintext highlighter-rouge">*.spec.ts</code> die <code class="language-plaintext highlighter-rouge">TestBed</code>-Configuration mit einem zusätzlichen <code class="language-plaintext highlighter-rouge">imports:</code> ergänzen:
     <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">HttpClientTestingModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http/testing</span><span class="dl">'</span><span class="p">;</span>
 <span class="c1">//...</span>
 <span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
@@ -544,13 +544,13 @@ werden, sondern eine andere, für den User verständlichere Meldung.</li>
 <span class="c1">//...</span>
 </code></pre></div>    </div>
   </li>
-  <li>Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ob und wie der <code class="language-plaintext highlighter-rouge">HttpClient</code> von deinem Service benutzt wurde. Lass dir vom <code class="language-plaintext highlighter-rouge">TestBed</code> einen <code class="language-plaintext highlighter-rouge">HttpTestingController</code> geben, verwende davon <code class="language-plaintext highlighter-rouge">expectOne()</code> und dessen Return-Objekt <code class="language-plaintext highlighter-rouge">TestRequest</code>
+  <li>Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ähnlich einem <code class="language-plaintext highlighter-rouge">spy</code>, ob und wie der <code class="language-plaintext highlighter-rouge">HttpClient</code> von deinem Service benutzt wurde. Lass dir vom <code class="language-plaintext highlighter-rouge">TestBed</code> einen <code class="language-plaintext highlighter-rouge">HttpTestingController</code> geben, verwende davon <code class="language-plaintext highlighter-rouge">expectOne()</code> und dessen Return-Objekt <code class="language-plaintext highlighter-rouge">TestRequest</code>
     <h3 id="aufgabestellung">Aufgabestellung:</h3>
   </li>
-  <li>Teste ob unser <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> die richtigen URL mit der richtigen HTTP-Methode (hier: <code class="language-plaintext highlighter-rouge">GET</code>) aufruft und</li>
-  <li>ob die  via <code class="language-plaintext highlighter-rouge">TestRequest.flush()</code> untergeschobene Antwort vom <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> richtig verarbeitet wird.</li>
-  <li>Teste ob Fehler in der ‘HTTP RESPONSE’  von <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> zurückgegeben werden und ob diese gleichzeitig geloggt werden.</li>
-  <li>wenn dieser Test “grün” ist , dann teste wieder <strong>alle bisherigen Tests</strong>. Falls einige jetzt wieder “rot” sind , fixe diese.</li>
+  <li>Teste, ob unser <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> , die Favorite Movies per Observable zurückgibt und</li>
+  <li>ob er dazu die richtige URL mit der richtigen HTTP-Methode (hier: <code class="language-plaintext highlighter-rouge">GET</code>) aufruft und</li>
+  <li>Teste ob Fehler in der ‘HTTP RESPONSE’  von <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> zurückgegeben werden und ob diese gleichzeitig auf die Console geloggt werden.</li>
+  <li>wenn diese Tests “grün” sind , dann teste wieder <strong>alle bisherigen Tests</strong>. Falls einige jetzt wieder “rot” sind , fixe diese.</li>
 </ul>
 
 <p><a href="https://github.com/bodote/bodote.github.io/discussions">Feedback und Kommentare</a></p>
