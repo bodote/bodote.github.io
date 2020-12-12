@@ -23,9 +23,15 @@ var store = [{
         "url": "http://localhost:4000/blog/Literaturrecherche-TDD/",
         "teaser": null
       },{
-        "title": "Test Driven Development mit Angular",
+        "title": "Test Driven Development mit Angular Folge 1-5",
         "excerpt":"Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Setup git clone https://github.com/bodote/tdd-angular.git git checkout v1.0 oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , lösche alles und setzte &lt;div class=\"content\"&gt; &lt;span&gt; app is running!&lt;/span&gt; &lt;/div&gt; ein....","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],
         "url": "http://localhost:4000/blog/TDD-mit-Angular/",
+        "teaser": null
+      },{
+        "title": "Test Driven Development mit Angular Folge 6-9",
+        "excerpt":"Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Aufgabe 6 Legen wir unsere FavoriteMovieComponent zur Seite und widmen uns jetzt dem FavoriteMovieService. Services sind in Angular in der Regel mit dem HttpClientModule und dessen HttpClient implementiert. Hilfreiche Hinweise: Passend zu...","categories": ["blog"],
+        "tags": ["TDD","Test Driven Development"],
+        "url": "http://localhost:4000/blog/TDD-mit-Angular6-9/",
         "teaser": null
       }]

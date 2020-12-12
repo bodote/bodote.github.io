@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Test Driven Development mit Angular - Bodos Software Blog</title>
+<!-- begin _includes/seo.html --><title>Test Driven Development mit Angular Folge 1-5 - Bodos Software Blog</title>
 <meta name="description" content="Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Setup git clone https://github.com/bodote/tdd-angular.git git checkout v1.0  oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , lösche alles und setzte">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Bodos Software Blog">
-<meta property="og:title" content="Test Driven Development mit Angular">
+<meta property="og:title" content="Test Driven Development mit Angular Folge 1-5">
 <meta property="og:url" content="http://localhost:4000/blog/TDD-mit-Angular/">
 
 
@@ -275,7 +275,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Test Driven Development mit Angular">
+    <meta itemprop="headline" content="Test Driven Development mit Angular Folge 1-5">
     <meta itemprop="description" content="Angular TDD WorkshopDiese Angular-TDD-Workshop ist eine Variante von diesem WorkshopWir verwenden hier aber jasmine statt JestSetupgit clone https://github.com/bodote/tdd-angular.gitgit checkout v1.0oder verwende ng new tdd-angular und reduziere dann src/app/app.component.html auf ein Minimum , lösche alles und setzte">
     <meta itemprop="datePublished" content="2020-11-08T00:00:00+00:00">
     
@@ -283,7 +283,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Test Driven Development mit Angular
+          <h1 id="page-title" class="page__title" itemprop="headline">Test Driven Development mit Angular Folge 1-5
 </h1>
           
 
@@ -299,7 +299,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          6 minute read
+          4 minute read
         
       </span>
     
@@ -345,16 +345,6 @@
           <li><a href="#lösung-zu-aufgabe-5">Lösung zu Aufgabe 5</a></li>
         </ul>
       </li>
-      <li><a href="#aufgabe-6">Aufgabe 6</a>
-        <ul>
-          <li><a href="#hilfreiche-hinweise">Hilfreiche Hinweise:</a></li>
-          <li><a href="#aufgabestellung">Aufgabestellung:</a></li>
-          <li><a href="#lösung-aufgabe-6">Lösung Aufgabe 6</a></li>
-        </ul>
-      </li>
-      <li><a href="#aufgabe-7">Aufgabe 7</a></li>
-      <li><a href="#aufgabe-8">Aufgabe 8</a></li>
-      <li><a href="#aufgabe-9">Aufgabe 9</a></li>
       <li><a href="#feedback-und-kommentare">Feedback und Kommentare:</a></li>
     </ul>
   </li>
@@ -529,65 +519,7 @@ werden, sondern eine andere, für den User verständlichere Meldung.</li>
   <li><a href="https://github.com/bodote/bodote.github.io/discussions">Feedback und Kommentare</a></li>
 </ul>
 
-<h2 id="aufgabe-6">Aufgabe 6</h2>
-<p>Legen wir unsere <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> zur Seite und widmen uns jetzt dem <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code>. Services sind in Angular in der Regel mit dem <code class="language-plaintext highlighter-rouge">HttpClientModule</code> und dessen <code class="language-plaintext highlighter-rouge">HttpClient</code> implementiert.</p>
-
-<h3 id="hilfreiche-hinweise">Hilfreiche Hinweise:</h3>
-<ul>
-  <li>Passend zu <code class="language-plaintext highlighter-rouge">HttpClientModule</code> gibt es ein <code class="language-plaintext highlighter-rouge">HttpClientTestingModule</code> welches man in <code class="language-plaintext highlighter-rouge">jasmine</code> Tests zusammen mit dem <code class="language-plaintext highlighter-rouge">TestBed</code> verwenden kann.</li>
-  <li>Das kann man dadurch erreichen, dass man dem Service, der zu testen ist,   statt dem “nomalen” <code class="language-plaintext highlighter-rouge">HttpClient</code> den speziellen <code class="language-plaintext highlighter-rouge">HttpTestingController</code> unterschiebt, sprich: <code class="language-plaintext highlighter-rouge">inject</code>-ed .</li>
-  <li>Dazu muss du im <code class="language-plaintext highlighter-rouge">*.spec.ts</code> die <code class="language-plaintext highlighter-rouge">TestBed</code>-Configuration mit einem zusätzlichen <code class="language-plaintext highlighter-rouge">imports:</code> ergänzen:
-    <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">HttpClientTestingModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http/testing</span><span class="dl">'</span><span class="p">;</span>
-<span class="c1">//...</span>
-<span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
-    <span class="na">imports</span><span class="p">:</span> <span class="p">[</span><span class="nx">HttpClientTestingModule</span><span class="p">]</span>
-  <span class="p">});</span>
-<span class="c1">//...</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Damit kannst du Antworten der Remote-Rest-Serivces mocken und zusätzlich prüfen, ähnlich einem <code class="language-plaintext highlighter-rouge">spy</code>, ob und wie der <code class="language-plaintext highlighter-rouge">HttpClient</code> von deinem Service benutzt wurde. Lass dir vom <code class="language-plaintext highlighter-rouge">TestBed</code> einen <code class="language-plaintext highlighter-rouge">HttpTestingController</code> geben, verwende davon <code class="language-plaintext highlighter-rouge">expectOne()</code> und dessen Return-Objekt <code class="language-plaintext highlighter-rouge">TestRequest</code>
-    <h3 id="aufgabestellung">Aufgabestellung:</h3>
-  </li>
-  <li>Teste, ob unser <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> , die Favorite Movies per Observable zurückgibt und</li>
-  <li>ob er dazu die richtige URL mit der richtigen HTTP-Methode (hier: <code class="language-plaintext highlighter-rouge">GET</code>) aufruft und</li>
-  <li>Teste ob Fehler in der ‘HTTP RESPONSE’  von <code class="language-plaintext highlighter-rouge">FavoriteMoviesService</code> zurückgegeben werden und ob diese gleichzeitig auf die Console geloggt werden.</li>
-  <li>wenn diese Tests “grün” sind , dann teste wieder <strong>alle bisherigen Tests</strong>. Falls einige jetzt wieder “rot” sind , fixe diese.
-    <h3 id="lösung-aufgabe-6">Lösung Aufgabe 6</h3>
-  </li>
-</ul>
-
-<!-- Courtesy of embedresponsively.com //-->
-
-<div class="responsive-video-container">
-    <iframe src="https://www.youtube-nocookie.com/embed/f_aXwbDks0c" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-  </div>
-
-<ul>
-  <li><a href="https://youtu.be/f_aXwbDks0c">Link zum Video</a></li>
-  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.6">Lösung zu Aufgabe 6</a></li>
-  <li><a href="https://github.com/bodote/bodote.github.io/discussions">Feedback und Kommentare</a></li>
-</ul>
-
-<h2 id="aufgabe-7">Aufgabe 7</h2>
-<p>Genau betrachtet, war die Aufgabe 6 “geschenkt” weil wir eigentlich nur getestet haben ob das Angular Observable Fehler korrekt meldet, was natürlich der Fall ist. Wir haben aber an unserem <code class="language-plaintext highlighter-rouge">FavoriteMovieService</code> eigentlich gar nicht ändern müssen, um den Test “rot” zu bekommen, richtig ?
-Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 3 Wiederholversuche für jeden ServiceRequest machen. Erst wenn der 3. Versuch auch fehlschlägt, dann soll der Fehler nach oben weitergereicht werden.</p>
-<ul>
-  <li>Was bedeutet das für unseren Test ?</li>
-  <li>nachdem der Test aus Aufgabe 6 ja streng genommen unser Code bisher gar nicht getestst hat (sondern nur das Angular-Interne Observable-Fehlerhandling), wollen wir diese Test jetzt auf 3 Versuche erweitern.</li>
-  <li>Tip : du musst jetzt 3 mal  <code class="language-plaintext highlighter-rouge">req.flush()</code> verwenden.</li>
-</ul>
-
-<h2 id="aufgabe-8">Aufgabe 8</h2>
-<p>Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern erst gar nicht erreicht werden kann (z.B. überhauptkeine Netzwerkverbindung besteht)?</p>
-<ul>
-  <li>Tip : statt <code class="language-plaintext highlighter-rouge">req.flush()</code> kann man hier <code class="language-plaintext highlighter-rouge">req.error(errorEvent)</code> verwenden um eine solchen Fehlermodus zu simulieren.</li>
-</ul>
-
-<h2 id="aufgabe-9">Aufgabe 9</h2>
-<p>Was , wenn die ersten 2 Versuche fehlschlagen, der dritte aber erfolgreich ist? Schreiben für diesen Fall einen Test</p>
-<ul>
-  <li>refactoriere die Test um unnötige Codeduplizierungen zu beseitigen.</li>
-</ul>
+<p><a href="../TDD-mit-Angular6-9">Weiter gehts hier</a></p>
 
 <h2 id="feedback-und-kommentare">Feedback und Kommentare:</h2>
 <p>Bitte gib mir dein Feedback! Das hilft uns sehr das Tutorial und die Videos noch besser zu machen.</p>
@@ -653,7 +585,7 @@ Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Test+Driven+Development+mit+Angular%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FTDD-mit-Angular%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Test+Driven+Development+mit+Angular+Folge+1-5%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2FTDD-mit-Angular%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2FTDD-mit-Angular%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -668,7 +600,8 @@ Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/blog/TDD-mit-Angular6-9/" class="pagination--pager" title="Test Driven Development mit Angular Folge 6-9
+">Next</a>
     
   </nav>
 
@@ -682,6 +615,49 @@ Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/TDD-mit-Angular6-9/" rel="permalink">Test Driven Development mit Angular Folge 6-9
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Angular TDD Workshop
+Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop
+Wir verwenden hier aber jasmine statt Jest
+
+</p>
+  </article>
+</div>
+
         
           
 
@@ -801,47 +777,6 @@ Ich bin ja ein enthusiastischer Befürworter von Test Driven Design (TDD), insbe
     <p class="archive__item-excerpt" itemprop="description">Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen
 Das Problem
 Im Rahmen einer großen Webapps-Entwic...</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/blog/TDD-Tutorial/" rel="permalink">(Video)Test Driven Development und Test-First Tutorial
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First
-
-</p>
   </article>
 </div>
 
