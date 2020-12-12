@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-12T15:38:16+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Test Driven Development mit Angular</title><link href="http://localhost:4000/blog/TDD-mit-Angular/" rel="alternate" type="text/html" title="Test Driven Development mit Angular" /><published>2020-11-08T00:00:00+00:00</published><updated>2020-11-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-mit-Angular</id><content type="html" xml:base="http://localhost:4000/blog/TDD-mit-Angular/">&lt;h1 id=&quot;angular-tdd-workshop&quot;&gt;Angular TDD Workshop&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-12T19:54:41+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Test Driven Development mit Angular</title><link href="http://localhost:4000/blog/TDD-mit-Angular/" rel="alternate" type="text/html" title="Test Driven Development mit Angular" /><published>2020-11-08T00:00:00+00:00</published><updated>2020-11-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-mit-Angular</id><content type="html" xml:base="http://localhost:4000/blog/TDD-mit-Angular/">&lt;h1 id=&quot;angular-tdd-workshop&quot;&gt;Angular TDD Workshop&lt;/h1&gt;
 &lt;p&gt;Diese Angular-TDD-Workshop ist eine Variante von diesem &lt;a href=&quot;https://itnext.io/test-driven-development-in-an-angular-world-92c0c42a54d0&quot;&gt;Workshop&lt;/a&gt;
 Wir verwenden hier aber &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jasmine&lt;/code&gt; statt &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jest&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
@@ -153,11 +153,11 @@ In diesem Fall soll in der Browser-View nach der Überschrift an Stelle der List
 &lt;!-- Courtesy of embedresponsively.com //--&gt;
 
 &lt;div class=&quot;responsive-video-container&quot;&gt;
-    &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/zsSAzOFgOoA&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+    &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/hTxUyh1evcg&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
   &lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://youtu.be/zsSAzOFgOoA&quot;&gt;Link zum Video&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/hTxUyh1evcg&quot;&gt;Link zum Video&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.5.1&quot;&gt;Einfache Lösung zu Aufgabe 5&lt;/a&gt; 
 werden, sondern eine andere, für den User verständlichere Meldung.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.5.2&quot;&gt;Bessere Lösung zu Aufgabe 5&lt;/a&gt;&lt;/li&gt;

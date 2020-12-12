@@ -103,8 +103,8 @@ In diesem Fall soll in der Browser-View nach der Überschrift an Stelle der List
 * Bonusfrage: Der Messagetext der Observerfehlermeldung soll nicht direkt angezeigt 
 * Hinweis: das `fixture.detectChanges()` darf jetzt NICHT mehr im `beforeEach()`, sondern erst in den eigentlichen Unit-Tests und dort im `//act`-Teil ausgeführt werden. 
 ### Lösung zu Aufgabe 5
-{% include video id="zsSAzOFgOoA" provider="youtube" %} 
-* [Link zum Video](https://youtu.be/zsSAzOFgOoA)
+{% include video id="hTxUyh1evcg" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/hTxUyh1evcg)
 * [Einfache Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.1) 
 werden, sondern eine andere, für den User verständlichere Meldung.
 * [Bessere Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.2)
