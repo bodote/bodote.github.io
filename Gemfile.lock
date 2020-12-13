@@ -278,8 +278,10 @@ DEPENDENCIES
   jekyll-algolia
   jekyll-feed
   jekyll-gist
+  jekyll-github-metadata
   jekyll-include-cache
   jekyll-paginate
+  jekyll-seo-tag
   jekyll-sitemap
   jemoji
 

@@ -21,6 +21,7 @@ twitter_username: BodoTe
 github_username: bodote
 minimal_mistakes_skin: "default" # "default" , "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 search: true
+google_site_verification: "jWhkzSBuQpPUkqu8UPoHMjE93Mxmurg8vsnWB_u0-Y0"
 
 # Build settings
 markdown: kramdown
@@ -54,6 +55,8 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-github-metadata
+  - jekyll-seo-tag
 
 author:
   name   : "Bodo Teichmann"
