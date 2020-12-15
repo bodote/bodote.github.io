@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Sehr große Datenbanken sehr schnell kopieren",
-        "excerpt":"Sehr große produktive Datenbanken als schreibbarte Test-DB den Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten in...","categories": ["blog"],
+        "excerpt":"Sehr große produktive Datenbanken als schreibbare Test-DBs den Entwicklern in Sekunden zu Verfügung stellen Das Problem Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten in...","categories": ["blog"],
         "tags": ["Testing","DevOps"],
         "url": "http://localhost:4000/blog/Big-DB-Copy-in-Seconds/",
         "teaser": null

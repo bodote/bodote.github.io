@@ -42,11 +42,16 @@ TestBed.configureTestingModule({
 
 
 ## Aufgabe 7
-Genau betrachtet, war die Aufgabe 6 "geschenkt" weil wir eigentlich nur getestet haben ob das Angular Observable Fehler korrekt meldet, was natürlich der Fall ist. Wir haben aber an unserem `FavoriteMovieService` eigentlich gar nicht ändern müssen, um den Test "rot" zu bekommen, richtig ?
-Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 3 Wiederholversuche für jeden ServiceRequest machen. Erst wenn der 3. Versuch auch fehlschlägt, dann soll der Fehler nach oben weitergereicht werden.
-* Was bedeutet das für unseren Test ? 
-* nachdem der Test aus Aufgabe 6 ja streng genommen unser Code bisher gar nicht getestst hat (sondern nur das Angular-Interne Observable-Fehlerhandling), wollen wir diese Test jetzt auf 3 Versuche erweitern. 
-* Tip : du musst jetzt 3 mal  `req.flush()` verwenden.
+Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 'n' Wiederholversuche für jeden ServiceRequest machen. Erst wenn der 'n'-te Versuch auch fehlschlägt, dann erst soll der Fehler nach oben weitergereicht und geloggt werden.
+* Welche Testfälle benötigen wir ? Beginne mit 2 Wiederholungsversuchen (also 'n'=2) und verallgemeinere dann.
+* Tip : du musst jetzt mehrmals  `req.flush()` verwenden.
+* die Anzahl der Wiederholungen soll im environment configurierbar sein.
+### Lösung Aufgabe 7 
+{% include video id="hZQQQTCmO_w" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/hZQQQTCmO_w)
+* [Lösung zu Aufgabe 7](https://github.com/bodote/tdd-angular/tree/v1.7) 
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
+
 
 ## Aufgabe 8
 Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern erst gar nicht erreicht werden kann (z.B. überhauptkeine Netzwerkverbindung besteht)?

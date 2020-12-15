@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-13T08:03:06+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Test Driven Development mit Angular Folge 6-9</title><link href="http://localhost:4000/blog/TDD-mit-Angular6-9/" rel="alternate" type="text/html" title="Test Driven Development mit Angular Folge 6-9" /><published>2020-12-08T00:00:00+00:00</published><updated>2020-12-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-mit-Angular6-9</id><content type="html" xml:base="http://localhost:4000/blog/TDD-mit-Angular6-9/">&lt;h1 id=&quot;angular-tdd-workshop&quot;&gt;Angular TDD Workshop&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-15T17:05:14+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Test Driven Development mit Angular Folge 6-9</title><link href="http://localhost:4000/blog/TDD-mit-Angular6-9/" rel="alternate" type="text/html" title="Test Driven Development mit Angular Folge 6-9" /><published>2020-12-08T00:00:00+00:00</published><updated>2020-12-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-mit-Angular6-9</id><content type="html" xml:base="http://localhost:4000/blog/TDD-mit-Angular6-9/">&lt;h1 id=&quot;angular-tdd-workshop&quot;&gt;Angular TDD Workshop&lt;/h1&gt;
 &lt;p&gt;Diese Angular-TDD-Workshop ist eine Variante von diesem &lt;a href=&quot;https://itnext.io/test-driven-development-in-an-angular-world-92c0c42a54d0&quot;&gt;Workshop&lt;/a&gt;
 Wir verwenden hier aber &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jasmine&lt;/code&gt; statt &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jest&lt;/code&gt;&lt;/p&gt;
 
@@ -42,12 +42,25 @@ Wir verwenden hier aber &lt;code class=&quot;language-plaintext highlighter-roug
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;aufgabe-7&quot;&gt;Aufgabe 7&lt;/h2&gt;
-&lt;p&gt;Genau betrachtet, war die Aufgabe 6 “geschenkt” weil wir eigentlich nur getestet haben ob das Angular Observable Fehler korrekt meldet, was natürlich der Fall ist. Wir haben aber an unserem &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FavoriteMovieService&lt;/code&gt; eigentlich gar nicht ändern müssen, um den Test “rot” zu bekommen, richtig ?
-Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 3 Wiederholversuche für jeden ServiceRequest machen. Erst wenn der 3. Versuch auch fehlschlägt, dann soll der Fehler nach oben weitergereicht werden.&lt;/p&gt;
+&lt;p&gt;Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau ‘n’ Wiederholversuche für jeden ServiceRequest machen. Erst wenn der ‘n’-te Versuch auch fehlschlägt, dann erst soll der Fehler nach oben weitergereicht und geloggt werden.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Was bedeutet das für unseren Test ?&lt;/li&gt;
-  &lt;li&gt;nachdem der Test aus Aufgabe 6 ja streng genommen unser Code bisher gar nicht getestst hat (sondern nur das Angular-Interne Observable-Fehlerhandling), wollen wir diese Test jetzt auf 3 Versuche erweitern.&lt;/li&gt;
-  &lt;li&gt;Tip : du musst jetzt 3 mal  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;req.flush()&lt;/code&gt; verwenden.&lt;/li&gt;
+  &lt;li&gt;Welche Testfälle benötigen wir ? Beginne mit 2 Wiederholungsversuchen (also ‘n’=2) und verallgemeinere dann.&lt;/li&gt;
+  &lt;li&gt;Tip : du musst jetzt mehrmals  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;req.flush()&lt;/code&gt; verwenden.&lt;/li&gt;
+  &lt;li&gt;die Anzahl der Wiederholungen soll im environment configurierbar sein.
+    &lt;h3 id=&quot;lösung-aufgabe-7&quot;&gt;Lösung Aufgabe 7&lt;/h3&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Courtesy of embedresponsively.com //--&gt;
+
+&lt;div class=&quot;responsive-video-container&quot;&gt;
+    &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/hZQQQTCmO_w&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/hZQQQTCmO_w&quot;&gt;Link zum Video&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/tdd-angular/tree/v1.7&quot;&gt;Lösung zu Aufgabe 7&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bodote/bodote.github.io/discussions&quot;&gt;Feedback und Kommentare&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;aufgabe-8&quot;&gt;Aufgabe 8&lt;/h2&gt;
@@ -503,7 +516,7 @@ betriebssystemnahen Funktionen) sinnvoll zu mocken.&lt;/p&gt;
       &lt;p&gt;Die Grundidee ist auch abseits von Java in anderen Programmiersprachen die gleiche. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Development" /><summary type="html">Warum »TDD« und »Test First« ?</summary></entry><entry><title type="html">Sehr große Datenbanken sehr schnell kopieren</title><link href="http://localhost:4000/blog/Big-DB-Copy-in-Seconds/" rel="alternate" type="text/html" title="Sehr große Datenbanken sehr schnell kopieren" /><published>2020-10-08T00:00:00+00:00</published><updated>2020-10-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/Big-DB-Copy-in-Seconds</id><content type="html" xml:base="http://localhost:4000/blog/Big-DB-Copy-in-Seconds/">&lt;h1 id=&quot;sehr-große-produktive-datenbanken-als-schreibbarte-test-db-den--entwickler-in-sekunden-zu-verfügung-stellen&quot;&gt;Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen&lt;/h1&gt;
+&lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="TDD" /><category term="Test Driven Development" /><summary type="html">Warum »TDD« und »Test First« ?</summary></entry><entry><title type="html">Sehr große Datenbanken sehr schnell kopieren</title><link href="http://localhost:4000/blog/Big-DB-Copy-in-Seconds/" rel="alternate" type="text/html" title="Sehr große Datenbanken sehr schnell kopieren" /><published>2020-10-08T00:00:00+00:00</published><updated>2020-10-08T00:00:00+00:00</updated><id>http://localhost:4000/blog/Big-DB-Copy-in-Seconds</id><content type="html" xml:base="http://localhost:4000/blog/Big-DB-Copy-in-Seconds/">&lt;h1 id=&quot;sehr-große-produktive-datenbanken-als-schreibbare-test-dbs-den--entwicklern-in-sekunden-zu-verfügung-stellen&quot;&gt;Sehr große produktive Datenbanken als schreibbare Test-DBs den  Entwicklern in Sekunden zu Verfügung stellen&lt;/h1&gt;
 &lt;h2 id=&quot;das-problem&quot;&gt;Das Problem&lt;/h2&gt;
 &lt;p&gt;Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. 
 Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten 
@@ -519,9 +532,9 @@ Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werde
   &lt;li&gt;dieser Clone wird einem Dockerconteiner mit der DB-Engine (z.B. ein MySql-Dockercontainer)&lt;/li&gt;
   &lt;li&gt;Der Dockercontainer wird gestartet und seine IP - Adresse in einem Nameserver registiriert (z.B. mit “Bind”)&lt;/li&gt;
   &lt;li&gt;Die einzelnen Schritte werden dann per Script automatisiert und&lt;/li&gt;
-  &lt;li&gt;mit hilfe eines Jenkins-Job den Entwicklern zu verfügung gestellt.&lt;/li&gt;
+  &lt;li&gt;mit Hilfe eines Jenkins-Job den Entwicklern zu verfügung gestellt.&lt;/li&gt;
   &lt;li&gt;Damit können die Entwickler das ganze mit wenigen Mouseklicks bedienen und jederzeit innerhalb von Sekunden oder wenige Minuten einen 
-schreibbarten DB-test - Clone der Produktiven Daten erzeugen.&lt;/li&gt;
+schreibbaren DB-test - Clone der Produktiven Daten erzeugen.&lt;/li&gt;
   &lt;li&gt;ggf. lässt sich ein Anonymisierungsscript sehr leicht via Script noch ergänzen.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -534,7 +547,7 @@ schreibbarten DB-test - Clone der Produktiven Daten erzeugen.&lt;/li&gt;
       &lt;p&gt;&lt;a href=&quot;https://openzfs.github.io/openzfs-docs/Project%20and%20Community/Admin%20Documentation.html&quot;&gt;ZFS on Linux&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="Testing" /><category term="DevOps" /><summary type="html">Sehr große produktive Datenbanken als schreibbarte Test-DB den Entwickler in Sekunden zu Verfügung stellen Das Problem Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten in der Größenordnung von Stunden oder Tagen, bis die DB vom Produktionssystem exportiert und im Test-System wieder importiert ist. Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.</summary></entry><entry><title type="html">(Video)Test Driven Development und Test-First Tutorial</title><link href="http://localhost:4000/blog/TDD-Tutorial/" rel="alternate" type="text/html" title="(Video)Test Driven Development und Test-First Tutorial" /><published>2020-09-10T00:00:00+00:00</published><updated>2020-09-10T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-Tutorial</id><content type="html" xml:base="http://localhost:4000/blog/TDD-Tutorial/">&lt;p&gt;Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="Testing" /><category term="DevOps" /><summary type="html">Sehr große produktive Datenbanken als schreibbare Test-DBs den Entwicklern in Sekunden zu Verfügung stellen Das Problem Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die “echten” Daten der Datenbank. Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten in der Größenordnung von Stunden oder Tagen, bis die DB vom Produktionssystem exportiert und im Test-System wieder importiert ist. Weiterhin müssen ggf. einzelne Teile der kopierten Datenbank anonymisiert werden um dem Datenschutz zu genügen.</summary></entry><entry><title type="html">(Video)Test Driven Development und Test-First Tutorial</title><link href="http://localhost:4000/blog/TDD-Tutorial/" rel="alternate" type="text/html" title="(Video)Test Driven Development und Test-First Tutorial" /><published>2020-09-10T00:00:00+00:00</published><updated>2020-09-10T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-Tutorial</id><content type="html" xml:base="http://localhost:4000/blog/TDD-Tutorial/">&lt;p&gt;Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First&lt;/p&gt;
 
 &lt;!-- Courtesy of embedresponsively.com //--&gt;
 

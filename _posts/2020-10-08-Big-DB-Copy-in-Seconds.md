@@ -10,7 +10,7 @@ toc: true
 classes: wide
 ---
 
-# Sehr große produktive Datenbanken als schreibbarte Test-DB den  Entwickler in Sekunden zu Verfügung stellen
+# Sehr große produktive Datenbanken als schreibbare Test-DBs den  Entwicklern in Sekunden zu Verfügung stellen
 ## Das Problem
 Im Rahmen einer großen Webapps-Entwicklung braucht das SW-Entwicklerteam zum Debuggen die "echten" Daten der Datenbank. 
 Wenn diese aber leider mehrere 100 Gigabyte oder mehrere Terabyte groß ist, führt das zu sehr langen Wartezeiten 
@@ -25,9 +25,9 @@ Die Grundidee ist:
 * dieser Clone wird einem Dockerconteiner mit der DB-Engine (z.B. ein MySql-Dockercontainer)
 * Der Dockercontainer wird gestartet und seine IP - Adresse in einem Nameserver registiriert (z.B. mit "Bind")
 * Die einzelnen Schritte werden dann per Script automatisiert und 
-* mit hilfe eines Jenkins-Job den Entwicklern zu verfügung gestellt. 
+* mit Hilfe eines Jenkins-Job den Entwicklern zu verfügung gestellt. 
 * Damit können die Entwickler das ganze mit wenigen Mouseklicks bedienen und jederzeit innerhalb von Sekunden oder wenige Minuten einen 
-schreibbarten DB-test - Clone der Produktiven Daten erzeugen. 
+schreibbaren DB-test - Clone der Produktiven Daten erzeugen. 
 * ggf. lässt sich ein Anonymisierungsscript sehr leicht via Script noch ergänzen.
 
 [^1]: [ZFS Dateisystem](https://de.wikipedia.org/wiki/ZFS_(Dateisystem)#:~:text=ZFS%20ist%20ein%20von%20Sun,im%20Server%2D%20und%20Rechenzentrumsbereich%20enth%C3%A4lt.)
