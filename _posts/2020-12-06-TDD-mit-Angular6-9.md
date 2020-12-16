@@ -53,9 +53,25 @@ Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 
-## Aufgabe 8
+## Bonusfrage zu Aufgabe 7
 Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern erst gar nicht erreicht werden kann (z.B. überhauptkeine Netzwerkverbindung besteht)?
 * Tip : statt `TestRequest.flush()` kann man hier `TestRequest.error()` verwenden um eine solchen Fehlermodus zu simulieren. Siehe auch [ErrorEvent](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent)
+
+## Aufgabe 8
+Kommen wir zurück zu unserer `FavoriteMoviesComponent`. Wir wollen jetzt nicht einfach eine Liste der Movies ausgeben, sondern jeder Movie soll mit einer eigenen (Dumb)-Compoment `FavoriteMovieComponent` (also ohne das "s" ) dargestellt werden. Was diese `FavoriteMovieComponent` macht und wie die implementiert ist, das ist uns im Moment unwichtig. 
+Wir wollen aber Testen, dass unsere bestehende `FavoriteMoviesComponent` jetzt jeden Movie als `FavoriteMovieComponent` (mit dessen Selector `kbd-favorite-movie`) statt  eines Listenelements `<li>` verwendet  UND dass diesem `FavoriteMovieComponent` der Name des Movies auch korrekt übergeben wird. 
+
+Mit anderen Worten:
+Lege eine neue Componente "favorite-movie" an (mit `ng g c`) und definiere dort `selector: 'kpd-favorite-movie'` und `@Input() favoriteMovie: string;`
+Die sonstige Implementierung und ebenso dessn html-template interessiert uns aber nicht weiter.
+
+Weil wir in unserem `favorite-movies.component.spec.ts` aber weiterhin nur echte Unittests und keinen Integrationstest haben wollen, wollen wir die `FavoriteMovieComponent` mit Hilfe des npm - packages `ng-mocks` mocken. Daher installierte dieses Package.
+
+### Aufgabenstellung: 
+1. Ändere unsere Test `favorite-movies.component.spec.ts` so dass satt dem `<li>`mit einem Movie, `kbd-favorite-movie` erwartet wird
+2. Ändere den Test so , dass auch der Parameter `FavoriteMovieComponent.favoriteMovie` von `FavoriteMoviesComponent` korrekt übergeben wird
+
+
 
 ## Aufgabe 9
 TBD
