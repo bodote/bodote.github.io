@@ -44,7 +44,7 @@ TestBed.configureTestingModule({
 ## Aufgabe 7
 Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 'n' Wiederholversuche für jeden ServiceRequest machen. Erst wenn der 'n'-te Versuch auch fehlschlägt, dann erst soll der Fehler nach oben weitergereicht und geloggt werden.
 * Welche Testfälle benötigen wir ? Beginne mit 2 Wiederholungsversuchen (also 'n'=2) und verallgemeinere dann.
-* Tip : du musst jetzt mehrmals  `req.flush()` verwenden.
+* Tip : du musst jetzt mehrmals  `TestRequest.flush()` verwenden.
 * die Anzahl der Wiederholungen soll im environment configurierbar sein.
 ### Lösung Aufgabe 7 
 {% include video id="hZQQQTCmO_w" provider="youtube" %} 
@@ -55,11 +55,10 @@ Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 
 
 ## Aufgabe 8
 Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern erst gar nicht erreicht werden kann (z.B. überhauptkeine Netzwerkverbindung besteht)?
-* Tip : statt `req.flush()` kann man hier `req.error(errorEvent)` verwenden um eine solchen Fehlermodus zu simulieren.
+* Tip : statt `TestRequest.flush()` kann man hier `TestRequest.error()` verwenden um eine solchen Fehlermodus zu simulieren. Siehe auch [ErrorEvent](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent)
 
 ## Aufgabe 9
-Was , wenn die ersten 2 Versuche fehlschlagen, der dritte aber erfolgreich ist? Schreiben für diesen Fall einen Test
-* refactoriere die Test um unnötige Codeduplizierungen zu beseitigen.
+TBD
 
 
 ## Feedback und Kommentare:
