@@ -316,7 +316,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#angular-tdd-workshop">Angular TDD Workshop</a><ul><li><a href="#aufgabe-6">Aufgabe 6</a><ul><li><a href="#hilfreiche-hinweise">Hilfreiche Hinweise:</a></li><li><a href="#aufgabestellung">Aufgabestellung:</a></li><li><a href="#lösung-aufgabe-6">Lösung Aufgabe 6</a></li></ul></li><li><a href="#aufgabe-7">Aufgabe 7</a><ul><li><a href="#lösung-aufgabe-7">Lösung Aufgabe 7</a></li></ul></li><li><a href="#aufgabe-8">Aufgabe 8</a></li><li><a href="#aufgabe-9">Aufgabe 9</a></li><li><a href="#feedback-und-kommentare">Feedback und Kommentare:</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#angular-tdd-workshop">Angular TDD Workshop</a><ul><li><a href="#aufgabe-6">Aufgabe 6</a><ul><li><a href="#hilfreiche-hinweise">Hilfreiche Hinweise:</a></li><li><a href="#aufgabestellung">Aufgabestellung:</a></li><li><a href="#lösung-aufgabe-6">Lösung Aufgabe 6</a></li></ul></li><li><a href="#aufgabe-7">Aufgabe 7</a><ul><li><a href="#lösung-aufgabe-7">Lösung Aufgabe 7</a></li></ul></li><li><a href="#bonusfrage-zu-aufgabe-7">Bonusfrage zu Aufgabe 7</a></li><li><a href="#aufgabe-8">Aufgabe 8</a><ul><li><a href="#aufgabenstellung">Aufgabenstellung:</a></li></ul></li><li><a href="#aufgabe-9">Aufgabe 9</a></li><li><a href="#feedback-und-kommentare">Feedback und Kommentare:</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -368,7 +368,7 @@ Wir verwenden hier aber <code class="language-plaintext highlighter-rouge">jasmi
 <p>Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau ‘n’ Wiederholversuche für jeden ServiceRequest machen. Erst wenn der ‘n’-te Versuch auch fehlschlägt, dann erst soll der Fehler nach oben weitergereicht und geloggt werden.</p>
 <ul>
   <li>Welche Testfälle benötigen wir ? Beginne mit 2 Wiederholungsversuchen (also ‘n’=2) und verallgemeinere dann.</li>
-  <li>Tip : du musst jetzt mehrmals  <code class="language-plaintext highlighter-rouge">req.flush()</code> verwenden.</li>
+  <li>Tip : du musst jetzt mehrmals  <code class="language-plaintext highlighter-rouge">TestRequest.flush()</code> verwenden.</li>
   <li>die Anzahl der Wiederholungen soll im environment configurierbar sein.
     <h3 id="lösung-aufgabe-7">Lösung Aufgabe 7</h3>
   </li>
@@ -386,17 +386,30 @@ Wir verwenden hier aber <code class="language-plaintext highlighter-rouge">jasmi
   <li><a href="https://github.com/bodote/bodote.github.io/discussions">Feedback und Kommentare</a></li>
 </ul>
 
-<h2 id="aufgabe-8">Aufgabe 8</h2>
+<h2 id="bonusfrage-zu-aufgabe-7">Bonusfrage zu Aufgabe 7</h2>
 <p>Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern erst gar nicht erreicht werden kann (z.B. überhauptkeine Netzwerkverbindung besteht)?</p>
 <ul>
-  <li>Tip : statt <code class="language-plaintext highlighter-rouge">req.flush()</code> kann man hier <code class="language-plaintext highlighter-rouge">req.error(errorEvent)</code> verwenden um eine solchen Fehlermodus zu simulieren.</li>
+  <li>Tip : statt <code class="language-plaintext highlighter-rouge">TestRequest.flush()</code> kann man hier <code class="language-plaintext highlighter-rouge">TestRequest.error()</code> verwenden um eine solchen Fehlermodus zu simulieren. Siehe auch <a href="https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent">ErrorEvent</a></li>
 </ul>
 
+<h2 id="aufgabe-8">Aufgabe 8</h2>
+<p>Kommen wir zurück zu unserer <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code>. Wir wollen jetzt nicht einfach eine Liste der Movies ausgeben, sondern jeder Movie soll mit einer eigenen (Dumb)-Component <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> (also ohne das “s” ) dargestellt werden. Was diese <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> macht und wie sie implementiert ist, das ist uns im Moment unwichtig.
+Wir wollen aber Testen, dass unsere bestehende <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> jetzt jeden Movie als <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> (mit dessen Selector <code class="language-plaintext highlighter-rouge">favorite-movie</code>) statt  eines Listenelements <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code> verwendet  <strong>und</strong> dass diesem <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> der Name des Movies auch korrekt übergeben wird.</p>
+
+<p>Mit anderen Worten:
+Lege eine neue Componente “favorite-movie” an (mit <code class="language-plaintext highlighter-rouge">ng g c</code>) und definiere dort <code class="language-plaintext highlighter-rouge">selector: 'favorite-movie'</code> und <code class="language-plaintext highlighter-rouge">@Input() favoriteMovie: string;</code>
+Die sonstige Implementierung und ebenso dessen HTML-Template interessiert uns aber nicht weiter.</p>
+
+<p>Weil wir in unseren Tests in <code class="language-plaintext highlighter-rouge">favorite-movies.component.spec.ts</code> aber weiterhin nur echte Unittests und keinen Integrationstest haben wollen, wollen wir die <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> mit Hilfe des npm - Packages <code class="language-plaintext highlighter-rouge">ng-mocks</code> mocken. Daher installierte dieses Package mit <code class="language-plaintext highlighter-rouge">npm install ng-mocks</code></p>
+
+<h3 id="aufgabenstellung">Aufgabenstellung:</h3>
+<ol>
+  <li>Ändere unsere Tests in <code class="language-plaintext highlighter-rouge">favorite-movies.component.spec.ts</code> so, dass satt dem <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code>mit einem Movie, <code class="language-plaintext highlighter-rouge">&lt;favorite-movie&gt;</code> erwartet wird</li>
+  <li>Ändere den Test so , dass geprüft wird, ob auch der Parameter <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent.favoriteMovie</code> von <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> korrekt übergeben wird.</li>
+</ol>
+
 <h2 id="aufgabe-9">Aufgabe 9</h2>
-<p>Was , wenn die ersten 2 Versuche fehlschlagen, der dritte aber erfolgreich ist? Schreiben für diesen Fall einen Test</p>
-<ul>
-  <li>refactoriere die Test um unnötige Codeduplizierungen zu beseitigen.</li>
-</ul>
+<p>TBD</p>
 
 <h2 id="feedback-und-kommentare">Feedback und Kommentare:</h2>
 <p>Bitte gib mir dein Feedback! Das hilft uns sehr das Tutorial und die Videos noch besser zu machen.</p>
