@@ -62,19 +62,26 @@ Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern ers
 
 
 ## Aufgabe 8
-Kommen wir zurück zu unserer `FavoriteMoviesComponent`. Wir wollen jetzt nicht einfach eine Liste der Movies ausgeben, sondern jeder Spielfilm soll mit einer eigenen "Presentation" oder "Dumb" -Component, genannte `FavoriteMovieComponent` (also ohne das "s" ) dargestellt werden. Was diese `FavoriteMovieComponent` macht und wie sie implementiert ist, das ist uns im Moment unwichtig.
-Wir wollen aber testen, dass unsere bestehende `FavoriteMoviesComponent` jetzt jeden Film als `FavoriteMovieComponent` (mit dessen Selector `favorite-movie`) statt  eines Listenelements `<li>` verwendet  **und** dass diesem `FavoriteMovieComponent` der Name des Films auch korrekt übergeben wird.
+Kommen wir zurück zu unserer `FavoriteMoviesComponent`. Wir wollen jetzt nicht einfach eine Liste der Filme ausgeben, sondern jeder Spielfilm soll mit einer eigenen "Presentation" -Component dargestellt werden. Diese Componente nennen wir  `FavoriteMovieComponent` (also ohne das "s" ). Was diese `FavoriteMovieComponent` macht und wie sie implementiert ist, das ist uns im Moment unwichtig.
+Wir wollen aber testen, dass unsere bestehende `FavoriteMoviesComponent` jetzt für jeden Film die untergeordnete  `FavoriteMovieComponent` verwendet. Diese soll den `selector` `favorite-movie` nutzen und der soll statt  des bisherigen Listenelements `<li>` eingesetzt werden. Außerdem wollen wir testen, dass wir dieser `FavoriteMovieComponent` den Name des Films auch korrekt übergeben.
 
 Mit anderen Worten:
-Lege eine neue Componente "favorite-movie" an (mit `ng g c`) und definiere dort `selector: 'favorite-movie'` und `@Input() favoriteMovie: string;`
+Lege eine neue Componente "favorite-movie" an (mit `ng g c`) und definiere dort `selector: 'favorite-movie'` und `@Input() movieName: string;`
 Die sonstige Implementierung und ebenso das HTML-Template von `FavoriteMovieComponent` interessiert uns aber nicht weiter.
 
-Weil wir in unseren Tests in `favorite-movies.component.spec.ts` aber weiterhin nur echte Unittests und keinen Integrationstest haben wollen, sollten wir die `FavoriteMovieComponent` mit Hilfe des npm - Packages `ng-mocks` mocken. Daher installierte dieses Package mit `npm install ng-mocks`
+Weil wir in unseren Tests in `favorite-movies.component.spec.ts` aber weiterhin nur echte Unittests und keinen Integrationstest haben wollen, sollten wir die `FavoriteMovieComponent` mit Hilfe des npm - Packages `ng-mocks` durch eine MockComponent ersetzten. Daher installiere zunächst dieses Package mit `npm install ng-mocks` in unserem Demo-Projekt.
 
 ### Aufgabenstellung:
-1. Ändere unsere Tests in `favorite-movies.component.spec.ts` so, dass satt dem `<li>`mit einem Movie, `<favorite-movie>` erwartet wird
-2. Ändere den Test so , dass geprüft wird, ob auch der Parameter `FavoriteMovieComponent.favoriteMovie` von `FavoriteMoviesComponent` korrekt übergeben wird.
-3. Verständnissfrage: Was hilft uns das ng-mocks-Package mit der MockComponent() überhaupt, wo wir doch in unserem Unittest trotzdem von `FavoriteMovieComponent` abhängig sind ? (Antwort in der Docu zu ng-mocks)
+1. Ändere unsere bisherigen Tests in `favorite-movies.component.spec.ts` so, dass satt dem `<li>`mit einem Spielfilmname, das `<favorite-movie>`-Element erwartet wird.
+2. Ändere den Test so , dass geprüft wird, ob auch der Parameter `FavoriteMovieComponent.movieName` von `FavoriteMoviesComponent` korrekt übergeben wird.
+3. Ändere die Implementierung oder das Html-Template der `FavoriteMoviesComponent` bis alle Tests wieder grün sind.
+4. Verständnissfrage: Was hilft uns das ng-mocks-Package mit der MockComponent() überhaupt, wo wir doch in unserem Unittest trotzdem von `FavoriteMovieComponent` abhängig sind ? (Antwort in der Docu zu ng-mocks)
+### Lösung Aufgabe 8 
+{% include video id="a8Go3wm5-Zg" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/a8Go3wm5-Zg)
+* [Lösung zu Aufgabe 7](https://github.com/bodote/tdd-angular/tree/v1.8) 
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
+
 
 ## Aufgabe 9
 Unsere `FavoriteMovieComponent` soll jetzt auch einen Event emittieren, wenn ein Movie gelöscht werden soll. Erweitere `FavoriteMovieComponent` entsprechend um ein `@Output...`.

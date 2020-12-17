@@ -316,7 +316,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#angular-tdd-workshop">Angular TDD Workshop</a><ul><li><a href="#aufgabe-6">Aufgabe 6</a><ul><li><a href="#hilfreiche-hinweise">Hilfreiche Hinweise:</a></li><li><a href="#aufgabestellung">Aufgabestellung:</a></li><li><a href="#lösung-aufgabe-6">Lösung Aufgabe 6</a></li></ul></li><li><a href="#aufgabe-7">Aufgabe 7</a><ul><li><a href="#lösung-aufgabe-7">Lösung Aufgabe 7</a></li></ul></li><li><a href="#bonusfrage-zu-aufgabe-7">Bonusfrage zu Aufgabe 7</a><ul><li><a href="#lösung-bonunsfrage-7">Lösung Bonunsfrage 7</a></li></ul></li><li><a href="#aufgabe-8">Aufgabe 8</a><ul><li><a href="#aufgabenstellung">Aufgabenstellung:</a></li></ul></li><li><a href="#aufgabe-9">Aufgabe 9</a></li><li><a href="#feedback-und-kommentare">Feedback und Kommentare:</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#angular-tdd-workshop">Angular TDD Workshop</a><ul><li><a href="#aufgabe-6">Aufgabe 6</a><ul><li><a href="#hilfreiche-hinweise">Hilfreiche Hinweise:</a></li><li><a href="#aufgabestellung">Aufgabestellung:</a></li><li><a href="#lösung-aufgabe-6">Lösung Aufgabe 6</a></li></ul></li><li><a href="#aufgabe-7">Aufgabe 7</a><ul><li><a href="#lösung-aufgabe-7">Lösung Aufgabe 7</a></li></ul></li><li><a href="#bonusfrage-zu-aufgabe-7">Bonusfrage zu Aufgabe 7</a><ul><li><a href="#lösung-bonunsfrage-7">Lösung Bonunsfrage 7</a></li></ul></li><li><a href="#aufgabe-8">Aufgabe 8</a><ul><li><a href="#aufgabenstellung">Aufgabenstellung:</a></li><li><a href="#lösung-aufgabe-8">Lösung Aufgabe 8</a></li></ul></li><li><a href="#aufgabe-9">Aufgabe 9</a></li><li><a href="#feedback-und-kommentare">Feedback und Kommentare:</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -397,21 +397,36 @@ Wir verwenden hier aber <code class="language-plaintext highlighter-rouge">jasmi
 </ul>
 
 <h2 id="aufgabe-8">Aufgabe 8</h2>
-<p>Kommen wir zurück zu unserer <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code>. Wir wollen jetzt nicht einfach eine Liste der Movies ausgeben, sondern jeder Spielfilm soll mit einer eigenen “Presentation” oder “Dumb” -Component, genannte <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> (also ohne das “s” ) dargestellt werden. Was diese <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> macht und wie sie implementiert ist, das ist uns im Moment unwichtig.
-Wir wollen aber testen, dass unsere bestehende <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> jetzt jeden Film als <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> (mit dessen Selector <code class="language-plaintext highlighter-rouge">favorite-movie</code>) statt  eines Listenelements <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code> verwendet  <strong>und</strong> dass diesem <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> der Name des Films auch korrekt übergeben wird.</p>
+<p>Kommen wir zurück zu unserer <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code>. Wir wollen jetzt nicht einfach eine Liste der Filme ausgeben, sondern jeder Spielfilm soll mit einer eigenen “Presentation” -Component dargestellt werden. Diese Componente nennen wir  <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> (also ohne das “s” ). Was diese <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> macht und wie sie implementiert ist, das ist uns im Moment unwichtig.
+Wir wollen aber testen, dass unsere bestehende <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> jetzt für jeden Film die untergeordnete  <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> verwendet. Diese soll den <code class="language-plaintext highlighter-rouge">selector</code> <code class="language-plaintext highlighter-rouge">favorite-movie</code> nutzen und der soll statt  des bisherigen Listenelements <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code> eingesetzt werden. Außerdem wollen wir testen, dass wir dieser <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> den Name des Films auch korrekt übergeben.</p>
 
 <p>Mit anderen Worten:
-Lege eine neue Componente “favorite-movie” an (mit <code class="language-plaintext highlighter-rouge">ng g c</code>) und definiere dort <code class="language-plaintext highlighter-rouge">selector: 'favorite-movie'</code> und <code class="language-plaintext highlighter-rouge">@Input() favoriteMovie: string;</code>
+Lege eine neue Componente “favorite-movie” an (mit <code class="language-plaintext highlighter-rouge">ng g c</code>) und definiere dort <code class="language-plaintext highlighter-rouge">selector: 'favorite-movie'</code> und <code class="language-plaintext highlighter-rouge">@Input() movieName: string;</code>
 Die sonstige Implementierung und ebenso das HTML-Template von <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> interessiert uns aber nicht weiter.</p>
 
-<p>Weil wir in unseren Tests in <code class="language-plaintext highlighter-rouge">favorite-movies.component.spec.ts</code> aber weiterhin nur echte Unittests und keinen Integrationstest haben wollen, sollten wir die <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> mit Hilfe des npm - Packages <code class="language-plaintext highlighter-rouge">ng-mocks</code> mocken. Daher installierte dieses Package mit <code class="language-plaintext highlighter-rouge">npm install ng-mocks</code></p>
+<p>Weil wir in unseren Tests in <code class="language-plaintext highlighter-rouge">favorite-movies.component.spec.ts</code> aber weiterhin nur echte Unittests und keinen Integrationstest haben wollen, sollten wir die <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> mit Hilfe des npm - Packages <code class="language-plaintext highlighter-rouge">ng-mocks</code> durch eine MockComponent ersetzten. Daher installiere zunächst dieses Package mit <code class="language-plaintext highlighter-rouge">npm install ng-mocks</code> in unserem Demo-Projekt.</p>
 
 <h3 id="aufgabenstellung">Aufgabenstellung:</h3>
 <ol>
-  <li>Ändere unsere Tests in <code class="language-plaintext highlighter-rouge">favorite-movies.component.spec.ts</code> so, dass satt dem <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code>mit einem Movie, <code class="language-plaintext highlighter-rouge">&lt;favorite-movie&gt;</code> erwartet wird</li>
-  <li>Ändere den Test so , dass geprüft wird, ob auch der Parameter <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent.favoriteMovie</code> von <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> korrekt übergeben wird.</li>
-  <li>Verständnissfrage: Was hilft uns das ng-mocks-Package mit der MockComponent() überhaupt, wo wir doch in unserem Unittest trotzdem von <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> abhängig sind ? (Antwort in der Docu zu ng-mocks)</li>
+  <li>Ändere unsere bisherigen Tests in <code class="language-plaintext highlighter-rouge">favorite-movies.component.spec.ts</code> so, dass satt dem <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code>mit einem Spielfilmname, das <code class="language-plaintext highlighter-rouge">&lt;favorite-movie&gt;</code>-Element erwartet wird.</li>
+  <li>Ändere den Test so , dass geprüft wird, ob auch der Parameter <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent.movieName</code> von <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> korrekt übergeben wird.</li>
+  <li>Ändere die Implementierung oder das Html-Template der <code class="language-plaintext highlighter-rouge">FavoriteMoviesComponent</code> bis alle Tests wieder grün sind.</li>
+  <li>Verständnissfrage: Was hilft uns das ng-mocks-Package mit der MockComponent() überhaupt, wo wir doch in unserem Unittest trotzdem von <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> abhängig sind ? (Antwort in der Docu zu ng-mocks)
+    <h3 id="lösung-aufgabe-8">Lösung Aufgabe 8</h3>
+  </li>
 </ol>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/a8Go3wm5-Zg" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<ul>
+  <li><a href="https://youtu.be/a8Go3wm5-Zg">Link zum Video</a></li>
+  <li><a href="https://github.com/bodote/tdd-angular/tree/v1.8">Lösung zu Aufgabe 7</a></li>
+  <li><a href="https://github.com/bodote/bodote.github.io/discussions">Feedback und Kommentare</a></li>
+</ul>
 
 <h2 id="aufgabe-9">Aufgabe 9</h2>
 <p>Unsere <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> soll jetzt auch einen Event emittieren, wenn ein Movie gelöscht werden soll. Erweitere <code class="language-plaintext highlighter-rouge">FavoriteMovieComponent</code> entsprechend um ein <code class="language-plaintext highlighter-rouge">@Output...</code>.
