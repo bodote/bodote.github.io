@@ -74,6 +74,7 @@ Weil wir in unseren Tests in `favorite-movies.component.spec.ts` aber weiterhin 
 ### Aufgabenstellung:
 1. Ändere unsere Tests in `favorite-movies.component.spec.ts` so, dass satt dem `<li>`mit einem Movie, `<favorite-movie>` erwartet wird
 2. Ändere den Test so , dass geprüft wird, ob auch der Parameter `FavoriteMovieComponent.favoriteMovie` von `FavoriteMoviesComponent` korrekt übergeben wird.
+3. Verständnissfrage: Was hilft uns das ng-mocks-Package mit der MockComponent() überhaupt, wo wir doch in unserem Unittest trotzdem von `FavoriteMovieComponent` abhängig sind ? (Antwort in der Docu zu ng-mocks)
 
 ## Aufgabe 9
 Unsere `FavoriteMovieComponent` soll jetzt auch einen Event emittieren, wenn ein Movie gelöscht werden soll. Erweitere `FavoriteMovieComponent` entsprechend um ein `@Output...`.
