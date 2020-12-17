@@ -56,6 +56,10 @@ Unser geplantes Backend ist leider etwas unzuverlässig, daher wollen wir genau 
 ## Bonusfrage zu Aufgabe 7
 Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern erst gar nicht erreicht werden kann (z.B. überhauptkeine Netzwerkverbindung besteht)?
 * Tip : statt `TestRequest.flush()` kann man hier `TestRequest.error()` verwenden um eine solchen Fehlermodus zu simulieren. Siehe auch [ErrorEvent](https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent)
+### Lösung Bonunsfrage 7
+* [Lösung zu Bonus-Aufgabe 7](https://github.com/bodote/tdd-angular/tree/v1.7.1) 
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
+
 
 ## Aufgabe 8
 Kommen wir zurück zu unserer `FavoriteMoviesComponent`. Wir wollen jetzt nicht einfach eine Liste der Movies ausgeben, sondern jeder Movie soll mit einer eigenen (Dumb)-Component `FavoriteMovieComponent` (also ohne das "s" ) dargestellt werden. Was diese `FavoriteMovieComponent` macht und wie sie implementiert ist, das ist uns im Moment unwichtig.
