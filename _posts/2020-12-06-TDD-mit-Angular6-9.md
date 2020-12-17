@@ -62,14 +62,14 @@ Was wenn der Externe HTTP-Service selbst keine Fehlermeldung sendet, sondern ers
 
 
 ## Aufgabe 8
-Kommen wir zurück zu unserer `FavoriteMoviesComponent`. Wir wollen jetzt nicht einfach eine Liste der Movies ausgeben, sondern jeder Movie soll mit einer eigenen (Dumb)-Component `FavoriteMovieComponent` (also ohne das "s" ) dargestellt werden. Was diese `FavoriteMovieComponent` macht und wie sie implementiert ist, das ist uns im Moment unwichtig.
-Wir wollen aber Testen, dass unsere bestehende `FavoriteMoviesComponent` jetzt jeden Movie als `FavoriteMovieComponent` (mit dessen Selector `favorite-movie`) statt  eines Listenelements `<li>` verwendet  **und** dass diesem `FavoriteMovieComponent` der Name des Movies auch korrekt übergeben wird.
+Kommen wir zurück zu unserer `FavoriteMoviesComponent`. Wir wollen jetzt nicht einfach eine Liste der Movies ausgeben, sondern jeder Spielfilm soll mit einer eigenen "Presentation" oder "Dumb" -Component, genannte `FavoriteMovieComponent` (also ohne das "s" ) dargestellt werden. Was diese `FavoriteMovieComponent` macht und wie sie implementiert ist, das ist uns im Moment unwichtig.
+Wir wollen aber testen, dass unsere bestehende `FavoriteMoviesComponent` jetzt jeden Film als `FavoriteMovieComponent` (mit dessen Selector `favorite-movie`) statt  eines Listenelements `<li>` verwendet  **und** dass diesem `FavoriteMovieComponent` der Name des Films auch korrekt übergeben wird.
 
 Mit anderen Worten:
 Lege eine neue Componente "favorite-movie" an (mit `ng g c`) und definiere dort `selector: 'favorite-movie'` und `@Input() favoriteMovie: string;`
-Die sonstige Implementierung und ebenso dessen HTML-Template interessiert uns aber nicht weiter.
+Die sonstige Implementierung und ebenso das HTML-Template von `FavoriteMovieComponent` interessiert uns aber nicht weiter.
 
-Weil wir in unseren Tests in `favorite-movies.component.spec.ts` aber weiterhin nur echte Unittests und keinen Integrationstest haben wollen, wollen wir die `FavoriteMovieComponent` mit Hilfe des npm - Packages `ng-mocks` mocken. Daher installierte dieses Package mit `npm install ng-mocks`
+Weil wir in unseren Tests in `favorite-movies.component.spec.ts` aber weiterhin nur echte Unittests und keinen Integrationstest haben wollen, sollten wir die `FavoriteMovieComponent` mit Hilfe des npm - Packages `ng-mocks` mocken. Daher installierte dieses Package mit `npm install ng-mocks`
 
 ### Aufgabenstellung:
 1. Ändere unsere Tests in `favorite-movies.component.spec.ts` so, dass satt dem `<li>`mit einem Movie, `<favorite-movie>` erwartet wird
