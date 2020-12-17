@@ -72,7 +72,8 @@ Weil wir in unseren Tests in `favorite-movies.component.spec.ts` aber weiterhin 
 2. Ändere den Test so , dass geprüft wird, ob auch der Parameter `FavoriteMovieComponent.favoriteMovie` von `FavoriteMoviesComponent` korrekt übergeben wird.
 
 ## Aufgabe 9
-TBD
+Unsere `FavoriteMovieComponent` soll jetzt auch einen Event emittieren, wenn ein Movie gelöscht werden soll. Erweitere `FavoriteMovieComponent` entsprechend um ein `@Output...`.
+Außerdem soll unser `FavoriteMovieService` eine weitere Methode bekommen um einen Movie zulöschen. Die Implementierung des Events und der Servicemethode interessiert uns nicht. Sondern wir wollen in einem neuen Test prüfe, ob unsere `FavoriteMoviesComponent` (mit "s") auf den Event korrekt reagiert indem sie im Service die `deleteMovie`-Methode mit dem richtigen Parameter aufruft.
 
 
 ## Feedback und Kommentare:
