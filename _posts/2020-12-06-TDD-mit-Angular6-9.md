@@ -84,8 +84,25 @@ Weil wir in unseren Tests in `favorite-movies.component.spec.ts` aber weiterhin 
 
 
 ## Aufgabe 9
-Unsere `FavoriteMovieComponent` soll jetzt auch einen Event emittieren, wenn ein Movie gelöscht werden soll. Erweitere `FavoriteMovieComponent` entsprechend um ein `@Output...`.
-Außerdem soll unser `FavoriteMovieService` eine weitere Methode bekommen um einen Movie zulöschen. Die Implementierung des Events und der Servicemethode interessiert uns nicht. Sondern wir wollen in einem neuen Test prüfe, ob unsere `FavoriteMoviesComponent` (mit "s") auf den Event korrekt reagiert indem sie im Service die `deleteMovie`-Methode mit dem richtigen Parameter aufruft.
+Unsere `FavoriteMovieComponent` soll jetzt einen `Event` emittieren, wenn ein Film gelöscht werden soll. Erweitere die `FavoriteMovieComponent` also um eine `EventEmitter` Property (`@Output...`).
+Außerdem soll unser `FavoriteMovieService` eine weitere Methode bekommen, um einen Film löschen zu können. Die Implementierung des Events und der Servicemethode interessiert uns nicht. Vielmehr wollen wir in einem neuen Test prüfen, ob unsere `FavoriteMoviesComponent` (mit "s") auf den `Event` korrekt reagiert. Nämlich indem sie im Service die `deleteMovie`-Methode mit dem richtigen Parameter aufruft.
+### Lösung Aufgabe 9 
+{% include video id="MFFNtlhl1ek" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/MFFNtlhl1ek)
+* [Lösung zu Aufgabe 7](https://github.com/bodote/tdd-angular/tree/v1.9) 
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
+
+## Aufgabe 10
+In dieser letzten Aufgabe der Serie wollen wir alles, was wir bis jetzt gelernt haben, nochmal anwenden.
+Wir nehmen an, wir wollten noch eine weitere Sub-Komponente entwicklen. Mit dieser Sub-Komponente, die jetzt direkt unterhalb der Überschrift "My Favorite Movies" von unserer "FavoriteMoviesComponent" erscheinen soll, soll der User nach Filmen suchen können, und dann einen der gefunden Filme zu seinen "FavoriteMovies" hinzufügen können. Diese Sub-Komponente soll `SearchMoviesComponent` heißen.
+Wobei wir hier **NICHT** die `SearchMoviesComponent` testen oder gar entwickeln wollen! 
+Vielemehr überlegen wir uns nur, welche Interfaces sie haben müsste, damit wir sie in unsere "smarte" FavoriteMoviesComponent integrieren können. 
+Dann erweitern wir unsere Tests für `FavoriteMoviesComponent`, um zu prüfen, ob `FavoriteMoviesComponent` die Subkomponente `SearchMoviesComponent` richtig integriert und verwendet.
+### Lösung Aufgabe 9 
+{% include video id="" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/)
+* [Lösung zu Aufgabe 7](https://github.com/bodote/tdd-angular/tree/v1.10) 
+* [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 
 ## Feedback und Kommentare:
