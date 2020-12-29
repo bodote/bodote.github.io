@@ -1,5 +1,5 @@
 ---
-title: "Test Driven Development mit Angular Folge 6-9"
+title: "Test Driven Development mit Angular Folge 6-10"
 date: 2020-12-08 
 categories:
   - blog
@@ -12,6 +12,8 @@ classes: wide
 # Angular TDD Workshop
 Diese Angular-TDD-Workshop ist eine Variante von diesem [Workshop](https://itnext.io/test-driven-development-in-an-angular-world-92c0c42a54d0)
 Wir verwenden hier aber `jasmine` statt `Jest`
+
+[Hier geht's zu den ersten 5 Folgen](../TDD-mit-Angular)
 
 ## Aufgabe 6
 Legen wir unsere `FavoriteMovieComponent` zur Seite und widmen uns jetzt dem `FavoriteMovieService`. Services sind in Angular in der Regel mit dem `HttpClientModule` und dessen `HttpClient` implementiert. 
@@ -79,7 +81,7 @@ Weil wir in unseren Tests in `favorite-movies.component.spec.ts` aber weiterhin 
 ### Lösung Aufgabe 8 
 {% include video id="a8Go3wm5-Zg" provider="youtube" %} 
 * [Link zum Video](https://youtu.be/a8Go3wm5-Zg)
-* [Lösung zu Aufgabe 7](https://github.com/bodote/tdd-angular/tree/v1.8) 
+* [Lösung zu Aufgabe 8](https://github.com/bodote/tdd-angular/tree/v1.8) 
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 
@@ -89,19 +91,19 @@ Außerdem soll unser `FavoriteMovieService` eine weitere Methode bekommen, um ei
 ### Lösung Aufgabe 9 
 {% include video id="MFFNtlhl1ek" provider="youtube" %} 
 * [Link zum Video](https://youtu.be/MFFNtlhl1ek)
-* [Lösung zu Aufgabe 7](https://github.com/bodote/tdd-angular/tree/v1.9) 
+* [Lösung zu Aufgabe 9](https://github.com/bodote/tdd-angular/tree/v1.9) 
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 ## Aufgabe 10
 In dieser letzten Aufgabe der Serie wollen wir alles, was wir bis jetzt gelernt haben, nochmal anwenden.
 Wir nehmen an, wir wollten noch eine weitere Sub-Komponente entwicklen. Mit dieser Sub-Komponente, die jetzt direkt unterhalb der Überschrift "My Favorite Movies" von unserer "FavoriteMoviesComponent" erscheinen soll, soll der User nach Filmen suchen können, und dann einen der gefunden Filme zu seinen "FavoriteMovies" hinzufügen können. Diese Sub-Komponente soll `SearchMoviesComponent` heißen.
 Wobei wir hier **NICHT** die `SearchMoviesComponent` testen oder gar entwickeln wollen! 
-Vielemehr überlegen wir uns nur, welche Interfaces sie haben müsste, damit wir sie in unsere "smarte" FavoriteMoviesComponent integrieren können. 
+Vielemehr überlegen wir uns nur, welche Schnittstellen sie haben müsste, damit wir sie in unsere "smarte" FavoriteMoviesComponent integrieren können. 
 Dann erweitern wir unsere Tests für `FavoriteMoviesComponent`, um zu prüfen, ob `FavoriteMoviesComponent` die Subkomponente `SearchMoviesComponent` richtig integriert und verwendet.
-### Lösung Aufgabe 9 
-{% include video id="" provider="youtube" %} 
-* [Link zum Video](https://youtu.be/)
-* [Lösung zu Aufgabe 7](https://github.com/bodote/tdd-angular/tree/v1.10) 
+### Lösung Aufgabe 10 
+{% include video id="he_70G6uqoQ" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/he_70G6uqoQ)
+* [Lösung zu Aufgabe 10](https://github.com/bodote/tdd-angular/tree/v1.10) 
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
 

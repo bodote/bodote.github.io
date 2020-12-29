@@ -110,7 +110,7 @@ werden, sondern eine andere, für den User verständlichere Meldung.
 * [Bessere Lösung zu Aufgabe 5](https://github.com/bodote/tdd-angular/tree/v1.5.2)
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
-[Weiter gehts hier](../TDD-mit-Angular6-9)
+[Weiter gehts hier](../TDD-mit-Angular6-10)
 
 ## Feedback und Kommentare:
 Bitte gib mir dein Feedback! Das hilft uns sehr das Tutorial und die Videos noch besser zu machen.
