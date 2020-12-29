@@ -94,7 +94,7 @@ Außerdem soll unser `FavoriteMovieService` eine weitere Methode bekommen, um ei
 * [Lösung zu Aufgabe 9](https://github.com/bodote/tdd-angular/tree/v1.9) 
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
-## Aufgabe 10
+## Aufgabe 10 (letzte Aufgabe der Serie)
 In dieser letzten Aufgabe der Serie wollen wir alles, was wir bis jetzt gelernt haben, nochmal anwenden.
 Wir nehmen an, wir wollten noch eine weitere Sub-Komponente entwicklen. Mit dieser Sub-Komponente, die jetzt direkt unterhalb der Überschrift "My Favorite Movies" von unserer "FavoriteMoviesComponent" erscheinen soll, soll der User nach Filmen suchen können, und dann einen der gefunden Filme zu seinen "FavoriteMovies" hinzufügen können. Diese Sub-Komponente soll `SearchMoviesComponent` heißen.
 Wobei wir hier **NICHT** die `SearchMoviesComponent` testen oder gar entwickeln wollen! 
