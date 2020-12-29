@@ -101,8 +101,8 @@ Wobei wir hier **NICHT** die `SearchMoviesComponent` testen oder gar entwickeln 
 Vielemehr überlegen wir uns nur, welche Schnittstellen sie haben müsste, damit wir sie in unsere "smarte" FavoriteMoviesComponent integrieren können. 
 Dann erweitern wir unsere Tests für `FavoriteMoviesComponent`, um zu prüfen, ob `FavoriteMoviesComponent` die Subkomponente `SearchMoviesComponent` richtig integriert und verwendet.
 ### Lösung Aufgabe 10 
-{% include video id="he_70G6uqoQ" provider="youtube" %} 
-* [Link zum Video](https://youtu.be/he_70G6uqoQ)
+{% include video id="nZ6g3AbTd9M" provider="youtube" %} 
+* [Link zum Video](https://youtu.be/nZ6g3AbTd9M)
 * [Lösung zu Aufgabe 10](https://github.com/bodote/tdd-angular/tree/v1.10) 
 * [Feedback und Kommentare](https://github.com/bodote/bodote.github.io/discussions)
 
