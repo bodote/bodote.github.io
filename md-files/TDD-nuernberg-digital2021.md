@@ -1,3 +1,5 @@
+[Nürnberg Digital 2021](https://nuernberg.digital/mitmachen/veranstalter.html), 
+Coding Track, 2021-07-16 - 2021-07-19
 # Short Teaser:
 Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile.
 # Long Teaser:
