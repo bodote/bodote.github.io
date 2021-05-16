@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
   Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Short Teaser: - Bodos Software Blog</title>
+<!-- begin _includes/seo.html --><title>Bodos Software Blog</title>
 <meta name="description" content="‘Gedanken und Ideen zu Softwareentwicklung’">
 
 
@@ -20,7 +20,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Bodos Software Blog">
-<meta property="og:title" content="Short Teaser:">
+<meta property="og:title" content="Bodos Software Blog">
 <meta property="og:url" content="http://localhost:4000/md-files/TDD-nuernberg-digital2021/">
 
 
@@ -157,7 +157,9 @@
 
 
     <div class="initial-content">
-      <h1 id="short-teaser">Short Teaser:</h1>
+      <p><a href="https://nuernberg.digital/mitmachen/veranstalter.html">Nürnberg Digital 2021</a>, 
+Coding Track, 2021-07-16 - 2021-07-19</p>
+<h1 id="short-teaser">Short Teaser:</h1>
 <p>Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile.</p>
 <h1 id="long-teaser">Long Teaser:</h1>
 <p>Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – woher aber kommt diese „Test Last“-Philosophie und warum halten so viele Entwickler so überzeugt daran fest? 
@@ -172,27 +174,85 @@ Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer 
 Ich war nämlich auch mal Abteilungsleiter, bis mich Scrum, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben.</p>
 <h2 id="warum-tdd">Warum TDD</h2>
 <ul>
-  <li>Warum halte ich hier trotzdem einen Vortrag zum Thema TDD ? Weil mich das Thema schon immer interessiert hat, seit ich so ums Jahr 2000 das Buch “Extreme Programming” von Kent Beck gelesen habe.</li>
-  <li>Da war viel von den Konzepten die Rede was später unter Scrum bekannt wurde. Als ich 2003 meinem Kompangnion und Chef Joachim von dieser Vision für eine Bessere Methode Software zu entwickeln erzählt hat er nur gesagt: “Wer Visionen hat sollte zum Arzt gehn”  (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch extrem brauchbar sind)</li>
-  <li>Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests VOR dem eigentlichen Teil der Software schreiben sollte.</li>
-  <li>Zitat “We will write tests before we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer’s perspective.”</li>
-  <li>Das war damals echt revolutionär und für mich eine neue Idee, die ich dann gleich auch  umzusetzten versuchte. * Dabei hatte ich das Glück damals gerade einen neuen Job zu haben, in dem mich mir nicht nur selbst Java beibringen durfte. Sondern ich durfte auch fast 2 Jahre mehr oder weniger unbehelligt an einer neuen Text-Layout Engine programmieren, mir nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck.</li>
-  <li>Wer im Pubikum kennt noch <em>TeX</em> oder <em>Latex</em>? Ja, genau damit hatte ich ein paar Jahre zuvor meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mich und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML.
-    <h2 id="was-ist-tdd-genau">Was ist TDD genau?</h2>
-    <p>Aber genug der alten Geschichten, was ist denn dieses TDD genau und was meint Kent Beck mit  “We will write tests before we code, minute by minute.” in seinem Buch ?</p>
+  <li>Warum halte ich hier trotzdem einen Vortrag zum Thema TDD ? Weil mich das Thema schon <strong>immer</strong> interessiert hat, seit ich so ums Jahr 2000 das Buch “Extreme Programming” von Kent Beck gelesen habe.</li>
+  <li>Da war viel von den Konzepten die Rede, die später unter dem Namen “Scrum” bekannt wurden. Als ich 2003 meinem Kompangnion Joachim von dieser Vision für eine bessere Methode Software zu entwickeln überzeugen wollte, hat er nur gesagt: “Wer Visionen hat sollte zum Arzt gehn”  (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch extrem brauchbar sind)</li>
+  <li>Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests <strong>VOR</strong> dem eigentlichen Teil der Software schreiben sollte.</li>
+  <li>Zitat “We will write tests <strong>before</strong> we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer’s perspective.”</li>
+  <li>Das war damals echt revolutionär und für mich eine neue Idee, die ich dann gleich auch  umzusetzten versuchte.</li>
+  <li>Dabei hatte ich das Glück damals gerade einen neuen Job zu haben, in dem ich mir nicht nur selbst Java beibringen durfte. Sondern ich durfte auch fast 2 Jahre mehr oder weniger unbehelligt an einer neuen Text-Layout Engine programmieren, mit nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck.</li>
+  <li>Wer im Pubikum kennt noch <em>TeX</em> oder <em>Latex</em>? Ja, genau damit hatte ich ein paar Jahre zuvor meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mich und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML.</li>
+  <li>Aber genug der alten Geschichten..
+    <h2 id="warum-tdd-und-test-first">Warum TDD und Test First?</h2>
   </li>
-  <li>Die Basis von TDD sind Unit-tests. Mit “<strong>Unit</strong>” ist die kleinste sinnvolle Einheit die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder   eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung macht.  Also im besten Fall ein paar Zeilen Code, sagen wir zwischen 10 und 100 Zeilen</li>
-  <li>der Begriff Unittest meint dann einen Stück Software, welches die Korrektheit dieser eine <strong>Unit</strong> testet. Und nur dieser. D.h. der Test sollte nach möglichkeit keine anderen Teile aus dem gesamten Softwareprojekt testen. Auch nicht , wenn die zu testende <strong>Unit</strong> eigentlich noch andere Units benötigt, um zu funktionieren.</li>
+  <li>Welches Problem will TDD und Test First eigentlich lösen ?</li>
+  <li>In Softwareprojekten die von mehrern Entwicklern über mehrer Jahre entwickelt, weiterentwickeln und neuen Anforderungen angepasst werden, entstehen typischerweise eine Reihe von Problemen, die mit TDD/TestFirst deutlich verbessert werden können:
+    <ul>
+      <li>Softwarequalität, Stabilität, Zuverlässigkeit, Belastbarkeit werden früher oder später ein Thema sein</li>
+      <li>oft stellen die Beteiligten fest, dass je größer die Software wird und je älter, desto schwieriger und langwieriger wird es, Anpassungen und Änderungen vorzunehmen.</li>
+      <li>Die Entwickler verbringen zu viel Zeit mit Bugsuche, statt neue Funktionen einzubauen.</li>
+      <li>Die Softwarearchitektur erodiert bis zu Unkenntlichkeit: Dadurch, dass neue Entwickler, die die ursprüngliche Architektur nicht gut genug kennen, Änderungen vornehmen, entwickelt sich die Software von dieser Architektur auch immer weiter weg, bis  dann kein architektonische Konzept erkennbar ist.</li>
+    </ul>
+  </li>
+  <li>Ok, jetzt denken vieleicht viele von euch: “ok, Softwarequalität, Stabilität, Zuverlässigkeit, da sehe ich  einen Zusammenhang zu automatischen Tests, aber was hat das mit Softwarearchitektur zu tun ?”
+Stimmts?</li>
+  <li>Also im Vertrauen, dass euch der Zusammenhang zwischen Testen und Qualität und damit auch automatischem Testen und Softwarequalität klar ist lasst mich direkt auf die Softwarearchitektur eingehen:</li>
+  <li>Vorher ein Wort zu den verschiedenen Ebenen von Softwarearchitektur:
+    <ul>
+      <li>wie beim Bauen von Gebäuden gibt es ja auch verschiedenen Ebenen: also
+        <ul>
+          <li>Wie sieht mein Stadtteil aus in dem die Gebäude stehen, wie sind die Straßen, Gehwege, Parks und Gebäude insgesamt organisiert?</li>
+          <li>Wie ist die Aufteilung in den Gebäuden? z.B. Büros, große oder kleine Wohnungen</li>
+          <li>Wie sind die Wohnungen aufteilt, z.b. wie groß ist das Wohnzimmer im Vergleich zur Küche</li>
+          <li>bis hin: welchen Bodenbelag hab ich wo, Welche Lichtschalter an dern Wand , welche Türgriffe?</li>
+        </ul>
+      </li>
+      <li>Wenn wir diese 4 Ebenen auf Softwarearchitektur übertragen und das auf TDD anwenden, dann hilft TDD eher bei den untern beiden Ebenen, also bei der Architektur der kleineren Details, weniger bei den obern beiden Ebenen, der Architektur im ganz Großen.</li>
+    </ul>
+  </li>
+  <li>So, die Behauptung die jetzt im Raume steht, ist also dass TDD/TestFirst bei der Softwarearchitektur der untern beiden Ebenen massiv hilft und auch hift über längere Zeiträume diese Architektur positiv beeinflusst.</li>
+  <li>Im Gegensatz dazu, helfen nachträglich hinzugefügte automatische Tests zwar für die Softwarequalität im Sinne von Stabilität und Fehlerarmut. Nachträglich hinzugefügte automatische Tests helfen aber gar nicht für die Softwarearchitektur, für keine der 4 Ebenen
+    <h2 id="wie-hilft-tddtestfirst">Wie hilft TDD/TestFirst?</h2>
+    <p><a href="/blog/TDD-aber-richtig/#test-first-ist-deswegen-entscheidend-weil">hier</a></p>
+    <h2 id="beweise-beweise">Beweise, Beweise</h2>
+    <p><a href="/blog/Literaturrecherche-TDD/">hier</a></p>
+  </li>
+</ul>
+
+<h2 id="was-ist-tdd-genau">Was ist TDD genau?</h2>
+<p>.. und was meint Kent Beck mit  “We will write tests before we code, minute by minute.”?</p>
+<ul>
+  <li>Die Basis von TDD sind Unit-tests. Mit “<strong>Unit</strong>” ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung macht. Also im besten Fall ein paar Zeilen Code, sagen wir zwischen 10 und 100 Zeilen</li>
+  <li>der Begriff <em>Unittest</em> meint dann einen Stück Software, welches die Korrektheit dieser einen <strong>Unit</strong> testet. Und nur dieser. D.h. der Test sollte nach Möglichkeit keine anderen Teile aus dem gesamten Softwareprojekt testen. Auch nicht, wenn die zu testende <strong>Unit</strong> eigentlich noch andere Units benötigt, um zu funktionieren.</li>
   <li>Diese Test-Software sollte dabei alle möglichen Pfade in der der nützlichen <strong>Unit</strong> abtesten. Dabei insbesonders alle Grenzbedinungen in der <strong>Unit</strong> auf Korrektheit überprüfen. Das Ergebnis ist dann eine sogenannte Testabdeckung von 100%. Auf die “Testabdeckung” gehen wir später noch ein.</li>
-  <li>Der eigentliche Witz kommt jetzt aber erst: Wir schreiben den Test BEVOR wir den Code für die eigentlich nützliche Unit schreiben.
+  <li>Der eigentliche Witz kommt jetzt aber erst: Wir schreiben den Test <strong>BEVOR</strong> wir den Code für die eigentlich nützliche Unit schreiben.
     <ul>
       <li>Geht das überhaupt ?</li>
       <li>Warum hackt da Kent Beck und andere immer noch so darauf rum ?</li>
       <li>Warum findet man so wenige Programmierer die das tatsächlich tun ?</li>
+      <li>Wie kann ich als Softwareentwickler mich in kleinen Schritten incrementell von TestLast zu TestFirst vorarbeiten ?</li>
     </ul>
   </li>
   <li>This is what we talk about today ! (wie meine Lieblings-Physikerin auf Youtube immer sagt)
-    <h1 id="timestamp5-min">Timestamp:5 Min</h1>
+    <h1 id="timestamp-min">Timestamp:? Min</h1>
+    <h2 id="geht-das-überhaupt">Geht das überhaupt?</h2>
+  </li>
+  <li>Also, wenn man die paar Zeilen aus Kents Becks Buch einfach so versucht direkt umzusetzten, dann merkt man schnell, ganz so einfach ist das nicht.</li>
+  <li>Zunächst klären wir ein paar Vorraussetzungen. Sind wir überhaupt in der Situation, TDD mit test first gerade anwenden zu können ?
+    <ul>
+      <li>Nehmen wir an wir sein ein SWEntwickler in einem Team</li>
+      <li>irgend jemand hat sich schon über das Gesamtkonzept den Kopf zerbrochen und eine Software-Architektur entworfen und diese uns soweit erklärt, dass wir ein grobes Verständniss dafür haben.</li>
+      <li>Wir sollen jetzt ein neues Feature implementieren, wofür wir aller Vorraussicht mindestens eine neue Klasse, Komponente, oder Service oder ähnliches benötigen.</li>
+      <li>wir müssen zwar auch bestehenden Code ändern, aber der neu zu schreibende Code überwiegt auf jeden Fall.</li>
+      <li>idealerweise gibt es schon irgendein Unittest-Framework im Projekt, auch wenn das bisher nur zum “Test Last” eingesetzt wurde.</li>
+    </ul>
+  </li>
+  <li>Die Erfahrung zeigt, dass man sinnvollerweise so vorgeht:
+    <ol>
+      <li>wir brauchen ein Konzept, das kann im einfachsten Fall im Kopf passieren, mit Papier und Bleistift, Oder, wer’s gerne schwergewichtig mag (oder in einem großen Projekt Dokumentationspflichten hat), denn gern auch mit einer Software seiner Wahl.</li>
+      <li>
+        <h2 id="anmerkungen-fürs-nächste-mal-beispiele-einbauen">Anmerkungen fürs nächste mal: Beispiele einbauen.</h2>
+      </li>
+    </ol>
   </li>
 </ul>
 

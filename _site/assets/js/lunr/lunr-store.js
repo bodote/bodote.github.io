@@ -1,4 +1,10 @@
 var store = [{
+        "title": "Test Driven Development und Test First für NueDigital",
+        "excerpt":"Nürnberg Digital 2021, Coding Track, 2021-07-16 - 2021-07-19 Short Teaser: Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile. Long Teaser: Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet –...","categories": ["Blog"],
+        "tags": ["Testing","TestFirst","Talk"],
+        "url": "/blog/TDD-TestFirst-NueDigital/",
+        "teaser": null
+      },{
         "title": "(Video)Test Driven Development und Test-First Tutorial",
         "excerpt":"Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First               ","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],
@@ -33,5 +39,11 @@ var store = [{
         "excerpt":"Angular TDD Workshop Diese Angular-TDD-Workshop ist eine Variante von diesem Workshop Wir verwenden hier aber jasmine statt Jest Hier geht’s zu den ersten 5 Folgen Aufgabe 6 Legen wir unsere FavoriteMovieComponent zur Seite und widmen uns jetzt dem FavoriteMovieService. Services sind in Angular in der Regel mit dem HttpClientModule und...","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],
         "url": "/blog/TDD-mit-Angular6-10/",
+        "teaser": null
+      },{
+        "title": "Test Driven Development mit Java Teil 2",
+        "excerpt":"siehe auch TDD mit Java Workshop (mit Video), Teil 1 Test Driven Development mit Java Testabdeckung und Mutation Testing Testabdeckung allen zu messen, und sich danach zu orientieren, oder gar “Test Last” zu praktizieren und dann notdürfigt eine x% Testabdeckung hinzupfuschen ist natürlich nicht die Lösung, wie wir bereits wissen....","categories": ["blog"],
+        "tags": ["Testing"],
+        "url": "/blog/TDD-mit-Java/",
         "teaser": null
       }]

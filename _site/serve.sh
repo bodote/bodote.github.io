@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -v
-bundle exec jekyll serve --watch
+bundle exec jekyll serve --watch --unpublished
