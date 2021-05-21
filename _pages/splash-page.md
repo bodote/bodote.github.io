@@ -10,7 +10,9 @@ header:
   caption: "Photo: [**Saturn V**](https://www.kennedyspacecenter.com/explore-attractions/race-to-the-moon)"
 excerpt: "...überschätzen, was sie in einem Jahr erreichen können und unterschätzen, was sie in 10 Jahren tun können ... oder was sie in einem Nachmittag zerstören können!"
 intro: 
-  - excerpt: '“Talk is cheap. Show me the code.” ― Linus Torvalds'
+  - excerpt: '“Talk  is cheap. Show me the code.” ― Linus Torvalds'
+  - excerpt: '"Any sufficiently advanced technology is indistinguishable from magic." - Arthur C. Clarke'
+  - excerpt: '"Git is black magic." me, trying to understand how git actually works'
 
 ---
 

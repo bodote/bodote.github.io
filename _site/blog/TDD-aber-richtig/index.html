@@ -164,6 +164,42 @@
       
 
 
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#blog" itemprop="item"><span itemprop="name">Blog</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">TDD? aber richtig!</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
 
 <div id="main" role="main">
   
@@ -187,7 +223,7 @@
     
     
       <div class="author__bio" itemprop="description">
-        <p>‘Talk is cheap. Show me the code.’ ― Linus Torvalds</p>
+        <p>‘Talk is cheap. Show me the code.’ ― Linus Torvalds <br /> <br /> ‘Any sufficiently advanced technology is indistinguishable from magic.’ - Arthur C. Clarke <br /> <br /> ‘Git is black magic.’ me, trying to understand how git actually works</p>
 
       </div>
     
@@ -351,14 +387,18 @@ gleichen)</p>
 <p>Also das wichtige und entscheidende ist für mich das  <strong>TEST FIRST</strong> Prinzip. Daher kommt ja auch das <strong>DRIVEN</strong> in TDD.</p>
 
 <h1 id="test-first-ist-deswegen-entscheidend-weil">»Test First«  ist deswegen entscheidend, weil…</h1>
-
+<p><strong>Test first..</strong>:</p>
 <ul>
-  <li><strong>Test first</strong> zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr klar über die Anforderungen und das Softwaredesign und zwar auf Klassen/Interface- Ebene Gedanken zu machen.</li>
-  <li><strong>Test first</strong> trägt dann fast automatisch zu einer klareren Softwarearchitektur auf Klassen/Interface- Ebene bei.</li>
-  <li><strong>Test zuerst</strong> zu schreiben geht aber nur, wenn ich nicht nur die <strong>fachlichen</strong> Anforderungen genau verstanden sondern, wenn ich auch genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mehr Gedanken zu machen.</li>
-  <li><strong>Test first</strong>- Code braucht meiner Erfahrung nach weniger späteres  Refactoring (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszyklus oder in einem späteren Sprint offensichtlich wird)</li>
-  <li><strong>Test first</strong> führt zu kleineren Klassen und Methoden, fördert automatisch das <a href="https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip">Single-Responsibility-Prinzip</a>, damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist.</li>
-  <li><strong>Test first</strong> spart am Ende halt doch Zeit und liefert höhere Code-Qualität.</li>
+  <li>.. zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr <strong>klar</strong> über die <strong>Anforderungen</strong> und das Softwaredesign und zwar auf Klassen/Interface- Ebene Gedanken zu machen.</li>
+  <li>.. trägt dann fast automatisch zu einer <strong>klareren Softwarearchitektur</strong> auf Klassen/Interface- Ebene bei.</li>
+  <li>.. zu schreiben geht aber nur, wenn ich nicht nur die <strong>fachlichen</strong> Anforderungen genau verstanden sondern, wenn ich auch genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mit ein <strong>durchdachtes  Konzept</strong> zu machen.</li>
+  <li>
+    <ul>
+      <li>Code braucht meiner Erfahrung nach <strong>weniger späteres  Refactoring</strong> (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszyklus oder in einem späteren Sprint offensichtlich wird)</li>
+    </ul>
+  </li>
+  <li>.. führt zu kleineren Klassen und Methoden, fördert automatisch das <strong><a href="https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip">Single-Responsibility-Prinzip</a></strong>, damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist.</li>
+  <li>.. spart am Ende halt doch Zeit und liefert <strong>höhere Code-Qualität</strong>.</li>
 </ul>
 
 <h2 id="warum--so-häufig-test-last-statttest-first">Warum  so häufig “test last” statt »Test First« ?</h2>

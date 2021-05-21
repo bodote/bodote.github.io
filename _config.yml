@@ -35,6 +35,8 @@ timezone: DE # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 include:
   - _pages
 
+
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -61,7 +63,9 @@ plugins:
 author:
   name   : "Bodo Teichmann"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "'Talk is cheap. Show me the code.' ― Linus Torvalds"
+  bio    : "'Talk is cheap. Show me the code.' ― Linus Torvalds <br> <br>
+  'Any sufficiently advanced technology is indistinguishable from magic.' - Arthur C. Clarke <br> <br>
+  'Git is black magic.' me, trying to understand how git actually works "
   links:
     - label: "Website von BAS"
       icon: "fas fa-fw fa-link"
@@ -83,7 +87,7 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/bodote"
     
-
+breadcrumbs: true  # disabled by default
 defaults:
   # _posts
   - scope:
@@ -96,13 +100,7 @@ defaults:
       comments: true
       share: true
       related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+      show_dates: true
 
 category_archive:
   type: liquid

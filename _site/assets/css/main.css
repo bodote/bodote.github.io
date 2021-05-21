@@ -1270,3 +1270,4 @@ body { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 10
   .page__hero-caption a { color: #000 !important; }
   /* Hide the following elements on print ========================================================================== */
   .masthead, .toc, .page__share, .page__related, .pagination, .ads, .page__footer, .page__comments-form, .author__avatar, .author__content, .author__urls-wrapper, .nav__list, .sidebar, .adsbygoogle { display: none !important; height: 1px !important; } }
+/* html {  box-sizing: border-box; background-color: $background-color; font-size: 14px;  @include breakpoint($medium) { font-size: 16px; }  @include breakpoint($large) { font-size: 16px; }  @include breakpoint($x-large) { font-size: 16px; }  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } */
