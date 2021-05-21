@@ -1,6 +1,6 @@
 ---
 title: "Test Driven Development und Test First für NueDigital"
-date: 2020-07-16 // zukünftige Datum wird nicht veröffentlicht !
+date: 2021-05-20 // zukünftige Datum wird nicht veröffentlicht !
 published: false
 visible: true
 categories:
@@ -202,7 +202,8 @@ float berechnePreis(preis, rabat, bestelldatum ,rabattZeitraumBeginn ,rabattZeit
 
 
 
-## Anmerkungen fürs nächste mal: Beispiele einbauen.
+## Anmerkungen fürs nächste mal: Beispiele einbauen. Einfluss auf SoftwareArchitektur nachweisen
+
 
 
 

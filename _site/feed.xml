@@ -1,4 +1,265 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-21T16:00:24+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Test Driven Development mit Java Teil 2</title><link href="http://localhost:4000/blog/TDD-mit-Java/" rel="alternate" type="text/html" title="Test Driven Development mit Java Teil 2" /><published>2020-12-12T00:00:00+00:00</published><updated>2020-12-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-mit-Java</id><content type="html" xml:base="http://localhost:4000/blog/TDD-mit-Java/">&lt;p&gt;siehe auch &lt;a href=&quot;2020-09-10-TDD-Tutorial.md&quot;&gt;TDD mit Java Workshop (mit Video), Teil 1&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-21T16:04:52+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bodos Software Blog</title><subtitle>'Gedanken und Ideen zu Softwareentwicklung'</subtitle><author><name>Bodo Teichmann</name></author><entry><title type="html">Test Driven Development und Test First für NueDigital</title><link href="http://localhost:4000/blog/TDD-TestFirst-NueDigital/" rel="alternate" type="text/html" title="Test Driven Development und Test First für NueDigital" /><published>2021-05-20T00:00:00+00:00</published><updated>2021-05-20T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-TestFirst-NueDigital</id><content type="html" xml:base="http://localhost:4000/blog/TDD-TestFirst-NueDigital/">&lt;p&gt;&lt;a href=&quot;https://nuernberg.digital/mitmachen/veranstalter.html&quot;&gt;Nürnberg Digital 2021&lt;/a&gt;, 
+Coding Track, 2021-07-16 - 2021-07-19&lt;/p&gt;
+&lt;h1 id=&quot;short-teaser&quot;&gt;Short Teaser:&lt;/h1&gt;
+&lt;p&gt;Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile.&lt;/p&gt;
+&lt;h1 id=&quot;long-teaser&quot;&gt;Long Teaser:&lt;/h1&gt;
+&lt;p&gt;Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – woher aber kommt diese „Test Last“-Philosophie und warum halten so viele Entwickler so überzeugt daran fest? 
+Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen anhand vieler Beispielprojekte den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. Wir wollen Vorurteile abbauen und die wichtigsten Fragen rund um Test-driven Development beantworten: Warum ist Test First scheinbar so schwierig? Welche Vorteile verschenken wir, wenn wir rein auf Test Last setzen?  Wird Softwarearchitektur durch Test First wirklich besser? Welchen Unterschied genau macht es, die Tests vor der Implementierung zu schreiben statt im Nachhinein? Warum hat Test First automatisch einen sehr positiven Einfluss auf meine Softwarearchitektur, Test Last aber eher weniger?  Wie kommen wir von Test Last zu Test First? Und welche Fragen hast du zu dem Thema?&lt;/p&gt;
+&lt;h1 id=&quot;timestamp-0&quot;&gt;Timestamp: 0&lt;/h1&gt;
+&lt;h1 id=&quot;willkommen&quot;&gt;Willkommen&lt;/h1&gt;
+&lt;p&gt;…zu “Test-driven Development?! Na klar … aber richtig!”&lt;/p&gt;
+&lt;h1 id=&quot;about-me&quot;&gt;About me&lt;/h1&gt;
+&lt;p&gt;Bodo Teichmann: Ich entwickle Software seit 1980, begonnen mit Basic, Assembler und C, jetzt schon lange Java und in letzter Zeit auch Javascript.&lt;/p&gt;
+&lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h2&gt;
+&lt;p&gt;Bin ich ein TDD-Profi der von Konferenz zu Konferenz reist und sein tiefes Wissen mit immer neuen Varianten und Facetten zum Besten gibt? Nein! Dazu hab ich zu viel Zeit mit Aufgaben verbracht, bei denen ich leider keine Software schreiben durfte. 
+Ich war nämlich auch mal Abteilungsleiter, bis mich Scrum, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben.&lt;/p&gt;
+&lt;h2 id=&quot;warum-beschäftigt-mich-tdd&quot;&gt;Warum beschäftigt mich TDD?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Warum halte ich hier trotzdem einen Vortrag zum Thema TDD ? Weil mich das Thema schon &lt;strong&gt;immer&lt;/strong&gt; interessiert hat. Eigentlich seit ich so ums Jahr 2000 das Buch “Extreme Programming” von Kent Beck gelesen habe.&lt;/li&gt;
+  &lt;li&gt;In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen “Scrum” bekannt wurden. Als ich 2003 meinem Kompangnion Joachim von dieser Vision für eine bessere Methode Software zu entwickeln überzeugen wollte, hat er nur gesagt: “Wer Visionen hat sollte zum Arzt gehn”  (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch extrem brauchbar sind)&lt;/li&gt;
+  &lt;li&gt;Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests &lt;strong&gt;VOR&lt;/strong&gt; dem eigentlichen Teil der Software schreiben sollte.&lt;/li&gt;
+  &lt;li&gt;Zitat “We will write tests &lt;strong&gt;before&lt;/strong&gt; we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer’s perspective.”&lt;/li&gt;
+  &lt;li&gt;Das war damals echt revolutionär und für mich eine völlig neue Idee. Ich wollte das dann gleich ausprobieren.&lt;/li&gt;
+  &lt;li&gt;Dabei hatte ich das Glück, dass ich damals gerade einen neuen Job hatte, in dem ich mir erstmal selbst selbst Java beibringen durfte. Java war damals ja auch noch einigermaßen neu. Noch besser aber war: ich durfte auch fast 2 Jahre mehr oder weniger unbehelligt an einer neuen Text-Layout Engine programmieren, mit nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck.&lt;/li&gt;
+  &lt;li&gt;Wer im Pubikum kennt noch &lt;em&gt;TeX&lt;/em&gt; oder &lt;em&gt;Latex&lt;/em&gt;? Ja, genau! Damit hat man damals Diplomarbeiten, Wissenschaftliche Paper, usw. geschrieben. Word war zu der Zeit für sowas ziemlich unbrauchbar, und ist es zum Teil heute noch.
+Jedenfalls: Ein paar Jahre hatte ich damit  meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mich und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML.&lt;/li&gt;
+  &lt;li&gt;Aber genug der alten Geschichten..
+    &lt;h2 id=&quot;warum-tdd-und-test-first&quot;&gt;Warum TDD und Test First?&lt;/h2&gt;
+    &lt;h3 id=&quot;stabilität-qualität&quot;&gt;Stabilität, Qualität&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Welches Problem will TDD und Test First eigentlich lösen ?&lt;/li&gt;
+  &lt;li&gt;In Softwareprojekten die von mehrern Entwicklern über mehrer Jahre entwickelt, weiterentwickeln und neuen Anforderungen angepasst werden, entstehen typischerweise eine Reihe von Qualitäts Problemen. Und wie die meisten aus der Branche inzwischen auch gelernt haben:  Mit automatischen Tests lässt sich die Qualität deutlich verbessern:
+    &lt;ul&gt;
+      &lt;li&gt;Softwarequalität, Stabilität, Zuverlässigkeit, Belastbarkeit sind früher oder später ein Thema in praktisch jedem Projekt :
+        &lt;ul&gt;
+          &lt;li&gt;Die Entwickler verbringen zu viel Zeit mit Bugsuche, statt neue Funktionen einzubauen.&lt;/li&gt;
+          &lt;li&gt;oft stellen die Beteiligten fest, dass je größer die Software wird und je älter, desto schwieriger und langwieriger wird es, Anpassungen und Änderungen vorzunehmen.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ich hoffe, bis jetzt hab ich euch nix neues erzählt…&lt;/p&gt;
+&lt;h3 id=&quot;softwarearchitektur&quot;&gt;Softwarearchitektur&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;in größeren Softwareprojekten entsteht typischerweise noch ein weiteres Problem:
+    &lt;ul&gt;
+      &lt;li&gt;Die Softwarearchitektur erodiert bis zu Unkenntlichkeit: Dadurch, dass neue Entwickler, die die ursprüngliche Architektur nicht gut genug kennen, Änderungen vornehmen, entwickelt sich die Software von dieser Architektur auch immer weiter weg, bis  dann kein architektonische Konzept erkennbar ist.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ok, jetzt denken vieleicht viele von euch: “ok, Softwarequalität, Stabilität, Zuverlässigkeit, da sehe ich  einen Zusammenhang zu automatischen Tests, aber was hat das mit Softwarearchitektur zu tun ?”
+Stimmts?&lt;/li&gt;
+  &lt;li&gt;Also im Vertrauen, dass euch der Zusammenhang zwischen Testen und Qualität und damit auch automatischem Testen und Softwarequalität klar ist, lasst mich direkt auf die Softwarearchitektur eingehen:
+    &lt;h3 id=&quot;ebenen-der-softwarearchitektur-im-vergleich&quot;&gt;Ebenen der Softwarearchitektur im Vergleich&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vorher ein Wort zu den verschiedenen Ebenen von Softwarearchitektur:
+    &lt;ul&gt;
+      &lt;li&gt;wie beim Bauen von Gebäuden gibt es ja auch verschiedenen Ebenen: also
+        &lt;ul&gt;
+          &lt;li&gt;Wie sieht mein Stadtteil aus in dem die Gebäude stehen, wie sind die Straßen, Gehwege, Parks und Gebäude insgesamt organisiert?&lt;/li&gt;
+          &lt;li&gt;Wie schaut die Fassade aus, und wie ist die Aufteilung in den Gebäuden? z.B. Büros, große oder kleine Wohnungen&lt;/li&gt;
+          &lt;li&gt;Wie sind die Wohnungen aufteilt, z.b. wie groß ist das Wohnzimmer im Vergleich zur Küche&lt;/li&gt;
+          &lt;li&gt;bis hin: welchen Bodenbelag hab ich wo, Welche Lichtschalter an dern Wand , welche Türgriffe?&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Wenn wir diese 4 Ebenen auf Softwarearchitektur übertragen und das auf TDD anwenden, dann hilft TDD eher bei den untern beiden Ebenen, also bei der Architektur der kleineren Details, weniger bei den obern beiden Ebenen, der Architektur im ganz Großen.
+        &lt;h3 id=&quot;tdd-und-softwarearchitektur-behauptung&quot;&gt;TDD und Softwarearchitektur Behauptung&lt;/h3&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;So, die Behauptung die jetzt im Raume steht, ist also, dass TDD/TestFirst bei der Softwarearchitektur der untern beiden Ebenen massiv hilft und auch hift über längere Zeiträume diese Architektur positiv beeinflusst.&lt;/li&gt;
+  &lt;li&gt;Im Gegensatz dazu, helfen nachträglich hinzugefügte automatische Tests zwar für die Softwarequalität im Sinne von Stabilität und Fehlerarmut. Nachträglich hinzugefügte automatische Tests helfen aber gar nicht für die Softwarearchitektur, für keine der 4 Ebenen
+    &lt;h2 id=&quot;wie-hilft-tddtestfirst-bei-der-architektur&quot;&gt;Wie hilft TDD/TestFirst bei der Architektur?&lt;/h2&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Test first..&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;.. zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr &lt;strong&gt;klar&lt;/strong&gt; über die &lt;strong&gt;Anforderungen&lt;/strong&gt; und das Softwaredesign und zwar auf Klassen/Interface- Ebene Gedanken zu machen.&lt;/li&gt;
+  &lt;li&gt;.. trägt dann fast automatisch zu einer &lt;strong&gt;klareren Softwarearchitektur&lt;/strong&gt; auf Klassen/Interface- Ebene bei.&lt;/li&gt;
+  &lt;li&gt;.. zu schreiben geht aber nur, wenn ich nicht nur die &lt;strong&gt;fachlichen&lt;/strong&gt; Anforderungen genau verstanden sondern, wenn ich auch genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mit ein &lt;strong&gt;durchdachtes  Konzept&lt;/strong&gt; zu machen.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Code braucht meiner Erfahrung nach &lt;strong&gt;weniger späteres  Refactoring&lt;/strong&gt; (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszyklus oder in einem späteren Sprint offensichtlich wird)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;.. führt zu kleineren Klassen und Methoden, fördert automatisch das &lt;strong&gt;&lt;a href=&quot;https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip&quot;&gt;Single-Responsibility-Prinzip&lt;/a&gt;&lt;/strong&gt;, damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist.&lt;/li&gt;
+  &lt;li&gt;.. spart am Ende halt doch Zeit und liefert &lt;strong&gt;höhere Code-Qualität&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;../_posts/2020-10-09-TDD-aber-richtig.md#test-first-ist-deswegen-entscheidend-weil&quot;&gt;mehr findest du hier&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;beweise-beweise&quot;&gt;Beweise, Beweise&lt;/h2&gt;
+&lt;p&gt;Die Frage ist, lassen sich meine Behauptungen belegen, welche Erfahrungen haben ander mit TDD/TestFirst gemacht?
+Da findet man doch eine Menge Indizien die dafür sprechen.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bücher über TDD selbst, werden immer wieder neu herausgebracht. Martin Fowlers Buch ist also beweitem nicht das einzige zu dem Thema.&lt;/li&gt;
+  &lt;li&gt;Bücher über Softwarearchitektur z.B.&lt;/li&gt;
+  &lt;li&gt;eine Reihe von wissenschaftlichen Studien, z.T. sogar richtige Vergleichsstudien&lt;/li&gt;
+  &lt;li&gt;eine Reihe von systematischen Erfahrungsberichten aus verschiedenen großen Unternehmen.&lt;/li&gt;
+  &lt;li&gt;sogar Metastudien zu dem Thema konnte ich finden.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ergebnisse&quot;&gt;Ergebnisse:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF&quot;&gt;IBM: Assessing test-driven development&lt;/a&gt; : &lt;strong&gt;50% weniger Bugs&lt;/strong&gt; als bei “test last”, minimaler geringere Produktivität&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&amp;amp;response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&amp;amp;Expires=1599907639&amp;amp;Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&amp;amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA&quot;&gt;Microsoft: Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies&lt;/a&gt; :  &lt;strong&gt;Bugrate sinkt mit TDD um 62%-77%&lt;/strong&gt; , 15% -35% mehr Zeit für TDD notwendig&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&amp;amp;context=csse_fac&quot;&gt;Metastudie, die 6 unterschiedliche andere Studien ausgewertet hat&lt;/a&gt;: Ergebnis: deutlich &lt;strong&gt;Positiv, auch bezüglich Software-Architektur&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/4343756&quot;&gt;An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development&lt;/a&gt; : &lt;strong&gt;deutlich bessere Gesamt-Produktivität und Codequalität&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf&quot;&gt;noch eine Metastudie&lt;/a&gt; : Gesamturteil deutlich positiv, aber Hinweis: schwer zu meistern , &lt;strong&gt;Fazit: Empfehlung für TDD&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://link.springer.com/book/10.1007%2F978-3-642-04288-1&quot;&gt;Empirische Studie zu Test-Driven Development&lt;/a&gt; : “test first” ist &lt;strong&gt;besser&lt;/strong&gt; darin, &lt;strong&gt;lose gekoppelte&lt;/strong&gt; Softwarekomponenten hervorzubringen als “test last”. “lose gekoppelt” bewirkt zum Beispiel bessere Wartbarkeit, verständlichkeit für die Entwickler, ist also was sehr gutes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;../_posts/2020-09-19-Literaturrecherche-TDD.md&quot;&gt;mehr Details hier&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;was-ist-tdd-genau&quot;&gt;Was ist TDD genau?&lt;/h2&gt;
+&lt;p&gt;.. und was meint Kent Beck mit  “We will write tests before we code, minute by minute.”?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Die Basis von TDD sind Unit-tests. Mit “&lt;strong&gt;Unit&lt;/strong&gt;” ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung macht. Also im besten Fall ein paar Zeilen Code, sagen wir zwischen 10 und 100 Zeilen&lt;/li&gt;
+  &lt;li&gt;der Begriff &lt;em&gt;Unittest&lt;/em&gt; meint dann einen Stück Software, welches die Korrektheit dieser einen &lt;strong&gt;Unit&lt;/strong&gt; testet. Und nur dieser. D.h. der Test sollte nach Möglichkeit keine anderen Teile aus dem gesamten Softwareprojekt testen. Auch nicht, wenn die zu testende &lt;strong&gt;Unit&lt;/strong&gt; eigentlich noch andere Units benötigt, um zu funktionieren.&lt;/li&gt;
+  &lt;li&gt;Diese Test-Software sollte dabei alle möglichen Pfade in der der nützlichen &lt;strong&gt;Unit&lt;/strong&gt; abtesten. Dabei insbesonders alle Grenzbedinungen in der &lt;strong&gt;Unit&lt;/strong&gt; auf Korrektheit überprüfen. Das Ergebnis ist dann eine sogenannte Testabdeckung von 100%. Auf die “Testabdeckung” gehen wir später noch ein.&lt;/li&gt;
+  &lt;li&gt;Der eigentliche Witz ist aber vor allem: Wir schreiben den Test &lt;strong&gt;BEVOR&lt;/strong&gt; wir den Code für die eigentlich nützliche Unit schreiben.
+    &lt;h2 id=&quot;die-wichtigen-fragen-über-die-keiner-spricht&quot;&gt;Die wichtigen Fragen über die keiner spricht.&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Wie geht das überhaupt ?&lt;/li&gt;
+      &lt;li&gt;Warum findet man so wenige Programmierer die das tatsächlich tun ?&lt;/li&gt;
+      &lt;li&gt;Warum ist das so schwer ?&lt;/li&gt;
+      &lt;li&gt;Wie kann ich als Softwareentwickler mich in kleinen Schritten incrementell von TestLast zu TestFirst vorarbeiten ?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;This is what we talk about today ! (wie meine Lieblings-Physikerin auf Youtube immer sagt)
+    &lt;h1 id=&quot;timestamp-min&quot;&gt;Timestamp:? Min&lt;/h1&gt;
+    &lt;h2 id=&quot;wie-geht-das-überhaupt&quot;&gt;Wie geht das überhaupt?&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Also, wenn man die paar Zeilen aus Kents Becks Buch einfach so versucht direkt umzusetzten, dann merkt man schnell, ganz so einfach ist das nicht. Kent Beck beschreibt auch gar nicht, wie das eigentlich praktisch umzusetzen ist.
+    &lt;h3 id=&quot;zunächst-klären-wir-ein-paar-vorraussetzungen&quot;&gt;Zunächst klären wir ein paar Vorraussetzungen.&lt;/h3&gt;
+    &lt;p&gt;Sind wir überhaupt in der Situation, TDD mit test first gerade anwenden zu können ?&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Nehmen wir an, wir wären ein SWEntwickler in einem Team&lt;/li&gt;
+      &lt;li&gt;irgend jemand hat sich schon über das Gesamtkonzept den Kopf zerbrochen und eine Software-Architektur entworfen und diese uns soweit erklärt, dass wir ein grobes Verständniss dafür haben.&lt;/li&gt;
+      &lt;li&gt;Wir sollen jetzt ein neues Feature implementieren, wofür wir aller Vorraussicht mindestens eine neue Klasse, Komponente, oder Service oder ähnliches benötigen.&lt;/li&gt;
+      &lt;li&gt;wir müssen zwar auch bestehenden Code ändern, aber der neu zu schreibende Code überwiegt auf jeden Fall.&lt;/li&gt;
+      &lt;li&gt;idealerweise gibt es schon irgendein Unittest-Framework im Projekt, auch wenn das bisher nur zum “Test Last” eingesetzt wurde.
+        &lt;h3 id=&quot;im-gegensatz-dazu-wann-ist-tdd-nicht-der-richtige-ansatz&quot;&gt;Im Gegensatz dazu: wann ist TDD nicht der richtige Ansatz?&lt;/h3&gt;
+        &lt;p&gt;TDD/TestFirst macht unter folgenden Vorraussetzungen eher weniger Sinn. 
+Diese Punkte zu kennen , ist wichtig um Misserfolg bei der Anwendung von TestFirst zu vermeiden.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ein großes Projekt ohne jegliche automatischen Tests&lt;/li&gt;
+  &lt;li&gt;nur minimale Kenntnis der eingesetzten Sprache/Framework/Testframework&lt;/li&gt;
+  &lt;li&gt;Architektur ist unklar.&lt;/li&gt;
+  &lt;li&gt;die Hauptarbeit ist rauszufinden, welche 2 Parameter geändert werden sollen, damit die neue Anforderung erfüllt wird, kaum oder gar keine neuer Code zu schreiben&lt;/li&gt;
+  &lt;li&gt;sehr große Skepsis bis Ablehnung im Kollegenkreis, keine Unterstützung durch PO/Scrummaster/Architekt
+    &lt;h3 id=&quot;wie-gehen-wir-bei-test-first-vor-&quot;&gt;Wie gehen wir bei Test First vor? :&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Die Erfahrung zeigt, dass man sinnvollerweise so vorgeht:
+    &lt;ol&gt;
+      &lt;li&gt;wir brauchen ein Konzept, das kann im einfachsten Fall im Kopf passieren, mit Papier und Bleistift, Oder, wer’s gerne schwergewichtig mag (oder in einem großen Projekt Dokumentationspflichten hat), denn gern auch mit einer Software seiner Wahl.&lt;/li&gt;
+      &lt;li&gt;aus dem Konzept sollte hervorgehen, welche neuen Klassen benötig werden , wie diese heißen sollen, was deren Aufgabe und was NICHT deren Aufgabe ist. Also mit andern Worten welchen Methoden haben diese Klassen und wie heißen die Methoden?&lt;/li&gt;
+      &lt;li&gt;erzeugen alle Klassen mit leeren Methodenrümpfen&lt;/li&gt;
+      &lt;li&gt;füge die Parameter für die Methodenrümpfe hinzu&lt;/li&gt;
+      &lt;li&gt;erst jetzt fange an die Unittests zu schreiben. sinnvoll ist eine 1:1 Entsprechnung von Klassen zu UnittestKlassen und eine n:1 Entsprechung von Test-Funktionen/Methoden. Also für jeden Methode in meiner Produktions-Code-Klasse brauche ich 1 oder mehrere Testfunktionen, weil ich ja verschiedene szenarien des   Produktions-Codes testen will.&lt;/li&gt;
+      &lt;li&gt;Identifiziere für jede Methode des Produktions-Codes welche Szenarien zu testn sind. Dazu sind  vor allem die Rand/Grenzbedingungen aus den Anforderungen wichtig.  Beispiele:
+        &lt;ul&gt;
+          &lt;li&gt;Rabatt, wenn Bestellsumme größer Grenzbetrag : 3 Testfälle: größer, kleiner, oder gleich&lt;/li&gt;
+          &lt;li&gt;Eine Liste soll angezeigt werden: Testfälle: Liste ist leer, Liste ist normal Liste ist zu lang für eine Seite.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Allgemein lässt sich feststellen: die Testfälle sollten sich aus den Anforderungen ergeben. Oder besser noch aus den Akzeptanzkritierien.:
+        &lt;ul&gt;
+          &lt;li&gt;Soll der Grenzbetrag aus obigen Beispiel variabel sein, wie, wo, von wem darf/soll dieser Festgelegt werden. Gilt der immer für einen bestimmten Zeitbereich? In dem Fall ergeben noch mehr Testfälle wie oben. z.B.  für Zeitbereich X gilt ein Rabatt - %-Zahl und für Zeitraum Y ein anderer. 2 Testfälle: die  Bestellung wird zum Zeitpunkt a innerhalb von Zeitbereich X  angelegt wird, und einmal zu Zeitpunkt b an der Grenze der Zeitbereiche X zu Y:   wie hoch muss dann der Rabattbetrag der Bestellung in beiden Fällen sein, welche Uhrzeit gilt hier ? UTC, Uhrzeit des Kunden, Uhrzeit des Servers? .&lt;/li&gt;
+          &lt;li&gt;also je Akzeptanzkriterium mind 1 oder mehrere Testfälle&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Programmiere also zuerst deinen Testfall. Dieser Test müsste jetzt fehlschlagen, weil der Produktions-Code ja nur leere Methoden enthält die nix machen und höchstens “0”, leere Objekte o.ä. zurückgeben.&lt;/li&gt;
+      &lt;li&gt;erst jetzt implementiere den eigentlichen Produktions-Code aber nur soweit , bis der Test “grün” ist, auf keinen Fall mehr!&lt;/li&gt;
+      &lt;li&gt;Programmiere den nächsten Testfall und erweitere deinen Produktions-Code; aber nur soweit , bis der neue Test “grün” und alle bisherigen Tests “grün” sind, auf keinen Fall mehr!&lt;/li&gt;
+      &lt;li&gt;hast du alle Testfälle fertig und alle sind grün: Refaktoriere den Code , bis er möglichst einfach und verständlich ist. Nutze dazu die Sicherheit die dir deine Testabgeckung gibt.
+GRAFIK: Flussdiagramm ???&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;warum-ist-das-eigentlich-sooo-schwer&quot;&gt;Warum ist das eigentlich sooo schwer?&lt;/h2&gt;
+&lt;p&gt;Ist es wirklich sooo schwer ? Eindeutig ja!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Zitat aus aus &lt;a href=&quot;https://less.works/de/less/technical-excellence/test-driven-development&quot;&gt;Large-Scale Scrum »LeSS«&lt;/a&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;“Wir treffen &lt;strong&gt;selten&lt;/strong&gt; Entwickler, die in der Lage war, sich TDD/TestFirst selbst beizubringen. Die meisten Entwickler brauchen &lt;strong&gt;tage- oder gar wochenlanges&lt;/strong&gt; Pair-Programming, bis sie es können.” und weiter :&lt;/li&gt;
+      &lt;li&gt;“Test-Driven Development ist vermutlich die &lt;strong&gt;schwierigste&lt;/strong&gt; agile Praxis, aber TDD ist gleichzeitig die einer der &lt;strong&gt;größten Gelegenheiten&lt;/strong&gt; die Qualität und das Design des Codes zu verbessern.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf&quot;&gt;Metastudie: How Effective is Test-Driven Development?&lt;/a&gt; :
+    &lt;ul&gt;
+      &lt;li&gt;“Fast alle [Studien] sind sich einig, dass &lt;strong&gt;TDD schwierig zu lernen&lt;/strong&gt; ist.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Aus &lt;a href=&quot;https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111&quot;&gt;Test-Driven Java Development - Second Edition&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;“It's not an easy thing to master TDD. Even after learning all the theory and going through best practices and anti-patterns, the journey is only just beginning. &lt;strong&gt;TDD requires time and a lot of practice&lt;/strong&gt;. It's a long trip that does not stop with this book.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ich-hab-noch-nie-testfirst-gemacht-wie-komme-ich-dahin&quot;&gt;Ich hab noch nie TestFirst gemacht, wie komme ich dahin?&lt;/h2&gt;
+&lt;p&gt;Nach der Vorwarnung gilt trotzdem: mit hinreichender Motivation kann man es sich durchaus beibringen. Wichtig ist nur entweder große Neugierde, oder die feste Überzeugung, dass es sich auszahlen wird. 
+Daher hier eine Schritt für Schritt Anleitung:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;mache ein paar “Trockenübungen” also Übungsaufgaben abseits von realem Produktionscode, aber mit den gleich Sprachen/Tools wie deine Produktionsumgebung
+    &lt;ul&gt;
+      &lt;li&gt;Suche die eine kleine Übungsaufgabe, die du in höchtens 1 stunde  lösen kannst. &lt;a href=&quot;https://www.freecodecamp.org/news/the-10-most-popular-coding-challenge-websites-of-2016-fb8a5672d22f/&quot;&gt;Ideen hier&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;notfalls, wenn du noch gar keine Plan für Test-First hast, fang mit Test-Last an und lerne wie man überhaupt Unittests schreibt.&lt;/li&gt;
+      &lt;li&gt;wenn du fertig bis, lösche alles und fang mit der selben Aufgabe ganz von vorn an, diesmal aber test-first&lt;/li&gt;
+      &lt;li&gt;mache diese Übung ein paar mal, immer wieder, bis  du für die Lösung mehr googlen musst und bis es es dir sehr flüssig von der Hand geht,&lt;/li&gt;
+      &lt;li&gt;du wirst feststellen: in jeder Iteration wirst du nicht nur schneller, sondern dein Code bekommt mit jeder Iteration auch eine bessere Struktur, wird kompakter, gleichzeitg leichter für andere verständlich.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;in der Produktionumgebung: fange an gute Test-Last Tests zu schreiben. Prüfe deren Testabdeckung, verwende Mutation-Testing. Baue Know How auf, wie du überhaupt Unittests in deinem Projekt schreiben kannst.&lt;/li&gt;
+  &lt;li&gt;Organisiere oder nehme Teil an Coding Dojos für Test-First&lt;/li&gt;
+  &lt;li&gt;beginne auch in Produktionumgebung mit TestFirst.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ganz-einfaches-codebeispiel-&quot;&gt;ganz einfaches Codebeispiel :&lt;/h2&gt;
+
+&lt;h1 id=&quot;bonus-content&quot;&gt;Bonus Content:&lt;/h1&gt;
+&lt;h2 id=&quot;testabdeckung-messen-&quot;&gt;Testabdeckung messen ?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ja, aber nur wärend des schreibens der Tests, um Lücken in der Testabdeckung zu finden.&lt;/li&gt;
+  &lt;li&gt;NEIN, um Qualitätsaussagen über die gesamte Codebasis zu machen
+    &lt;ul&gt;
+      &lt;li&gt;weil es gibt Code der nicht sinnvoll zu testen ist, z.B. weil er keine Fallunterscheidungen oder Schleifen enthält. Hier nachträglich die Testabdeckung zu erhöhen macht die Codebasis  in der Regel nicht besser.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Beispiel : ???&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;noch-besser-mutation-testing-hilft-auch-bei-test-last&quot;&gt;noch besser: Mutation-Testing, hilft auch bei Test-Last!&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Erklärung: &lt;a href=&quot;https://en.wikipedia.org/wiki/Mutation_testing&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;auch hier gilt: macht nur Sinn für die Anforderungen , an denen ich gerade arbeite, hilft mir blinde Flecken zu finden&lt;/li&gt;
+  &lt;li&gt;Beispiel:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;berechnePreis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabattZeitraumBeginn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabattZeitraumEnde&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabatminimum&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabattZeitraumBeginn&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabattZeitraumEnde&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabatt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Mutation wird vom Testtool automatisch eingefügt  :&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;berechnePreis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabattZeitraumBeginn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabattZeitraumEnde&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabatminimum&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabattZeitraumBeginn&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabattZeitraumEnde&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabatt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;anmerkungen-fürs-nächste-mal-beispiele-einbauen-einfluss-auf-softwarearchitektur-nachweisen&quot;&gt;Anmerkungen fürs nächste mal: Beispiele einbauen. Einfluss auf SoftwareArchitektur nachweisen&lt;/h2&gt;</content><author><name>Bodo Teichmann</name></author><category term="Blog" /><category term="Testing" /><category term="TestFirst" /><category term="Talk" /><summary type="html">Nürnberg Digital 2021, Coding Track, 2021-07-16 - 2021-07-19 Short Teaser: Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile. Long Teaser: Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – woher aber kommt diese „Test Last“-Philosophie und warum halten so viele Entwickler so überzeugt daran fest? Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen anhand vieler Beispielprojekte den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. Wir wollen Vorurteile abbauen und die wichtigsten Fragen rund um Test-driven Development beantworten: Warum ist Test First scheinbar so schwierig? Welche Vorteile verschenken wir, wenn wir rein auf Test Last setzen? Wird Softwarearchitektur durch Test First wirklich besser? Welchen Unterschied genau macht es, die Tests vor der Implementierung zu schreiben statt im Nachhinein? Warum hat Test First automatisch einen sehr positiven Einfluss auf meine Softwarearchitektur, Test Last aber eher weniger? Wie kommen wir von Test Last zu Test First? Und welche Fragen hast du zu dem Thema? Timestamp: 0 Willkommen …zu “Test-driven Development?! Na klar … aber richtig!” About me Bodo Teichmann: Ich entwickle Software seit 1980, begonnen mit Basic, Assembler und C, jetzt schon lange Java und in letzter Zeit auch Javascript. Disclaimer Bin ich ein TDD-Profi der von Konferenz zu Konferenz reist und sein tiefes Wissen mit immer neuen Varianten und Facetten zum Besten gibt? Nein! Dazu hab ich zu viel Zeit mit Aufgaben verbracht, bei denen ich leider keine Software schreiben durfte. Ich war nämlich auch mal Abteilungsleiter, bis mich Scrum, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben. Warum beschäftigt mich TDD? Warum halte ich hier trotzdem einen Vortrag zum Thema TDD ? Weil mich das Thema schon immer interessiert hat. Eigentlich seit ich so ums Jahr 2000 das Buch “Extreme Programming” von Kent Beck gelesen habe. In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen “Scrum” bekannt wurden. Als ich 2003 meinem Kompangnion Joachim von dieser Vision für eine bessere Methode Software zu entwickeln überzeugen wollte, hat er nur gesagt: “Wer Visionen hat sollte zum Arzt gehn” (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch extrem brauchbar sind) Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests VOR dem eigentlichen Teil der Software schreiben sollte. Zitat “We will write tests before we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer’s perspective.” Das war damals echt revolutionär und für mich eine völlig neue Idee. Ich wollte das dann gleich ausprobieren. Dabei hatte ich das Glück, dass ich damals gerade einen neuen Job hatte, in dem ich mir erstmal selbst selbst Java beibringen durfte. Java war damals ja auch noch einigermaßen neu. Noch besser aber war: ich durfte auch fast 2 Jahre mehr oder weniger unbehelligt an einer neuen Text-Layout Engine programmieren, mit nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck. Wer im Pubikum kennt noch TeX oder Latex? Ja, genau! Damit hat man damals Diplomarbeiten, Wissenschaftliche Paper, usw. geschrieben. Word war zu der Zeit für sowas ziemlich unbrauchbar, und ist es zum Teil heute noch. Jedenfalls: Ein paar Jahre hatte ich damit meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mich und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML. Aber genug der alten Geschichten.. Warum TDD und Test First? Stabilität, Qualität Welches Problem will TDD und Test First eigentlich lösen ? In Softwareprojekten die von mehrern Entwicklern über mehrer Jahre entwickelt, weiterentwickeln und neuen Anforderungen angepasst werden, entstehen typischerweise eine Reihe von Qualitäts Problemen. Und wie die meisten aus der Branche inzwischen auch gelernt haben: Mit automatischen Tests lässt sich die Qualität deutlich verbessern: Softwarequalität, Stabilität, Zuverlässigkeit, Belastbarkeit sind früher oder später ein Thema in praktisch jedem Projekt : Die Entwickler verbringen zu viel Zeit mit Bugsuche, statt neue Funktionen einzubauen. oft stellen die Beteiligten fest, dass je größer die Software wird und je älter, desto schwieriger und langwieriger wird es, Anpassungen und Änderungen vorzunehmen.</summary></entry><entry><title type="html">Test Driven Development mit Java Teil 2</title><link href="http://localhost:4000/blog/TDD-mit-Java/" rel="alternate" type="text/html" title="Test Driven Development mit Java Teil 2" /><published>2020-12-12T00:00:00+00:00</published><updated>2020-12-12T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-mit-Java</id><content type="html" xml:base="http://localhost:4000/blog/TDD-mit-Java/">&lt;p&gt;siehe auch &lt;a href=&quot;2020-09-10-TDD-Tutorial.md&quot;&gt;TDD mit Java Workshop (mit Video), Teil 1&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;test-driven-development-mit-java&quot;&gt;Test Driven Development mit Java&lt;/h1&gt;
 &lt;h2 id=&quot;testabdeckung-und-mutation-testing&quot;&gt;Testabdeckung und Mutation Testing&lt;/h2&gt;
@@ -632,265 +893,4 @@ schreibbaren DB-test - Clone der Produktiven Daten erzeugen.&lt;/li&gt;
 
 &lt;div class=&quot;responsive-video-container&quot;&gt;
     &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/8v4PixvHk18&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-  &lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="blog" /><category term="TDD" /><category term="Test Driven Development" /><summary type="html">Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First</summary></entry><entry><title type="html">Test Driven Development und Test First für NueDigital</title><link href="http://localhost:4000/blog/TDD-TestFirst-NueDigital/" rel="alternate" type="text/html" title="Test Driven Development und Test First für NueDigital" /><published>2020-07-16T00:00:00+00:00</published><updated>2020-07-16T00:00:00+00:00</updated><id>http://localhost:4000/blog/TDD-TestFirst-NueDigital</id><content type="html" xml:base="http://localhost:4000/blog/TDD-TestFirst-NueDigital/">&lt;p&gt;&lt;a href=&quot;https://nuernberg.digital/mitmachen/veranstalter.html&quot;&gt;Nürnberg Digital 2021&lt;/a&gt;, 
-Coding Track, 2021-07-16 - 2021-07-19&lt;/p&gt;
-&lt;h1 id=&quot;short-teaser&quot;&gt;Short Teaser:&lt;/h1&gt;
-&lt;p&gt;Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile.&lt;/p&gt;
-&lt;h1 id=&quot;long-teaser&quot;&gt;Long Teaser:&lt;/h1&gt;
-&lt;p&gt;Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – woher aber kommt diese „Test Last“-Philosophie und warum halten so viele Entwickler so überzeugt daran fest? 
-Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen anhand vieler Beispielprojekte den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. Wir wollen Vorurteile abbauen und die wichtigsten Fragen rund um Test-driven Development beantworten: Warum ist Test First scheinbar so schwierig? Welche Vorteile verschenken wir, wenn wir rein auf Test Last setzen?  Wird Softwarearchitektur durch Test First wirklich besser? Welchen Unterschied genau macht es, die Tests vor der Implementierung zu schreiben statt im Nachhinein? Warum hat Test First automatisch einen sehr positiven Einfluss auf meine Softwarearchitektur, Test Last aber eher weniger?  Wie kommen wir von Test Last zu Test First? Und welche Fragen hast du zu dem Thema?&lt;/p&gt;
-&lt;h1 id=&quot;timestamp-0&quot;&gt;Timestamp: 0&lt;/h1&gt;
-&lt;h1 id=&quot;willkommen&quot;&gt;Willkommen&lt;/h1&gt;
-&lt;p&gt;…zu “Test-driven Development?! Na klar … aber richtig!”&lt;/p&gt;
-&lt;h1 id=&quot;about-me&quot;&gt;About me&lt;/h1&gt;
-&lt;p&gt;Bodo Teichmann: Ich entwickle Software seit 1980, begonnen mit Basic, Assembler und C, jetzt schon lange Java und in letzter Zeit auch Javascript.&lt;/p&gt;
-&lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h2&gt;
-&lt;p&gt;Bin ich ein TDD-Profi der von Konferenz zu Konferenz reist und sein tiefes Wissen mit immer neuen Varianten und Facetten zum Besten gibt? Nein! Dazu hab ich zu viel Zeit mit Aufgaben verbracht, bei denen ich leider keine Software schreiben durfte. 
-Ich war nämlich auch mal Abteilungsleiter, bis mich Scrum, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben.&lt;/p&gt;
-&lt;h2 id=&quot;warum-beschäftigt-mich-tdd&quot;&gt;Warum beschäftigt mich TDD?&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Warum halte ich hier trotzdem einen Vortrag zum Thema TDD ? Weil mich das Thema schon &lt;strong&gt;immer&lt;/strong&gt; interessiert hat. Eigentlich seit ich so ums Jahr 2000 das Buch “Extreme Programming” von Kent Beck gelesen habe.&lt;/li&gt;
-  &lt;li&gt;In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen “Scrum” bekannt wurden. Als ich 2003 meinem Kompangnion Joachim von dieser Vision für eine bessere Methode Software zu entwickeln überzeugen wollte, hat er nur gesagt: “Wer Visionen hat sollte zum Arzt gehn”  (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch extrem brauchbar sind)&lt;/li&gt;
-  &lt;li&gt;Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests &lt;strong&gt;VOR&lt;/strong&gt; dem eigentlichen Teil der Software schreiben sollte.&lt;/li&gt;
-  &lt;li&gt;Zitat “We will write tests &lt;strong&gt;before&lt;/strong&gt; we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer’s perspective.”&lt;/li&gt;
-  &lt;li&gt;Das war damals echt revolutionär und für mich eine völlig neue Idee. Ich wollte das dann gleich ausprobieren.&lt;/li&gt;
-  &lt;li&gt;Dabei hatte ich das Glück, dass ich damals gerade einen neuen Job hatte, in dem ich mir erstmal selbst selbst Java beibringen durfte. Java war damals ja auch noch einigermaßen neu. Noch besser aber war: ich durfte auch fast 2 Jahre mehr oder weniger unbehelligt an einer neuen Text-Layout Engine programmieren, mit nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck.&lt;/li&gt;
-  &lt;li&gt;Wer im Pubikum kennt noch &lt;em&gt;TeX&lt;/em&gt; oder &lt;em&gt;Latex&lt;/em&gt;? Ja, genau! Damit hat man damals Diplomarbeiten, Wissenschaftliche Paper, usw. geschrieben. Word war zu der Zeit für sowas ziemlich unbrauchbar, und ist es zum Teil heute noch.
-Jedenfalls: Ein paar Jahre hatte ich damit  meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mich und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML.&lt;/li&gt;
-  &lt;li&gt;Aber genug der alten Geschichten..
-    &lt;h2 id=&quot;warum-tdd-und-test-first&quot;&gt;Warum TDD und Test First?&lt;/h2&gt;
-    &lt;h3 id=&quot;stabilität-qualität&quot;&gt;Stabilität, Qualität&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Welches Problem will TDD und Test First eigentlich lösen ?&lt;/li&gt;
-  &lt;li&gt;In Softwareprojekten die von mehrern Entwicklern über mehrer Jahre entwickelt, weiterentwickeln und neuen Anforderungen angepasst werden, entstehen typischerweise eine Reihe von Qualitäts Problemen. Und wie die meisten aus der Branche inzwischen auch gelernt haben:  Mit automatischen Tests lässt sich die Qualität deutlich verbessern:
-    &lt;ul&gt;
-      &lt;li&gt;Softwarequalität, Stabilität, Zuverlässigkeit, Belastbarkeit sind früher oder später ein Thema in praktisch jedem Projekt :
-        &lt;ul&gt;
-          &lt;li&gt;Die Entwickler verbringen zu viel Zeit mit Bugsuche, statt neue Funktionen einzubauen.&lt;/li&gt;
-          &lt;li&gt;oft stellen die Beteiligten fest, dass je größer die Software wird und je älter, desto schwieriger und langwieriger wird es, Anpassungen und Änderungen vorzunehmen.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ich hoffe, bis jetzt hab ich euch nix neues erzählt…&lt;/p&gt;
-&lt;h3 id=&quot;softwarearchitektur&quot;&gt;Softwarearchitektur&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;in größeren Softwareprojekten entsteht typischerweise noch ein weiteres Problem:
-    &lt;ul&gt;
-      &lt;li&gt;Die Softwarearchitektur erodiert bis zu Unkenntlichkeit: Dadurch, dass neue Entwickler, die die ursprüngliche Architektur nicht gut genug kennen, Änderungen vornehmen, entwickelt sich die Software von dieser Architektur auch immer weiter weg, bis  dann kein architektonische Konzept erkennbar ist.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Ok, jetzt denken vieleicht viele von euch: “ok, Softwarequalität, Stabilität, Zuverlässigkeit, da sehe ich  einen Zusammenhang zu automatischen Tests, aber was hat das mit Softwarearchitektur zu tun ?”
-Stimmts?&lt;/li&gt;
-  &lt;li&gt;Also im Vertrauen, dass euch der Zusammenhang zwischen Testen und Qualität und damit auch automatischem Testen und Softwarequalität klar ist, lasst mich direkt auf die Softwarearchitektur eingehen:
-    &lt;h3 id=&quot;ebenen-der-softwarearchitektur-im-vergleich&quot;&gt;Ebenen der Softwarearchitektur im Vergleich&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Vorher ein Wort zu den verschiedenen Ebenen von Softwarearchitektur:
-    &lt;ul&gt;
-      &lt;li&gt;wie beim Bauen von Gebäuden gibt es ja auch verschiedenen Ebenen: also
-        &lt;ul&gt;
-          &lt;li&gt;Wie sieht mein Stadtteil aus in dem die Gebäude stehen, wie sind die Straßen, Gehwege, Parks und Gebäude insgesamt organisiert?&lt;/li&gt;
-          &lt;li&gt;Wie schaut die Fassade aus, und wie ist die Aufteilung in den Gebäuden? z.B. Büros, große oder kleine Wohnungen&lt;/li&gt;
-          &lt;li&gt;Wie sind die Wohnungen aufteilt, z.b. wie groß ist das Wohnzimmer im Vergleich zur Küche&lt;/li&gt;
-          &lt;li&gt;bis hin: welchen Bodenbelag hab ich wo, Welche Lichtschalter an dern Wand , welche Türgriffe?&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Wenn wir diese 4 Ebenen auf Softwarearchitektur übertragen und das auf TDD anwenden, dann hilft TDD eher bei den untern beiden Ebenen, also bei der Architektur der kleineren Details, weniger bei den obern beiden Ebenen, der Architektur im ganz Großen.
-        &lt;h3 id=&quot;tdd-und-softwarearchitektur-behauptung&quot;&gt;TDD und Softwarearchitektur Behauptung&lt;/h3&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;So, die Behauptung die jetzt im Raume steht, ist also, dass TDD/TestFirst bei der Softwarearchitektur der untern beiden Ebenen massiv hilft und auch hift über längere Zeiträume diese Architektur positiv beeinflusst.&lt;/li&gt;
-  &lt;li&gt;Im Gegensatz dazu, helfen nachträglich hinzugefügte automatische Tests zwar für die Softwarequalität im Sinne von Stabilität und Fehlerarmut. Nachträglich hinzugefügte automatische Tests helfen aber gar nicht für die Softwarearchitektur, für keine der 4 Ebenen
-    &lt;h2 id=&quot;wie-hilft-tddtestfirst-bei-der-architektur&quot;&gt;Wie hilft TDD/TestFirst bei der Architektur?&lt;/h2&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Test first..&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;.. zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr &lt;strong&gt;klar&lt;/strong&gt; über die &lt;strong&gt;Anforderungen&lt;/strong&gt; und das Softwaredesign und zwar auf Klassen/Interface- Ebene Gedanken zu machen.&lt;/li&gt;
-  &lt;li&gt;.. trägt dann fast automatisch zu einer &lt;strong&gt;klareren Softwarearchitektur&lt;/strong&gt; auf Klassen/Interface- Ebene bei.&lt;/li&gt;
-  &lt;li&gt;.. zu schreiben geht aber nur, wenn ich nicht nur die &lt;strong&gt;fachlichen&lt;/strong&gt; Anforderungen genau verstanden sondern, wenn ich auch genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mit ein &lt;strong&gt;durchdachtes  Konzept&lt;/strong&gt; zu machen.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Code braucht meiner Erfahrung nach &lt;strong&gt;weniger späteres  Refactoring&lt;/strong&gt; (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszyklus oder in einem späteren Sprint offensichtlich wird)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;.. führt zu kleineren Klassen und Methoden, fördert automatisch das &lt;strong&gt;&lt;a href=&quot;https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip&quot;&gt;Single-Responsibility-Prinzip&lt;/a&gt;&lt;/strong&gt;, damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist.&lt;/li&gt;
-  &lt;li&gt;.. spart am Ende halt doch Zeit und liefert &lt;strong&gt;höhere Code-Qualität&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../_posts/2020-10-09-TDD-aber-richtig.md#test-first-ist-deswegen-entscheidend-weil&quot;&gt;mehr findest du hier&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;beweise-beweise&quot;&gt;Beweise, Beweise&lt;/h2&gt;
-&lt;p&gt;Die Frage ist, lassen sich meine Behauptungen belegen, welche Erfahrungen haben ander mit TDD/TestFirst gemacht?
-Da findet man doch eine Menge Indizien die dafür sprechen.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Bücher über TDD selbst, werden immer wieder neu herausgebracht. Martin Fowlers Buch ist also beweitem nicht das einzige zu dem Thema.&lt;/li&gt;
-  &lt;li&gt;Bücher über Softwarearchitektur z.B.&lt;/li&gt;
-  &lt;li&gt;eine Reihe von wissenschaftlichen Studien, z.T. sogar richtige Vergleichsstudien&lt;/li&gt;
-  &lt;li&gt;eine Reihe von systematischen Erfahrungsberichten aus verschiedenen großen Unternehmen.&lt;/li&gt;
-  &lt;li&gt;sogar Metastudien zu dem Thema konnte ich finden.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ergebnisse&quot;&gt;Ergebnisse:&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF&quot;&gt;IBM: Assessing test-driven development&lt;/a&gt; : &lt;strong&gt;50% weniger Bugs&lt;/strong&gt; als bei “test last”, minimaler geringere Produktivität&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&amp;amp;response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&amp;amp;Expires=1599907639&amp;amp;Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&amp;amp;Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA&quot;&gt;Microsoft: Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies&lt;/a&gt; :  &lt;strong&gt;Bugrate sinkt mit TDD um 62%-77%&lt;/strong&gt; , 15% -35% mehr Zeit für TDD notwendig&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&amp;amp;context=csse_fac&quot;&gt;Metastudie, die 6 unterschiedliche andere Studien ausgewertet hat&lt;/a&gt;: Ergebnis: deutlich &lt;strong&gt;Positiv, auch bezüglich Software-Architektur&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/abstract/document/4343756&quot;&gt;An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development&lt;/a&gt; : &lt;strong&gt;deutlich bessere Gesamt-Produktivität und Codequalität&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf&quot;&gt;noch eine Metastudie&lt;/a&gt; : Gesamturteil deutlich positiv, aber Hinweis: schwer zu meistern , &lt;strong&gt;Fazit: Empfehlung für TDD&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://link.springer.com/book/10.1007%2F978-3-642-04288-1&quot;&gt;Empirische Studie zu Test-Driven Development&lt;/a&gt; : “test first” ist &lt;strong&gt;besser&lt;/strong&gt; darin, &lt;strong&gt;lose gekoppelte&lt;/strong&gt; Softwarekomponenten hervorzubringen als “test last”. “lose gekoppelt” bewirkt zum Beispiel bessere Wartbarkeit, verständlichkeit für die Entwickler, ist also was sehr gutes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../_posts/2020-09-19-Literaturrecherche-TDD.md&quot;&gt;mehr Details hier&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;was-ist-tdd-genau&quot;&gt;Was ist TDD genau?&lt;/h2&gt;
-&lt;p&gt;.. und was meint Kent Beck mit  “We will write tests before we code, minute by minute.”?&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Die Basis von TDD sind Unit-tests. Mit “&lt;strong&gt;Unit&lt;/strong&gt;” ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung macht. Also im besten Fall ein paar Zeilen Code, sagen wir zwischen 10 und 100 Zeilen&lt;/li&gt;
-  &lt;li&gt;der Begriff &lt;em&gt;Unittest&lt;/em&gt; meint dann einen Stück Software, welches die Korrektheit dieser einen &lt;strong&gt;Unit&lt;/strong&gt; testet. Und nur dieser. D.h. der Test sollte nach Möglichkeit keine anderen Teile aus dem gesamten Softwareprojekt testen. Auch nicht, wenn die zu testende &lt;strong&gt;Unit&lt;/strong&gt; eigentlich noch andere Units benötigt, um zu funktionieren.&lt;/li&gt;
-  &lt;li&gt;Diese Test-Software sollte dabei alle möglichen Pfade in der der nützlichen &lt;strong&gt;Unit&lt;/strong&gt; abtesten. Dabei insbesonders alle Grenzbedinungen in der &lt;strong&gt;Unit&lt;/strong&gt; auf Korrektheit überprüfen. Das Ergebnis ist dann eine sogenannte Testabdeckung von 100%. Auf die “Testabdeckung” gehen wir später noch ein.&lt;/li&gt;
-  &lt;li&gt;Der eigentliche Witz ist aber vor allem: Wir schreiben den Test &lt;strong&gt;BEVOR&lt;/strong&gt; wir den Code für die eigentlich nützliche Unit schreiben.
-    &lt;h2 id=&quot;die-wichtigen-fragen-über-die-keiner-spricht&quot;&gt;Die wichtigen Fragen über die keiner spricht.&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Wie geht das überhaupt ?&lt;/li&gt;
-      &lt;li&gt;Warum findet man so wenige Programmierer die das tatsächlich tun ?&lt;/li&gt;
-      &lt;li&gt;Warum ist das so schwer ?&lt;/li&gt;
-      &lt;li&gt;Wie kann ich als Softwareentwickler mich in kleinen Schritten incrementell von TestLast zu TestFirst vorarbeiten ?&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;This is what we talk about today ! (wie meine Lieblings-Physikerin auf Youtube immer sagt)
-    &lt;h1 id=&quot;timestamp-min&quot;&gt;Timestamp:? Min&lt;/h1&gt;
-    &lt;h2 id=&quot;wie-geht-das-überhaupt&quot;&gt;Wie geht das überhaupt?&lt;/h2&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Also, wenn man die paar Zeilen aus Kents Becks Buch einfach so versucht direkt umzusetzten, dann merkt man schnell, ganz so einfach ist das nicht. Kent Beck beschreibt auch gar nicht, wie das eigentlich praktisch umzusetzen ist.
-    &lt;h3 id=&quot;zunächst-klären-wir-ein-paar-vorraussetzungen&quot;&gt;Zunächst klären wir ein paar Vorraussetzungen.&lt;/h3&gt;
-    &lt;p&gt;Sind wir überhaupt in der Situation, TDD mit test first gerade anwenden zu können ?&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Nehmen wir an, wir wären ein SWEntwickler in einem Team&lt;/li&gt;
-      &lt;li&gt;irgend jemand hat sich schon über das Gesamtkonzept den Kopf zerbrochen und eine Software-Architektur entworfen und diese uns soweit erklärt, dass wir ein grobes Verständniss dafür haben.&lt;/li&gt;
-      &lt;li&gt;Wir sollen jetzt ein neues Feature implementieren, wofür wir aller Vorraussicht mindestens eine neue Klasse, Komponente, oder Service oder ähnliches benötigen.&lt;/li&gt;
-      &lt;li&gt;wir müssen zwar auch bestehenden Code ändern, aber der neu zu schreibende Code überwiegt auf jeden Fall.&lt;/li&gt;
-      &lt;li&gt;idealerweise gibt es schon irgendein Unittest-Framework im Projekt, auch wenn das bisher nur zum “Test Last” eingesetzt wurde.
-        &lt;h3 id=&quot;im-gegensatz-dazu-wann-ist-tdd-nicht-der-richtige-ansatz&quot;&gt;Im Gegensatz dazu: wann ist TDD nicht der richtige Ansatz?&lt;/h3&gt;
-        &lt;p&gt;TDD/TestFirst macht unter folgenden Vorraussetzungen eher weniger Sinn. 
-Diese Punkte zu kennen , ist wichtig um Misserfolg bei der Anwendung von TestFirst zu vermeiden.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;ein großes Projekt ohne jegliche automatischen Tests&lt;/li&gt;
-  &lt;li&gt;nur minimale Kenntnis der eingesetzten Sprache/Framework/Testframework&lt;/li&gt;
-  &lt;li&gt;Architektur ist unklar.&lt;/li&gt;
-  &lt;li&gt;die Hauptarbeit ist rauszufinden, welche 2 Parameter geändert werden sollen, damit die neue Anforderung erfüllt wird, kaum oder gar keine neuer Code zu schreiben&lt;/li&gt;
-  &lt;li&gt;sehr große Skepsis bis Ablehnung im Kollegenkreis, keine Unterstützung durch PO/Scrummaster/Architekt
-    &lt;h3 id=&quot;wie-gehen-wir-bei-test-first-vor-&quot;&gt;Wie gehen wir bei Test First vor? :&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Die Erfahrung zeigt, dass man sinnvollerweise so vorgeht:
-    &lt;ol&gt;
-      &lt;li&gt;wir brauchen ein Konzept, das kann im einfachsten Fall im Kopf passieren, mit Papier und Bleistift, Oder, wer’s gerne schwergewichtig mag (oder in einem großen Projekt Dokumentationspflichten hat), denn gern auch mit einer Software seiner Wahl.&lt;/li&gt;
-      &lt;li&gt;aus dem Konzept sollte hervorgehen, welche neuen Klassen benötig werden , wie diese heißen sollen, was deren Aufgabe und was NICHT deren Aufgabe ist. Also mit andern Worten welchen Methoden haben diese Klassen und wie heißen die Methoden?&lt;/li&gt;
-      &lt;li&gt;erzeugen alle Klassen mit leeren Methodenrümpfen&lt;/li&gt;
-      &lt;li&gt;füge die Parameter für die Methodenrümpfe hinzu&lt;/li&gt;
-      &lt;li&gt;erst jetzt fange an die Unittests zu schreiben. sinnvoll ist eine 1:1 Entsprechnung von Klassen zu UnittestKlassen und eine n:1 Entsprechung von Test-Funktionen/Methoden. Also für jeden Methode in meiner Produktions-Code-Klasse brauche ich 1 oder mehrere Testfunktionen, weil ich ja verschiedene szenarien des   Produktions-Codes testen will.&lt;/li&gt;
-      &lt;li&gt;Identifiziere für jede Methode des Produktions-Codes welche Szenarien zu testn sind. Dazu sind  vor allem die Rand/Grenzbedingungen aus den Anforderungen wichtig.  Beispiele:
-        &lt;ul&gt;
-          &lt;li&gt;Rabatt, wenn Bestellsumme größer Grenzbetrag : 3 Testfälle: größer, kleiner, oder gleich&lt;/li&gt;
-          &lt;li&gt;Eine Liste soll angezeigt werden: Testfälle: Liste ist leer, Liste ist normal Liste ist zu lang für eine Seite.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Allgemein lässt sich feststellen: die Testfälle sollten sich aus den Anforderungen ergeben. Oder besser noch aus den Akzeptanzkritierien.:
-        &lt;ul&gt;
-          &lt;li&gt;Soll der Grenzbetrag aus obigen Beispiel variabel sein, wie, wo, von wem darf/soll dieser Festgelegt werden. Gilt der immer für einen bestimmten Zeitbereich? In dem Fall ergeben noch mehr Testfälle wie oben. z.B.  für Zeitbereich X gilt ein Rabatt - %-Zahl und für Zeitraum Y ein anderer. 2 Testfälle: die  Bestellung wird zum Zeitpunkt a innerhalb von Zeitbereich X  angelegt wird, und einmal zu Zeitpunkt b an der Grenze der Zeitbereiche X zu Y:   wie hoch muss dann der Rabattbetrag der Bestellung in beiden Fällen sein, welche Uhrzeit gilt hier ? UTC, Uhrzeit des Kunden, Uhrzeit des Servers? .&lt;/li&gt;
-          &lt;li&gt;also je Akzeptanzkriterium mind 1 oder mehrere Testfälle&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Programmiere also zuerst deinen Testfall. Dieser Test müsste jetzt fehlschlagen, weil der Produktions-Code ja nur leere Methoden enthält die nix machen und höchstens “0”, leere Objekte o.ä. zurückgeben.&lt;/li&gt;
-      &lt;li&gt;erst jetzt implementiere den eigentlichen Produktions-Code aber nur soweit , bis der Test “grün” ist, auf keinen Fall mehr!&lt;/li&gt;
-      &lt;li&gt;Programmiere den nächsten Testfall und erweitere deinen Produktions-Code; aber nur soweit , bis der neue Test “grün” und alle bisherigen Tests “grün” sind, auf keinen Fall mehr!&lt;/li&gt;
-      &lt;li&gt;hast du alle Testfälle fertig und alle sind grün: Refaktoriere den Code , bis er möglichst einfach und verständlich ist. Nutze dazu die Sicherheit die dir deine Testabgeckung gibt.
-GRAFIK: Flussdiagramm ???&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;warum-ist-das-eigentlich-sooo-schwer&quot;&gt;Warum ist das eigentlich sooo schwer?&lt;/h2&gt;
-&lt;p&gt;Ist es wirklich sooo schwer ? Eindeutig ja!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Zitat aus aus &lt;a href=&quot;https://less.works/de/less/technical-excellence/test-driven-development&quot;&gt;Large-Scale Scrum »LeSS«&lt;/a&gt;:
-    &lt;ul&gt;
-      &lt;li&gt;“Wir treffen &lt;strong&gt;selten&lt;/strong&gt; Entwickler, die in der Lage war, sich TDD/TestFirst selbst beizubringen. Die meisten Entwickler brauchen &lt;strong&gt;tage- oder gar wochenlanges&lt;/strong&gt; Pair-Programming, bis sie es können.” und weiter :&lt;/li&gt;
-      &lt;li&gt;“Test-Driven Development ist vermutlich die &lt;strong&gt;schwierigste&lt;/strong&gt; agile Praxis, aber TDD ist gleichzeitig die einer der &lt;strong&gt;größten Gelegenheiten&lt;/strong&gt; die Qualität und das Design des Codes zu verbessern.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf&quot;&gt;Metastudie: How Effective is Test-Driven Development?&lt;/a&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;“Fast alle [Studien] sind sich einig, dass &lt;strong&gt;TDD schwierig zu lernen&lt;/strong&gt; ist.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Aus &lt;a href=&quot;https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111&quot;&gt;Test-Driven Java Development - Second Edition&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;“It's not an easy thing to master TDD. Even after learning all the theory and going through best practices and anti-patterns, the journey is only just beginning. &lt;strong&gt;TDD requires time and a lot of practice&lt;/strong&gt;. It's a long trip that does not stop with this book.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ich-hab-noch-nie-testfirst-gemacht-wie-komme-ich-dahin&quot;&gt;Ich hab noch nie TestFirst gemacht, wie komme ich dahin?&lt;/h2&gt;
-&lt;p&gt;Nach der Vorwarnung gilt trotzdem: mit hinreichender Motivation kann man es sich durchaus beibringen. Wichtig ist nur entweder große Neugierde, oder die feste Überzeugung, dass es sich auszahlen wird. 
-Daher hier eine Schritt für Schritt Anleitung:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;mache ein paar “Trockenübungen” also Übungsaufgaben abseits von realem Produktionscode, aber mit den gleich Sprachen/Tools wie deine Produktionsumgebung
-    &lt;ul&gt;
-      &lt;li&gt;Suche die eine kleine Übungsaufgabe, die du in höchtens 1 stunde  lösen kannst. &lt;a href=&quot;https://www.freecodecamp.org/news/the-10-most-popular-coding-challenge-websites-of-2016-fb8a5672d22f/&quot;&gt;Ideen hier&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;notfalls, wenn du noch gar keine Plan für Test-First hast, fang mit Test-Last an und lerne wie man überhaupt Unittests schreibt.&lt;/li&gt;
-      &lt;li&gt;wenn du fertig bis, lösche alles und fang mit der selben Aufgabe ganz von vorn an, diesmal aber test-first&lt;/li&gt;
-      &lt;li&gt;mache diese Übung ein paar mal, immer wieder, bis  du für die Lösung mehr googlen musst und bis es es dir sehr flüssig von der Hand geht,&lt;/li&gt;
-      &lt;li&gt;du wirst feststellen: in jeder Iteration wirst du nicht nur schneller, sondern dein Code bekommt mit jeder Iteration auch eine bessere Struktur, wird kompakter, gleichzeitg leichter für andere verständlich.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;in der Produktionumgebung: fange an gute Test-Last Tests zu schreiben. Prüfe deren Testabdeckung, verwende Mutation-Testing. Baue Know How auf, wie du überhaupt Unittests in deinem Projekt schreiben kannst.&lt;/li&gt;
-  &lt;li&gt;Organisiere oder nehme Teil an Coding Dojos für Test-First&lt;/li&gt;
-  &lt;li&gt;beginne auch in Produktionumgebung mit TestFirst.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;ganz-einfaches-codebeispiel-&quot;&gt;ganz einfaches Codebeispiel :&lt;/h2&gt;
-
-&lt;h1 id=&quot;bonus-content&quot;&gt;Bonus Content:&lt;/h1&gt;
-&lt;h2 id=&quot;testabdeckung-messen-&quot;&gt;Testabdeckung messen ?&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Ja, aber nur wärend des schreibens der Tests, um Lücken in der Testabdeckung zu finden.&lt;/li&gt;
-  &lt;li&gt;NEIN, um Qualitätsaussagen über die gesamte Codebasis zu machen
-    &lt;ul&gt;
-      &lt;li&gt;weil es gibt Code der nicht sinnvoll zu testen ist, z.B. weil er keine Fallunterscheidungen oder Schleifen enthält. Hier nachträglich die Testabdeckung zu erhöhen macht die Codebasis  in der Regel nicht besser.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Beispiel : ???&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;noch-besser-mutation-testing-hilft-auch-bei-test-last&quot;&gt;noch besser: Mutation-Testing, hilft auch bei Test-Last!&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Erklärung: &lt;a href=&quot;https://en.wikipedia.org/wiki/Mutation_testing&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;auch hier gilt: macht nur Sinn für die Anforderungen , an denen ich gerade arbeite, hilft mir blinde Flecken zu finden&lt;/li&gt;
-  &lt;li&gt;Beispiel:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;berechnePreis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabattZeitraumBeginn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabattZeitraumEnde&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabatminimum&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabattZeitraumBeginn&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabattZeitraumEnde&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabatt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;   
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Mutation wird vom Testtool automatisch eingefügt  :&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;berechnePreis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabattZeitraumBeginn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabattZeitraumEnde&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabatminimum&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabattZeitraumBeginn&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;bestelldatum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabattZeitraumEnde&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabatt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;   
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;anmerkungen-fürs-nächste-mal-beispiele-einbauen&quot;&gt;Anmerkungen fürs nächste mal: Beispiele einbauen.&lt;/h2&gt;</content><author><name>Bodo Teichmann</name></author><category term="Blog" /><category term="Testing" /><category term="TestFirst" /><category term="Talk" /><summary type="html">Nürnberg Digital 2021, Coding Track, 2021-07-16 - 2021-07-19 Short Teaser: Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile. Long Teaser: Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – woher aber kommt diese „Test Last“-Philosophie und warum halten so viele Entwickler so überzeugt daran fest? Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen anhand vieler Beispielprojekte den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. Wir wollen Vorurteile abbauen und die wichtigsten Fragen rund um Test-driven Development beantworten: Warum ist Test First scheinbar so schwierig? Welche Vorteile verschenken wir, wenn wir rein auf Test Last setzen? Wird Softwarearchitektur durch Test First wirklich besser? Welchen Unterschied genau macht es, die Tests vor der Implementierung zu schreiben statt im Nachhinein? Warum hat Test First automatisch einen sehr positiven Einfluss auf meine Softwarearchitektur, Test Last aber eher weniger? Wie kommen wir von Test Last zu Test First? Und welche Fragen hast du zu dem Thema? Timestamp: 0 Willkommen …zu “Test-driven Development?! Na klar … aber richtig!” About me Bodo Teichmann: Ich entwickle Software seit 1980, begonnen mit Basic, Assembler und C, jetzt schon lange Java und in letzter Zeit auch Javascript. Disclaimer Bin ich ein TDD-Profi der von Konferenz zu Konferenz reist und sein tiefes Wissen mit immer neuen Varianten und Facetten zum Besten gibt? Nein! Dazu hab ich zu viel Zeit mit Aufgaben verbracht, bei denen ich leider keine Software schreiben durfte. Ich war nämlich auch mal Abteilungsleiter, bis mich Scrum, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben. Warum beschäftigt mich TDD? Warum halte ich hier trotzdem einen Vortrag zum Thema TDD ? Weil mich das Thema schon immer interessiert hat. Eigentlich seit ich so ums Jahr 2000 das Buch “Extreme Programming” von Kent Beck gelesen habe. In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen “Scrum” bekannt wurden. Als ich 2003 meinem Kompangnion Joachim von dieser Vision für eine bessere Methode Software zu entwickeln überzeugen wollte, hat er nur gesagt: “Wer Visionen hat sollte zum Arzt gehn” (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch extrem brauchbar sind) Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests VOR dem eigentlichen Teil der Software schreiben sollte. Zitat “We will write tests before we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer’s perspective.” Das war damals echt revolutionär und für mich eine völlig neue Idee. Ich wollte das dann gleich ausprobieren. Dabei hatte ich das Glück, dass ich damals gerade einen neuen Job hatte, in dem ich mir erstmal selbst selbst Java beibringen durfte. Java war damals ja auch noch einigermaßen neu. Noch besser aber war: ich durfte auch fast 2 Jahre mehr oder weniger unbehelligt an einer neuen Text-Layout Engine programmieren, mit nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck. Wer im Pubikum kennt noch TeX oder Latex? Ja, genau! Damit hat man damals Diplomarbeiten, Wissenschaftliche Paper, usw. geschrieben. Word war zu der Zeit für sowas ziemlich unbrauchbar, und ist es zum Teil heute noch. Jedenfalls: Ein paar Jahre hatte ich damit meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mich und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML. Aber genug der alten Geschichten.. Warum TDD und Test First? Stabilität, Qualität Welches Problem will TDD und Test First eigentlich lösen ? In Softwareprojekten die von mehrern Entwicklern über mehrer Jahre entwickelt, weiterentwickeln und neuen Anforderungen angepasst werden, entstehen typischerweise eine Reihe von Qualitäts Problemen. Und wie die meisten aus der Branche inzwischen auch gelernt haben: Mit automatischen Tests lässt sich die Qualität deutlich verbessern: Softwarequalität, Stabilität, Zuverlässigkeit, Belastbarkeit sind früher oder später ein Thema in praktisch jedem Projekt : Die Entwickler verbringen zu viel Zeit mit Bugsuche, statt neue Funktionen einzubauen. oft stellen die Beteiligten fest, dass je größer die Software wird und je älter, desto schwieriger und langwieriger wird es, Anpassungen und Änderungen vorzunehmen.</summary></entry></feed>
+  &lt;/div&gt;</content><author><name>Bodo Teichmann</name></author><category term="blog" /><category term="TDD" /><category term="Test Driven Development" /><summary type="html">Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First</summary></entry></feed>

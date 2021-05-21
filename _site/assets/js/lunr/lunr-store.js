@@ -1,10 +1,4 @@
 var store = [{
-        "title": "Test Driven Development und Test First für NueDigital",
-        "excerpt":"Nürnberg Digital 2021, Coding Track, 2021-07-16 - 2021-07-19 Short Teaser: Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile. Long Teaser: Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet –...","categories": ["Blog"],
-        "tags": ["Testing","TestFirst","Talk"],
-        "url": "/blog/TDD-TestFirst-NueDigital/",
-        "teaser": null
-      },{
         "title": "(Video)Test Driven Development und Test-First Tutorial",
         "excerpt":"Nach wie vor aktuell: Mein Tutorial zu Test Driven Development und Test-First               ","categories": ["blog"],
         "tags": ["TDD","Test Driven Development"],
@@ -45,5 +39,11 @@ var store = [{
         "excerpt":"siehe auch TDD mit Java Workshop (mit Video), Teil 1 Test Driven Development mit Java Testabdeckung und Mutation Testing Testabdeckung allen zu messen, und sich danach zu orientieren, oder gar “Test Last” zu praktizieren und dann notdürfigt eine x% Testabdeckung hinzupfuschen ist natürlich nicht die Lösung, wie wir bereits wissen....","categories": ["blog"],
         "tags": ["Testing"],
         "url": "/blog/TDD-mit-Java/",
+        "teaser": null
+      },{
+        "title": "Test Driven Development und Test First für NueDigital",
+        "excerpt":"Nürnberg Digital 2021, Coding Track, 2021-07-16 - 2021-07-19 Short Teaser: Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Viele gehen daher den leichteren Weg, schreiben automatische Tests nach der Entwicklung und verschenken damit viele Vorteile. Long Teaser: Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet –...","categories": ["Blog"],
+        "tags": ["Testing","TestFirst","Talk"],
+        "url": "/blog/TDD-TestFirst-NueDigital/",
         "teaser": null
       }]
