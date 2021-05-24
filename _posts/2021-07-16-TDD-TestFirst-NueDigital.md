@@ -25,21 +25,34 @@ Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer 
 # About me
 Bodo Teichmann: Ich entwickle Software seit 1980, begonnen mit Basic, Assembler und C, jetzt schon lange Java und in letzter Zeit auch Javascript.
 ## Disclaimer
-Bin ich ein TDD-Profi der von Konferenz zu Konferenz reist und sein tiefes Wissen mit immer neuen Varianten und Facetten zum Besten gibt? Nein! Dazu hab ich zu viel Zeit mit Aufgaben verbracht, bei denen ich leider keine Software schreiben durfte. 
-Ich war nämlich auch mal Abteilungsleiter, bis mich Scrum, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben. 
+Also um hier gleich eins klar zu stellen: 
+ich bin kein Berater/Speaker/Buchautor der von Konferenz zu Konferenz reist und sein tiefes Wissen mit immer neuen Varianten und Facetten zum Besten gibt. 
+* Sondern, Ich hab mich in meiner bisherigen Berufslaufbahn auch etliche Jahre mit Themen befasst, bei denen ich nicht direkt selbst Software schreiben durfte. 
+Ich war nämlich unter auch mal Abteilungsleiter, bis mich Scrum, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben, sodass ich jetzt wieder selbst Software entwickeln darf. 
 ## Warum beschäftigt mich TDD?
-* Warum halte ich hier trotzdem einen Vortrag zum Thema TDD ? Weil mich das Thema schon **immer** interessiert hat. Eigentlich seit ich so ums Jahr 2000 das Buch "Extreme Programming" von Kent Beck gelesen habe. 
-* In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen "Scrum" bekannt wurden. Als ich 2003 meinem Kompangnion Joachim von dieser Vision für eine bessere Methode Software zu entwickeln überzeugen wollte, hat er nur gesagt: "Wer Visionen hat sollte zum Arzt gehn"  (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch extrem brauchbar sind)
-* Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests **VOR** dem eigentlichen Teil der Software schreiben sollte.
+### (Kent Beck, "Extreme Programming")
+* Das Thema beschäftigt mich, seit ich so ums Jahr 2000 das Buch "Extreme Programming" von Kent Beck gelesen habe. 
+* In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen "Scrum" bekannt wurden. 
+* Dazu muss man wissen: Kent Beck ist nicht **irgendein** Fachbuchautor, er ist einer DER Fachbuchautoren. Er hat mit 17 andern zusammen 2001 das "Agile Manifest" publiziert und damit eine wahre **Revolution** in der Softwarebranche ausgelöst. 
+    * Also, er ist tatsächlich einer der "Erfinder" von Scrum, wenn du so willst. Und inzwischen arbeitet praktisch **jeder** in der Softwareindustrie weltweit nach der Methode, oder zumindest behaupet praktisch jeder, dass er nach Scrum arbeite würde.
+
+* Als ich 2003 meinem Kompangnion Joachim von dieser Vision für eine bessere Methode der Softwareentwicklung  überzeugen wollte, hat er nur gesagt: "Wer Visionen hat sollte zum Arzt gehn"  (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch **extrem** brauchbar sind)
+
+* Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests **VOR** dem **eigentlichen** Teil der Software schreiben sollte.
 * Zitat "We will write tests **before** we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer's perspective."
-* Das war damals echt revolutionär und für mich eine völlig neue Idee. Ich wollte das dann gleich ausprobieren. 
+
+    * Dazu wiederhole ich nochmal: Kent Beck ist nicht irgendwer, sondern einer der ganz großen Vordenker der agilen Bewegung und der Softwarebranche insgesamt. 
+    * So, und wenn einer DER großen Vordenker der letzten 20 Jahre in der Branche eine Konzept wie TDD vorschlägt, dann darf man das auf jeden Fall sehr ernst nehmen, und es lohnt sich sicher, sich damit näher aueinanderzusetzten, oder?
+
+* Zurück zu mir ins Jahr 2000. Damals war das allerdings alles andere als offensichtlich und Kent Beck war mit seinem Buch einer unter viele, der halt ein paar verrückt klingende Ideen hatte.
+* Trotzdem das damals echt revolutionär und für mich völlig neu war, wollte ich das  gleich ausprobieren. Irgendwie war ich auch auf der Suche nach Ideeen, wie man besser als **bisher** Software entwickeln könnte.
 * Dabei hatte ich das Glück, dass ich damals gerade einen neuen Job hatte, in dem ich mir erstmal selbst selbst Java beibringen durfte. Java war damals ja auch noch einigermaßen neu. Noch besser aber war: ich durfte auch fast 2 Jahre mehr oder weniger unbehelligt an einer neuen Text-Layout Engine programmieren, mit nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck. 
 * Wer im Pubikum kennt noch *TeX* oder *Latex*? Ja, genau! Damit hat man damals Diplomarbeiten, Wissenschaftliche Paper, usw. geschrieben. Word war zu der Zeit für sowas ziemlich unbrauchbar, und ist es zum Teil heute noch.
-Jedenfalls: Ein paar Jahre hatte ich damit  meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mich und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML. 
-* Aber genug der alten Geschichten..
+Jedenfalls: Ein paar Jahre früher hatte ich damit  meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mir und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML. 
+* Aber genug der alten Geschichten.. der Punkt ist, dass ich damit TestDrivenDevelopment mit Hilfe der 6 Seite aus Kent Becks Buch recht erfolgreich gelernt und praktisch angewendet habe.
 ## Warum TDD und Test First?
+* Welches Problem will TDD und "Test First" eigentlich lösen ?
 ### Stabilität, Qualität
-* Welches Problem will TDD und Test First eigentlich lösen ?
 * In Softwareprojekten die von mehrern Entwicklern über mehrer Jahre entwickelt, weiterentwickeln und neuen Anforderungen angepasst werden, entstehen typischerweise eine Reihe von Qualitäts Problemen. Und wie die meisten aus der Branche inzwischen auch gelernt haben:  Mit automatischen Tests lässt sich die Qualität deutlich verbessern:
     * Softwarequalität, Stabilität, Zuverlässigkeit, Belastbarkeit sind früher oder später ein Thema in praktisch jedem Projekt :
         * Die Entwickler verbringen zu viel Zeit mit Bugsuche, statt neue Funktionen einzubauen.
@@ -63,30 +76,46 @@ Stimmts?
 ### TDD und Softwarearchitektur Behauptung
 * So, die Behauptung die jetzt im Raume steht, ist also, dass TDD/TestFirst bei der Softwarearchitektur der untern beiden Ebenen massiv hilft und auch hift über längere Zeiträume diese Architektur positiv beeinflusst.
 * Im Gegensatz dazu, helfen nachträglich hinzugefügte automatische Tests zwar für die Softwarequalität im Sinne von Stabilität und Fehlerarmut. Nachträglich hinzugefügte automatische Tests helfen aber gar nicht für die Softwarearchitektur, für keine der 4 Ebenen
-## Wie hilft TDD/TestFirst bei der Architektur?
+### Probleme ohne TDD 
+* Bei Software die von mehrköpfigen Teams gebaut werden,  ist es wichtig, dass nicht nur der ursprüngliche Autor einer Methode oder Klasse leicht versteht, und auch nach Wochen und Monate noch versteht. 
+* Denn Software die wirklich benutzt wird, muss ja ständig neuen Anforderungen angepasst werden und weiterentwickelt werden, da erzähle ich ja niemandem was neues.
+* Wenn ich aber Softwareteile anpassen und erweitern muss, muss ich erstmal verstehen was da bisher steht. Und zwar möglichst schnell.
+* Genau hier kommt die Softwarearchitektur der unteren beiden Detailebenen ins Spiel. 
+    * ist die Softwarearchitektur für einen Entwickler schnell verständlich oder nicht ?
+    * ist die Softwarearchitektur flexibel und leicht änderbar ? 
+* das ist auf den untern beiden Detailebenen, also der Ebene der Klassen und Methoden und des Zusammenspiels von diesen auf Modulebene extrem wichtig. 
 
+# Timestamp 13 Min
+## Wie hilft TDD/TestFirst bei der Softwarearchitektur?
 **Test first..**: 
-* .. zwingt vor dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich sehr **klar** über die **Anforderungen** und das Softwaredesign und zwar auf Klassen/Interface- Ebene Gedanken zu machen.
+* .. zwingt **vor** dem Schreiben des eigentlich Code und der eigentlichen Unittests dazu, sich **sehr** **klar**,  **sehr** **klar**, über die **Anforderungen** und das Softwaredesign und zwar auf Klassen/Interface- Ebene Gedanken zu machen.
 * .. trägt dann fast automatisch zu einer **klareren Softwarearchitektur** auf Klassen/Interface- Ebene bei. 
-* .. zu schreiben geht aber nur, wenn ich nicht nur die **fachlichen** Anforderungen genau verstanden sondern, wenn ich auch genau verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also gezwungen, mir vor der ersten Codezeile die ich schreibe, mit ein **durchdachtes  Konzept** zu machen.
-* - Code braucht meiner Erfahrung nach **weniger späteres  Refactoring** (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszyklus oder in einem späteren Sprint offensichtlich wird)
-* .. führt zu kleineren Klassen und Methoden, fördert automatisch das **[Single-Responsibility-Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip)**, damit meine ich, kleinere Klassen und kleinere Methode die von weniger anderen Klassen abhängen. Ich hoffe euch ist klar, dass das was sehr gutes ist. 
+* .. zu schreiben geht aber **nur**, wenn ich nicht nur die **fachlichen** Anforderungen genau verstanden sondern, wenn ich auch **genau** verstanden habe wie sich mein neuer Code in den bestehenden einfügen soll. Ich bin also **gezwungen**, mir vor der **ersten** Codezeile die ich schreibe, mit ein **durchdachtes  Konzept** zu machen.
+* - solcher Code braucht meiner Erfahrung nach **weniger späteres  Refactoring** (also Refactoring dessen Notwendigkeit erst in einem späteren Entwicklungszyklus offensichtlich wird)
+* .. führt zu **kleineren** Klassen und Methoden, fördert automatisch das **[Single-Responsibility-Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip)**, damit meine ich, kleinere Klassen und kleinere Methode, die von weniger anderen Klassen abhängen. Damit wir die Software leichter verständlich und auch leichter und damit billiger anpassbar.
+
+Ich hoffe euch ist klar, dass das was sehr gutes ist. 
+
 * .. spart am Ende halt doch Zeit und liefert **höhere Code-Qualität**.
 
 [mehr findest du hier](../_posts/2020-10-09-TDD-aber-richtig.md#test-first-ist-deswegen-entscheidend-weil)
 
 ## Beweise, Beweise
-Die Frage ist, lassen sich meine Behauptungen belegen, welche Erfahrungen haben ander mit TDD/TestFirst gemacht?
-Da findet man doch eine Menge Indizien die dafür sprechen.
-* Bücher über TDD selbst, werden immer wieder neu herausgebracht. Martin Fowlers Buch ist also beweitem nicht das einzige zu dem Thema.
+So jetzt könnt ihr sagen: Der Teichmann kann uns ja viel erzählen, stimmt das denn überhaupt und funktioniert das in der Praxis ? 
+
+Die Frage ist, lassen sich meine Behauptungen belegen, welche Erfahrungen haben andern mit TDD/TestFirst gemacht?
+Da findet man doch eine Menge Indizien, die dafür sprechen.
+* Bücher über TDD selbst, werden immer wieder neu herausgebracht. Kent Becks Buch ist also beweitem nicht das einzige zu dem Thema.
 * Bücher über Softwarearchitektur z.B. 
 * eine Reihe von wissenschaftlichen Studien, z.T. sogar richtige Vergleichsstudien
 * eine Reihe von systematischen Erfahrungsberichten aus verschiedenen großen Unternehmen.
-* sogar Metastudien zu dem Thema konnte ich finden.
+* sogar einige Metastudien zu dem Thema konnte ich finden.
+* Zitat: "Das Spring Team unterstützt und beführwortet TestDrivenDevelopment. ["The Spring team advocates test-driven development,TDD ."](https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html)
+* Zitat: "Wir praktizieren selbst TestDrivenDeveopment. Da heißt, bevor wir die Arbeit an einem neuen Feature beginnen, schreiben wir zuerst einen Test, der das gewünschte Verhalten genau beschreibt." ["At VMware Pivotal Labs, we practice test-driven development (TDD). That means before we begin work on a new feature, we first write a test that describes the behavior we want to add to our software.](https://tanzu.vmware.com/content/blog/go-faster-write-tests-first)
 
 ### Ergebnisse:
 * [IBM: Assessing test-driven development](https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF) : **50% weniger Bugs** als bei "test last", minimaler geringere Produktivität
-* [Microsoft: Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies](https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&Expires=1599907639&Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) :  **Bugrate sinkt mit TDD um 62%-77%** , 15% -35% mehr Zeit für TDD notwendig
+* [Microsoft: Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies](https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&Expires=1599907639&Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) :  **Bugrate sinkt mit TDD um 62%-77%** , 15% -35% mehr Zeit für TDD notwendig.
 * [Metastudie, die 6 unterschiedliche andere Studien ausgewertet hat](https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&context=csse_fac): Ergebnis: deutlich **Positiv, auch bezüglich Software-Architektur**
 * [An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development](https://ieeexplore.ieee.org/abstract/document/4343756) : **deutlich bessere Gesamt-Produktivität und Codequalität**
 * [noch eine Metastudie](https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf) : Gesamturteil deutlich positiv, aber Hinweis: schwer zu meistern , **Fazit: Empfehlung für TDD**
@@ -97,17 +126,21 @@ Da findet man doch eine Menge Indizien die dafür sprechen.
 
 ## Was ist TDD genau?
  .. und was meint Kent Beck mit  "We will write tests before we code, minute by minute."?
-* Die Basis von TDD sind Unit-tests. Mit "**Unit**" ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung macht. Also im besten Fall ein paar Zeilen Code, sagen wir zwischen 10 und 100 Zeilen   
-* der Begriff *Unittest* meint dann einen Stück Software, welches die Korrektheit dieser einen **Unit** testet. Und nur dieser. D.h. der Test sollte nach Möglichkeit keine anderen Teile aus dem gesamten Softwareprojekt testen. Auch nicht, wenn die zu testende **Unit** eigentlich noch andere Units benötigt, um zu funktionieren. 
-* Diese Test-Software sollte dabei alle möglichen Pfade in der der nützlichen **Unit** abtesten. Dabei insbesonders alle Grenzbedinungen in der **Unit** auf Korrektheit überprüfen. Das Ergebnis ist dann eine sogenannte Testabdeckung von 100%. Auf die "Testabdeckung" gehen wir später noch ein.
+* Die Basis von TDD sind Unit-tests. Mit "**Unit**" ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung machen.
+* Schopsystem: Rabattberechnung.
+* Also im besten Fall ein paar Zeilen Code, sagen wir zwischen 10 und 100 Zeilen   
+* der Begriff *Unittest* meint dann einen Stück Software, welches die Korrektheit dieser einen **Unit** testet. Und nur dieser. D.h. der Test sollte nach Möglichkeit keine **anderen** Teile aus dem Softwareprojekt testen. 
+* Der Unittest soll **NICHT** andere Teile des Codes  testen, auch nicht, wenn die zu testende **Unit** eigentlich noch andere Units benötigt, um zu funktionieren. 
+* Der **Unit-Test-Code** sollte dabei **alle** möglichen Pfade in der der nützlichen **Unit** abtesten. Dabei insbesonders alle **Grenzbedinungen** in der **Unit** auf Korrektheit überprüfen. 
+* Das Ergebnis ist dann eine sogenannte Testabdeckung von 100%. Auf die "Testabdeckung" gehen wir später noch ein.
 * Der eigentliche Witz ist aber vor allem: Wir schreiben den Test **BEVOR** wir den Code für die eigentlich nützliche Unit schreiben. 
-## Die wichtigen Fragen über die keiner spricht.
+## Die wichtigen Fragen.
     * Wie geht das überhaupt ?
     * Warum findet man so wenige Programmierer die das tatsächlich tun ?
     * Warum ist das so schwer ? 
     * Wie kann ich als Softwareentwickler mich in kleinen Schritten incrementell von TestLast zu TestFirst vorarbeiten ?
-* This is what we talk about today ! (wie meine Lieblings-Physikerin auf Youtube immer sagt)
-# Timestamp:? Min
+
+# Timestamp:27 Min
 ## Wie geht das überhaupt?
 * Also, wenn man die paar Zeilen aus Kents Becks Buch einfach so versucht direkt umzusetzten, dann merkt man schnell, ganz so einfach ist das nicht. Kent Beck beschreibt auch gar nicht, wie das eigentlich praktisch umzusetzen ist.
 ### Zunächst klären wir ein paar Vorraussetzungen. 
@@ -147,7 +180,7 @@ GRAFIK: Flussdiagramm ???
 ## Warum ist das eigentlich sooo schwer?
 Ist es wirklich sooo schwer ? Eindeutig ja! 
 * Zitat aus aus [Large-Scale Scrum >>LeSS<<](https://less.works/de/less/technical-excellence/test-driven-development):
-    * "Wir treffen **selten** Entwickler, die in der Lage war, sich TDD/TestFirst selbst beizubringen. Die meisten Entwickler brauchen **tage- oder gar wochenlanges** Pair-Programming, bis sie es können." und weiter :
+    * "Wir treffen **selten** Entwickler, die in der Lage ware, sich TDD/TestFirst selbst beizubringen. Die meisten Entwickler brauchen **tage- oder gar wochenlanges** Pair-Programming, bis sie es können." und weiter :
     * "Test-Driven Development ist vermutlich die **schwierigste** agile Praxis, aber TDD ist gleichzeitig die einer der **größten Gelegenheiten** die Qualität und das Design des Codes zu verbessern.
 * [Metastudie: How Effective is Test-Driven Development?](https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf) : 
     * "Fast alle \[Studien\] sind sich einig, dass **TDD schwierig zu lernen** ist.
@@ -167,19 +200,24 @@ Daher hier eine Schritt für Schritt Anleitung:
 1. Organisiere oder nehme Teil an Coding Dojos für Test-First
 1. beginne auch in Produktionumgebung mit TestFirst.
 
+
+# Timestamp 40 min 
 ## ganz einfaches Codebeispiel : 
 
 # Bonus Content:
 ## Testabdeckung messen ?
-* Ja, aber nur wärend des schreibens der Tests, um Lücken in der Testabdeckung zu finden.
+* Ja, aber nur wärend des schreibens der Tests, um Lücken in der Testabdeckung zu finden. ![testCoverage](/assets/images/testCoverage.png){:height="360px" width="360px"}
 * NEIN, um Qualitätsaussagen über die gesamte Codebasis zu machen 
     * weil es gibt Code der nicht sinnvoll zu testen ist, z.B. weil er keine Fallunterscheidungen oder Schleifen enthält. Hier nachträglich die Testabdeckung zu erhöhen macht die Codebasis  in der Regel nicht besser.
+
 * Beispiel : ???
 
 ### noch besser: Mutation-Testing, hilft auch bei Test-Last!
-* Erklärung: [](https://en.wikipedia.org/wiki/Mutation_testing)
-* auch hier gilt: macht nur Sinn für die Anforderungen , an denen ich gerade arbeite, hilft mir blinde Flecken zu finden
-* Beispiel: 
+* [Mutation-Testing](https://en.wikipedia.org/wiki/Mutation_testing)
+* hilft vor allem blinde Flecken zu finden, sehr gut auch für "test-last"
+* Konkret: 
+    * [javascript (including angular)](https://stryker-mutator.io/docs/stryker-js/) getting-started
+    * [java](https://pitest.org)
 
 ~~~ java
 float berechnePreis(preis, rabat, bestelldatum ,rabattZeitraumBeginn ,rabattZeitraumEnde){
@@ -203,6 +241,12 @@ float berechnePreis(preis, rabat, bestelldatum ,rabattZeitraumBeginn ,rabattZeit
 
 
 ## Anmerkungen fürs nächste mal: Beispiele einbauen. Einfluss auf SoftwareArchitektur nachweisen
+
+https://www.youtube.com/watch?v=UWtEVKVPBQ0 : 
+Wenn Tests schwer zu schreiben sind, dass sagt das was aus über die Qualität unserer Softwarearchitektur: das stimmt was nicht!
+https://web.archive.org/web/20100105084725/http://blog.james-carr.org/2006/11/03/tdd-anti-patterns/
+
+https://www.javacodegeeks.com/2018/02/developers-dont-use-tdd.html
 
 
 

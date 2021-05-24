@@ -460,6 +460,8 @@ Da findet man doch eine Menge Indizien die dafür sprechen.</p>
   <li>eine Reihe von wissenschaftlichen Studien, z.T. sogar richtige Vergleichsstudien</li>
   <li>eine Reihe von systematischen Erfahrungsberichten aus verschiedenen großen Unternehmen.</li>
   <li>sogar Metastudien zu dem Thema konnte ich finden.</li>
+  <li><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html">“The Spring team advocates test-driven development (TDD).”</a></li>
+  <li><a href="https://tanzu.vmware.com/content/blog/go-faster-write-tests-first">At VMware Pivotal Labs, we practice test-driven development (TDD). That means before we begin work on a new feature, we first write a test that describes the behavior we want to add to our software.</a></li>
 </ul>
 
 <h3 id="ergebnisse">Ergebnisse:</h3>
@@ -587,7 +589,7 @@ Daher hier eine Schritt für Schritt Anleitung:</p>
 <h1 id="bonus-content">Bonus Content:</h1>
 <h2 id="testabdeckung-messen-">Testabdeckung messen ?</h2>
 <ul>
-  <li>Ja, aber nur wärend des schreibens der Tests, um Lücken in der Testabdeckung zu finden.</li>
+  <li>Ja, aber nur wärend des schreibens der Tests, um Lücken in der Testabdeckung zu finden. <img src="/assets/images/testCoverage.png" alt="testCoverage" height="360px" width="360px" /></li>
   <li>NEIN, um Qualitätsaussagen über die gesamte Codebasis zu machen
     <ul>
       <li>weil es gibt Code der nicht sinnvoll zu testen ist, z.B. weil er keine Fallunterscheidungen oder Schleifen enthält. Hier nachträglich die Testabdeckung zu erhöhen macht die Codebasis  in der Regel nicht besser.</li>
@@ -598,9 +600,14 @@ Daher hier eine Schritt für Schritt Anleitung:</p>
 
 <h3 id="noch-besser-mutation-testing-hilft-auch-bei-test-last">noch besser: Mutation-Testing, hilft auch bei Test-Last!</h3>
 <ul>
-  <li>Erklärung: <a href="https://en.wikipedia.org/wiki/Mutation_testing"></a></li>
-  <li>auch hier gilt: macht nur Sinn für die Anforderungen , an denen ich gerade arbeite, hilft mir blinde Flecken zu finden</li>
-  <li>Beispiel:</li>
+  <li><a href="https://en.wikipedia.org/wiki/Mutation_testing">Mutation-Testing</a></li>
+  <li>hilft vor allem blinde Flecken zu finden, sehr gut auch für “test-last”</li>
+  <li>Konkret:
+    <ul>
+      <li><a href="https://stryker-mutator.io/docs/stryker-js/">javascript (including angular)</a> getting-started</li>
+      <li><a href="https://pitest.org">java</a></li>
+    </ul>
+  </li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="nf">berechnePreis</span><span class="o">(</span><span class="n">preis</span><span class="o">,</span> <span class="n">rabat</span><span class="o">,</span> <span class="n">bestelldatum</span> <span class="o">,</span><span class="n">rabattZeitraumBeginn</span> <span class="o">,</span><span class="n">rabattZeitraumEnde</span><span class="o">){</span>
@@ -621,6 +628,12 @@ Daher hier eine Schritt für Schritt Anleitung:</p>
 </code></pre></div></div>
 
 <h2 id="anmerkungen-fürs-nächste-mal-beispiele-einbauen-einfluss-auf-softwarearchitektur-nachweisen">Anmerkungen fürs nächste mal: Beispiele einbauen. Einfluss auf SoftwareArchitektur nachweisen</h2>
+
+<p>https://www.youtube.com/watch?v=UWtEVKVPBQ0 : 
+Wenn Tests schwer zu schreiben sind, dass sagt das was aus über die Qualität unserer Softwarearchitektur: das stimmt was nicht!
+https://web.archive.org/web/20100105084725/http://blog.james-carr.org/2006/11/03/tdd-anti-patterns/</p>
+
+<p>https://www.javacodegeeks.com/2018/02/developers-dont-use-tdd.html</p>
 
 
         
