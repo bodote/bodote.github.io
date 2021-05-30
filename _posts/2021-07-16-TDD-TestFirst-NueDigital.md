@@ -5,7 +5,7 @@ published: false
 visible: true
 categories:
   - Blog
-tags:
+tags: 
   - Testing
   - TestFirst
   - Talk 
@@ -20,38 +20,54 @@ Den „Test First“-Ansatz konsequent umzusetzen, ist schwerer als gedacht. Vie
 Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – woher aber kommt diese „Test Last“-Philosophie und warum halten so viele Entwickler so überzeugt daran fest? 
 Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen anhand vieler Beispielprojekte den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. Wir wollen Vorurteile abbauen und die wichtigsten Fragen rund um Test-driven Development beantworten: Warum ist Test First scheinbar so schwierig? Welche Vorteile verschenken wir, wenn wir rein auf Test Last setzen?  Wird Softwarearchitektur durch Test First wirklich besser? Welchen Unterschied genau macht es, die Tests vor der Implementierung zu schreiben statt im Nachhinein? Warum hat Test First automatisch einen sehr positiven Einfluss auf meine Softwarearchitektur, Test Last aber eher weniger?  Wie kommen wir von Test Last zu Test First? Und welche Fragen hast du zu dem Thema?  
 # Timestamp: 0
+
+# Short Teaser2:
+## Ganz Gallien ist ...
+## Die ganze Softwarewelt ist
+.. von Agiliität und Scrum besetzt, nur ein kleines scheinbar unbedeutendes Kapitel in Kent Becks Buch aus dem Jahr 2000,  in dem er die Grundlagen zu Scrum gelegt hat, wiedersetzt sich nach wie vor der wirklich großen Verbreitung. Das Kapitel beschreibt Test Driven Development.
+Warum ist das so ? Ist TDD wirklich eine so gute Idee? Warum wird es dann nicht überall eingesetzt?  In welchem Umfeld steigert es die Produktivität der Softwareentwicklung, in welchem Umfeld vieleicht eher nicht ? 
+
+Genau darüber werden wir heute sprechen!
+# Mein Name..
+ist Bodo. 1980 begann ich mit meinem ersten Computer Sinclair ZX80 Software zu entwicklen.
+Zunächst in Basic und Assember, später dann C, jetzt schon lange Java und in letzter Zeit auch Javascript.
 # Willkommen
 ...zu "Test-driven Development?! Na klar … aber richtig!"
-# About me
-Bodo Teichmann: Ich entwickle Software seit 1980, begonnen mit Basic, Assembler und C, jetzt schon lange Java und in letzter Zeit auch Javascript.
+
 ## Disclaimer
 Also um hier gleich eins klar zu stellen: 
-ich bin kein Berater/Speaker/Buchautor der von Konferenz zu Konferenz reist und sein tiefes Wissen mit immer neuen Varianten und Facetten zum Besten gibt. 
+ich bin **kein Berater/Speaker/Buchautor** der von Konferenz zu Konferenz reist und sein tiefes Wissen mit immer neuen Varianten und Facetten zum Besten gibt. 
 * Sondern, Ich hab mich in meiner bisherigen Berufslaufbahn auch etliche Jahre mit Themen befasst, bei denen ich nicht direkt selbst Software schreiben durfte. 
-Ich war nämlich unter auch mal Abteilungsleiter, bis mich Scrum, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben, sodass ich jetzt wieder selbst Software entwickeln darf. 
+Ich war nämlich unter **auch mal Abteilungsleiter**, bis mich **Scrum**, Scrumteam, Scrummaster und Product-Owner von meinem Leiden erlöst haben, sodass ich jetzt wieder **entwickeln** darf. 
 ## Warum beschäftigt mich TDD?
 ### (Kent Beck, "Extreme Programming")
-* Das Thema beschäftigt mich, seit ich so ums Jahr 2000 das Buch "Extreme Programming" von Kent Beck gelesen habe. 
-* In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen "Scrum" bekannt wurden. 
-* Dazu muss man wissen: Kent Beck ist nicht **irgendein** Fachbuchautor, er ist einer DER Fachbuchautoren. Er hat mit 17 andern zusammen 2001 das "Agile Manifest" publiziert und damit eine wahre **Revolution** in der Softwarebranche ausgelöst. 
-    * Also, er ist tatsächlich einer der "Erfinder" von Scrum, wenn du so willst. Und inzwischen arbeitet praktisch **jeder** in der Softwareindustrie weltweit nach der Methode, oder zumindest behaupet praktisch jeder, dass er nach Scrum arbeite würde.
+* Das Thema beschäftigt mich, seit ich so ums Jahr **2000** das Buch "Extreme Programming" von Kent Beck gelesen habe. 
+* In dem Buch war viel von den **Konzepten** die Rede, die später unter dem Namen "**Scrum**" bekannt wurden. 
+* Dazu muss man wissen: Kent Beck ist nicht **irgendein** Fachbuchautor, er ist einer DER Fachbuchautoren, Speaker auf allen einschlägigen Konferenze. Vor allem aber ist er einer DER Vordenker der Softwareindustrie.
+Er hat die Art und Weise wie wir heute Software entwickeln wie kaum ein Anderer beeinfluss.
+Er war maßgeblich am  "Agile Manifest" beteiligt, das 2001 publiziert wurde und damit eine wahre **Revolution** in der Softwarebranche ausgelöst hat.
+    * Also, er ist tatsächlich einer der "**Erfinder**" von Scrum, wenn du so willst. Und inzwischen arbeitet praktisch **jeder** in der Softwareindustrie weltweit nach der Methode, oder zumindest **behaupet** praktisch jeder, dass er nach Scrum arbeite würde.
+###### bis hierher auswendig ?
+* Also 2000 hatte ich das Buch gelesen.
+* Aber in 2003: Als ich damals meinem **Kompangnion Joachim** von dieser Vision für eine bessere Methode der Softwareentwicklung  überzeugen wollte, hat er nur gesagt: "Wer **Visionen** hat sollte zum Arzt gehn"  (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch **extrem** brauchbar sind)
 
-* Als ich 2003 meinem Kompangnion Joachim von dieser Vision für eine bessere Methode der Softwareentwicklung  überzeugen wollte, hat er nur gesagt: "Wer Visionen hat sollte zum Arzt gehn"  (nur um dann ein paar Jahre später einzusehen, dass Kent Becks Ideen doch **extrem** brauchbar sind)
-
-* Also mit Scrum war erstmal nix! Aber da gab es ja noch Kapitel 18: Auf gerade mal 6 Seiten erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests **VOR** dem **eigentlichen** Teil der Software schreiben sollte.
+* Also mit Scrum war erstmal **nix**, Anfang der 2000er Jahre! Aber da gab es ja noch Kapitel 18: Auf gerade mal **6 Seiten** erklärte Kent Beck, dass man Software automatisch testen sollte und sogar die Tests **VOR** dem **eigentlichen** Teil der Software schreiben sollte.
 * Zitat "We will write tests **before** we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer's perspective."
 
-    * Dazu wiederhole ich nochmal: Kent Beck ist nicht irgendwer, sondern einer der ganz großen Vordenker der agilen Bewegung und der Softwarebranche insgesamt. 
-    * So, und wenn einer DER großen Vordenker der letzten 20 Jahre in der Branche eine Konzept wie TDD vorschlägt, dann darf man das auf jeden Fall sehr ernst nehmen, und es lohnt sich sicher, sich damit näher aueinanderzusetzten, oder?
+    * Dazu wiederhole ich nochmal: Kent Beck ist **nicht irgendwer**, sondern einer **der** ganz großen **Vordenker** der **agilen Bewegung** und der Softwarebranche insgesamt. 
+    * So, und wenn einer DER großen Vordenker der letzten 20 Jahre in der Branche eine Konzept wie TDD vorschlägt, dann darf man das auf jeden Fall **sehr ernst nehmen**, und es lohnt sich sicher, sich damit näher aueinanderzusetzten, oder?
 
-* Zurück zu mir ins Jahr 2000. Damals war das allerdings alles andere als offensichtlich und Kent Beck war mit seinem Buch einer unter viele, der halt ein paar verrückt klingende Ideen hatte.
-* Trotzdem das damals echt revolutionär und für mich völlig neu war, wollte ich das  gleich ausprobieren. Irgendwie war ich auch auf der Suche nach Ideeen, wie man besser als **bisher** Software entwickeln könnte.
-* Dabei hatte ich das Glück, dass ich damals gerade einen neuen Job hatte, in dem ich mir erstmal selbst selbst Java beibringen durfte. Java war damals ja auch noch einigermaßen neu. Noch besser aber war: ich durfte auch fast 2 Jahre mehr oder weniger unbehelligt an einer neuen Text-Layout Engine programmieren, mit nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck. 
-* Wer im Pubikum kennt noch *TeX* oder *Latex*? Ja, genau! Damit hat man damals Diplomarbeiten, Wissenschaftliche Paper, usw. geschrieben. Word war zu der Zeit für sowas ziemlich unbrauchbar, und ist es zum Teil heute noch.
-Jedenfalls: Ein paar Jahre früher hatte ich damit  meine Diplomarbeit geschrieben. Die Algorithmen von Latex waren in einem Buch erklärt. Das besorgte ich mir und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals ganz moderne XML. 
-* Aber genug der alten Geschichten.. der Punkt ist, dass ich damit TestDrivenDevelopment mit Hilfe der 6 Seite aus Kent Becks Buch recht erfolgreich gelernt und praktisch angewendet habe.
+* **Zurück** zu mir ins Jahr **2000**. **Damals** war das allerdings alles andere als offensichtlich und Kent Beck war mit seinem Buch **einer unter vielen**, der halt ein paar **verrückt klingende Ideen** hatte.
+* Trotzdem das damals echt revolutionär und **für mich völlig neu** war, wollte ich das  gleich ausprobieren. Irgendwie war ich auch auf der Suche nach Ideeen, wie man besser als **bisher** Software entwickeln könnte.
+* Dabei hatte ich das Glück, dass ich damals gerade einen **neuen Job** hatte, in dem ich mir erstmal selbst selbst Java beibringen durfte. Java war damals ja auch noch einigermaßen neu. Noch besser aber war: ich durfte auch fast 2 Jahre mehr oder weniger **unbehelligt** an einer neuen Typesetting System (**Web2Print**) programmieren, mit nur einer Hand voll Anforderungen, und weitgehend unbehelligt von unbequemen Fragen oder gar Termindruck. 
+* Wer im Pubikum kennt noch *TeX* oder *Latex*? Ja, genau! Damit hat man damals Diplomarbeiten, Wissenschaftliche Paper, usw. geschrieben. **Word** war zu der Zeit für sowas ziemlich **unbrauchbar**, und ist es zum Teil heute noch.
+* Jedenfalls: Ein paar Jahre früher hatte ich damit  meine Diplomarbeit geschrieben. Die **Algorithmen von Latex** waren in einem Buch erklärt. Das besorgte ich mir und programmierte das ganze in Java nach. Nicht 1 zu 1. Sonst hätten wir ja gleich Latex nehmen können. Das Quellformat sollte jetzt nämlich nicht die etwas kryptische Latex-Syntax sein, sondern das damals **ganz moderne XML**. 
+* Aber genug der alten Geschichten.. **der Punkt ist**, dass ich damit **TestDrivenDevelopment** mit Hilfe der 6 Seite aus Kent Becks Buch recht **erfolgreich** gelernt und praktisch **angewendet** habe.
 ## Warum TDD und Test First?
-* Welches Problem will TDD und "Test First" eigentlich lösen ?
+https://youtu.be/FlJN6_4yI2A?t=1595 26:35
+* **Welches Problem** will TDD und "Test First" eigentlich lösen ?
+But: https://youtu.be/FlJN6_4yI2A?t=3084 51:26
+
 ### Stabilität, Qualität
 * In Softwareprojekten die von mehrern Entwicklern über mehrer Jahre entwickelt, weiterentwickeln und neuen Anforderungen angepasst werden, entstehen typischerweise eine Reihe von Qualitäts Problemen. Und wie die meisten aus der Branche inzwischen auch gelernt haben:  Mit automatischen Tests lässt sich die Qualität deutlich verbessern:
     * Softwarequalität, Stabilität, Zuverlässigkeit, Belastbarkeit sind früher oder später ein Thema in praktisch jedem Projekt :
