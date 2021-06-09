@@ -1,0 +1,1 @@
+pandoc _posts/2021-07-16-TDD-TestFirst-NueDigital.md -t odt -f markdown_strict --reference-doc=custom-reference.odt -o ~/Desktop/2021-07-16-TDD-TestFirst-NueDigital.odt
