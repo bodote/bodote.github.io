@@ -9,6 +9,7 @@ tags:
   - Test Driven Development
 toc: false
 #classes: wide
+#- [TDD Teil 2: Architektur und Test Driven Development](../TDD-TestFirst-Teil2-Architektur)
 ---
 
 Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – woher aber kommt diese „Test Last“-Philosophie und warum halten so viele Entwickler so überzeugt daran fest?
@@ -17,7 +18,6 @@ Die Blogserie geht dieser Frage auf den Grund. Auf dem Weg zu einer Antwort klä
 Das alles und noch viel mehr im der Blog-Serie zu TDD:
 
 - [TDD Teil 1: Warum Test Driven Development?](../TDD-TestFirst-Teil1-Warum)
-- [TDD Teil 2: Architektur und Test Driven Development](../TDD-TestFirst-Teil2-Architektur)
 
 Außerdem zum Thema:
 

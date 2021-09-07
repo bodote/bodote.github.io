@@ -1,7 +1,7 @@
 ---
 title: "TDD? aber richtig!"
 date: 2020-10-09
-published: false
+published: true
 categories:
   - blog
 tags:
