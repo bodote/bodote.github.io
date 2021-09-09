@@ -1,5 +1,5 @@
 ---
-title: "TDD Teil 1: Warum Test Driven Development?"
+title: "TDD Blog Teil 1: Warum Test Driven Development?"
 date: 2021-09-07
 published: true
 visible: true

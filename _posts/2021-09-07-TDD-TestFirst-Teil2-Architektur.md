@@ -1,5 +1,5 @@
 ---
-title: "TDD und Architektur?"
+title: "TDD Blog Teil 2: Architektur"
 date: 2021-09-08
 published: true
 visible: true

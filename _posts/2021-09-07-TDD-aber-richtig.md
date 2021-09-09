@@ -1,6 +1,6 @@
 ---
 title: "TDD? aber richtig!"
-date: 2021-09-07
+date: 2021-09-06
 published: true
 categories:
   - blog

@@ -1,5 +1,5 @@
 ---
-title: "TDD Blog Teil 3"
+title: "TDD Blog Teil 3: Beweise etc."
 date: 2021-09-09
 published: true
 visible: true
