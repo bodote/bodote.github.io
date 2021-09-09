@@ -105,8 +105,10 @@ Zum Glück ist die elektrische Verkabelung von Gebäuden nicht annähernd so kom
 
 Jedenfalls: TDD verspricht das Architekturproblem auf Ebene 3 und 4 zu lösen. Aber was sind die Ebenen 3 und 4 überhaupt ? Das klären wir im nächsten Teil der Blogserie.
 
-[weite zum Teil 2](../TDD-TestFirst-Teil2-Architektur)
+[weiter zum Teil 2](../TDD-TestFirst-Teil2-Architektur)
 
-# Fußnoten:
+---
+
+Fußnoten:
 
 [^1]: [Kent Beck: Extreme Programming Explained. Embrace Change., Addison-Wesley, 2000, ISBN 0-201-61641-6. Kapitel 18](https://books.google.de/books?id=G8EL4H4vf7UC&lpg=PR9&ots=jbvErnnRBq&dq=%22We%20will%20write%20tests%20before%20we%20code%2C%20minute%20by%20minute.%22&hl=de&pg=PA115#v=onepage&q=%22We%20will%20write%20tests%20before%20we%20code,%20minute%20by%20minute.%22&f=false)
