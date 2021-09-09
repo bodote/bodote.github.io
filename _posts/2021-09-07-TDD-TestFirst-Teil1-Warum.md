@@ -13,7 +13,9 @@ toc: true
 classes: wide
 ---
 
-# Teil 1: Warum TDD und was hat TDD mit Scrum zu tun ?
+[Intro zu dieser Blog Serie über TDD](../TDD-aber-richtig)
+
+# Warum TDD und was hat TDD mit Scrum zu tun ?
 
 Ganz Gallien ist von den Römern besetzt, nur ein kleines.... usw, die Asterix Fans unter euch kennen den Text.
 
@@ -22,23 +24,26 @@ Mit TDD ist es irgendwie so ähnlich, man könnten fast schreiben:
 
 Warum ist das so ? Ist TDD wirklich eine so gute Idee? Warum wird es dann nicht überall eingesetzt? In welchem Umfeld steigert es die Produktivität der Softwareentwicklung, in welchem Umfeld vieleicht ist es sogar contraproduktiv ?
 
-Wenn du dich das jetzt auch fragst, und den Beweis sehen willst, dass TDD mit Test First 50% weniger Bugs und einen bessere Softwarearchitektur zur Folge hat, dann lies weiter.
+Wenn du dich das jetzt auch fragst, und den Beweis sehen willst, dass TDD mit Test First **50% weniger Bugs** und einen bessere Softwarearchitektur zur Folge hat, dann lies weiter.
+
+# Meine persönliche Erfahrung mit TDD
 
 Also für mich begann das alles mit dem Buch "Extreme Programming" von Kent Beck im Jahr 2000.
 In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen "Scrum" bekannt wurden.
 Aus heutiger Sicht zeigt das schon: Kent Beck ist nicht irgendein Fachbuchautor, er ist einer DER großen Vordenker der Softwareindustrie. Seine Bücher, Blogs und Youtube-Video sind immer sehr interessant und oft wegweisend.
-Kent Beck hat die Art und Weise wie wir heute Software entwickeln wie kaum ein Anderer beeinfluss.
+
+Kent Beck hat die Art und Weise wie wir heute Software entwickeln wie kaum ein Anderer beeinflusst.
 Er war maßgeblich am **"Agile Manifest"** beteiligt, das 2001 publiziert wurde und damit eine wahre Revolution in der Softwarebranche ausgelöst hat.
-Also, er ist tatsächlich einer der "Erfinder\*" von Scrum, wenn du so willst. Und inzwischen arbeitet praktisch jeder in der Softwareindustrie weltweit nach der Methode, oder zumindest behaupet praktisch jeder, dass er nach Scrum arbeite würde. (Auch wenn es bei näherem Hinsehen manchmal fragwürdig erscheint.)
+Also, er ist tatsächlich einer der "Erfinder" von Scrum, wenn du so willst. Und inzwischen arbeitet praktisch jeder in der Softwareindustrie weltweit nach der Methode, oder zumindest behaupet praktisch jeder, dass er nach Scrum arbeite würde. (Auch wenn es bei näherem Hinsehen manchmal fragwürdig erscheint.)
 
-# Meine persönliche Erfahrung mit TDD
+Jedenfalls, im Jahr 2000 hatte ich das Buch gelesen. Der Inhalt war genau , was der Titel versprach. Nämlich **Extrem**. Für die meisten damals war es es vor allem aber eins, nämlich: extremer Unsinn. Wer hatte denn sowas schon mal gehört? Die Entwickler sollten **paarweise** am gleichen Problem gemeinsam arbeiten? gehts noch ?
 
-Jedenfalls, im Jahr 2000 hatte ich das Buch gelesen. Der Inhalt war genau , was der Titel versprach. Nämlich **Extrem**. Für die meisten damals war es es vor allem aber **extreme** Unsinn. Wer hatte denn sowas schon mal gehört: die Entwickler sollten **paarweise** am gleichen Problem gemeinsam arbeiten!
 Mit kam das auch zumindest ungewöhnlich und überraschend vor. Aber ich hatte schon genügend Probleme in meinen damals 5 Jahren Berufserfahrung gesehen, dass ich für neue Lösungsansätze sehr offen war. Kent Becks Ideen fand ich jedenfalls sehr spannend.
 Leider ist es mir damals in meinem beruflichen Umfeld noch nicht sofort gelungen Scrum einzuführen! Die Zeit oder die Umständen waren irgendwie noch nicht reif.
 
-Aber da gab es ja noch Kapitel 18 in Kent Beck's Buch: Auf gerade mal 6 Seiten erklärt Kent Beck, dass man Software automatisch testen sollte und sogar die Tests **VOR** dem **eigentlichen** Teil der Software schreiben sollte:
+Aber da gab es ja noch Kapitel 18 in Kent Beck's Buch[^1]: Auf gerade mal 6 Seiten erklärt Kent Beck, dass man Software automatisch testen sollte und sogar die Tests **VOR** dem **eigentlichen** Teil der Software schreiben sollte:
 "We will write tests before we code, minute by minute. We will preserve these tests forever, and run them all together frequently. We will also derive tests from the customer's perspective." [^1]
+
 Wir vergegenwärtigen uns nochmal: Kent Beck ist nicht irgendwer, sondern einer der ganz großen Vordenker der agilen Bewegung und der Softwarebranche insgesamt.
 So, und wenn einer DER großen Vordenker der letzten 20 Jahre in der Branche eine Konzept wie TDD vorschlägt, dann darf man das auf jeden Fall sehr ernst nehmen, und es lohnt sich sicher, sich damit näher aueinanderzusetzten, oder?
 
