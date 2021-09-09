@@ -21,6 +21,7 @@ Das alles und noch viel mehr im der Blog-Serie zu TDD:
 
 - [TDD Teil 1: Warum Test Driven Development?](../TDD-TestFirst-Teil1-Warum)
 - [TDD Teil 2: Architektur und Test Driven Development](../TDD-TestFirst-Teil2-Architektur)
+- [TDD Teil 3: TDD Beweise,Beweise](../TDD-TestFirst-Teil3-Beweise)
 
 Außerdem zum Thema:
 

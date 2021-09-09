@@ -20,27 +20,32 @@ classes: wide
 Zunächst ein Wort zu den verschiedenen Ebenen von Softwarearchitektur:
 Wie beim Bauen von Gebäuden gibt es ja auch in der Software oder allgemein in der IT-System-Architektur verschiedenen Ebenen, die ich jetzt vollkommen willkürlich so definiere:
 
-### 1. Ebene:
+1. Ebene:
 
-- Bauwesen: Wie sieht mein Stadtteil aus in dem die Gebäude stehen, wie sind die Straßen, Gehwege, Parks und Gebäude insgesamt organisiert?
-- Softwarearchitektur: das ist Ebene auf der vor allem die Organisations- oder Standort übergreifenden IT-Strukturen (Hardware und Software) definiert und dokumentiert werden
+   - Bauwesen: Wie sieht mein Stadtteil aus in dem die Gebäude stehen, wie sind die Straßen, Gehwege, Parks und Gebäude insgesamt organisiert?
+   - Softwarearchitektur: das ist Ebene auf der vor allem die Organisations- oder Standort übergreifenden IT-Strukturen (Hardware und Software) definiert und dokumentiert werden
 
-### 2. Ebene:
+2. Ebene:
 
-- Bauwesen: Wie schaut die Fassade aus, und wie ist die Aufteilung in den Gebäuden? z.B. Büros, große oder kleine Wohnungen
-- Softwarearchitektur: auf dieser Ebene werden IT-Struktur (Hardware und Software) innerhalb der Organisation definiert und dokumentiert.
+   - Bauwesen: Wie schaut die Fassade aus, und wie ist die Aufteilung in den Gebäuden? z.B. Büros, große oder kleine Wohnungen
+   - Softwarearchitektur: auf dieser Ebene werden IT-Struktur (Hardware und Software) innerhalb der Organisation definiert und dokumentiert.
 
-### 3. Ebene:
+3. Ebene:
 
-- Bauwesen: Wie ist die Raumaufteilung der Wohn-/Büro-Einheiten, wo sind Fenster und Türen,wie groß ist das Wohnzimmer im Vergleich zur Küche etc.
-- Softwarearchitektur: auf dieser Ebene wird grobe Stuktur einer Softwarelösung definiert und dokumentiert (hauptsächlich Software, in Sonderfällen auch Hardwarekomponenten) .
+   - Bauwesen: Wie ist die Raumaufteilung der Wohn-/Büro-Einheiten, wo sind Fenster und Türen,wie groß ist das Wohnzimmer im Vergleich zur Küche etc.
+   - Softwarearchitektur: auf dieser Ebene wird grobe Stuktur einer Softwarelösung definiert und dokumentiert (hauptsächlich Software, in Sonderfällen auch Hardwarekomponenten) .
 
-### 4. Ebene:
+4. Ebene:
 
-- Bauwesen: welchen Bodenbelag hab ich wo, Welche Lichtschalter an der Wand , welche Türgriffe?
-- Softwarearchitektur: hier geht es um Module und Klassen und deren Interaktion (wenn wir von ObjectOrientierten Sprachen sprechen).
+   - Bauwesen: welchen Bodenbelag hab ich wo, Welche Lichtschalter an der Wand , welche Türgriffe?
+   - Softwarearchitektur: hier geht es um Module und Klassen und deren Interaktion (wenn wir von ObjectOrientierten Sprachen sprechen).
 
 Wenn wir diese 4 Ebenen auf Softwarearchitektur übertragen und das auf TDD anwenden, dann hilft TDD eher bei den untern beiden Ebenen 3 und 4, also bei der Architektur der kleineren Details, weniger bei den obern beiden Ebenen 1 und 2, der Architektur im ganz Großen.
+
+Die Ebenen 1 und 2 sind in der IT-Systemarchitektur (Hard- und Software) auch meist gar nicht das Problem. Denn hier ist zum einen meist recht gute Dokumentation vorhanden und die IT-Systemarchitektur entspricht auch der Planung, wie diese dokumentiert ist.
+Denn diese oberen beiden Ebenen ändern sich auch nur viel langsamer als die unteren Ebenen.
+
+Genau das ist aber in den untern beiden Ebenen oft nicht so: wenig Doku, und wenn überhaupt vorhanden meist hoffnungslos veraltet und entspricht nicht mehr der Realität. Die ursprünglich vielicht guten Ideen der Architekten sind bis zur Unkenntlichkeit verändert.
 
 ## TDD und Softwarearchitektur Behauptung
 
@@ -123,6 +128,8 @@ TDD und Test first...
 Ich hoffe euch ist klar, dass das was sehr gutes ist. TDD spart, im richtigen Context eingesetzt (dazu mehr im Teil 3), am Ende halt doch Zeit und liefert **höhere Code-Qualität**.
 
 [zurück zum Teil 1](../TDD-TestFirst-Teil1-Warum)
+
+[weiter zu Teil 3: TDD Beweise,Beweise](../TDD-TestFirst-Teil3-Beweise)
 
 # Fußnoten:
 

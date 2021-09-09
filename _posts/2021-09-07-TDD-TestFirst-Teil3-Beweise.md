@@ -1,5 +1,5 @@
 ---
-title: "TDD Beweise"
+title: "TDD Blog Teil 3"
 date: 2021-09-07
 published: false
 visible: true
@@ -13,12 +13,17 @@ toc: true
 classes: wide
 ---
 
-# Teil 3: Beweise, Beweise
+- [TDD Teil 1: Warum Test Driven Development?](../TDD-TestFirst-Teil1-Warum)
+- [TDD Teil 2: Architektur und Test Driven Development](../TDD-TestFirst-Teil2-Architektur)
+
+# Beweise, Beweise!
+
+## Wo finden wir die Beweise?
 
 So jetzt könnt ihr sagen: Der Teichmann kann uns ja viel erzählen, stimmt das denn überhaupt und funktioniert das in der Praxis ?
 
-Die Frage ist, lassen sich meine Behauptungen belegen, welche Erfahrungen haben andern mit TDD/TestFirst gemacht?
-Da findet man doch eine Menge Indizien, die dafür sprechen.
+Die Frage ist, lassen sich meine Behauptungen belegen? Welche Erfahrungen haben andere mit TDD/TestFirst gemacht?
+Da findet man doch eine Menge Indizien, die dafür sprechen:
 
 - Bücher über TDD selbst, werden immer wieder neu herausgebracht. Kent Becks Buch ist also beweitem nicht das einzige zu dem Thema.
 
@@ -34,7 +39,7 @@ Da findet man doch eine Menge Indizien, die dafür sprechen.
 
 - Zitat: "Wir praktizieren selbst TestDrivenDeveopment. Da heißt, bevor wir die Arbeit an einem neuen Feature beginnen, schreiben wir zuerst einen Test, der das gewünschte Verhalten genau beschreibt." ["At VMware Pivotal Labs, we practice test-driven development (TDD). That means before we begin work on a new feature, we first write a test that describes the behavior we want to add to our software.](https://tanzu.vmware.com/content/blog/go-faster-write-tests-first)
 
-### Ergebnisse:
+## Fundstellen:
 
 - [IBM: Assessing test-driven development](https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF) : **50% weniger Bugs** als bei "test last", minimaler geringere Produktivität
 
@@ -50,14 +55,12 @@ Da findet man doch eine Menge Indizien, die dafür sprechen.
 
 [mehr Details hier](../_posts/2020-09-19-Literaturrecherche-TDD.md)
 
-## Was ist TDD genau? Folie 22-31
+# Was ist TDD eigentich praktisch gesprochen?
 
 .. und was meint Kent Beck mit "We will write tests before we code, minute by minute."?
-Folien 22 -31 erklären
+Die lange Antwort liest du am besten selbst direkt im Buch nach.
 
-### nochmal wiederholen mit anderen Worten:
-
-...und nochmal zu den Folien zurückgehen
+## TL;DR? Zusammenfassung TDD für eilige Product Owner und sonstige Nicht-Softwareentwickler
 
 - Die Basis von TDD sind Unit-tests. Mit "**Unit**" ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung machen.
 
@@ -74,7 +77,7 @@ Folien 22 -31 erklären
 
 - Der eigentliche Witz ist aber vor allem: Wir schreiben den Test **BEVOR** wir den Code für die eigentlich nützliche Unit schreiben.
 
-### ABER:
+## Was sich leider erst mit viel Praxis erschließt
 
 leider sieh man an so einem einfachen Beispiel noch nicht, wie sich TestFirst auf die Softwarearchitektur auswirkt. Das offenbart sich nach meiner Erfahrung erst dann, wenn man wirklich komplexte Anforderungen programmiert und der Code einen gewissen umfang an Verschiedenen Klassen hat.
 
@@ -82,9 +85,9 @@ Das heißt für euch: wenn Ihr selbst die Erfahrung machen wollt, dann müsst ih
 
 Meine Überzeugung ist, das den sehr guten Softwareentwickler von den Gewinner der Championsleague (um mal einen Vergleich aus dem Fußball zu bemühen) unterscheidet, ist, unter anderem TDD zu beherschen.
 
-## Die wichtigen Fragen.
+# Die wichtigen Fragen.
 
-### Warum findet man so wenige Programmierer die das tatsächlich tun ?
+## Warum findet man so wenige Programmierer die das tatsächlich tun ?
 
 oder anders gefragt: **Warum ist das eigentlich sooo schwer?**
 Ist es wirklich sooo schwer ? Eindeutig ja!
@@ -101,11 +104,9 @@ Ist es wirklich sooo schwer ? Eindeutig ja!
 - Aus [Test-Driven Java Development - Second Edition](https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111)
   - "It\'s not an easy thing to master TDD. Even after learning all the theory and going through best practices and anti-patterns, the journey is only just beginning. **TDD requires time and a lot of practice**. It\'s a long trip that does not stop with this book.
 
-### Wie kann ich als Softwareentwickler mich in kleinen Schritten incrementell von TestLast zu TestFirst vorarbeiten ?
+## Wie kann ich als Softwareentwickler mich in kleinen Schritten incrementell von TestLast zu TestFirst vorarbeiten ?
 
-# Timestamp:
-
-#### Zunächst klären wir ein paar Vorraussetzungen.
+### Zunächst klären wir ein paar Vorraussetzungen.
 
 Sind wir überhaupt in der Situation, TDD mit 'test first' gerade anwenden zu können ?
 _ Nehmen wir an, wir wären ein SWEntwickler in einem Team
@@ -150,8 +151,6 @@ Daher hier eine Schritt für Schritt Anleitung:
 1. Organisiere oder nehme Teil an Coding Dojos für Test-First
 1. beginne auch in Produktionumgebung mit TestFirst.
 
-# Timestamp 40 min
-
 # Bonus Content:
 
 ## Testabdeckung messen ?
@@ -194,7 +193,7 @@ float berechnePreis(preis, rabat, bestelldatum ,rabattZeitraumBeginn ,rabattZeit
 }
 ```
 
-## Anmerkungen fürs nächste mal: Beispiele einbauen. Einfluss auf SoftwareArchitektur nachweisen
+### Anmerkungen fürs nächste mal: Beispiele einbauen. Einfluss auf SoftwareArchitektur nachweisen
 
 https://www.youtube.com/watch?v=UWtEVKVPBQ0 :
 Wenn Tests schwer zu schreiben sind, dass sagt das was aus über die Qualität unserer Softwarearchitektur: das stimmt was nicht!
