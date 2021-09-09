@@ -13,17 +13,22 @@ toc: true
 classes: wide
 ---
 
-- [TDD Teil 1: Warum Test Driven Development?](../TDD-TestFirst-Teil1-Warum)
-- [TDD Teil 2: Architektur und Test Driven Development](../TDD-TestFirst-Teil2-Architektur)
+Siehe auch:
+
+[TDD Teil 1: Warum Test Driven Development?](../TDD-TestFirst-Teil1-Warum)
+
+[TDD Teil 2: Architektur und Test Driven Development](../TDD-TestFirst-Teil2-Architektur)
 
 # Beweise, Beweise!
 
-## Wo finden wir die Beweise?
-
 So jetzt könnt ihr sagen: Der Teichmann kann uns ja viel erzählen, stimmt das denn überhaupt und funktioniert das in der Praxis ?
 
-Die Frage ist, lassen sich meine Behauptungen belegen? Welche Erfahrungen haben andere mit TDD/TestFirst gemacht?
+Ich hoffe, dem Leser ist klar, dass es Beweise im streng mathematischen Sinn nicht geben kann. Also sorry für diese Clickbait-mäßig Überschrift.
+
+Trotzdem: Die Frage ist, lassen sich meine Behauptungen belegen? Welche Erfahrungen haben andere mit TDD/TestFirst gemacht?
 Da findet man doch eine Menge Indizien, die dafür sprechen:
+
+Es gibt da ganz verschiedene Arten von Belegen, wie gut TDD und Test - First wirklich in der Praxis ist:
 
 - Bücher über TDD selbst, werden immer wieder neu herausgebracht. Kent Becks Buch ist also beweitem nicht das einzige zu dem Thema.
 
@@ -35,34 +40,51 @@ Da findet man doch eine Menge Indizien, die dafür sprechen:
 
 - sogar einige Metastudien zu dem Thema konnte ich finden.
 
-- Zitat: "Das Spring Team unterstützt und beführwortet TestDrivenDevelopment. ["The Spring team advocates test-driven development,TDD ."](https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html)
+## Die Indizien
 
-- Zitat: "Wir praktizieren selbst TestDrivenDeveopment. Da heißt, bevor wir die Arbeit an einem neuen Feature beginnen, schreiben wir zuerst einen Test, der das gewünschte Verhalten genau beschreibt." ["At VMware Pivotal Labs, we practice test-driven development (TDD). That means before we begin work on a new feature, we first write a test that describes the behavior we want to add to our software.](https://tanzu.vmware.com/content/blog/go-faster-write-tests-first)
+Im Folgenden nur ein Auszug aus den interessantesten Fundstellen, die ich recherchiert habe. Die vollständige Liste aller meiner Fundstellen findet sich [hier](../Literaturrecherche-TDD.)
 
-## Fundstellen:
+- ["The Spring team advocates test-driven development,TDD ."](https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html)
 
-- [IBM: Assessing test-driven development](https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF) : **50% weniger Bugs** als bei "test last", minimaler geringere Produktivität
+  > "Das Spring Team unterstützt und beführwortet TestDrivenDevelopment.
 
-- [Microsoft: Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies](https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&Expires=1599907639&Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) : **Bugrate sinkt mit TDD um 62%-77%** , 15% -35% mehr Zeit für TDD notwendig.
+- ["VMware Pivotal Labs Website](https://tanzu.vmware.com/content/blog/go-faster-write-tests-first)
 
-- [Metastudie, die 6 unterschiedliche andere Studien ausgewertet hat](https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&context=csse_fac): Ergebnis: deutlich **Positiv, auch bezüglich Software-Architektur**
+  > "Wir praktizieren selbst TestDrivenDeveopment. Da heißt, bevor wir die Arbeit an einem neuen Feature beginnen, schreiben wir zuerst einen Test, der das gewünschte Verhalten genau beschreibt."
 
-- [An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development](https://ieeexplore.ieee.org/abstract/document/4343756) : **deutlich bessere Gesamt-Produktivität und Codequalität**
+- [IBM: Assessing test-driven development](https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF)
 
-- [noch eine Metastudie](https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf) : Gesamturteil deutlich positiv, aber Hinweis: schwer zu meistern , **Fazit: Empfehlung für TDD**
+  > **50% weniger Bugs** als bei "test last", minimaler geringere Produktivität
 
-- [Empirische Studie zu Test-Driven Development](https://link.springer.com/book/10.1007%2F978-3-642-04288-1) : "test first" ist **besser** darin, **lose gekoppelte** Softwarekomponenten hervorzubringen als "test last". "lose gekoppelt" bewirkt zum Beispiel bessere Wartbarkeit, verständlichkeit für die Entwickler, ist also was sehr gutes.
+- [Microsoft: Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies](https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&Expires=1599907639&Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA)
 
-[mehr Details hier](../_posts/2020-09-19-Literaturrecherche-TDD.md)
+  > **Bugrate sinkt mit TDD um 62%-77%** , 15% -35% mehr Zeit für TDD notwendig.
+
+- [Metastudie, die 6 unterschiedliche andere Studien ausgewertet hat](https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&context=csse_fac)
+
+  > Ergebnis: deutlich **Positiv, auch bezüglich Software-Architektur**
+
+- [An Experimental Evaluation of the Effectiveness and Efficiency of the Test Driven Development](https://ieeexplore.ieee.org/abstract/document/4343756)
+
+  > **deutlich bessere Gesamt-Produktivität und Codequalität**
+
+- [noch eine Metastudie](https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf)
+
+  > Gesamturteil deutlich positiv, aber Hinweis: "schwer zu meistern" , **Fazit: Empfehlung für TDD**
+
+- [Empirische Studie zu Test-Driven Development](https://link.springer.com/book/10.1007%2F978-3-642-04288-1)
+  > " _Test First_ ist **besser** darin, **lose gekoppelte** Softwarekomponenten hervorzubringen als _test last_." _Lose gekoppelt_ bewirkt zum Beispiel bessere Wartbarkeit, Verständlichkeit für die Entwickler, ist also was sehr gutes.
+
+[mehr Details hier](../Literaturrecherche-TDD)
 
 # Was ist TDD eigentich praktisch gesprochen?
 
 .. und was meint Kent Beck mit "We will write tests before we code, minute by minute."?
-Die lange Antwort liest du am besten selbst direkt im Buch nach.
+Die lange Antwort liest du am besten selbst direkt im Buch nach.[^1]
 
 ## TL;DR? Zusammenfassung TDD für eilige Product Owner und sonstige Nicht-Softwareentwickler
 
-- Die Basis von TDD sind Unit-tests. Mit "**Unit**" ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung machen.
+- Die Basis von TDD sind Unit-tests[^3]. Mit "**Unit**" ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung machen.
 
 - Also im besten Fall ein paar Zeilen Code, sagen wir zwischen 10 und 100 Zeilen
 
@@ -77,15 +99,25 @@ Die lange Antwort liest du am besten selbst direkt im Buch nach.
 
 - Der eigentliche Witz ist aber vor allem: Wir schreiben den Test **BEVOR** wir den Code für die eigentlich nützliche Unit schreiben.
 
-## Was sich leider erst mit viel Praxis erschließt
+## Was sich erst mit viel Praxis erschließt
 
-leider sieh man an so einem einfachen Beispiel noch nicht, wie sich TestFirst auf die Softwarearchitektur auswirkt. Das offenbart sich nach meiner Erfahrung erst dann, wenn man wirklich komplexte Anforderungen programmiert und der Code einen gewissen umfang an Verschiedenen Klassen hat.
+Leider sieht der Product Ower, Scrum Master oder der noch nicht so erfahrene Entwickler an so einem einfachen Beispiel noch nicht, wie sich TestFirst auf die Softwarearchitektur auswirkt. Das offenbart sich nach meiner Erfahrung erst dann, wenn man wirklich komplexte Anforderungen programmiert und der Code einen gewissen Umfang an verschiedenen Klassen hat.
 
 Das heißt für euch: wenn Ihr selbst die Erfahrung machen wollt, dann müsst ihr leider den langen Weg gehen. Es gibt keine Abkürzung Dazu passt auch prima das Zitat aus dem "Test-Driven Java Developmeht" - Buch unten.
 
-Meine Überzeugung ist, das den sehr guten Softwareentwickler von den Gewinner der Championsleague (um mal einen Vergleich aus dem Fußball zu bemühen) unterscheidet, ist, unter anderem TDD zu beherschen.
+> \"It\'s not an easy thing to master TDD. Even after learning all the
+> theory and going through best practices and anti-patterns, the journey
+> is only just beginning. **TDD requires time and a lot of practice**. It\'s a
+> long trip that does not stop with this book. As a matter of fact, it
+> never truly ends. There are always new ways to become more proficient
+> and faster. However, even though the cost is high, the benefits are even
+> higher. **People who have spent enough time with TDD claim that there is
+> no other way to develop a software.** We are one of them and we\'re sure
+> that you will be too.\"[^3]
 
-# Die wichtigen Fragen.
+Meine Überzeugung ist, das den sehr guten Softwareentwickler von dem Gewinner der Championsleague trennt, ist, unter anderem TDD zu beherschen. (..um auch mal einen Vergleich aus dem Fußball zu bemühen)
+
+# Die häufigsten Fragen
 
 ## Warum findet man so wenige Programmierer die das tatsächlich tun ?
 
@@ -94,27 +126,31 @@ Ist es wirklich sooo schwer ? Eindeutig ja!
 
 - Zitat aus aus [Large-Scale Scrum >>LeSS<<](https://less.works/de/less/technical-excellence/test-driven-development):
 
-  - "Wir treffen **selten** Entwickler, die in der Lage ware, sich TDD/TestFirst selbst beizubringen. Die meisten Entwickler brauchen **tage- oder gar wochenlanges** Pair-Programming, bis sie es können." und weiter :
-  - "Test-Driven Development ist vermutlich die **schwierigste** agile Praxis, aber TDD ist gleichzeitig die einer der **größten Gelegenheiten** die Qualität und das Design des Codes zu verbessern.
+  > "Wir treffen **selten** Entwickler, die in der Lage ware, sich TDD/TestFirst selbst beizubringen. Die meisten Entwickler brauchen **tage- oder gar wochenlanges** Pair-Programming, bis sie es können."
+
+  und weiter :
+
+  > "Test-Driven Development ist vermutlich die **schwierigste** agile Praxis, aber TDD ist gleichzeitig die einer der **größten Gelegenheiten** die Qualität und das Design des Codes zu verbessern.
 
 - [Metastudie: How Effective is Test-Driven Development?](https://www.researchgate.net/profile/Burak_Turhan/publication/258126622_How_Effective_is_Test_Driven_Development/links/54e794320cf27a6de10a8afe/How-Effective-is-Test-Driven-Development.pdf) :
 
-  - "Fast alle \[Studien\] sind sich einig, dass **TDD schwierig zu lernen** ist.
+  > "Fast alle \[Studien\] sind sich einig, dass **TDD schwierig zu lernen** ist.
 
 - Aus [Test-Driven Java Development - Second Edition](https://www.packtpub.com/product/test-driven-java-development-second-edition/9781788836111)
-  - "It\'s not an easy thing to master TDD. Even after learning all the theory and going through best practices and anti-patterns, the journey is only just beginning. **TDD requires time and a lot of practice**. It\'s a long trip that does not stop with this book.
+  > "It\'s not an easy thing to master TDD. Even after learning all the theory and going through best practices and anti-patterns, the journey is only just beginning. **TDD requires time and a lot of practice**. It\'s a long trip that does not stop with this book.
 
-## Wie kann ich als Softwareentwickler mich in kleinen Schritten incrementell von TestLast zu TestFirst vorarbeiten ?
+## Wie kann ich als Softwareentwickler mich in kleinen Schritten inkrementell von Test Last zu Test First vorarbeiten ?
 
 ### Zunächst klären wir ein paar Vorraussetzungen.
 
 Sind wir überhaupt in der Situation, TDD mit 'test first' gerade anwenden zu können ?
-_ Nehmen wir an, wir wären ein SWEntwickler in einem Team
-_ irgend jemand hat sich schon über das Gesamtkonzept den Kopf zerbrochen und eine Software-Architektur entworfen und diese uns soweit erklärt, dass wir ein grobes Verständniss dafür haben.
-_ Wir sollen jetzt ein neues Feature implementieren, wofür wir aller Vorraussicht mindestens eine neue Klasse, Komponente, oder Service oder ähnliches benötigen.
-_ wir müssen zwar auch bestehenden Code ändern, aber der neu zu schreibende Code überwiegt auf jeden Fall. \* idealerweise gibt es schon irgendein Unittest-Framework im Projekt, auch wenn das bisher nur zum "Test Last" eingesetzt wurde.
 
-## Im Gegensatz dazu: wann ist TDD nicht der richtige Ansatz?
+Nehmen wir an, wir wären ein SWEntwickler in einem Team
+irgend jemand hat sich schon über das Gesamtkonzept den Kopf zerbrochen und eine Software-Architektur entworfen und diese uns soweit erklärt, dass wir ein grobes Verständniss dafür haben.
+Wir sollen jetzt ein neues Feature implementieren, wofür wir aller Vorraussicht mindestens eine neue Klasse, Komponente, oder Service oder ähnliches benötigen.
+wir müssen zwar auch bestehenden Code ändern, aber der neu zu schreibende Code überwiegt auf jeden Fall. Idealerweise gibt es schon irgendein Unittest-Framework im Projekt, auch wenn das bisher nur zum "Test Last" eingesetzt wurde.
+
+### Im Gegensatz dazu: wann ist TDD nicht der richtige Ansatz?
 
 Wo macht TDD weniger Sinn ?
 https://youtu.be/FlJN6_4yI2A?t=3084 51:26
@@ -136,7 +172,7 @@ Diese Punkte zu kennen , ist wichtig um Misserfolg bei der Anwendung von TestFir
 
 - sehr große Skepsis bis Ablehnung im Kollegenkreis, keine Unterstützung durch PO/Scrummaster/Architekt
 
-### Ich hab noch nie TestFirst gemacht, wie komme ich dahin?
+## Ich hab noch nie TestFirst gemacht, wie komme ich dahin?
 
 Nach der Vorwarnung gilt trotzdem: mit hinreichender Motivation kann man TDD sich durchaus selbst beibringen. Wichtig ist nur entweder große Neugierde, oder die feste Überzeugung, dass es sich auszahlen wird.
 Daher hier eine Schritt für Schritt Anleitung:
@@ -161,9 +197,9 @@ Daher hier eine Schritt für Schritt Anleitung:
 
   - weil es gibt Code der nicht sinnvoll zu testen ist, z.B. weil er keine Fallunterscheidungen oder Schleifen enthält. Hier nachträglich die Testabdeckung zu erhöhen macht die Codebasis in der Regel nicht besser.
 
-- Beispiel : ???
+- Beispiel : \[TBD\]
 
-### noch besser: Mutation-Testing, hilft auch bei Test-Last!
+## noch besser: Mutation-Testing, hilft auch bei Test-Last!
 
 - [Mutation-Testing](https://en.wikipedia.org/wiki/Mutation_testing)
 
@@ -193,19 +229,19 @@ float berechnePreis(preis, rabat, bestelldatum ,rabattZeitraumBeginn ,rabattZeit
 }
 ```
 
-### Anmerkungen fürs nächste mal: Beispiele einbauen. Einfluss auf SoftwareArchitektur nachweisen
+# Weitere Interessante Links zum Thema:
 
-https://www.youtube.com/watch?v=UWtEVKVPBQ0 :
-Wenn Tests schwer zu schreiben sind, dass sagt das was aus über die Qualität unserer Softwarearchitektur: das stimmt was nicht!
-https://web.archive.org/web/20100105084725/http://blog.james-carr.org/2006/11/03/tdd-anti-patterns/
+- [Wenn Tests schwer zu schreiben sind, dass sagt das was aus über die Qualität unserer Softwarearchitektur: das stimmt was nicht!](https://www.youtube.com/watch?v=UWtEVKVPBQ0):
 
-https://www.javacodegeeks.com/2018/02/developers-dont-use-tdd.html
+- [Tdd Antipatterns](https://web.archive.org/web/20100105084725/http://blog.james-carr.org/2006/11/03/tdd-anti-patterns/)
 
-zum Ende des Vortrages UMFRAGE für Feedback!
+- [Developers don't use TDD](https://www.javacodegeeks.com/2018/02/developers-dont-use-tdd.html)
 
-# Fußnoten:
+---
 
-[^1]: Kent Beck: Extreme Programming Explained. Embrace Change., Addison-Wesley, 2000, ISBN 0-201-61641-6. Kapitel 18 https://books.google.de/books?id=G8EL4H4vf7UC&lpg=PR9&ots=jbvErnnRBq&dq=%22We%20will%20write%20tests%20before%20we%20code%2C%20minute%20by%20minute.%22&hl=de&pg=PA115#v=onepage&q=%22We%20will%20write%20tests%20before%20we%20code,%20minute%20by%20minute.%22&f=false
+Fußnoten:
+
+[^1]: [Kent Beck: Extreme Programming Explained. Embrace Change., Addison-Wesley, 2000, ISBN 0-201-61641-6. Kapitel 18](https://books.google.de/books?id=G8EL4H4vf7UC&lpg=PR9&ots=jbvErnnRBq&dq=%22We%20will%20write%20tests%20before%20we%20code%2C%20minute%20by%20minute.%22&hl=de&pg=PA115#v=onepage&q=%22We%20will%20write%20tests%20before%20we%20code,%20minute%20by%20minute.%22&f=false)
 [^2]:
     SOLID steht für : Single Responsibility (SRP), Open/Close, Liskov's Substitution, Interface Segregation, and Dependency Inversion.
     The SOLID concepts are:
@@ -215,3 +251,6 @@ zum Ende des Vortrages UMFRAGE für Feedback!
     The **Interface segregation principle**: "Many client-specific interfaces are better than one general-purpose interface."[9][4]
     The **Dependency inversion principle**: "Depend upon abstractions, [not] concretions."[10][4]
     The SOLID acronym was introduced later, around 2004, by Michael Feathers.[11]
+
+[^3]: [Was ist ein Unit-Test?](https://www.it-agile.de/agiles-wissen/agile-entwicklung/unit-tests/)
+[^4]: [Test-Driven development by Example von Kent Beck](https://www.amazon.de/dp/8131715957/ref=cm_sw_em_r_mt_dp_B70TB8B67MC0XC1VV2CV)

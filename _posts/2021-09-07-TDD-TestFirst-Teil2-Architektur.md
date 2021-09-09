@@ -125,7 +125,7 @@ TDD und Test first...
 
 - Durch Test first fällt die Verletzung des **SOLID** Prinzips (RESERVE-FOLIE: SOLID: Single Responsibility (SRP), Open/Close, Liskov's Substitution, Interface Segregation, and Dependency Inversion.) schneller auf, weil die Tests andernfalls schnell komplex und groß würden und man z.B. sehr viele Mock-Objekte[^3] benötigt.
 
-Ich hoffe euch ist klar, dass das was sehr gutes ist. TDD spart, im richtigen Context eingesetzt (dazu mehr im Teil 3), am Ende halt doch Zeit und liefert **höhere Code-Qualität**.
+Ich hoffe euch ist klar, dass das etwas sehr gutes ist. TDD spart, am Ende halt doch Zeit und liefert **höhere Code-Qualität**, wenn im richtigen Context eingesetzt. Dazu mehr im Teil 3.
 
 [zurück zum Teil 1](../TDD-TestFirst-Teil1-Warum)
 
@@ -145,4 +145,4 @@ Ich hoffe euch ist klar, dass das was sehr gutes ist. TDD spart, im richtigen Co
     The SOLID acronym was introduced later, around 2004, by Michael Feathers.
     [Quelle und Zitate](https://en.wikipedia.org/wiki/Single-responsibility_principle)
 
-[^3]: für die Nicht-Entwicker: Mockobjecte sind quasi das , was im Crashtests von Autos die Dummys sind, man testet zwar mit Echte Autos (also analog unser zu testender Code), aber nicht mit echten **Menschen** (bei uns andere Klassen/Methode, die für das durchlaufen des eigentlichen Testcodes nötig sind) . Man könnte einen eigenen Vortrag über Mocks machen, aber das lassen wir hier mal absichtlich bei Seite.
+[^3]: für die Nicht-Entwicker: Mockobjecte sind quasi das, was im Crashtests von Autos die Dummys sind, man testet zwar mit Echte Autos (also analog unser zu testender Code), aber nicht mit echten **Menschen** (bei uns andere Klassen/Methode, die für das durchlaufen des eigentlichen Testcodes nötig sind) . Man könnte einen eigenen Vortrag über Mocks machen, aber das lassen wir hier mal absichtlich bei Seite.
