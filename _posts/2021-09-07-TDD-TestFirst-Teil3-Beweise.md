@@ -153,7 +153,7 @@ wir müssen zwar auch bestehenden Code ändern, aber der neu zu schreibende Code
 ### Im Gegensatz dazu: wann ist TDD nicht der richtige Ansatz?
 
 Wo macht TDD weniger Sinn ?
-https://youtu.be/FlJN6_4yI2A?t=3084 51:26
+[Nochmal der Meister Beck selbst ab 51:26](https://youtu.be/FlJN6_4yI2A?t=3084)
 
 TDD/TestFirst macht unter folgenden Vorraussetzungen eher weniger Sinn.
 Diese Punkte zu kennen , ist wichtig um Misserfolg bei der Anwendung von TestFirst zu vermeiden.
@@ -166,11 +166,13 @@ Diese Punkte zu kennen , ist wichtig um Misserfolg bei der Anwendung von TestFir
 
 - die Hauptarbeit ist rauszufinden, welche 2 Parameter geändert werden sollen, damit die neue Anforderung erfüllt wird, kaum oder gar keine neuer Code zu schreiben
 
-- oder ganz banal: wir schreiben nur HTML oder verändern nur Parameter des schon vorhandenen und hoffentlich mit Unittest versehenen Codes
-
-  - bei Oberflächen, speziell HTML: evtl. besser 'test last' mit snapshot testing (echtes 'test first' kann (muss aber nicht) hier overkill sein)
-
 - sehr große Skepsis bis Ablehnung im Kollegenkreis, keine Unterstützung durch PO/Scrummaster/Architekt
+
+### HTML-Templates und TDD
+
+Bei HTML-Templates (z.B. für SinglePageApplications) wie sie in Angular oder React vorkommen funktioniert der klassische TDD nicht. Aber es gibt ein speziell für diesen Fall angepasstes TDD: [Visual TDD](https://storybook.js.org/tutorials/visual-testing-handbook/react/en/vtdd/).
+
+Grundidee basiert darauf, dass "Visual Testcases" mit einem Tool wie [storybook](https://storybook.js.org/) erstellt werden "visuell" vom Entwickler (oder jedenfalls einem Menschen) einmalig geprüft und für ok befunden werden und dann davon ein Snapshot (in form eines PNGs ) automatisch erstellt wird. Bei jedem folgenden Testdurchlauf werden dann die Snapshots mit denen im git eingechecken verglichen und bei Abweichungen muss wieder ein Mensch prüfen ob hier ein Fehler vorliegt, oder die Änderung ok ist.
 
 ## Ich hab noch nie TestFirst gemacht, wie komme ich dahin?
 

@@ -17,20 +17,20 @@ classes: wide
 
 # Warum TDD und was hat TDD mit Scrum zu tun ?
 
-Ganz Gallien ist von den Römern besetzt, nur ein kleines.... usw, die Asterix Fans unter euch kennen den Text.
+"Ganz Gallien ist von den Römern besetzt, nur ein kleines....", die Asterix Fans unter euch kennen den Text.
 
 Mit TDD ist es irgendwie so ähnlich, man könnten fast schreiben:
-"Die ganze Softwarewelt ist von Agilität und Scrum besetzt! Wirklich ? Nur ein kleines scheinbar unbedeutendes Kapitel in Kent Becks Buch aus dem Jahr 2000, in dem er die Grundlagen zu Scrum gelegt hat, wiedersetzt sich nach wie vor der wirklich großen Verbreitung. Das Kapitel beschreibt Test Driven Development."
+"Die ganze Softwarewelt ist von Agilität und Scrum besetzt! Wirklich ? Nur ein kleines scheinbar unbedeutendes Kapitel in Kent Becks Buch aus dem Jahr 2000, in dem er die Grundlagen zu Scrum gelegt hat, wiedersetzt sich nach wie vor der wirklich großen Verbreitung. Das Kapitel beschreibt Test Driven Development..."
 
-Warum ist das so ? Ist TDD wirklich eine so gute Idee? Warum wird es dann nicht überall eingesetzt? In welchem Umfeld steigert es die Produktivität der Softwareentwicklung, in welchem Umfeld vieleicht ist es sogar contraproduktiv ?
+Warum ist das so? Ist TDD wirklich eine so gute Idee? Warum wird es dann nicht überall eingesetzt? In welchem Umfeld steigert es die Produktivität der Softwareentwicklung, in welchem Umfeld ist es eher contraproduktiv ?
 
-Wenn du dich das jetzt auch fragst, und den Beweis sehen willst, dass TDD mit Test First **50% weniger Bugs** und einen bessere Softwarearchitektur zur Folge hat, dann lies weiter.
+Wenn du dich das jetzt auch fragst, und den Beweis sehen willst, dass TDD mit Test First **50% weniger Bugs** und einen **bessere Softwarearchitektur** zur Folge hat, dann lies weiter.
 
 # Meine persönliche Erfahrung mit TDD
 
-Also für mich begann das alles mit dem Buch "Extreme Programming" von Kent Beck im Jahr 2000.
+Also für mich begann die Geschichte mit dem Buch "Extreme Programming" von Kent Beck[^1] im Jahr 2000.
 In dem Buch war viel von den Konzepten die Rede, die später unter dem Namen "Scrum" bekannt wurden.
-Aus heutiger Sicht zeigt das schon: Kent Beck ist nicht irgendein Fachbuchautor, er ist einer DER großen Vordenker der Softwareindustrie. Seine Bücher, Blogs und Youtube-Video sind immer sehr interessant und oft wegweisend.
+Aus heutiger Sicht zeigt das nämlich: Kent Beck ist nicht irgendein Fachbuchautor, er ist einer DER großen Vordenker der Softwareindustrie. Seine Bücher, Blogs und Youtube-Video sind immer sehr interessant und oft wegweisend.
 
 Kent Beck hat die Art und Weise wie wir heute Software entwickeln wie kaum ein Anderer beeinflusst.
 Er war maßgeblich am **"Agile Manifest"** beteiligt, das 2001 publiziert wurde und damit eine wahre Revolution in der Softwarebranche ausgelöst hat.
