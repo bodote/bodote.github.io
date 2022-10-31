@@ -34,7 +34,7 @@ In der Tat: damit eine Webseite eine wirkliche PWA wird, gehört eine Menge mehr
 
 * Keynote zum Begriff [Metaverse](https://javascript-conference.com/general-web-development/about-the-hype-pied-pipers-and-the-status-quo/) : jetzt weiß ich endlich , was Mark Zuckerberg damit meint und was das Buch "Snow Crash" von 1992 damit zu tun hat. Zusammenfassung siehe [Wikipedia](https://en.wikipedia.org/wiki/Metaverse)
 
-## Modern Angular Architectures: Standalone Components, Nx and more
+## Workshoptag: Modern Angular Architectures: Standalone Components, Nx and more
 Der Teil mit Manfrd Steyer der aus meiner Sicht der beste Sprecher der Konferenz war (kein einziges "Äh") war ziemlich interessant: einfach mal alle `*.module.ts` im Projekt löschen und alles zu Stand-Alone-Compoments umbauen. Außerdem auch interessant die Verwendung von [ngrxcomponent-store](https://ngrx.io/guide/component-store#ngrxcomponent-store), nicht zu verwechseln mit dem "normalen" ngrx-store ! Hier ist auch die Kombination aus component-store und Stand-Alone-Compoments interessant und evtl. auch die Verbindung zu [Storybook](https://storybook.js.org/).
 [Modern Angular Architectures: Standalone Components, Nx and more](https://javascript-conference.com/angular/modern-angular-architectures-workshop-standalone-components-nx-and-more/)
 
