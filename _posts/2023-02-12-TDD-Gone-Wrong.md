@@ -10,6 +10,11 @@ tags:
 toc: true
 classes: wide
 ---
+In order to not fall into the confirmation bias fallacy, I volunteered to play the role of a TDD opponent in a Open Space Event at our company.
+
+I still think, that TDD is a great tool in the software developers tool box, but nevertheless 
+what I found was actually quite interesting:
+
 
 # When TDD might not be a good fit
 ## Requirements are not stable
@@ -30,11 +35,15 @@ classes: wide
 * going for too much abstraction: it is not realistic in any way that you just can swap out webservice for a in memory data base (or vice versa) so why make an repository abstraction in the first place?
 
 
-# what is the actual purpose of TDD ?
+# What is the actual purpose of TDD ?
 * being able to confidently add new features (without breaking the old ones) TTD is one way, but not the only way to reach that 
 * proof that the software does the right thing, where it is important, and errors are catastrophic in some way (accounting, controlling machines that could do harm to people, organizing companies: offers, orders, invoices )
 * to get feedback for the developer, in terms of correctness, but also in term of good (oder bad) design.
 
-# controversial and provocative arguments
-* it is better to offload the responsibility for the software quality to some other guys (the "QS" - department)
-* 
+# Controversial and provocative arguments against TDD
+* Isn't it better to offload the responsibility for the software quality to some other guys (the "QS" - department) so that I as a developer don't need to bother with that unpleasant task?
+
+
+---
+
+Sources : [TDD, Where Did It All Go Wrong (Ian Cooper)](https://youtu.be/EZ05e7EMOLM), [Is TDD Dead?](https://martinfowler.com/articles/is-tdd-dead/)
