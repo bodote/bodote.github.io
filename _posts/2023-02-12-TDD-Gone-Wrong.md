@@ -45,7 +45,9 @@ it's too easy to make mistakes when trying TDD:
 * you **think**, you have mastered TDD, because you can write tests first now without any significant problems,  but in fact half the way is still in front of you yet.
 
 
-
+## ... because it's taught the wrong way
+* although it seems right to first learn to write tests first on simple examples, and even that seems already hard to learn. But it is a **totally different level** to write tests first for komplex real world business software!
+* Many give up on TDD because they don't really experience the benefits of TDD because they don't realize that these are **only to be found at the next level**, of which level they are not even aware of!
 
 
 # When TDD might not be a good fit
@@ -57,8 +59,6 @@ it's too easy to make mistakes when trying TDD:
 * not Enterprise software (not accounting etc. )
 * Sozial Media in general ? because user base can grow fast , but also shrink fast if users just don't like it the way it is any more
 * hypothesis: some programmers minds/characters fit better with TDD than others 
-
-
 
 
 
