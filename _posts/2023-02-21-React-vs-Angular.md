@@ -1,8 +1,8 @@
 ---
 title: "React versus Angular"
 date: 2023-02-12
-published: false
-visible: false
+published: true
+visible: true
 categories:
   - Blog
 tags:
