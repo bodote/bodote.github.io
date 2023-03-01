@@ -108,7 +108,7 @@ tries to give a "High Level difference for Managers":
 * its comparatively easy for an Angular Developer to work on a React project
 * buts is hard for a React Developer to work on an Angular project
 
-{% include figure image_path="/assets/images/HiringReactVsAngularDevelopers.png" alt="React vs. Angular hiring developers" caption="Hiring Developers." %}
+{% include figure image_path="/assets/images/hiring_react_vs_ang.png" alt="React vs. Angular hiring developers" caption="Hiring Developers." %}
 
 {% include figure image_path="/assets/images/ReactVSAngularTechnology.png" alt="React vs. Angular Technologie " caption="Technology" %}
 
