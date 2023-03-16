@@ -76,7 +76,12 @@ it's too easy to make mistakes when trying TDD:
 * more , faster and better tests come at a **cost**, but the TDD-proponents seem not to think about that
 * TDD leads to **fragile code base**: small changes leads to broken tests and the code base is hard to change and hard to maintain: **true**, if you make the **mistakes listed above**!
 
+# Perspective of a customer or a manager
+When you are planning a project and you have only developers that are not experienced in test driven development then you are in big trouble:
+* If you choose the test driven development path, then you need a lot of money and a lot of time to bring the developers up to speed in test driven development.
+* If you don't do test driven development, then you're also in big trouble because then you'll end up with a really bad code in the long run. 
+* So overall, No matter what, you'll always lose.
 
 ---
 
-Sources : [TDD, Where Did It All Go Wrong (Ian Cooper)](https://youtu.be/EZ05e7EMOLM), [Is TDD Dead?](https://martinfowler.com/articles/is-tdd-dead/) [Test Driven Development vs Behavior Driven Development](https://youtu.be/Bq_oz7nCNUA) [When Test Driven Development Goes Wrong](https://youtu.be/UWtEVKVPBQ0)
+Sources : [TDD, Where Did It All Go Wrong (Ian Cooper)](https://youtu.be/EZ05e7EMOLM), [Is TDD Dead?](https://martinfowler.com/articles/is-tdd-dead/) [Test Driven Development vs Behavior Driven Development](https://youtu.be/Bq_oz7nCNUA) [When Test Driven Development Goes Wrong](https://youtu.be/UWtEVKVPBQ0), [stackoverflow:disadvantages-of-test-driven-development](https://stackoverflow.com/questions/64333/disadvantages-of-test-driven-development)
