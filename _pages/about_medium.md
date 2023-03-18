@@ -2,6 +2,9 @@
 permalink: /about_medium/
 title: "Über mich:"
 date: 2020-09-10
+layout: single
+toc: false
+author_profile: false
 ---
 
 Ich entwickle Software seit 1980. Das erste SW-Projekt war ein Vokabel-Lernprogramm, welches  auf der von [Sebastian Leitner entwickelten Lern-Systematik mit Karteikarten](https://www.phase-6.de/presse/classic-wissenschaft/) beruhte. Es war für den [Sinclair ZX81](https://de.wikipedia.org/wiki/Sinclair_ZX81) mit 16KByte Speichererweiterung in BASIC geschrieben. Es folgten [weitere Projekte während Schulzeit und dem Studium](about_long.md) der Elektrotechnik mit Schwerpunkt digitale Signalverarbeitung und Nebenfach Audiocodierung bei [Dr. Karl-Heinz Brandenburg](https://de.wikipedia.org/wiki/Karlheinz_Brandenburg)). Studienarbeit und Diplomarbeit dann am Fraunhoferinstitut in Erlangen, die an einer damals noch vollkommen unbekannten Technologie für die Komprimierung von Audiosignalen forschte. Das Konzept nannten sich "MPEG-1 Layer 3", später ist es dann als ["mp3"](https://de.wikipedia.org/wiki/MP3) berühmt geworden. Nach Abschluss der Diplomprüfung blieb ich weitere 5 Jahre als junger Ingenieur am Institut, wirkte dabei an der Weiterentwicklung und zahlreichen Patenten für die Audiokomprimierungsverfahren ["MP3"](https://de.wikipedia.org/wiki/MP3) und später auch für das ["AAC"](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) mit, welche beide heute in jedem Smartphone stecken. Die Programmierung der Kompimierungverfahren erfolgte damals in "C" oder Assembler.
