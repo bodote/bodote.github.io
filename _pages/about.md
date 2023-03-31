@@ -6,7 +6,7 @@ layout: single
 toc: false
 author_profile: false
 ---
-Ich habe ca. 1980 meine erste Programmiersprache "Basic" gelernt.
+Ich bin Jahrgang 1966 und habe  ca. 1980 als erste Programmiersprache "Basic" gelernt.
 Mein erstes Programm war eine Vorkabellernprogramm auf dem Sinclair ZX81 für mich selbst.  
 
 An Softwareentwicklung begeistert mich, Dinge bauen, schnelles Feedback zu bekommen, ob es funktioniert
