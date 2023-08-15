@@ -11,9 +11,8 @@ header:
 excerpt: "...überschätzen, was sie in einem Jahr erreichen können und unterschätzen, was sie in 10 Jahren tun können ... oder was sie in einem Nachmittag zerstören können!"
 intro: 
   - excerpt: '“Talk  is cheap. Show me the code.” ― Linus Torvalds'
-  - excerpt: '"Any sufficiently advanced technology is indistinguishable from magic." - Arthur C. Clarke'
-  - excerpt: '"Git is black magic." me, trying to understand how git actually works'
-
+  - excerpt: '"The whole problem with the world is that fools and fanatics are always so certain of themselves, and wiser people so full of doubts." - Bertrand Russell'
+ 
 ---
 
 {% include feature_row id="intro" type="center" %}
