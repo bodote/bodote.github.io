@@ -1,5 +1,5 @@
 ---
-title: "The Trouble With Server Side Events"
+title: "The Trouble With Server Send Events"
 date: 2023-11-24
 published: true
 visible: true
@@ -7,13 +7,13 @@ categories:
   - Blog
 tags:
   - spring-boot
-  - server-side-events
+  - server-send-events
 toc: false
 classes: wide
 ---
 # SSE Connection Lost Detection Delay Issue and Solutions
 
-Server Side Events  for Server to Browser communication can be used to inform the clients about server side updates to the data the client browser shows to the user. Then e.g. a  Frontend Single Page application can decide to reload new data from the server.
+Server Send Events  for Server to Browser communication can be used to inform the clients about server send updates to the data the client browser shows to the user. Then e.g. a  Frontend Single Page application can decide to reload new data from the server.
 
 When implementing this solution with Spring boot and Angular for a project, we observed that if the SSE - Connection timeout is set to infinity on the server side, even if the server sends keepalive events to the client every 10 - 30 seconds to avoid broken connections, the server detects broken connection only after about 10 min or so. This comes from  `RTO` of up to 60sec and `tcp_retries2` of 15, as explained below.
 Moreover, we observed, that server sends keepalive events to the client every 10sec seems necessary in some environments to prevent the network infrastructure (firewalls etc.) from dropping the connection prematurely.
