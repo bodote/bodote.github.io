@@ -1,5 +1,5 @@
 ---
-title: "Warum TDD im Tutorial funktionierte, in deinem echte Projekt aber nicht"
+title: "Warum TDD bei dir nicht funktioniert"
 date: 2024-03-14
 published: false
 visible: false
@@ -100,15 +100,74 @@ Denke jetzt darüber nach, was deine Software aus der Sicht ihrer Benutzer tut, 
 ## Was "Spezifikation" NICHT ist
 Ihr Ziel ist es nicht, Daten in ein Formular einzugeben oder Knöpfe zu drücken. Die Benutzeroberfläche deiner Software ist nicht das, was die Leute mit deiner Software machen wollen. Das ist nur deine Vermutung, wie sie tun können, was immer es ist, das sie tun wollen.
 
-Lass mich dir ein einfaches Beispiel geben.
+## einfaches Beispiel:
 
+ *** IDEE: Zuhörer zwei Gruppen , erste Gruppe schaut 15sec den ersten test an 2. gruppe 15 den zweiten ***
 Du könntest einen Test so schreiben:
+```java
+@Test
+void test10() {
+    driverPath =
+            new File("/Users/bodo.teichmann/dev/learning/tddJavaMaven/chromedriver-mac-arm64/chromedriver");
+    ChromeDriverService service = new ChromeDriverService.Builder()
+            .usingDriverExecutable(driverPath)
+            .build();
+    WebDriver driver = new ChromeDriver(service);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    try {
+        driver.get("https://bodote.github.io/");
+        String title = driver.getTitle();
+        assertEquals("Die meisten Menschen… - Bodos Software Blog", title);
+        WebElement searchLink =
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("fa-search")));
+        searchLink.click();
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search")));
+        searchBox.sendKeys("TDD");
+        WebElement post =
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("TDD Where it did go wrong")));
+        post.click();
+        WebElement postHeader = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("page-title")));
+        assertEquals("TDD Where it did go wrong", postHeader.getText());
+        List<WebElement> foundLinks = wait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li//ul/li/a | //li//ol/li/a")));
+        var found = foundLinks.stream().anyMatch(link -> link.getText().contains("because"));
+        assertTrue(found);
+    } finallvary {
+        driver.quit(); // Make sure to quit the driver to free up resources
+    }
+}
+```
 
 Und es sagt nicht, was dieser Code tun soll.
 
 Wenn du das genau studierst und etwas über Webentwicklung und Selenium, das Selenium-Testframework, weißt, könntest du vielleicht nach sorgfältigem Lesen herausfinden, was dieser Test tut.
 
 Oder ich könnte den Test so schreiben, und jetzt weißt du genau, was dieser Code tun soll.
+
+This test:
+```java
+@Test
+void should_find_a_blog_about_TDD() {
+  given().a_web_site("https://bodote.github.io/");
+  when().search_menu_is_clicked().and().search_term_$_is_typed("TDD");
+  then().blog_post_$_should_be_found("TDD Where it did go wrong")
+          .and()
+          .when_clicked_$_should_be_the_title("TDD Where it did go wrong");
+}
+
+```
+Will produce this report (using `jGiven`):
+```
+Test Class: jgiven.BlogTest
+
+ Should find a blog about TDD
+
+   Given a web site "https://bodote.github.io/"
+    When search menu is clicked
+     And search term "TDD" is typed
+    Then blog post "TDD Where it did go wrong" should be found
+     And when clicked "TDD Where it did go wrong" should be the title
+```
 
 Aber jetzt hast du keine Ahnung, wie der getestete Code tatsächlich funktioniert. Du weißt nicht einmal, ob dies eine Webanwendung ist.
 
