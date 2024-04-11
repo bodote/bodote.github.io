@@ -249,7 +249,7 @@ the tests we create aren't really tests
 they're really something else
 
 this is still a common problem today
-
+so vauge
 many of the questions that I get from
 
 people when talking about test driven
