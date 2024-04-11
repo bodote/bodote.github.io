@@ -132,7 +132,7 @@ void test10() {
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li//ul/li/a | //li//ol/li/a")));
         var found = foundLinks.stream().anyMatch(link -> link.getText().contains("because"));
         assertTrue(found);
-    } finallvary {
+    } finally {
         driver.quit(); // Make sure to quit the driver to free up resources
     }
 }
@@ -219,4 +219,46 @@ Aber wie ich bereits beschrieben habe, kam BDD ursprünglich nicht wirklich dahe
 
 Es war breiter als das. Fast alles, was ich hier gesagt habe, ist gleichermaßen anwendbar, überall dort, wo wir einen Test schreiben.
 
-Eine der hä
+Eine der häufigeren Fragen, die ich bekomme, wenn ich über BDD spreche, ist von Teams, die an Plattformen oder Back-End-Systemen arbeiten, und um diese Frage zu paraphrasieren, lautet sie: Was meinst du, ich muss meine Tests aus der Perspektive eines Endbenutzers auf einer Webseite schreiben?
+
+Nun, nein, das ist es überhaupt nicht.
+
+Die Idee ist, über Tests deiner Software basierend auf dem Verhalten, das sie einem Benutzer dieser Software zeigt, nachzudenken, anstatt in Begriffen des Testens deiner Software aus der Perspektive von dir, dem Produzenten der Software, zu denken. Das ist ein riesiger Unterschied in der Perspektive und zwingt dich, in Begriffen von jemandem oder tatsächlich etwas zu denken, das deine Software verwendet.
+
+Also jetzt bist du gezwungen, darüber nachzudenken, es von außen zu entwerfen.
+
+Das hat auch viele Positives.
+
+Wenn mein Test schwer zu schreiben ist, bedeutet das, dass mein Code schwer zu verwenden ist. Wenn ich meinen Test als Spezifikation anstatt als Test schreibe, werde ich ihn zuerst schreiben, bevor ich den Code schreibe, offensichtlich.
+
+Das ist wahr, egal auf welcher Ebene der Test ist.
+
+Also bin ich jetzt die erste Person, die meine Software verwendet.
+
+Und es sei denn, ich bin irgendeine Art von Narr, werde ich mein eigenes Leben nicht schwieriger machen wollen. Unsere Tests als Spezifikationen zu behandeln bedeutet, dass wir gezwungen sind, die Perspektive eines Benutzers unserer Software einzunehmen.
+
+Wenn dein Code irgendeine Art von Back-End-Plattform-Ding ist, dann sind deine Benutzer andere Programmierer, aber sie sind immer noch deine Benutzer. Und wo auch immer dein Code sitzt, wenn er einfacher zu verwenden ist, ist er besser.
+
+Wenn wir unsere hochrangigen Akzeptanztests als BDD-Spezifikationen schreiben, bevor wir an einem neuen Feature arbeiten, dokumentieren wir, was unser System tun soll, auf eine Weise, die für jeden zugänglich ist, egal welchen Hintergrund sie haben, ob sie verstehen, wie das System funktioniert oder nicht.
+
+Also, zusätzlich dazu, dass sie haltbarer im Angesicht von Veränderung als Ergebnis dieser Abstraktion sind, bieten unsere Tests jetzt eine bessere funktionale Beschreibung dessen, was die Software tatsächlich tut, und wir wissen, dass sie es tut, weil dieser Test bestanden hat.
+
+Um dies zu tun, verwenden wir die Sprache des Problems anstatt die Sprache der Lösung. Das bedeutet, dass wir eine bessere, effektivere Kommunikation zwischen allen Beteiligten etablieren.
+
+Ich habe kürzlich angefangen, dies als einen Prozess der Übersetzung zu denken.
+
+Und wie bei allem anderen Komplizierten werden wir einen besseren Job machen, wenn wir in einer Reihe von kleinen, einfacheren Schritten vorgehen können.
+
+Wir beginnen mit einer ziemlich vagen Idee davon, was unsere Benutzer wollen. Das ist nicht falsch, dass es vage ist, es ist immer vage. Entwicklerteams wissen nicht, was Benutzer wollen, Produktbesitzer wissen nicht, was Benutzer wollen, Domänenexperten können raten, was die Benutzer wollen, aber sie wissen es nicht wirklich, und wenn du die Benutzer fragst, wissen sie es auch nicht.
+
+Also, wenn du an einem neuen Feature beginnst, ist es immer nur eine beste Vermutung. Es ist die beste Vermutung von jemandem, vielleicht ist es eine gute Vermutung, vielleicht nicht. Wir werden das wirklich nicht wissen, bis es in den Händen von Benutzern ist und sie uns sagen, denn obwohl Benutzer nicht wissen, was sie wollen, sind sie ziemlich gut darin, dir zu sagen, ob sie etwas mögen, das sie haben oder nicht, sobald sie es sehen können. Also ist es tatsächlich hilfreich, wenn unsere ersten Gedanken ein bisschen vage sind. Je spezifischer sie sind, desto wahrscheinlicher ist es, dass sie falsch sind.
+
+Wenn ich Bücher kaufe, muss ich sicherlich zum Laden gehen, ein Buch finden, das mir gefällt, und es in meinen Einkaufswagen legen, aber das Detail, ob das über eine Webseite, mein Telefon oder über meine neue gedankenkontrollierte Schnittstelle ist, ist Implementierungsdetail. Es ist meine Wahl und somit unvermeidlich wahrscheinlicher zu ändern und somit zerbrechlicher.
+
+Also, vage zu sein, ist ein guter Anfang. Am anderen Ende dieses Prozesses ist der ganze Punkt dieser Übung, so präzise zu sein, dass selbst das Ultimatum in Pedanterie, ein Computer, den Schritten folgen kann. Hier ist also unsere Übersetzung: Unsere Aufgabe ist es, von einem vagen Wunsch zu einer spezifischen Lösung in Code zu gelangen. Der große Fehler, den die meisten Organisationen machen, ist der Versuch, diese Übersetzung in zu wenigen Schritten zu bewältigen. Die meisten Organisationen gehen direkt zur Lösung über und spezifizieren diese als Anforderungen.
+
+BDD behebt das, wir starten mit unserem vagen Wunsch und fangen diesen als Benutzergeschichte ein, die ihn ein wenig verfeinert, er wird ein bisschen präziser. Es darf allerdings nichts darüber aussagen, wie die Software tatsächlich funktioniert, stattdessen beschreibt es einen kleinen Zuwachs in der Funktionalität unseres Systems aus der Perspektive eines Benutzers davon. Als Nächstes kommen wir mit einer Reihe von konkreten Beispielen, die, wenn sie in unserem System existierten, demonstrieren würden, dass unser System das Nützliche in unserer Software tut, das wir es tun lassen wollen. Diese Beispiele sind Akzeptanzkriterien, sie sollten spezifischer sein als die Geschichte. Wenn wir sagen, unsere Geschichte handelte vom Bücherkaufen, könnten wir jetzt über ein Beispiel nachdenken, bei dem es um ein spezifisches Buch geht und was passiert.
+
+Diese Szenarien sammeln wir zusammen, um unsere Spezifikation zu erfassen, und der nächste Schritt in unserem Übersetzungsprozess ist, diese Dinge ausführbar zu machen. Das bedeutet, die Installation unter unseren Testfällen zu implementieren. Jetzt haben wir eine ausführbare Spezifikation, die wir nutzen können, um den Rest unseres Entwicklungsprozesses voranzutreiben. Wenn diese Tests bestehen, ist unser Übersetzungsprozess abgeschlossen. Es gibt viel mehr Details zu BDD als dies, und seine Nutzung in der akzeptanztestgetriebenen Entwicklung unterscheidet sich ein wenig von seiner Nutzung in der testgetriebenen Entwicklung, aber in beiden Fällen hat die Perspektive von außen nach innen, der Fokus auf Ergebnisse statt auf Implementierungsdetails und die Behandlung der Tests, die wir schreiben, als Spezifikationen dessen, was wir wollen, dass unser Code tut, statt Tests, wie er funktioniert, einen enormen Einfluss auf unsere Ergebnisse in der Entwicklung.
+
+Dies ist bei weitem die effektivste Methode, Qualität in unsere Entwürfe zu treiben, während wir unsere Freiheit bewahren, unsere Meinung zu ändern, wenn wir mehr lernen und unsere Sicht auf das Problem und unsere Entwürfe sich ändern. 
