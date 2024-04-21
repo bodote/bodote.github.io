@@ -131,19 +131,7 @@ This video is an in-depth discussion on the misconceptions surrounding Test-Driv
 ### Diagram
 
 Let's visualize the key points discussed in the video:
-
-```mermaid
-graph LR
-    TDD[TDD Misconceptions] --> DeveloperTests[Developer Tests]
-    TDD --> Cycle[Red-Green-Refactor Cycle]
-    TDD --> Mocks[Misuse of Mocks]
-    TDD --> Isolation[Principle of Isolation]
-    TDD --> Behavior[Testing for Behavior]
-    DeveloperTests --> Integration[Integration over Isolation]
-    Cycle --> ContinuousRefactoring[Continuous Refactoring]
-    Behavior --> AvoidOverSpecification[Avoiding Over-Specification]
-    Integration --> DesignByTests[Design by Tests]
-```
+![TDD Misconceptions](../assets/images/tdd_missconceptions-1.png)
 
 ## When Test Driven Development Goes Wrong (Dave Farley)
 [Video link: When Test Driven Development Goes Wrong (Dave Farley)](https://youtu.be/UWtEVKVPBQ0?si=fb-yHhtJlykp6OyH)
@@ -174,21 +162,7 @@ The video discusses the value of Test Driven Development (TDD) and outlines comm
 10. The video encourages viewing TDD and its challenges as opportunities for learning and refining software design skills.
 
 ### Diagram
-```mermaid
-graph LR
-    TDD[Test Driven Development] --> AntiPatterns[5 Common Anti-Patterns] 
-    AntiPatterns --> Liar[Liar]
-    AntiPatterns --> ExcessiveSetup[Excessive Setup]
-    AntiPatterns --> Giant[Giant]
-    AntiPatterns --> Mockery[Mockery]
-    AntiPatterns --> Inspector[Inspector]
-    TDD --> Benefits[Benefits of TDD]
-    Benefits --> Quality[Improves Code Quality]
-    Benefits --> Feedback[Efficient Feedback Loop]
-    Benefits --> Design[Enhances Code Design]
-```
-
-
+![TDD Antipatterns](../assets/images/tdd_antipatterns-1.png) 
 
 # Books:
 

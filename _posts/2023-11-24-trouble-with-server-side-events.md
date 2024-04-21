@@ -47,7 +47,7 @@ The combination of SSE's unidirectional communication model and TCP's conservati
 
 9. **Client-To-Server Keepalives**: To achieve more responsive connection management, custom solutions such as bidirectional keep-alives or enhanced monitoring are required but are not inherently supported in SSE or Spring Boot.
 
-**Remark:** When using Spring Boot 3.x the default value for the timeout for SSE is 30sec anyhow. It can also be set to infinity, which only works as long as keepalive events are send by the server every 10 sec or so.
+**Remark:** When using Spring Boot 3.x the default value for the timeout for SSE is 30sec anyhow, which does **not** help with _Connection Lost Detection Delay_ described above. It can also be set to infinity, which only works as long as keepalive events ("heartbeats") are send by the server every 10 sec or so.
 
 In conclusion, the considerable delay in detecting broken SSE connections presents a challenge in terms of resource efficiency and server performance. While SSE has benefits, its dependency on TCP and lack of bidirectional communication can lead to significant delays in recognizing disconnected clients. Adopting alternatives like **WebSockets** or **implementing strategies to limit connection duration** can offer more immediate detection and better resource management, though they come with their own trade-offs and implementation requirements.
 
