@@ -85,7 +85,7 @@ Die lange Antwort liest du am besten selbst direkt im Buch nach.[^1]
 ## TDD sind das Gleiche wie Unittests, richtig ?
 **Falsch!**
 
-- Die Basis von TDD sind **NICHT** Unit-tests wie sie Wikipedia beschreibt[^5]. Insbesonders der Aspekt der Forderung nach "Isolation" eines Tests hat viel **Verwirrung** gestiftet: 
+- Die Basis von TDD sind **NICHT** Unit-tests wie sie Wikipedia beschreibt[^5]. Insbesonders der Aspekt der Forderung nach **"Isolation"** eines Tests hat viel **Verwirrung** gestiftet: 
   - Zwar sollen verschiedenen Tests voneinander soweit **"isoliert"** sein, dass sie sich nicht gegenseitig beeinflussen, (z.B. darf es nicht von der Reihenfolge der Ausführung der Tests abhängig sein, ob ein Test erfolgreich läuft)
   - in TDD sollte man sich für einen Tests auch immer eine einzelnen möglichst atomaren Aspect, Requirement, Akzeptanzkriterium, oder wie auch immer du das nenenn willst beschränken
   - aber das heißt ausdrücklich NICHT, dass man nur eine Klasse oder eine Methode testen soll und alls Abhängigkeiten (dependencies) "weg-mocken" soll. 
@@ -98,7 +98,7 @@ Die lange Antwort liest du am besten selbst direkt im Buch nach.[^1]
 - teste **NIE** die Internas des Codes. Warum ? weil das zu enge Koppeln von Tests an die Internas des Codes zu fragilen/instabilen Test führt, die umfassendes Refaktoring verhindern und daher beim Refactoring auch geändert werden müssten.
 - Tools wie "Junit", "Mockito", "jasmin" etc. können und sollen eingesetzt werden, solange man obige Regeln beachtet.
 - Der eigentliche Witz ist aber vor allem: Wir schreiben den Test **BEVOR** wir den Code für die eigentlich nützliche Unit schreiben.
-- Wenn man sich strickt an das Test-First Prinzip hält und wirklich immer nur das Implementiert, was der Test vordert muss das automatisch zu einer sogenannte "Testabdeckung" von 100% führen. Auf die "Testabdeckung" gehen wir weiter unten noch ein.
+- Wenn man sich strickt an das Test-First Prinzip hält und wirklich immer nur das Implementiert, was der Test vordert muss das automatisch zu einer sogenannte **"Testabdeckung"** von **100%** führen. Auf die "Testabdeckung" gehen wir weiter unten noch ein.
 
 (Abschnitt überarbeitet im April 2024)
 
