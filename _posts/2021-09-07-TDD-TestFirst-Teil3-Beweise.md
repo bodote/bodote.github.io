@@ -82,22 +82,25 @@ Im Folgenden nur ein Auszug aus den interessantesten Fundstellen, die ich recher
 .. und was meint Kent Beck mit "We will write tests before we code, minute by minute."?
 Die lange Antwort liest du am besten selbst direkt im Buch nach.[^1]
 
-## TL;DR? Zusammenfassung TDD für eilige Product Owner und sonstige Nicht-Softwareentwickler
+## TDD sind das Gleiche wie Unittests, richtig ?
+**Falsch!**
 
-- Die Basis von TDD sind Unit-tests[^3]. Mit "**Unit**" ist die kleinste sinnvolle Einheit, die testbar ist gemeint. Möglichst nur eine Methode oder Klasse oder eine Gruppe von wenigen eng zusammengehörige Methoden oder Funktionen, die eine nützliche Berechnung oder Entscheidung machen.
-
-- Also im besten Fall ein paar Zeilen Code, sagen wir zwischen 10 und 100 Zeilen
-
-- der Begriff _Unittest_ meint dann einen Stück Software, welches die Korrektheit dieser einen **Unit** testet. Und nur dieser. D.h. der Test sollte nach Möglichkeit **keine anderen Teile** aus dem Softwareprojekt testen.
-
-- Der Unittest soll **NICHT** andere Teile des Codes testen, auch nicht, wenn die zu testende **Unit** eigentlich noch andere Units benötigt, um zu funktionieren. Dafür benutzen wir dann sog. **"Mocks"** oder "Mockobjekte" und **Spys**. Diese Thema sprengt aber den heutigen Vortrag.
-  Also kurz gesagt: **Mocks** sind quasi **"TestDummys"** z.B. : hält der Testdummy überhaupt den **Aufprall** auf dem Luftsack auf oder noch besser: **bläst** sich der Prallsack **schnell genug** auf als der Kopf vom Dummy darauf einschlägt?
-
-- Der **Unit-Test-Code** sollte dabei **alle** möglichen Pfade in der der nützlichen **Unit** abtesten. Dabei insbesonders alle **Grenzbedinungen** in der **Unit** auf Korrektheit überprüfen.
-
-- Das Ergebnis ist dann eine sogenannte Testabdeckung von 100%. Auf die "Testabdeckung" gehen wir später noch ein.
-
+- Die Basis von TDD sind **NICHT** Unit-tests wie sie Wikipedia beschreibt[^5]. Insbesonders der Aspekt der Forderung nach "Isolation" eines Tests hat viel **Verwirrung** gestiftet: 
+  - Zwar sollen verschiedenen Tests voneinander soweit **"isoliert"** sein, dass sie sich nicht gegenseitig beeinflussen, (z.B. darf es nicht von der Reihenfolge der Ausführung der Tests abhängig sein, ob ein Test erfolgreich läuft)
+  - in TDD sollte man sich für einen Tests auch immer eine einzelnen möglichst atomaren Aspect, Requirement, Akzeptanzkriterium, oder wie auch immer du das nenenn willst beschränken
+  - aber das heißt ausdrücklich NICHT, dass man nur eine Klasse oder eine Methode testen soll und alls Abhängigkeiten (dependencies) "weg-mocken" soll. 
+  - vielmehr sollten **"Mocks"** sehr sparsam, mit Bedacht und und nur dort eingesetzt werden, wo es unbedingt nötig ist: 
+    - im wesentlich müssen nur extern aufgerufene REST - Services gemockt werden 
+    - evtl. wird manchmal auch die Datenbank gemockt, wenn ansonsten die Test zu langsam laufen würden, oder es zu schwierig erscheint, eine zum Testrunner lokale Datenbank zu instanzieren.
+    - notfalls kann im Ausnahmefall auch mal ein zum Projekt gehörendes Modul gemock werden, wenn es eine sehr lange Laufzeit aufweist (z.B. lang laufende Berechnungen), denn das Ziel für automatische Tests ist schnelles Feedback für den Entwickler
+- Hingegen ist es sogar erwünscht, dass ein einzelner TDD-Test z.B. für ein Spring - Backend den Rest-Controller zusammen mit "seinem" Service, und ggf. zusammen mit dessen DB-Repository testet (für letzeres verwende "Testcontainers" oder "embedded" DBs). 
+- das "Interface" für einen Test ist immer die "öffentliche" und hoffentlich stabile API. **Stabil** heißt, dass sich die API nur selten ändern sollte. 
+- teste **NIE** die Internas des Codes. Warum ? weil das zu enge Koppeln von Tests an die Internas des Codes zu fragilen/instabilen Test führt, die umfassendes Refaktoring verhindern und daher beim Refactoring auch geändert werden müssten.
+- Tools wie "Junit", "Mockito", "jasmin" etc. können und sollen eingesetzt werden, solange man obige Regeln beachtet.
 - Der eigentliche Witz ist aber vor allem: Wir schreiben den Test **BEVOR** wir den Code für die eigentlich nützliche Unit schreiben.
+- Wenn man sich strickt an das Test-First Prinzip hält und wirklich immer nur das Implementiert, was der Test vordert muss das automatisch zu einer sogenannte "Testabdeckung" von 100% führen. Auf die "Testabdeckung" gehen wir weiter unten noch ein.
+
+(Abschnitt überarbeitet im April 2024)
 
 ## Was sich erst mit viel Praxis erschließt
 
@@ -256,3 +259,4 @@ Fußnoten:
 
 [^3]: [Was ist ein Unit-Test?](https://www.it-agile.de/agiles-wissen/agile-entwicklung/unit-tests/)
 [^4]: [Test-Driven development by Example von Kent Beck](https://www.amazon.de/dp/8131715957/ref=cm_sw_em_r_mt_dp_B70TB8B67MC0XC1VV2CV)
+[^5]: [Unit testing](https://en.wikipedia.org/wiki/Unit_testing)
