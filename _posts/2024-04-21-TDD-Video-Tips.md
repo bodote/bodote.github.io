@@ -131,7 +131,7 @@ This video is an in-depth discussion on the misconceptions surrounding Test-Driv
 ### Diagram
 
 Let's visualize the key points discussed in the video:
-![TDD Misconceptions](../assets/images/tdd_missconceptions-1.png)
+![TDD Misconceptions](/assets/images/tdd_missconceptions-1.png)
 
 ## When Test Driven Development Goes Wrong (Dave Farley)
 [Video link: When Test Driven Development Goes Wrong (Dave Farley)](https://youtu.be/UWtEVKVPBQ0?si=fb-yHhtJlykp6OyH)
@@ -162,7 +162,7 @@ The video discusses the value of Test Driven Development (TDD) and outlines comm
 10. The video encourages viewing TDD and its challenges as opportunities for learning and refining software design skills.
 
 ### Diagram
-![TDD Antipatterns](../assets/images/tdd_antipatterns-1.png) 
+![TDD Antipatterns](/assets/images/tdd_antipatterns-1.png) 
 
 # Books:
 
