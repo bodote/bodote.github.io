@@ -40,7 +40,7 @@ Genau darüber werden wir heute sprechen!
 
 # Mein Name..
 
-ist Bodo. Ich bin Co-Founter von BRANDAD-System AG. 1980 begann ich mit meinem ersten Computer Sinclair ZX80 Software zu entwicklen.
+ist Bodo. Ich bin Co-Founter von BRANDAD Group AG (früher bekannt als BRANDAD-System AG). 1980 begann ich mit meinem ersten Computer Sinclair ZX80 Software zu entwicklen.
 Zunächst in Basic und Assember, später dann C, jetzt schon lange Java und in letzter Zeit auch Javascript.
 
 # Willkommen
