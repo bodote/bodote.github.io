@@ -7,13 +7,13 @@ categories:
   - Blog
 tags:
   - TDD
-toc: false
+toc: true
 classes: wide
 ---
 
 # High level Videos about TDD:
 
-## [TDD, Where Did It All Go Wrong (Ian Cooper)](https://youtu.be/EZ05e7EMOLM?si=fydSo58rklUexrBO&t=1334)
+## Video: [TDD, Where Did It All Go Wrong (Ian Cooper)](https://youtu.be/EZ05e7EMOLM?si=fydSo58rklUexrBO&t=1334)
 
 The video highlights several common misconceptions about Test-Driven Development (TDD) that often lead to challenges and resistance in its adoption and practice. Let's delve into these misconceptions in more detail:
 
@@ -85,7 +85,7 @@ This video discusses the speaker's experiences and insights into the practice an
   - because: requirements are more stable than implementation
   - use "given", "when", "then" pattern
 
-## Updated Version , same topic , same speaker:
+## Video: Updated Version , same topic , same speaker:
 
 [TDD Revisited , where it all went wrong, guidance on what to do instead - Ian Cooper - NDC Porto 2023 (Ian Cooper)](https://youtu.be/IN9lftH0cJc?si=_xnC2IQsdiqu2GDM)
 
@@ -133,11 +133,13 @@ This video is an in-depth discussion on the misconceptions surrounding Test-Driv
 Let's visualize the key points discussed in the video:
 ![TDD Misconceptions](/assets/images/tdd_missconceptions-1.png)
 
-## When Test Driven Development Goes Wrong (Dave Farley)
+## Video: When Test Driven Development Goes Wrong (Dave Farley)
+
 [Video link: When Test Driven Development Goes Wrong (Dave Farley)](https://youtu.be/UWtEVKVPBQ0?si=fb-yHhtJlykp6OyH)
 The video discusses the value of Test Driven Development (TDD) and outlines common pitfalls encountered by practitioners, emphasizing how these pitfalls can actually guide toward better software design.
 
 ### Takeaways
+
 - 🚀 **TDD Importance**: TDD is a significant advancement in software development, promoting high-quality code through a test-first approach.
 - 🛠 **Common Mistakes**: The video identifies common anti-patterns in TDD that can hinder its effectiveness, including the liar, excessive setup, the giant, mockery, and inspector anti-patterns.
 - 📚 **Learning Opportunity**: These anti-patterns are not just mistakes but opportunities to learn and improve software design and architecture.
@@ -150,6 +152,7 @@ The video discusses the value of Test Driven Development (TDD) and outlines comm
 - 📖 **Continuous Learning**: TDD is a practice of continuous learning, allowing developers to refine their understanding of good design through testing.
 
 ### Summary
+
 1. TDD is highlighted as a critical advancement in software development, emphasizing quality code creation.
 2. Five common TDD anti-patterns are discussed: the liar, excessive setup, the giant, mockery, and inspector, each showcasing a specific pitfall in TDD practice.
 3. These anti-patterns serve as indicators of areas where software design can be improved.
@@ -162,59 +165,17 @@ The video discusses the value of Test Driven Development (TDD) and outlines comm
 10. The video encourages viewing TDD and its challenges as opportunities for learning and refining software design skills.
 
 ### Diagram
+
 ![TDD Antipatterns](/assets/images/tdd_antipatterns-1.png) 
 
-# Books:
 
-## Test-Driven Development by Kent Beck
+## Video: Test Driven Development in JavaScript – writing tests that don’t suck!
 
-Great choice! Let's dive into "Test-Driven Development" by Kent Beck. I'll work on a detailed summary for you.
-
-### Unraveling the Book
-
-Imagine crafting a masterpiece, not with brushes and paints, but with code. In the world of software development, the masterpiece is not just about the final product but the process it takes to create it. "Test-Driven Development" by Kent Beck introduces a revolutionary approach that emphasizes writing tests before writing the actual code. This method, akin to sketching the outline of a painting before filling in the colors, ensures that the software is reliable, easy to maintain, and meets the user's needs from the very beginning.
-
-### The Essence (80/20)
-
-- **The Red-Green-Refactor Cycle**: At the heart of Test-Driven Development (TDD) is a simple yet powerful cycle. Developers start by writing a failing test (Red), then write the minimal amount of code to make the test pass (Green), and finally, refactor the code to improve its structure and clarity while ensuring the tests still pass. This cycle ensures continuous feedback and a focus on achieving functional goals efficiently.
-
-- **The Importance of Refactoring**: Refactoring is a critical component of TDD. It allows developers to improve the design of their code without altering its behavior. Beck emphasizes that regular refactoring leads to cleaner, more understandable, and more maintainable code, which is crucial for long-term project success.
-
-- **Test Cases as Documentation**: Beck proposes that tests serve not only to verify that the code works as intended but also to document the code's behavior. Well-written tests can provide insights into the requirements and functionalities of the system, acting as a guide for current and future developers.
-
-### The Action Plan
-
-1. **Start Small**: Begin with writing a small and manageable test for a specific aspect of the functionality you want to develop. This approach helps in focusing on one thing at a time, making it easier to troubleshoot and understand.
-
-2. **Run the Test and See it Fail**: Running the test and seeing it fail confirms that your test is working as expected and that it will show a pass when the functionality is correctly implemented.
-
-3. **Implement the Functionality**: Write just enough code to pass the test. This step encourages simplicity and effectiveness in code writing, avoiding unnecessary features.
-
-4. **Refactor and Repeat**: After passing the test, refactor your code to improve its structure and readability. Then, move on to the next test. This iterative process promotes a disciplined approach to development and continuous improvement.
-
-### Blind Spot
-
-One potential blind spot in TDD is the risk of over-reliance on the developer's understanding of the requirements. If the initial tests are based on incorrect assumptions or incomplete understandings, the code may pass all tests but still fail to meet the users' needs. It's crucial to continuously review and adapt tests in light of new information and feedback.
-
-### Connected Knowledge
-
-For those intrigued by TDD, exploring Agile Software Development principles or Continuous Integration and Continuous Deployment (CI/CD) practices can provide a broader context and further improve development processes. Reading about Behavior-Driven Development (BDD) might also offer insights into how testing can be oriented around user behavior and expectations.
-
-Would you like to delve deeper into any specific aspect of "Test-Driven Development" or explore another book? 
-
-Now, let's create a picture that best depicts the essence of "Test-Driven Development" by Kent Beck, followed by an abstract version of the summary.
-
-I've created two illustrations to encapsulate the essence of "Test-Driven Development" by Kent Beck. The first image depicts a software developer immersed in the TDD process, while the second provides an abstract representation of the TDD cycle. 
-
-Feel free to explore these visual summaries, and let me know if there's another book you're curious about or if you'd like to delve deeper into any specific aspect of Test-Driven Development!
-
-# Test Driven Development in JavaScript – writing tests that don’t suck!
-
-NDC London Conference 2022
+From David Whitney at NDC London Conference 2022
 
 On Youtube: [Test Driven Development in JavaScript – writing tests that don’t suck!](https://youtu.be/D7LKslgwxmQ?si=MpiW39Fe_B78QnBC)
 
-### Abstract:
+### Abstract
 > "In this session we’ll talk about TDD in JavaScript, without the dogma, without the buzzwords, in simple clear examples, using Visual Studio Code, Jest and Wallaby.js
 
 >We’ll cover tooling, the TDD mindset, organisational patterns, naming, data driven tests, refactoring tests, and the one most important skill in testing – learning to test the characteristics of your code, not your implementations.
@@ -223,49 +184,49 @@ On Youtube: [Test Driven Development in JavaScript – writing tests that don’
 
 >Live coding included!"
 
-## Importance of Testing in Software Development
+### Importance of Testing in Software Development
 Testing is emphasized as a fundamental part of software that validates the functionality and ensures reliability before deployment. The speaker stresses that testing is an original aspect of software development, not borrowed from other disciplines.
 
-## Transition from No Testing to Embracing Testing
+### Transition from No Testing to Embracing Testing
 Whitney shares his personal journey from not writing tests for the first ten years of his programming career to recognizing their critical value through mentorship. This transition highlights the transformation in mindset towards the importance of automated testing.
 
-## TDD Process and Mindset
+### TDD Process and Mindset
 The process of TDD involves writing tests first, then the software, and finally refactoring to improve the software's structure without affecting its functionality. The methodology is built around a cycle of testing that includes creating failing tests (red), making them pass (green), and then refactoring.
 
-## Practical Guide to Setting Up Testing in JavaScript
+### Practical Guide to Setting Up Testing in JavaScript
 Detailed steps are provided for setting up a JavaScript project with testing using Jest, including configurations and necessary packages. This practical advice is valuable for developers looking to integrate testing into their JavaScript projects.
 
-## Framework and Tool Recommendations
+### Framework and Tool Recommendations
 Jest is recommended as a comprehensive solution for testing in JavaScript due to its integration of testing utilities and wide support. Additionally, tools like Wallaby.js are highlighted for continuous test running, enhancing the development workflow by providing real-time feedback on tests.
 
-## Principles of Writing Good Tests
+### Principles of Writing Good Tests
 Tests should be simple and test only one aspect at a time. They should focus on the 'what' not the 'how', meaning they should test the output or behavior rather than the implementation details, which makes them less brittle to changes in the codebase.
 
-## Avoiding Common Testing Pitfalls
+### Avoiding Common Testing Pitfalls
    
 In the video, David Whitney delves into several common testing pitfalls that software developers may encounter, especially when writing tests in the context of Test Driven Development (TDD). Here’s an elaboration on some of the key pitfalls discussed and advice on how to avoid them:
 
-### Over-Testing Implementation Details
+#### Over-Testing Implementation Details
 One common mistake is writing tests that are overly tied to the specific implementation of a function or feature. This leads to brittle tests that need to be rewritten every time the implementation changes, even if the functionality remains the same. Whitney emphasizes testing the behavior or outcomes rather than the specific ways those outcomes are achieved. This approach ensures that tests remain valid and useful even as the underlying code evolves.
 
-### Excessive Mocking
+#### Excessive Mocking
 While mocking can be useful for isolating external dependencies and speeding up tests, overuse of mocks can make tests less effective and more complex. Excessive mocking can lead to a scenario where tests pass because they are testing the mocks rather than the actual code. Whitney suggests using mocks judiciously and ensuring that tests are still checking real interactions and integrations, especially for critical paths in the application.
 
-### Complicated Setup for Simple Tests
+#### Complicated Setup for Simple Tests
 Tests should be easy to read and understand. A complex setup for a test can make it hard for other developers to understand what is being tested or why a test fails. Whitney advises keeping the setup as simple as possible and using helper functions or fixtures to reduce repetitive setup code, thereby maintaining clarity and focus on what each test aims to verify.
 
-### Ignoring Edge Cases
+#### Ignoring Edge Cases
 Focusing solely on the "happy path" can lead to significant gaps in test coverage. Whitney points out the importance of considering and testing edge cases, error conditions, and unusual input scenarios. This helps ensure that the software is robust and behaves as expected under a variety of conditions, not just under ideal circumstances.
 
-### Lack of Incremental Testing
+#### Lack of Incremental Testing
 In TDD, the cycle involves writing a small amount of test code, then production code, and refactoring. However, developers sometimes attempt to write too many tests upfront without corresponding code to make them pass. Whitney recommends an incremental approach: start with the simplest test, make it pass, and gradually add more complexity. This method helps in building up functionality systematically and ensures that each test provides value.
 
-### Testing Too Much at Once
+#### Testing Too Much at Once
 Attempting to verify multiple aspects or functionalities in a single test can make it difficult to pinpoint the cause of failures and can complicate the test code. Whitney advocates for focusing each test on one functionality or behavior. This practice not only makes tests easier to understand but also simplifies debugging and maintenance.
 
 By avoiding these common pitfalls, developers can create more effective, maintainable, and reliable tests. Whitney’s advice underscores the philosophy of TDD and the broader goals of ensuring high-quality, durable software through thoughtful testing practices.
 
-## Continuous Improvement and Learning
+### Continuous Improvement and Learning
 The ongoing nature of testing and software development is emphasized. Developers are encouraged to continually learn and improve their testing strategies and to keep tests updated as the software evolves.
 
 These points underscore the importance of a thoughtful, systematic approach to testing in software development, particularly using TDD practices. The video serves as both an educational resource for developers new to TDD and a comprehensive guide for experienced programmers looking to refine their testing strategies.
