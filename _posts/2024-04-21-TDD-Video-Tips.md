@@ -207,3 +207,65 @@ Now, let's create a picture that best depicts the essence of "Test-Driven Develo
 I've created two illustrations to encapsulate the essence of "Test-Driven Development" by Kent Beck. The first image depicts a software developer immersed in the TDD process, while the second provides an abstract representation of the TDD cycle. 
 
 Feel free to explore these visual summaries, and let me know if there's another book you're curious about or if you'd like to delve deeper into any specific aspect of Test-Driven Development!
+
+# Test Driven Development in JavaScript – writing tests that don’t suck!
+
+NDC London Conference 2022
+
+On Youtube: [Test Driven Development in JavaScript – writing tests that don’t suck!](https://youtu.be/D7LKslgwxmQ?si=MpiW39Fe_B78QnBC)
+
+### Abstract:
+> "In this session we’ll talk about TDD in JavaScript, without the dogma, without the buzzwords, in simple clear examples, using Visual Studio Code, Jest and Wallaby.js
+
+>We’ll cover tooling, the TDD mindset, organisational patterns, naming, data driven tests, refactoring tests, and the one most important skill in testing – learning to test the characteristics of your code, not your implementations.
+
+>This talk is perfect for people who have never done TDD before, struggle to understand it’s value, or feel held back by brittle tests that feel like mud. It’s the summation of 15 years of teaching testing across static and dynamically typed languages, and I promise, even if you think you know testing there’s something in here for you.
+
+>Live coding included!"
+
+## Importance of Testing in Software Development
+Testing is emphasized as a fundamental part of software that validates the functionality and ensures reliability before deployment. The speaker stresses that testing is an original aspect of software development, not borrowed from other disciplines.
+
+## Transition from No Testing to Embracing Testing
+Whitney shares his personal journey from not writing tests for the first ten years of his programming career to recognizing their critical value through mentorship. This transition highlights the transformation in mindset towards the importance of automated testing.
+
+## TDD Process and Mindset
+The process of TDD involves writing tests first, then the software, and finally refactoring to improve the software's structure without affecting its functionality. The methodology is built around a cycle of testing that includes creating failing tests (red), making them pass (green), and then refactoring.
+
+## Practical Guide to Setting Up Testing in JavaScript
+Detailed steps are provided for setting up a JavaScript project with testing using Jest, including configurations and necessary packages. This practical advice is valuable for developers looking to integrate testing into their JavaScript projects.
+
+## Framework and Tool Recommendations
+Jest is recommended as a comprehensive solution for testing in JavaScript due to its integration of testing utilities and wide support. Additionally, tools like Wallaby.js are highlighted for continuous test running, enhancing the development workflow by providing real-time feedback on tests.
+
+## Principles of Writing Good Tests
+Tests should be simple and test only one aspect at a time. They should focus on the 'what' not the 'how', meaning they should test the output or behavior rather than the implementation details, which makes them less brittle to changes in the codebase.
+
+## Avoiding Common Testing Pitfalls
+   
+In the video, David Whitney delves into several common testing pitfalls that software developers may encounter, especially when writing tests in the context of Test Driven Development (TDD). Here’s an elaboration on some of the key pitfalls discussed and advice on how to avoid them:
+
+### Over-Testing Implementation Details
+One common mistake is writing tests that are overly tied to the specific implementation of a function or feature. This leads to brittle tests that need to be rewritten every time the implementation changes, even if the functionality remains the same. Whitney emphasizes testing the behavior or outcomes rather than the specific ways those outcomes are achieved. This approach ensures that tests remain valid and useful even as the underlying code evolves.
+
+### Excessive Mocking
+While mocking can be useful for isolating external dependencies and speeding up tests, overuse of mocks can make tests less effective and more complex. Excessive mocking can lead to a scenario where tests pass because they are testing the mocks rather than the actual code. Whitney suggests using mocks judiciously and ensuring that tests are still checking real interactions and integrations, especially for critical paths in the application.
+
+### Complicated Setup for Simple Tests
+Tests should be easy to read and understand. A complex setup for a test can make it hard for other developers to understand what is being tested or why a test fails. Whitney advises keeping the setup as simple as possible and using helper functions or fixtures to reduce repetitive setup code, thereby maintaining clarity and focus on what each test aims to verify.
+
+### Ignoring Edge Cases
+Focusing solely on the "happy path" can lead to significant gaps in test coverage. Whitney points out the importance of considering and testing edge cases, error conditions, and unusual input scenarios. This helps ensure that the software is robust and behaves as expected under a variety of conditions, not just under ideal circumstances.
+
+### Lack of Incremental Testing
+In TDD, the cycle involves writing a small amount of test code, then production code, and refactoring. However, developers sometimes attempt to write too many tests upfront without corresponding code to make them pass. Whitney recommends an incremental approach: start with the simplest test, make it pass, and gradually add more complexity. This method helps in building up functionality systematically and ensures that each test provides value.
+
+### Testing Too Much at Once
+Attempting to verify multiple aspects or functionalities in a single test can make it difficult to pinpoint the cause of failures and can complicate the test code. Whitney advocates for focusing each test on one functionality or behavior. This practice not only makes tests easier to understand but also simplifies debugging and maintenance.
+
+By avoiding these common pitfalls, developers can create more effective, maintainable, and reliable tests. Whitney’s advice underscores the philosophy of TDD and the broader goals of ensuring high-quality, durable software through thoughtful testing practices.
+
+## Continuous Improvement and Learning
+The ongoing nature of testing and software development is emphasized. Developers are encouraged to continually learn and improve their testing strategies and to keep tests updated as the software evolves.
+
+These points underscore the importance of a thoughtful, systematic approach to testing in software development, particularly using TDD practices. The video serves as both an educational resource for developers new to TDD and a comprehensive guide for experienced programmers looking to refine their testing strategies.
