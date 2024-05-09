@@ -23,3 +23,5 @@ Ich habe außerdem gearbeitet mit [Docker](https://www.docker.com/), [Jenkins](h
 ------
 
 [Mehr Datails?](about_medium.md)
+
+{% include mastodon_feed.html %}
