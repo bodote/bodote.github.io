@@ -70,20 +70,20 @@ author:
     - label: "Website von BAS"
       icon: "fas fa-fw fa-link"
       url: "https://brandad.dev"
-    - label: "Mastodon"
+    - label: "Mastodon @BodoTe"
       icon: "fa-brands fa-mastodon"
       url: "https://mastodon.social/@BodoTe"
-    - label: "GitHub"
+    - label: "GitHub @bodote"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/bodote"
     
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/BodoTe"
-    - label: "GitHub"
+    - label: "Mastodon @BodoTe"
+      icon: "fa-brands fa-mastodon"
+      url: "https://mastodon.social/@BodoTe"
+    - label: "GitHub @bodote"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/bodote"
     
