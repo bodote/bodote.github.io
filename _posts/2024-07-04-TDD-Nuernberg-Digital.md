@@ -11,12 +11,16 @@ toc: true
 classes: wide
 ---
 
-# [Nürnberg Digital Festival 2024](https://nuernberg.digital/)
+# [Nürnberg Digital Festival 2025](https://nuernberg.digital/)
 
-## Test-driven Development (TDD): Warum ist das eine sehr gute Idee ?
-* [Ankündigung](https://nuernberg.digital/programm/details/test-driven-development-tdd-warum-ist-das-eine-sehr-gute-idee.html)
-* [Powerpoint Folien dazu](../../assets/powerpoints/TDD_OpenBAS.pptx)
+## Test-driven Development: Grundlagen, Einsatzszenarien und -Strategien, KI-Unterstützung! Let's TDD!
+* [Ankündigung](https://nuernberg.digital/de/events/2025/test-driven-development-grundlagen-strategien-ki)
 
-## An Test-driven Development gescheitert? Hier erfährst du, warum.
-* [Ankündigung](https://nuernberg.digital/programm/details/an-test-driven-development-gescheitert-hier-erfaehrst-du-warum.html)
-* [Powerpoint Folien dazu](../../assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pptx)
+### Teil 1: Test-Driven Development (TDD): Warum ist das eine sehr gute Idee?:
+* [Powerpoint Folien dazu](../../assets/powerpoints/TDD_Why.pptx)
+* [PDF mit Notizen dazu](../../assets/powerpoints/TDD_Why.pdf)
+
+### Teil 2: Du bist an TDD gescheitert? Hier erfährst du, warum.
+
+* [Powerpoint Folien dazu](../../assets/powerpoints/assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pptx)
+* [PDF mit Notizen dazu](../../assets/powerpoints/assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pdf)
