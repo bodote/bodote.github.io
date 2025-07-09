@@ -17,10 +17,10 @@ classes: wide
 * [Ankündigung](https://nuernberg.digital/de/events/2025/test-driven-development-grundlagen-strategien-ki)
 
 ### Teil 1: Test-Driven Development (TDD): Warum ist das eine sehr gute Idee?:
-* [Powerpoint Folien dazu](../../assets/powerpoints/TDD_Why.pptx)
-* [PDF mit Notizen dazu](../../assets/powerpoints/TDD_Why.pdf)
+* [Powerpoint Folien](../../assets/powerpoints/TDD_Why.pptx)
+* [PDF mit Notizen](../../assets/powerpoints/TDD_Why.pdf)
 
 ### Teil 2: Du bist an TDD gescheitert? Hier erfährst du, warum.
 
-* [Powerpoint Folien dazu](../../assets/powerpoints/assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pptx)
-* [PDF mit Notizen dazu](../../assets/powerpoints/assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pdf)
+* [Powerpoint Folien](../../assets/powerpoints/assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pptx)
+* [PDF mit Notizen](../../assets/powerpoints/assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pdf)
