@@ -1,6 +1,6 @@
 ---
-title: "TDD Vorträge bei 'Nürnberg Ditigal Festival 2024' "
-date: 2024-07-04
+title: "TDD Vorträge bei 'Nürnberg Ditigal Festival 2025' "
+date: 2025-07-10
 published: true
 visible: true
 categories:
