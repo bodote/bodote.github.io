@@ -22,5 +22,5 @@ classes: wide
 
 ### Teil 2: Du bist an TDD gescheitert? Hier erfährst du, warum.
 
-* [Powerpoint Folien](../../assets/powerpoints/assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pptx)
-* [PDF mit Notizen](../../assets/powerpoints/assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pdf)
+* [Powerpoint Folien](../../assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pptx)
+* [PDF mit Notizen](../../assets/powerpoints/TDD_Wiederentdecken-Missverständniss-Lösungen_2.pdf)
