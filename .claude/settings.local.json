@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:registry.npmjs.org)",
+      "WebFetch(domain:gitlab.com)",
+      "WebFetch(domain:cdn.jsdelivr.net)"
+    ]
+  }
+}

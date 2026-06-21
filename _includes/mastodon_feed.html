@@ -1,5 +1,32 @@
-<!-- start feedwind code --> 
-<script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading" data-fw-param="167193/">
+<!-- Mastodon timeline via the maintained @idotj/mastodon-embed-timeline library
+     (AGPL-3.0). Loaded from jsDelivr, version-pinned. Renders client-side using
+     the Mastodon API. Docs: https://gitlab.com/idotj/mastodon-embed-timeline -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@idotj/mastodon-embed-timeline@4.8.2/dist/mastodon-timeline.min.css">
 
-</script> 
-<!-- end feedwind code -->
+<div id="mt-container" class="mt-container">
+  <div class="mt-body" role="feed">
+    <div class="mt-loading-spinner"></div>
+  </div>
+  <noscript>
+    <a href="https://mastodon.social/@BodoTe" rel="me noopener" target="_blank">
+      Meine Beiträge auf Mastodon ansehen
+    </a>
+  </noscript>
+</div>
+
+<script type="module">
+  import { Init } from "https://cdn.jsdelivr.net/npm/@idotj/mastodon-embed-timeline@4.8.2/dist/mastodon-timeline.esm.js";
+  new Init({
+    instanceUrl: "https://mastodon.social",
+    timelineType: "profile",
+    userId: "108024881874568139",     // @BodoTe@mastodon.social
+    profileName: "@BodoTe",
+    maxNbPostFetch: "12",
+    maxNbPostShow: "8",
+    dateFormatLocale: "de-DE",
+    hideReblog: true,
+    hideReplies: true,
+  });
+</script>
