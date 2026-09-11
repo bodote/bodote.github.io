@@ -1,80 +1,97 @@
 # AGENTS.md
 
+Leitfaden für KI-Agenten in diesem Repository.
+
 ## Was dieses Projekt ist
 
-Persönlicher Software-Blog (`bodote.github.io`), gebaut mit **Jekyll 3.10** über das
-`github-pages` Gem und dem **Minimal Mistakes** Remote-Theme. Deployment erfolgt
-automatisch durch GitHub Pages beim Push auf `master` — es gibt **keine** eigene
-CI-Pipeline (`.github/` existiert nicht). Ein Push auf `master` ist damit direkt
-eine Veröffentlichung.
+Persönlicher Software-Blog („Bodos Software Blog", `bodote.github.io`), gebaut mit
+**Jekyll 3.10** über das `github-pages`-Gem und dem **Minimal Mistakes**
+Remote-Theme. Deployment erfolgt automatisch durch GitHub Pages beim Push auf
+`master` — es gibt **keine** eigene CI-Pipeline (`.github/workflows` existiert
+nicht). Ein Push auf `master` ist damit direkt eine Veröffentlichung.
+
+Es gibt **keinen Anwendungscode**: die Arbeit besteht aus Markdown/HTML-Inhalten,
+YAML-Konfiguration und SCSS.
 
 Inhaltssprache: **Deutsch** (einzelne Posts sind englisch). Themenschwerpunkt: TDD,
 Test-First, Testautomatisierung, Softwarearchitektur, Angular/React, Spring Boot.
 
 ## Toolchain
 
-- **Ruby 3.3.12** über `rbenv`, im Projekt gepinnt via `.ruby-version`.
-  Das macOS-System-Ruby (2.6.10 unter `/usr/bin/ruby`) wird **nicht** benutzt.
-- `rbenv` ist per Homebrew installiert und in `~/.zshrc` initialisiert
-  (`eval "$(rbenv init - zsh)"`). In einer frischen Shell greift `.ruby-version`
-  automatisch — `ruby -v` muss 3.3.12 zeigen.
-- **Bundler 2.5.7**; `bundle` wählt diese Version wegen `BUNDLED WITH` im
-  Lockfile selbst aus, auch wenn eine neuere Bundler-Version installiert ist.
-  Kein `bundle _2.5.7_`-Präfix nötig.
-- Gems liegen lokal in `vendor/bundle` (`bundle config set --local path vendor/bundle`,
-  hinterlegt in `.bundle/config`) — beides gitignored.
-- Nicht auf Ruby 3.4 wechseln: dort sind `csv` und `base64` nicht mehr Teil der
-  Stdlib, womit Jekyll 3.10 bzw. Abhängigkeiten von `github-pages` brechen.
+Zwei Dinge müssen stimmen, sonst bricht der Build:
+
+**1. Ruby 3.3** — nicht 3.4+/4.0. Das `github-pages`-Gem bringt Jekyll 3.x und
+Liquid 4.0.x mit; dort fehlen unter 3.4 Stdlib-Gems (`csv`, `base64`) und Liquid
+4.0.3 ruft noch `String#tainted?` auf. Auf diesem Rechner installiert als
+**Ruby 3.3.12 über rbenv**, im Projekt gepinnt via `.ruby-version`. Das
+macOS-System-Ruby (2.6.10 unter `/usr/bin/ruby`) wird nicht benutzt.
+
+> Hinweis: `localserve-only-published.sh` und `serve-unpublished.sh` setzen
+> `PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"` für eine Homebrew-Installation.
+> Dieser Pfad existiert hier **nicht** — das Prepend bleibt wirkungslos und der
+> rbenv-Shim greift, sodass trotzdem 3.3.12 läuft. Wer die Skripte anfasst:
+> beide Wege führen aktuell zum Ziel, aber nur rbenv ist real installiert.
+
+**2. Eine UTF-8-Locale.** `jekyll-sass-converter` 1.5.2 liest `.scss` sonst als
+US-ASCII und scheitert an den UTF-8-Partials des Themes:
+
+```
+Conversion error: Jekyll::Converters::Scss ...
+Invalid US-ASCII character "\xE2" on line 54
+```
+
+Deshalb `export LANG=en_US.UTF-8` (bzw. `LC_ALL`) — die Serve-Skripte tun das
+selbst. Bei manuellem `jekyll build` in einer Shell ohne Locale tritt der Fehler
+sofort auf.
+
+**Bundler 2.5.7**; `bundle` wählt diese Version wegen `BUNDLED WITH` im Lockfile
+selbst aus, auch wenn eine neuere installiert ist. Gems liegen lokal in
+`vendor/bundle` (`.bundle/config`) — gitignored.
 
 ## Lokal bauen und servieren
 
 ```bash
-bundle install            # einmalig
-bundle exec jekyll build  # Verifikation, dass Liquid/Front Matter fehlerfrei sind
-bundle exec jekyll serve  # oder: ./localserver.sh
-./serve.sh                # bindet 0.0.0.0, --watch --unpublished (zeigt Drafts)
+bundle install
+bundle exec jekyll build         # Verifikation (UTF-8-Locale nötig, s.o.)
+./localserve-only-published.sh   # jekyll serve             -> localhost:4000
+./serve-unpublished.sh           # 0.0.0.0, --watch, --unpublished (zeigt Drafts)
 ```
 
-Der Build ist unter Ruby 3.3.12 verifiziert (17 Post-Seiten, exit 0). Die Meldung
-`To use retry middleware with Faraday v2.0+, install faraday-retry gem` ist
-harmlos und kommt aus `jekyll-github-metadata`.
-
+- `./serve-unpublished.sh` ist der Weg, Posts mit `published: false` vorab zu prüfen.
 - Änderungen an `_config.yml` werden **nicht** automatisch neu geladen — Server neu starten.
-- `./serve.sh` ist der richtige Weg, um Posts mit `published: false` vorab zu prüfen.
-- `jekyll build` ist die einzige verfügbare Verifikation; es gibt keine Tests und
-  keinen Linter.
-- `update.sh` ist nur eine Notiz-Datei mit auskommentierten `bundle update` /
-  `bundle install`-Kommandos, kein ausführbares Update-Skript.
+- Es gibt keine Tests und keinen Linter. Ein fehlerfreier Build plus Sichtprüfung
+  der betroffenen Seite ist die Baseline-Kontrolle vor dem Commit.
+- `update.sh` ist nur eine Notiz-Datei mit auskommentierten Kommandos, kein Skript.
 
 ## Verzeichnisstruktur
 
 | Pfad | Zweck |
 |---|---|
+| `_config.yml` | Site-Einstellungen, Theme, Plugins, Autor/Footer, `defaults`. Nicht hot-reloaded. |
 | `_posts/` | Blogposts, `YYYY-MM-DD-Titel.md` |
-| `_pages/` | Statische Seiten + Archiv-Layouts (über `include:` in `_config.yml` eingebunden) |
+| `_pages/` | Statische Seiten + Archiv-Layouts (über `include:` eingebunden) |
 | `_data/navigation.yml` | Hauptnavigation |
-| `_includes/` | Eigene Snippets (nur `mastodon_feed.html`) |
-| `assets/images/`, `assets/powerpoints/` | Bilder, Vortragsfolien (PDF/PPTX) |
-| `assets/css/main.scss` | Einziger Style-Einstiegspunkt, importiert Theme-Partials |
+| `_includes/` | Eigene Overrides (nur `mastodon_feed.html`) |
+| `assets/` | `images/`, `css/main.scss`, `powerpoints/` (Vortragsfolien, PDF/PPTX) |
+| `extra-html/` | Standalone-HTML außerhalb des Jekyll-Layouts (Slides) |
 | `index.html` | Startseite, nur Front Matter (`layout: home`) |
-| `doc/README.md` | Übrig gebliebenes Starter-Template-README |
 | `.ruby-version` | Pinnt Ruby 3.3.12 für rbenv |
+| `doc/`, `*.odt`, `odt_convert.sh` | Pandoc-Export von Posts nach ODT |
 | `_site/`, `vendor/`, `.bundle` | Build-Output / lokale Gems / gitignored |
 
 Das Theme liegt **nicht** im Repo (`remote_theme: mmistakes/minimal-mistakes`).
-Layouts oder Theme-Partials nicht suchen — zum Überschreiben muss eine Datei mit
+Layouts und Theme-Partials nicht suchen — zum Überschreiben muss eine Datei mit
 gleichem Namen in `_layouts/` bzw. `_includes/` neu angelegt werden.
 
 ## Neuen Post anlegen
 
-Datei `_posts/YYYY-MM-DD-Kurz-Titel.md` mit diesem Front Matter (so sieht es in
-allen bestehenden Posts aus):
+Datei `_posts/YYYY-MM-DD-Kurz-Titel.md`:
 
 ```yaml
 ---
 title: "Titel in Anführungszeichen"
 date: 2025-07-10
-published: true
+published: true   # false hält den Post aus dem Build heraus
 visible: true
 categories:
   - blog          # bestehende Werte: blog / Blog / Vorträge
@@ -85,8 +102,10 @@ classes: wide     # breites Layout, in fast allen Posts gesetzt
 ---
 ```
 
-- `published: false` hält einen Post aus dem Build heraus (aktuell bei zwei Posts).
-- `visible:` ist ein eigenes, vom Theme nicht ausgewertetes Feld — beim Kopieren
+- `defaults` in `_config.yml` setzt `layout: single`, `author_profile`, `read_time`,
+  `comments`, `share`, `related` bereits für alle Posts — nicht pro Post wiederholen,
+  außer zum Überschreiben.
+- `visible:` ist ein eigenes, vom Theme **nicht** ausgewertetes Feld — beim Kopieren
   mitführen, aber keine Wirkung erwarten.
 - Permalinks folgen `/:categories/:title/`; eine Änderung von Titel oder Kategorie
   eines veröffentlichten Posts **bricht die bestehende URL**.
@@ -94,46 +113,42 @@ classes: wide     # breites Layout, in fast allen Posts gesetzt
   in `_data/navigation.yml` bewusst auskommentiert.
 - Asset-Links absolut vom Site-Root schreiben: `/assets/images/foo.png`.
 
-## Konventionen
-
-- Deutsche Texte; VS Code nutzt cSpell mit `"cSpell.language": "en,de"`.
-- Commit-Nachrichten in der History sind durchweg `.` — keine Konvention vorhanden;
-  aussagekräftige Messages sind eine Verbesserung, keine Abweichung.
-- Dependency-Updates laufen über Renovate (`renovate.json`, `config:base`).
-
 ## Dependencies updaten
 
-Der Kern der Toolchain ist **nicht frei wählbar**: das `github-pages`-Gem pinnt
-Jekyll, Liquid, Kramdown, Rouge und `jekyll-sass-converter` auf exakte Versionen,
-weil GitHub Pages serverseitig mit genau diesem Set baut.
+Der Kern der Toolchain ist **nicht frei wählbar**: `github-pages` pinnt Jekyll,
+Liquid, Kramdown, Rouge und `jekyll-sass-converter` auf exakte Versionen, weil
+GitHub Pages serverseitig mit genau diesem Set baut.
 
-- `bundle update` ist der richtige Befehl — es löst innerhalb dieser Pins auf und
-  aktualisiert nur die freien transitiven Gems.
+- `bundle update` ist der richtige Befehl — es löst innerhalb dieser Pins auf.
 - `bundle outdated` listet u.a. `jekyll 3.10.0 -> 4.4.1`, `liquid 4.0.4 -> 5.13.0`,
   `rouge 3.30.0 -> 5.1.0`. Diese **nicht** erzwingen: lokal würde dann etwas anderes
   gebaut als auf GitHub Pages, und der Fehler fällt erst nach dem Push auf.
-- Ein echter Sprung dieser Gems geht nur über eine neuere `github-pages`-Version
-  (aktuell 232 = neueste) — oder durch Umstellung auf eine eigene GitHub-Action,
-  die die Site selbst baut und `_site/` deployt.
-- Nach jedem Update: `bundle exec jekyll build` muss durchlaufen, und `_site/` soll
-  ~33 HTML-Seiten inkl. 17 Posts, `feed.xml`, `sitemap.xml` und ein ~95 KB großes
-  `assets/css/main.css` enthalten.
+- Ein echter Sprung geht nur über eine neuere `github-pages`-Version (aktuell 232 =
+  neueste) oder durch Umstellung auf eine eigene Build-Action. Bewusste Entscheidung
+  des Projekts: **GitHub-Pages-kompatibel bleiben**, also keine eigene Action.
+- Beim serverseitigen Build ignoriert GitHub Pages das `Gemfile.lock` — es betrifft
+  nur die lokale Umgebung.
+- Neue Plugins müssen im von GitHub Pages unterstützten Set enthalten sein. Ein
+  beliebiges Gem kann den gehosteten Build brechen, auch wenn es lokal läuft.
+- Updates sind per Renovate automatisiert (`renovate.json`, `config:base`).
 
-Stand 2026-09-11 durchgeführt (`bundle update`): u.a. activesupport 7.1.3.4 -> 8.1.3.1,
-nokogiri 1.16.7 -> 1.19.4, faraday 2.10.1 -> 2.14.3, minitest 5.24.1 -> 6.0.6,
-rexml 3.3.4 -> 3.4.4. Build und `jekyll serve` verifiziert.
+Stand 2026-09-11 (`bundle update`): u.a. activesupport 7.1.3.4 -> 8.1.3.1,
+nokogiri 1.16.7 -> 1.19.4, faraday 2.10.1 -> 2.14.3, minitest 5.24.1 -> 6.0.6.
+Build und Serve verifiziert.
 
-- `odt_convert.sh` konvertiert einen fest verdrahteten Post per pandoc nach ODT
-  (`custom-reference.odt` als Referenz-Dokument) — Ad-hoc-Skript, Pfad vor Nutzung anpassen.
+## Konventionen & Fallstricke
 
-## Vorsicht
-
+- **Sprache der bearbeiteten Datei übernehmen** — Inhalte sind überwiegend deutsch,
+  Kommentare in Config-Dateien oft ebenfalls.
 - Nicht `_site/` bearbeiten — wird bei jedem Build überschrieben.
-- Große Binärdateien (PDFs bis ~24 MB) liegen in `assets/powerpoints/` im Repo;
-  keine weiteren ohne Rückfrage hinzufügen.
-- `_config.yml` enthält `google_site_verification` und die Autor-/Kontaktdaten —
-  beim Umbau nicht verlieren.
 - Jekyll rendert jedes `.md` im Root als Seite. `AGENTS.md`, `README.md` und die
   Shell-Skripte stehen darum in `exclude:` in `_config.yml` — sonst landet die
   Agenten-Doku unter `/AGENTS/` auf dem öffentlichen Blog. Neue Root-Dokumente
   dort ebenfalls eintragen.
+- Große Binärdateien (PDFs bis ~24 MB) liegen in `assets/powerpoints/` im Repo;
+  keine weiteren ohne Rückfrage hinzufügen.
+- `_config.yml` enthält `google_site_verification` und die Autor-/Kontaktdaten —
+  beim Umbau nicht verlieren.
+- `.DS_Store` ist inzwischen in `.gitignore` — nicht committen.
+- Commit-Nachrichten in der History sind durchweg `.` — keine Konvention vorhanden;
+  aussagekräftige Messages sind eine Verbesserung, keine Abweichung.
