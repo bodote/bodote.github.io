@@ -10,9 +10,12 @@ tags:
 toc: true
 classes: wide
 ---
+# issue Grundlage
+
+
 # /super-review [branch] [plan oder issue]
 
-Alles Startet mit einem einfach Prompt z.B. "machen eine Code review der letzten Änderungen"
+Alles Startet mit einem einfach Prompt z.B. "mache eine Code review der letzten Änderungen"
 
 Ok, aber was, wenn in dem Branch schon mehrer Commits gemacht wurden und du alles in dem Featurebranch reviewen willst: 
 
