@@ -186,6 +186,7 @@ This is not a component library. It is how you build your component library.
 ## Der Skill im Wortlaut
 
 ### Description Header:
+```
 ---
 name: issue-grundlage
 description: >-
@@ -196,7 +197,7 @@ description: >-
   die Work-Item-Nummer; eine Figma-URL ist optional.
 argument-hint: "<gitlab-work-item-nummer> [figma-url], z. B. 92"
 ---
-
+```
 # Issue-Grundlage — Work Item + Figma zu einem Grundlagendokument
 
 Diese Skill erzeugt **die Grundlage fuer den Implementierungsplan** — nicht den Plan selbst.
