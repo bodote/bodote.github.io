@@ -1,8 +1,8 @@
 ---
 title: "Der Issue Grundlage Skill: /issue-grundlage"
-date: 2026-09-16
-published: false
-visible: false
+date: 2026-09-27
+published: true
+visible: true
 categories:
   - Blog
 tags:
@@ -15,20 +15,32 @@ classes: wide
 * Coding Agent sind inzwischen "schlau" genugt, um die komplette Produktion des Codes incl. Code-Review, Deployment etc. zu übernehmen
 * das geht aber nicht "einfach so"
 * Der Schlüssel ist die Orchestrierung, Guard Rails in Form von z.B.  Architekturvorgaben, prüfbaren Qualitätskritereien, die so engmaschig und zuverlässig sind, dass die Entwickler 100% vertrauen darin haben.
+
+![Agent arbeitet innerhalb von Leitplanken aus Skills](/assets/images/issue-grundlage/03-guardrails.svg){: .align-center}
+
 * letztelich das Berufsbild des SW-Entwicklers löst sich auf. 
   * was bleibt ist vieleicht der Systemarchitekt der technischen Context und technische Anforderungen zusammenstellt
   * und mit Sicherheit der Produktplaner/Anforderungsanalyst/Anwenderversteher, der den fachlichen Context zusammenstellt. 
+
+![Das Berufsbild des SW-Entwicklers teilt sich in Systemarchitekt und Produktplaner](/assets/images/issue-grundlage/02b-berufsbild.svg){: .align-center}
+
 
 # Mögliche Wege dorthin
 
 * Diese Architekturvorgaben, prüfbaren Qualitätskritereien sind als **Skills** realisiert, die aber NICHT von anderen Übernommen werden sondern werden von dem selben Entwicklerteam selbst entwickelt und immer weiter verfeinert.
 * zu "Fremden" Skills kann vieleicht noch ein einzelner Entwickler 100% vertrauen haben, aber was, wenn sich doch Fehler einschleichen? Wer fixed diesen nachhaltig , sodass die auch in Zukunft nicht mehr auftreten ?
+
+![Kreislauf eigener Skills gegenüber einem fremden Skill als Blackbox](/assets/images/issue-grundlage/04-eigene-skills.svg){: .align-center}
+
 * Entwicklerteams sollen volle Verantwortung für erzeugten Code übernehmen, welche **fremden** Resourcen können sie guten Gewissens verantworten ?
   * etablierte Programmiersprechen (z.B. Java, Typescipt ) sind ok, jahrelange gute Erfahrung
   * etablierte Frameworks (Spring, Angular) ebenso 
   * sonstige zusätzliche Libraries, teilweise auch je nach Reifegrad und Community support auch ok
   * fremde Skillsets (GSD, BMAD, OpenSpec, etc. ) gibt es noch nicht lange genug um ähnliches Vertrauen zu rechtfertigen. Reifegrad muss als unzureichend bewertet werden. 
   * "Fertige Skillsets" wie sind beeindruckend, funktionieren für mich für kleinere Projekte, bei denen nicht viel auf dem Spiel steht. Aber für große Projekt habe ich (noch) kein 100% vertrauen 
+
+![Vertrauen in fremde Ressourcen: Sprachen, Frameworks, Libraries, Skillsets](/assets/images/issue-grundlage/03b-verantwortung.svg){: .align-center}
+
 * Daher: Skill müssen (jedenfalls derzeit noch) von Teams für größere längerfristige Projekte selbst entwickelt werden.
 * Skills werden inkrementell verbessert
 * Team sollte genau verstehen, was in den Skills drin steht.
@@ -38,6 +50,9 @@ classes: wide
   * Gemini and ChatGPT independently suggested the same malicious walmart-mcp repository. The agents found the attacker’s project and handed users installation instructions.
   * Attackers no longer need to deceive users directly. They can deceive the assistants users trust.
 
+![FakeGit: Angreifer, Fake-Skills, KI-Assistent empfiehlt, Nutzer infiziert](/assets/images/issue-grundlage/05-fakegit.svg){: .align-center}
+
+
 # Skills im Projekt
 * wir haben viele Skills im Projekt, von unterschiedlichen Entwicklern, für die verschiedenen Entwicklungsstadien eines Features/Work-Item/Issues. 
   * Anforderungsanalyse
@@ -45,15 +60,24 @@ classes: wide
   * NICHT fürs eigentliche Coding: da reicht der Prompt : "setze Plan XY um"
   * Qualitätssicherung und Code Review
 
+![Skills je Entwicklungsstadium, Coding ohne Skill](/assets/images/issue-grundlage/05b-skills-projekt.svg){: .align-center}
+
+
 
 Im Folgenden besprechen wir nur den ... :
 # Skill zur Anforderungsanalyse
 der Skill heist bei uns "issue-grundlage"
+
+![Issue und Figma werden über den Skill zur Grundlage](/assets/images/issue-grundlage/01-titel.svg){: .align-center}
+
  
 ## Korrekturschleifen vermeiden durch bessere Anforderungsanalyse
 Um Korrekturschleifen zu vermeiden habe wir den "Issue-Grundlage" Skill iterativ entwickelt, der eine möglichst vollständige, umfassenden und widerspruchsfreie Grundlagen für die Planung eines Features (Workitem/Issue) liefern soll, sodass Planerstellung und Umsetzung ohne weitere Rückfragen vom Coding Agent durchgeführt werden können. 
 
 Vorraussetzung: Monorepo für BE **UND** FE, eine Trennung von beiden macht m.E. für Codings Agents keinen Sinn
+
+![Ziel: vom Issue zur Grundlage, zum Plan und Code – ohne Korrekturschleifen](/assets/images/issue-grundlage/06-ziel.svg){: .align-center}
+
 
 ## Ausgangssituation:
 
@@ -71,7 +95,13 @@ shadcn/ui is a set of beautifully-designed, accessible components and a code dis
 
 This is not a component library. It is how you build your component library.
 
+![Ausgangssituation: manuelles Kopieren und im Figma verstreute FE-Anforderungen](/assets/images/issue-grundlage/07-problem.svg){: .align-center}
+
+
 ## Lösung 
+
+![Vier Iterationen als Treppe](/assets/images/issue-grundlage/08-iterationen.svg){: .align-center}
+
 
 ### Iteration 1
 
@@ -82,6 +112,9 @@ This is not a component library. It is how you build your component library.
 
 * Skill für gitlab läuft
 * Aber : Figma-Bespielprompt bring noch nicht die Detais für FE wie gewünscht: FE hat viele Fehler die alle nachgebessert werden müsse, nicht manuell aber mit je einem Prompt pro Problem, was viel Arbeit macht
+
+![Iteration 1: GitLab-Skill für Backend, Figma-Beispielprompt für Frontend](/assets/images/issue-grundlage/09-iteration1.svg){: .align-center}
+
 
 ### Iteration 2
 * Figma Skill der den Agent anweist auf **KEINEN FALL** ein Design auf grund eines Figma-PNG-Screenshots zu machen, sondern der den Agent zwingt die Figma - Design-Properties zu lesen und diese zu verwenden
@@ -95,6 +128,9 @@ This is not a component library. It is how you build your component library.
 #### Jedoch
 * viel manuelle recherche in Figma, Entwickler muss die passenden Stellen suchen, die Links erzeugen und manuell ins Issue kopieren-> viel Arbeit
 * Ergebniss besser, aber nicht überzeugend, Coding Agent übersieht nach wie vor viele wichtige Design-Details
+
+![Iteration 2: Design-Properties statt Screenshot, Links von Hand](/assets/images/issue-grundlage/10-iteration2.svg){: .align-center}
+
 
 ### Iteration 3
 * neuer Skill "Issue Grundlage"
@@ -110,16 +146,45 @@ This is not a component library. It is how you build your component library.
 #### Jedoch
 * Funktioniert schon besser, aber immer noch Lücken und Missverständnisse
 
+![Iteration 3: Skill Issue-Grundlage erzeugt ein 3–4× so langes Dokument](/assets/images/issue-grundlage/11-iteration3.svg){: .align-center}
+
+
 ### Iteration 4
 * mehrer Agenten (Claude und Codex) mit dem selben Skill auf das selbe Issue und die selben Figma links ansetzen.
 * 2 konkurrierende Ergebnisse produzieren
 * Finaler Vergleich, Deduplication, aufdecken von Widersprüchen durch einen Coding Agent (hier: Claude weil größere Tokenbudget)
 * Ergebniss: Liste von "offene Punkte" die der Entwicker mit PO und UX-Designerin klären muss.
 
+![Iteration 4: zwei Analysten und ein Merger](/assets/images/issue-grundlage/12-iteration4.svg){: .align-center}
+
+
 ---
 
 # Der Skill
 (Stand vom 27.Sept.2026) 
+
+## Der Skill auf einen Blick
+
+![Ablauf der Phasen 0 bis 6](/assets/images/issue-grundlage/18-ablauf.svg){: .align-center}
+
+![Nicht verhandelbare Regeln](/assets/images/issue-grundlage/13-regeln.svg){: .align-center}
+
+![Pflichtschritt F: Instanz gegenüber Component-Set](/assets/images/issue-grundlage/14-pflichtschritt-f.svg){: .align-center}
+
+![Figma-Zugang über den lokalen Server](/assets/images/issue-grundlage/15-figma-zugang.svg){: .align-center}
+
+![Analysekatalog A1 bis A9](/assets/images/issue-grundlage/16-analysekatalog.svg){: .align-center}
+
+![Zuordnung der Akzeptanzkriterien zu Figma mit Status](/assets/images/issue-grundlage/17-zuordnung.svg){: .align-center}
+
+![Bestandsanalyse A6b](/assets/images/issue-grundlage/17b-bestand.svg){: .align-center}
+
+![Zusammenführung der zwei Analysen in drei Dokumente](/assets/images/issue-grundlage/19-merger.svg){: .align-center}
+
+![Lessons Learned](/assets/images/issue-grundlage/20-lessons.svg){: .align-center}
+
+## Der Skill im Wortlaut
+
 ### Description Header:
 ---
 name: issue-grundlage
