@@ -12,11 +12,6 @@ classes: wide
 ---
 
 # Meine Hypothesen
-* **Flut an generiertem Code**: KI-Agenten erzeugen riesige Pull Requests (oft  1.000+ Zeilen Code), was Entwickler beim manuellen Prüfen überfordert.
-  * Entwickler schaffen ca 200-400 LOC pro Stunden, können das aber nicht länger als 1,5 durchhalten und brauchen Pause 
-  * ein Pullrequest von 5000 Zeilen in 1 Tag erzeugt benötigt, dann mind. 2 Tage zum Reviewen
-  * Streng genommen sogar das doppelte, weil der Entwickler der den Code erzeugen lies UND ein weitere Entwickler müssen den Code reviewen , wenn man weiterhin traditionell arbeiten will , also brauchen wir fürs review 4 Tage. 
-  * der Alltag eines Entwickler würden dann zu 80% nur noch aus Code reviews bestehen. -> unrealistisch.
 * Coding Agent sind inzwischen "schlau" genugt, um die komplette Produktion des Codes incl. Code-Review, Deployment etc. zu übernehmen
 * das geht aber nicht "einfach so"
 * Der Schlüssel ist die Orchestrierung, Guard Rails in Form von z.B.  Architekturvorgaben, prüfbaren Qualitätskritereien, die so engmaschig und zuverlässig sind, dass die Entwickler 100% vertrauen darin haben.
@@ -25,19 +20,23 @@ classes: wide
 * "Fertige Skillsets" wie z.B. GSD oder BMAD sind beeindruckend, funktionieren für mich für kleinere Projekte, bei denen nicht viel auf dem Spiel steht. Aber für große Projekt habe ich keine 100% vertrauen 
 * Daher: Skill müssen (jedenfalls derzeit noch) selbst entwickelt werden.
 * Skills werden inkrementell verbessert
-* Skills aus anderen Quellen sind [potentiell extrem gefährlich](https://www.artificialintelligence-news.com/news/ai-agents-are-becoming-a-new-malware-distribution-channel/) 
+* Skills aus anderen Quellen sind [potentiell extrem gefährlich](https://www.artificialintelligence-news.com/news/ai-agents-are-becoming-a-new-malware-distribution-channel/) :
+   * Roughly 7,600 fake GitHub repositories, 6,600 fraudulent profiles and more than 14 million downloads: that is the scale of FakeGit, a malware campaign documented by Island in July 2026. Over 800 repositories impersonated AI skills and MCP servers, distributing SmartLoader and the StealC infostealer.
+  * Fake repositories are nothing new. The surprise was who recommended them.
+  * Gemini and ChatGPT independently suggested the same malicious walmart-mcp repository. The agents found the attacker’s project and handed users installation instructions.
+  * Attackers no longer need to deceive users directly. They can deceive the assistants users trust.
 * auch Codeview muss drastisch vereinfacht werden, z.B. durch
   * coding agents selbst (mit review- skills)
   * oder andere Ideen wie die von Viktor Rentea 
 
-
-# Beispiel 1: der "Issue-Grundlage" Skill
+# Korrekturschleifen vermeiden durch bessere Anforderungsanalyse
+Um Korrekturschleifen zu vermeiden habe wir den "Issue-Grundlage" Skill iterativ entwickelt, der eine möglichst vollständige, umfassenden und widerspruchsfreie Grundlagen für die Planung eines Features (Workitem/Issue) liefern soll, sodass Planerstellung und Umsetzung ohne weitere Rückfragen vom Coding Agent durchgeführt werden können. 
 
 Vorraussetzung: Monorepo für BE **UND** FE, eine Trennung von beiden macht m.E. für Codings Agents keinen Sinn
 
 ## Ausgangssituation:
 
-ich kopiere den Issue Text aus Gitlab in den Prompt. Funktioniert für reine Backend Task okish, aber nicht nicht für Frontend
+ich kopiere den Issue Text aus Gitlab in den Prompt. Funktioniert für reine Backend Task ok-ish, aber nicht nicht für Frontend
 
 ### Das Problem 
 
@@ -96,48 +95,60 @@ This is not a component library. It is how you build your component library.
 * Finaler Vergleich, Deduplication, aufdecken von Widersprüchen durch einen Coding Agent (hier: Claude weil größere Tokenbudget)
 * Ergebniss: Liste von "offene Punkte" die der Entwicker mit PO und UX-Designerin klären muss.
 
-
+---
 
 # Der Skill
-(Stand vom 21.Sept.2026) 
+(Stand vom 27.Sept.2026) 
 ### Description Header:
-```
 ---
 name: issue-grundlage
 description: >-
   Erstellt vor der Planung aus einem GitLab-Work-Item und seinem Figma-Design ein
-  Grundlagendokument mit Akzeptanzkriterien, Design-Specs und Klaerungsliste. Trigger:
+  Grundlagendokument mit Akzeptanzkriterien und Design-Specs, dazu je ein eigenes Dokument
+  fuer Widersprueche und Klaerungsliste. Trigger:
   "Issue aufarbeiten", "Grundlagendokument erstellen", "Issue plus Figma". Benoetigt
   die Work-Item-Nummer; eine Figma-URL ist optional.
 argument-hint: "<gitlab-work-item-nummer> [figma-url], z. B. 92"
 ---
-```
 
 # Issue-Grundlage — Work Item + Figma zu einem Grundlagendokument
 
 Diese Skill erzeugt **die Grundlage fuer den Implementierungsplan** — nicht den Plan selbst.
-Ergebnis ist ein Dokument, in dem jedes Akzeptanzkriterium des Work Items neben den konkreten
-Figma-Design-Details steht, und eine Liste der Punkte, die der Nutzer klaeren muss.
+Ergebnis sind drei verlinkte Dokumente: ein Hauptdokument, in dem jedes Akzeptanzkriterium des
+Work Items neben den konkreten Figma-Design-Details steht, und daneben je ein eigenes Dokument fuer
+die Widersprueche und fuer die Punkte, die der Nutzer klaeren muss.
 
 Zwei unabhaengige Analysten arbeiten dasselbe Work Item aus:
 
 | Analyst | Modell / Effort | Ergebnisdatei |
 | --- | --- | --- |
-| Claude-Subagent | Opus 5 / High | `tmp/item<N>-opus5.md` |
-| codex-CLI | gpt-5.6-sol / high | `tmp/item<N>-gpt5.6-sol.md` |
-| **Zusammenfuehrung** | Opus 5 / High | `docs/item<N>-final.md` |
+| Claude-Subagent | Opus 5 / Medium | `tmp/item<N>-opus5.md` |
+| codex-CLI | gpt-5.6-sol / medium | `tmp/item<N>-gpt5.6-sol.md` |
+| **Zusammenfuehrung** | Opus 5 / Medium | `docs/item<N>-final.md` (Hauptdokument) |
+| | | `docs/item<N>-widersprueche.md` (Abschnitt 9) |
+| | | `docs/item<N>-klaerung.md` (Abschnitt 10) |
 
 Dazu der geteilte Issue-Snapshot `tmp/issue-grundlage/issue<N>.md`.
 
-**Nur das finale Dokument liegt in `docs/` und wird eingecheckt.** Die beiden
+**Die Zusammenfuehrung liefert drei Dokumente statt einem.** Abschnitt 9 (Widersprueche) und
+Abschnitt 10 (offene Punkte) stehen jeweils in einer eigenen Datei; im Hauptdokument bleiben an
+ihrer Stelle die Abschnittsueberschriften mit Kurzzahlen und einem **Link** auf das ausgelagerte
+Dokument. Grund: das Hauptdokument wird beim Lesen und Planen anders benutzt als die beiden
+Arbeitslisten — die Klaerungsliste wird abgearbeitet und abgehakt, die Widerspruchsliste wird
+entschieden. Die Kurzliste `0b` bleibt im Hauptdokument, damit der Stand der Klaerung dort ablesbar
+ist. Die Abschnittsnummern 9 und 10 bleiben erhalten, damit Verweise aus anderen Dokumenten weiter
+tragen.
+
+**Nur diese drei finalen Dokumente liegen in `docs/` und werden eingecheckt.** Die beiden
 Analysten-Zwischenergebnisse und der Snapshot liegen unter `tmp/` (git-ignoriert) — sie sind
 Arbeitsmaterial fuer die Zusammenfuehrung, kein Projektartefakt. Niemals ein `item<N>-opus5.md`
 oder `item<N>-gpt5.6-sol.md` nach `docs/` schreiben und nichts davon zu Git hinzufuegen.
 
-> **Kein Code, kein Plan.** Diese Skill liest **keinen** Quellcode und schreibt **keinen**
-> Implementierungsplan. Sie beantwortet nur: *Was ist gefordert, wie sieht es im Figma genau aus,
-> und was ist noch offen?* Der Plan entsteht erst danach — aus `docs/item<N>-final.md`, nachdem der
-> Nutzer die offenen Punkte geklaert hat.
+> **Kein Plan — aber der Bestand zaehlt.** Diese Skill schreibt **keinen** Implementierungsplan.
+> Sie beantwortet: *Was ist gefordert, wie sieht es im Figma genau aus, was davon gibt es im
+> Bestand schon, und was ist noch offen?* Quellcode zu **lesen** ist dafuer ausdruecklich erlaubt
+> und bei Erweiterungen bestehender Features Pflicht (A6b). Der Plan entsteht erst danach — aus
+> `docs/item<N>-final.md`, nachdem der Nutzer die offenen Punkte geklaert hat.
 
 ## Erforderliche Eingabe
 
@@ -149,20 +160,35 @@ oder `item<N>-gpt5.6-sol.md` nach `docs/` schreiben und nichts davon zu Git hinz
 
 ## Nicht verhandelbare Regeln
 
-- **Kein Quellcode.** Weder Analysten noch Merger lesen `backend/src/**`, `frontend/src/**`, Tests,
-  Build- oder Konfigurationsdateien; kein `git diff`, kein `git log`. Ob und wie etwas bereits
-  implementiert ist, ist hier ausdruecklich **nicht** die Frage.
+- **Bestandscode lesen: erlaubt, oft Pflicht — aber nur lesend.** Beide Analysten duerfen
+  `backend/src/**`, `frontend/src/**`, Tests, Build- und Konfigurationsdateien sowie `git log`
+  lesen. **Pflicht** ist die Bestandsanalyse (A6b), sobald das Work Item ein **bestehendes**
+  Backend-Feature erweitert oder eine **bestehende** UI im Frontend ausbaut: dann muss belegt
+  werden, was wirklich neu ist, was aus dem Bestand uebernommen werden kann und was geaendert
+  werden muss. Handelt es sich erkennbar um ein Feature auf der gruenen Wiese, wird das in 6b in
+  einem Satz festgehalten — die Pruefung entfaellt nicht, ihr Ergebnis ist dann „kein Bestand".
+  Der Merger analysiert **keinen** Quellcode nach; er fuehrt nur die zwei Analysen zusammen.
+  Gelesen wird ausschliesslich: kein `Edit`, kein `Write` an Quellcode, kein Build, keine Tests.
+- **Bestand ist Befund, nicht Anforderung.** Was im Code steht, aendert kein Akzeptanzkriterium.
+  Weicht der Bestand von Issue oder Figma ab, ist das ein Widerspruch (Abschnitt 9) oder ein
+  offener Punkt (Abschnitt 10) — es wird nicht stillschweigend als „so ist es halt" uebernommen.
 - **Screenshots sind keine Designquelle.** Bilder, die am Issue haengen, dienen hoechstens der
   Orientierung. Verbindliche Design-Werte kommen **ausschliesslich** aus dem Figma-MCP. Ein
   Screenshot ersetzt niemals den Figma-Link.
 - **Nichts erfinden.** Jede Aussage im Dokument ist entweder mit einer Issue-Stelle oder mit einer
-  **Figma-Node-ID** belegt. Alles andere gehoert in die Klaerungsliste (Abschnitt 10) — nicht in die
-  Spezifikation. Kein „vermutlich", kein „analog zu", kein stilles Auffuellen von Luecken.
+  **Figma-Node-ID** belegt. Alles andere gehoert in die Klaerungsliste (Abschnitt 10; final
+  ausgelagert nach `docs/item<N>-klaerung.md`) — nicht in die Spezifikation. Kein „vermutlich", kein „analog zu", kein stilles Auffuellen von Luecken.
 - **Anti-Pattern-Regel (Figma-Luecken):** Eine „Luecke im Figma" darf **erst** behauptet werden,
   wenn der Komponenten-Set-Lookup (Pflichtschritt F, Schritte 1–4) durchgefuehrt wurde und nichts
   ergeben hat. Eine notierte Vermutung ohne durchgefuehrten Lookup ist ein Fehler, kein Finding.
-- **Nur die drei Ergebnisdateien schreiben** (plus der Snapshot in Phase 0). Keine Aenderung an
-  bestehenden Dokumenten, kein `git add`, kein Commit.
+- **Nur die fuenf Ergebnisdateien schreiben** (plus der Snapshot in Phase 0). Keine Aenderung an
+  bestehenden Dokumenten, kein `git add`, kein Commit. Ausnahme: der TODO-Abgleich aus Phase 5b
+  haengt Abschnitt 13 an `docs/item<N>-final.md` an.
+- **TODO-Abgleich ist Pflicht.** Jeder Lauf prueft alle `todo.md` unter `docs/`, `backend/docs/` und
+  `frontend/docs/` gegen das Work Item (Phase 5b). Passende TODOs werden **nie still uebernommen und
+  nie still verworfen** — der Nutzer entscheidet je Eintrag. Den Abgleich machen der Orchestrator
+  und nicht die Analysten: deren Katalog bleibt unveraendert, damit die zwei Analysen vergleichbar
+  bleiben, und `todo.md` ist keine Quelle fuer Akzeptanzkriterien.
 - Modell und Effort der Analysten sind fest verdrahtet und **unabhaengig vom Modell, mit dem diese
   Skill aufgerufen wurde**.
 
@@ -180,14 +206,13 @@ fehlen: **jede Instanz ist grundsaetzlich verdaechtig.**
 
 Darum MUSS bei jeder Figma-Analyse:
 
-1. **Einmal pro Datei** ein vollstaendiges Komponenten-Inventar erheben. Wenn der Harness
-   `list_file_components_for_code_connect(fileKey)` anbietet, dieses Tool aufrufen; es liefert alle
-   **published Component-Sets** inkl. Variant-Properties, Optionen und Node-IDs. Da der lokale
-   Codex-Server `figma-desktop` dieses Tool nicht anbietet, verwendet Codex stattdessen
-   `get_metadata` auf der **„Components"-Page** der aktiven Datei. Dieser Weg erfasst auch lokale,
-   unveroeffentlichte Sets. Den verwendeten Weg in Abschnitt 11 nennen. Ist weder das Listen-Tool
-   noch die Components-Page erreichbar, die Analyse als unvollstaendig markieren; der Schritt darf
-   nie stillschweigend entfallen.
+1. **Einmal pro Datei** ein vollstaendiges Komponenten-Inventar erheben: `get_metadata` auf der
+   **„Components"-Page** der aktiven Datei — in **beiden** Harnesses. Der Weg erfasst auch lokale,
+   unveroeffentlichte Sets samt Variant-Properties, Optionen und Node-IDs.
+   `list_file_components_for_code_connect(fileKey)` gibt es nur im gehosteten Connector, der hier
+   nicht verwendet wird. Den Erhebungsweg in Abschnitt 11 nennen. Ist die Components-Page nicht
+   erreichbar, die Analyse als unvollstaendig markieren; der Schritt darf nie stillschweigend
+   entfallen.
 2. **Jede** in den analysierten Frames vorkommende **Instanz** (erkennbar an `data-name` /
    Layer-Name) gegen dieses Inventar **matchen**.
 3. Fuer **jede** Komponente **ALLE** Variant-Properties **disponieren** — Ergebnis als Pflicht-
@@ -203,18 +228,33 @@ Darum MUSS bei jeder Figma-Analyse:
 
 ### Figma-Zugang je Harness — zwei verschiedene Mechanismen
 
-**Claude Code: MCP-Tools.** `mcp__plugin_figma_figma__<name>` fuer die Cloud-Anbindung,
-`mcp__figma-desktop__<name>` fuer den lokal laufenden Dev-Mode-Server. MCP-Tools sind *deferred*:
-vor dem ersten Aufruf per `ToolSearch` laden. Bei Unklarheit an den Tool-Namen im Tool-Listing des
-laufenden Harness orientieren, nicht raten.
+**Beide Harnesses nutzen denselben lokalen Dev-Mode-Server** (`http://127.0.0.1:3845/mcp`), nur
+der Namensraum unterscheidet sich. Der gehostete Connector — `mcp__plugin_figma_figma__*` in
+Claude Code, `mcp__codex_apps__figma_*` in Codex — ist hier **nicht autorisiert** und wird nicht
+verwendet, auch nicht als Fallback.
 
-**Codex: lokaler MCP-Server.** Codex verwendet den in der Codex-Konfiguration eingetragenen
-Dev-Mode-Server `figma-desktop` ueber `mcp__figma_desktop__<name>`. Die Tools koennen deferred sein
-und im anfaenglichen Tool-Listing fehlen; vor einer Nichtverfuegbarkeitsmeldung im Runtime-
-Tool-Katalog gezielt nach dem Praefix `mcp__figma_desktop__` suchen. Zuerst
-`.codex/skills/figma-desktop/SKILL.md` vollstaendig lesen. Vor jedem `get_design_context` ausserdem
-den verpflichtenden Skill `figma:figma-design-to-code` laden, dabei aber den lokalen Namespace
-beibehalten.
+| Harness | Namespace |
+|---|---|
+| Claude Code | `mcp__figma-desktop__<name>` (**Bindestrich**) |
+| Codex | `mcp__figma_desktop__<name>` (**Unterstrich**) |
+
+Zuerst `.agents/skills/figma-desktop/SKILL.md` vollstaendig lesen — in Claude Code auch per
+Skill-Tool `figma-desktop` ladbar. Sie besitzt Namensraeume, Parameter und Fehlerbehandlung.
+
+Die Tools koennen *deferred* sein und im anfaenglichen Tool-Listing fehlen; vor einer
+Nichtverfuegbarkeitsmeldung im Runtime-Tool-Katalog gezielt nach dem Praefix des eigenen Harness
+suchen (Claude Code: `ToolSearch` mit
+`select:mcp__figma-desktop__get_metadata,mcp__figma-desktop__get_design_context,mcp__figma-desktop__get_screenshot,mcp__figma-desktop__get_variable_defs`).
+Bei Unklarheit an den Tool-Namen im Tool-Listing des laufenden Harness orientieren, nicht raten.
+Vor jedem `get_design_context` ausserdem den verpflichtenden Skill `figma:figma-design-to-code`
+laden, dabei aber den lokalen Namespace beibehalten.
+
+**Antwortet der lokale Server nicht mehr** — Timeout, haengender Aufruf oder Connection-Fehler bei
+*jedem* Tool —, mit
+`curl -sS -m 5 -o /dev/null -w '%{http_code}\n' http://127.0.0.1:3845/mcp` gegenpruefen und den
+Nutzer bitten, Figma Desktop vollstaendig zu beenden (⌘Q) und neu zu starten; danach erneut
+aufrufen. Das ist ein anderer Fehlerfall als die `tools:`-Allowlist weiter unten und laesst sich
+nicht durch einen Subagenten-Neustart beheben.
 
 Der lokale Server arbeitet mit dem in Figma Desktop aktiven Dokument. Seine Tools akzeptieren
 `nodeId` und je nach Tool `clientFrameworks` / `clientLanguages`, aber **kein `fileKey`**. Nicht auf
@@ -237,7 +277,11 @@ Beide arbeiten **genau diesen** Katalog ab — nur so sind die zwei Ergebnisse v
 ### A1 — Anforderungen und Akzeptanzkriterien vollstaendig erfassen
 
 Quelle ist **ausschliesslich** der Snapshot `tmp/issue-grundlage/issue<N>.md`: Beschreibung, **alle
-Tasks** und **alle Kommentare**.
+Tasks** und **alle Kommentare**, **nicht** jedoch die geanze "DoD" (definition of Done)-Liste, sondern nur diese 4 Punkte:
+* DEV: Barrierefreiheit berücksichtigt und
+  * DEV: Tests bei neuen Seiten und Zuständen mit 'testA11y()' hinzugefügt
+* DEV: Projektsetup muss dokumentiert und auf dem aktuellen Stand sein   
+* DEV: Technische Doku wurde angepasst
 
 **AK-IDs sind verbindlich und stabil zu bilden** (die Zusammenfuehrung haengt daran):
 
@@ -299,6 +343,38 @@ oder Figma-Node-ID. Was sich nicht belegen laesst, wandert nach Abschnitt 10 —
 - **Im Issue gefordert, im Figma nicht auffindbar** → Abschnitt 8, mit dem Nachweis, dass
   Pflichtschritt F durchgefuehrt wurde.
 
+### A6b — Bestandsanalyse (Neu / Wiederverwendung / Aenderung)
+
+**Pflicht, sobald das Work Item Bestehendes erweitert** — ein Backend-Feature, das es schon gibt,
+oder eine UI, die schon existiert. Ziel ist die Trennung: *Was ist wirklich neu, was traegt der
+Bestand schon, und was muss angefasst werden?*
+
+Vorgehen:
+
+1. Einstiegspunkte suchen (`Grep`/`Glob`) — Endpunkt-Pfade, Domain-Begriffe, Komponenten- und
+   Routen-Namen aus den AK. Backend: Controller/Adapter, Service, Domain-Typ, Repository,
+   Modulith-Modul. Frontend: Route, Container-/Praesentations-Komponente, Signal-Store/Service,
+   Model-Typ, verwendete spartan-ng-Bausteine.
+2. Die gefundenen Stellen tatsaechlich lesen — Signaturen, DTO-/Model-Felder, vorhandene Zustaende
+   (Lade-, Fehler-, Leerzustand), bestehende Tests.
+3. Je AK aus A1 eine Zeile bilden mit einer dieser **Einstufungen**:
+
+| Einstufung | Bedeutung |
+| --- | --- |
+| `neu` | Im Bestand gibt es dafuer nichts; wird komplett neu gebaut. |
+| `Wiederverwendung` | Bestehender Code deckt es ab und wird unveraendert genutzt — mit Pfad belegt. |
+| `Erweiterung` | Bestehender Code traegt, muss aber ergaenzt werden (neues Feld, neue Variante, neuer Zweig). |
+| `Aenderung` | Bestehendes Verhalten widerspricht der Anforderung und muss umgebaut werden → zusaetzlich Abschnitt 9. |
+| `unklar` | Ohne Entscheidung des Nutzers nicht zuzuordnen → zusaetzlich Abschnitt 10. |
+
+4. Jede Zeile mit **Pfad und Zeilennummer** belegen (`frontend/src/app/...ts:42`). Eine Einstufung
+   ohne Beleg ist eine Vermutung und gehoert nach Abschnitt 10, nicht in die Tabelle.
+5. **Keine Loesung entwerfen.** Kein Klassenschnitt, keine Arbeitspakete, keine Reihenfolge — das
+   ist Sache der Planung. Hier steht nur der Befund.
+
+Ist das Work Item erkennbar ein Neubau ohne Bestandsbezug, bleibt die Tabelle leer und 6b enthaelt
+einen Satz mit der Begruendung und den Suchbegriffen, die nichts ergeben haben.
+
 ### A7 — Widersprueche
 
 Drei Arten, jeweils mit Belegen auf **beiden** Seiten:
@@ -319,6 +395,8 @@ Am Ende ausdruecklich pruefen und im Dokument bestaetigen:
 - Jede verwendete Komponente hat eine Zeile in der Varianten-Tabelle (Pflichtschritt F.3).
 - Jeder Figma-Link aus dem Issue ist aufgeloest oder mit Begruendung verworfen.
 - Kein Status `im Figma nicht gefunden` ohne durchgefuehrten Pflichtschritt F.
+- Jedes AK aus A1 hat eine Zeile in 6b, oder 6b begruendet, warum es keinen Bestandsbezug gibt.
+  Jede Einstufung ausser `neu` ist mit Pfad und Zeile belegt.
 
 ### A9 — Klaerungsliste
 
@@ -332,6 +410,9 @@ keine Punkte, die sich aus Issue oder Figma bereits beantworten lassen.
 ## Verbindliche Berichtsstruktur (beide Analysten, exakt)
 
 Die Zusammenfuehrung in Phase 4 haengt an dieser Gliederung — nicht abweichen.
+
+Jeder Analyst schreibt **eine** Datei mit allen Abschnitten 0–11 (inkl. 6b), Abschnitt 9 und 10 eingeschlossen.
+Die Auslagerung in eigene Dokumente betrifft nur das Enddokument aus Phase 5.
 
 ```markdown
 # Grundlagendokument Work Item <N> — „<Titel>" — Analyst: <Modell/Effort>
@@ -369,6 +450,9 @@ Die Zusammenfuehrung in Phase 4 haengt an dieser Gliederung — nicht abweichen.
 - **Konkrete Vorgaben:** Texte, Formate, Zustaende, Grenzwerte, Interaktion, A11y
 - **Offen:** <U-IDs oder „keine">
 
+## 6b. Bestandsanalyse — Neu, Wiederverwendung, Aenderung (A6b)
+| AK-ID | Bestand (Pfad:Zeile) | Einstufung | Was konkret traegt / fehlt / muss geaendert werden |
+
 ## 7. Im Figma vorhanden, im Issue nicht gefordert (A6)
 ## 8. Im Issue gefordert, im Figma nicht auffindbar (A6 — nur nach Pflichtschritt F)
 ## 9. Widersprueche (A7)
@@ -396,7 +480,7 @@ Die Zusammenfuehrung in Phase 4 haengt an dieser Gliederung — nicht abweichen.
 ### Phase 0 — Vorbereitung und Snapshot
 
 1. **`<N>`** aus dem Argument uebernehmen; fehlt es, stoppen und fragen.
-2. Verzeichnisse anlegen und **alte Ergebnisdateien dieses `<N>`** bereinigen (die drei Dateien aus
+2. Verzeichnisse anlegen und **alte Ergebnisdateien dieses `<N>`** bereinigen (die fuenf Dateien aus
    der Tabelle oben), damit nichts aus einem frueheren Lauf kollidiert. Dem Nutzer kurz nennen, was
    bereinigt wurde. Dateien anderer Nummern bleiben unangetastet.
 
@@ -471,11 +555,27 @@ pruefen.
   eine `figma.com/design/...?node-id=…`-URL gebraucht wird. Nicht mit einem geratenen Link
   weiterarbeiten und nicht ohne Figma starten.
 
+**Vorab-Check des lokalen Figma-Servers** — bevor Analysten starten, denn beide haengen an ihm:
+
+1. `curl -sS -m 5 -o /dev/null -w '%{http_code}\n' http://127.0.0.1:3845/mcp` — kein HTTP-Status
+   heisst: Server haengt oder Figma Desktop laeuft nicht.
+2. In Claude Code die Tools per `ToolSearch`
+   (`select:mcp__figma-desktop__get_metadata,…`, siehe oben) laden und einmal `get_metadata` auf
+   eine Node-ID aus dem Issue aufrufen. Das belegt zugleich, dass die verlinkte Datei aktiv ist.
+   Findet `ToolSearch` nichts, ist `figma-desktop` in Claude Code nicht registriert: `claude mcp
+   get figma-desktop` pruefen (erwartet: Projekt-Scope aus `.mcp.json`, Status verbunden); steht
+   er auf „Pending approval", muss der Nutzer ihn in einer interaktiven Sitzung freigeben.
+
+Schlaegt einer der Schritte fehl, den Nutzer mit dem Text aus der Skill `figma-desktop` bitten,
+Figma Desktop vollstaendig zu beenden (⌘Q), neu zu starten und die verlinkte Datei zu oeffnen;
+danach beide Schritte wiederholen. **Nicht** ohne funktionierenden lokalen Server in Phase 2/3
+starten.
+
 Danach kurz ausgeben: `<N>`, Titel, Anzahl Tasks, Anzahl Kommentare, `fileKey` und die gefundenen
 Node-IDs. Ab hier laufen die Phasen 2–5 **am Stueck durch**; ausser den Abbruchfaellen in Phase 0/1
-gibt es keine Rueckfrage mehr.
+und einem haengenden Figma-Server (Phase 2) gibt es keine Rueckfrage mehr.
 
-### Phase 2 — Analyst 1: Claude-Subagent (Opus 5 / High)
+### Phase 2 — Analyst 1: Claude-Subagent (Opus 5 / Medium)
 
 Einen Subagenten mit `subagent_type: "issue-grundlage-opus5"` starten (Definition:
 `.claude/agents/issue-grundlage-opus5.md`, Modell/Effort dort fest verdrahtet). **Kein** inline
@@ -490,7 +590,25 @@ Figma-Node-IDs mit ihrer Herkunft, den Zielpfad `tmp/item<N>-opus5.md` und den H
 Analysekatalog, **Pflichtschritt F** und Berichtsstruktur vollstaendig in
 `.agents/skills/issue-grundlage/SKILL.md` stehen und exakt zu befolgen sind.
 
+#### Wenn der lokale Server waehrend der Analyse haengt
+
+Der Server bleibt gelegentlich mitten im Lauf stehen. Beginnt die Abschlussmeldung des Subagenten
+mit `FIGMA-MCP HAENGT`, den Nutzer um den Neustart von Figma Desktop bitten (Text aus der Skill
+`figma-desktop`), nach seiner Bestaetigung den `curl`-Check wiederholen und den **selben**
+Subagenten per `SendMessage` fortsetzen („Figma Desktop ist neu gestartet, mach beim
+fehlgeschlagenen Aufruf weiter") — er behaelt dabei seinen bisherigen Kontext. Nicht auf den
+Rueckfallweg unten ausweichen: der ist fuer fehlendes MCP im Subagenten, nicht fuer einen
+haengenden Server. Laeuft codex parallel, ist er vom selben Haenger betroffen; seine Logdatei
+pruefen und ihn gegebenenfalls nach dem Neustart erneut starten.
+
 #### Wenn der Subagent kein MCP hat: Ursache pruefen, nicht ausweichen
+
+Antwortet der lokale Server gar nicht mehr auf Port 3845 (siehe oben), hilft keine der folgenden
+Massnahmen — dann muss der Nutzer Figma Desktop neu starten. Erst danach weiterlesen.
+
+Findet `ToolSearch` im Subagenten keine `mcp__figma-desktop__*`-Tools, zuerst pruefen, ob der
+Server in Claude Code registriert ist (`claude mcp get figma-desktop`; Eintrag in `.mcp.json`).
+Ohne Registrierung sieht kein Subagent den lokalen Server, egal was diese Skill vorschreibt.
 
 Meldet der Subagent, die Figma-MCP-Tools seien nicht aufrufbar, ist die **haeufigste Ursache eine
 `tools:`-Allowlist in seiner Agent-Definition** — die filtert alle MCP-Server heraus, und
@@ -521,8 +639,7 @@ tmp/issue-grundlage/figma<N>-mcp-verify.md
 
 Mindestinhalt, jeweils mit dem verwendeten Tool-Namen als Herkunft:
 
-1. `list_file_components_for_code_connect(fileKey)` oder, beim lokalen Codex-Server, `get_metadata`
-   auf der Components-Page — **vollstaendig**: jede gefundene Komponente mit Node-ID, Typ,
+1. `get_metadata` auf der Components-Page — **vollstaendig**: jede gefundene Komponente mit Node-ID, Typ,
    **allen** Variant-Properties samt Optionen und Default. Das ist das Inventar fuer
    Pflichtschritt F.2/F.3; den verwendeten Erhebungsweg nennen.
 2. `get_variable_defs(<Hauptnode>)` und je relevanter Variante — Token-Klarnamen **mit** Werten.
@@ -541,7 +658,7 @@ ansehen; codex ruft die MCP-Tools zusaetzlich selbst auf (eigener Prozess, eigen
 und nutzt die Datei als Gegenprobe. Fehlt die Datei, ist der Subagent angewiesen, das zu **melden**
 statt auf Sekundaerquellen auszuweichen.
 
-### Phase 3 — Analyst 2: codex-CLI (gpt-5.6-sol / high)
+### Phase 3 — Analyst 2: codex-CLI (gpt-5.6-sol / medium)
 
 Kann parallel zu Phase 2 starten. Fuer **Binary-Discovery**, **Update** und die **Startregeln**
 gilt unveraendert `.claude/skills/super-review/references/codex-cli.md` — dort nachlesen und nicht
@@ -554,14 +671,15 @@ Pfad.
 RUST_LOG=info <codex> exec \
   --json \
   -m gpt-5.6-sol \
-  -c model_reasoning_effort="high" \
+  -c model_reasoning_effort="medium" \
   --sandbox workspace-write \
   --skip-git-repo-check \
   "Erstelle ein Grundlagendokument fuer das GitLab-Work-Item \
 https://git.office.brand-ad.de/guardops/issues/-/work_items/<N>. Lies die Datei \
 .agents/skills/issue-grundlage/SKILL.md im aktuellen Repository und befolge ihren Abschnitt \
-'Pflichtschritt F', den 'Analysekatalog' (A1-A9) und die 'Verbindliche Berichtsstruktur' \
-VOLLSTAENDIG. Lies ausserdem .codex/skills/figma-desktop/SKILL.md vollstaendig und verwende \
+'Pflichtschritt F', den 'Analysekatalog' (A1-A9, einschliesslich A6b) und die 'Verbindliche \
+Berichtsstruktur' \
+VOLLSTAENDIG. Lies ausserdem .agents/skills/figma-desktop/SKILL.md vollstaendig und verwende \
 ausschliesslich den lokalen MCP-Namespace mcp__figma_desktop__ fuer Figma. Die Anforderungen \
 liest du ausschliesslich aus dem Snapshot \
 tmp/issue-grundlage/issue<N>.md (Beschreibung, Tasks UND Kommentare) - lade nichts aus GitLab nach. \
@@ -575,9 +693,13 @@ nicht optional: eine Komponenten-Instanz zeigt nur ihren eingestellten Variant-S
 get_metadata auf die 'Components'-Page aufrufen, jede Instanz dagegen matchen und JEDE Komponente \
 in der Tabelle 4.2 disponieren; figma-desktop bietet \
 list_file_components_for_code_connect nicht an. Vermerke den Erhebungsweg in Abschnitt 11. Eine 'Luecke im \
-Figma' darfst du erst behaupten, nachdem dieser Lookup nichts ergeben hat. WICHTIG: Lies KEINEN \
-Quellcode - weder backend/src noch frontend/src noch Tests, Build- oder Konfigurationsdateien; \
-kein git diff, kein git log. Schreibe keinen Implementierungsplan. Aendere KEINE Datei ausser \
+Figma' darfst du erst behaupten, nachdem dieser Lookup nichts ergeben hat. Bestandscode DARFST \
+und SOLLST du lesen: backend/src, frontend/src, Tests, Build- und Konfigurationsdateien sowie git \
+log. Erweitert das Work Item ein bestehendes Backend-Feature oder eine bestehende UI, ist die \
+Bestandsanalyse A6b PFLICHT - Abschnitt '6b. Bestandsanalyse' mit je einer Zeile pro AK, \
+Einstufung neu/Wiederverwendung/Erweiterung/Aenderung/unklar und Beleg als Pfad:Zeile. Gibt es \
+keinen Bestandsbezug, begruende das in 6b in einem Satz samt der erfolglosen Suchbegriffe. \
+Schreibe keinen Implementierungsplan und entwirf in 6b keine Loesung - nur den Befund. Aendere KEINE Datei ausser \
 deiner Ergebnisdatei tmp/item<N>-gpt5.6-sol.md und nimm nichts in Git auf. Schreibe NICHT nach \
 docs/ - das Verzeichnis ist allein dem finalen Dokument vorbehalten, das ein anderer Agent \
 erstellt." \
@@ -610,7 +732,7 @@ dem in Figma Desktop aktiven Dokument. `<FILEKEY>` bleibt als Quellenbeleg fuer 
 die Components-Page der aktiven Datei und benoetigt dafuer keinen `fileKey`-Toolparameter.
 
 **Die lokale Tool-Vorgabe nicht zu einer allgemeinen „installed Figma integration" abschwaechen.**
-Der Codex-Lauf muss `.codex/skills/figma-desktop/SKILL.md` lesen, den exakten Namespace
+Der Codex-Lauf muss `.agents/skills/figma-desktop/SKILL.md` lesen, den exakten Namespace
 `mcp__figma_desktop__*` entdecken und verwenden. Ein Ergebnis aus dem gehosteten Figma-Plug-in,
 Web-Browsing oder der REST-API erfuellt Pflichtschritt F nicht.
 
@@ -624,13 +746,18 @@ muss dann im Kopf ausweisen, dass es **nicht** doppelt belegt ist.
 Erst weiter, wenn **beide** Dateien existieren, nicht leer sind und die Abschnitte 0–11 der
 Berichtsstruktur enthalten. Zusaetzlich pruefen, ob Abschnitt 4.2 (Varianten-Disposition) in beiden
 Dateien vorhanden und gefuellt ist — fehlt sie, ist die betroffene Analyse laut Pflichtschritt F
-unvollstaendig; das im Kopf des Enddokuments vermerken, weil es die Konsens-Zaehlung verzerrt.
+unvollstaendig; das im Kopf des Hauptdokuments vermerken, weil es die Konsens-Zaehlung verzerrt.
+Ebenso pruefen, ob **Abschnitt 6b** vorhanden ist: entweder mit Zeilen samt `Pfad:Zeile`-Belegen
+oder mit der Begruendung, warum es keinen Bestandsbezug gibt. Fehlt 6b ganz, ist die Analyse
+unvollstaendig — auch das im Kopf vermerken.
 
 ### Phase 5 — Zusammenfuehren (Subagent)
 
-Einen Subagenten mit `subagent_type: "issue-grundlage-merger"` starten (Opus 5 / High,
+Einen Subagenten mit `subagent_type: "issue-grundlage-merger"` starten (Opus 5 / Medium,
 `.claude/agents/issue-grundlage-merger.md`). Er liest **nur** die zwei Analyse-Dokumente — er prueft
-weder Issue noch Figma nach und fuehrt keine dritte Analyse durch.
+weder Issue noch Figma nach und fuehrt keine dritte Analyse durch. Der Prompt uebergibt `<N>`, die
+zwei Quellpfade und **alle drei** Zielpfade (`docs/item<N>-final.md`,
+`docs/item<N>-widersprueche.md`, `docs/item<N>-klaerung.md`).
 
 > **Der Merger liefert Teil-Dateien, der Orchestrator fuegt sie zusammen.** Das Enddokument wird
 > 60–200 KB gross und passt **nicht** in einen `Write`: der Lauf reisst die Ausgabegrenze und haengt
@@ -640,12 +767,27 @@ weder Issue noch Figma nach und fuehrt keine dritte Analyse durch.
 > `Edit` ist **kein** Ausweg: es ist in Subagenten dieser Umgebung gesperrt („Edit is disabled for
 > this session, in subagents as well as here"), obwohl es in der Tool-Liste steht — es in die
 > `tools:`-Zeile aufzunehmen aendert daran nichts. Der Merger schreibt daher mehrere Dateien unter
-> `tmp/` (`…teil1.md` = 0–4, `…teil2a.md` = 5–6, `…teil2b.md` = 7–9, `…teil2c.md` = 10–12) und nennt
-> sie in seiner Abschlussmeldung. Der Orchestrator haengt sie in dieser Reihenfolge zusammen:
+> `tmp/` und nennt sie in seiner Abschlussmeldung:
+>
+> | Teil-Datei unter `tmp/` | Inhalt | Ziel in `docs/` |
+> | --- | --- | --- |
+> | `item<N>-final.teil1.md` | Abschnitte 0, 0b, 1–4 | `item<N>-final.md` |
+> | `item<N>-final.teil2a.md` | Abschnitte 5, 6 und 6b | `item<N>-final.md` |
+> | `item<N>-final.teil2b.md` | Abschnitte 7, 8, die Verweis-Stubs 9 und 10, 11, 12 | `item<N>-final.md` |
+> | `item<N>-widersprueche.md` | Abschnitt 9 vollstaendig | `item<N>-widersprueche.md` |
+> | `item<N>-klaerung.md` | Abschnitt 10 vollstaendig | `item<N>-klaerung.md` |
+>
+> Der Orchestrator baut daraus die drei Enddokumente:
 >
 > ```bash
-> cat tmp/item<N>-final.teil1.md tmp/item<N>-final.teil2a.md tmp/item<N>-final.teil2b.md tmp/item<N>-final.teil2c.md > docs/item<N>-final.md
+> cat tmp/item<N>-final.teil1.md tmp/item<N>-final.teil2a.md tmp/item<N>-final.teil2b.md > docs/item<N>-final.md
+> cp  tmp/item<N>-widersprueche.md docs/item<N>-widersprueche.md
+> cp  tmp/item<N>-klaerung.md      docs/item<N>-klaerung.md
 > ```
+>
+> Werden die Widerspruchs- oder die Klaerungsliste selbst zu gross fuer einen `Write`, splittet der
+> Merger sie ebenfalls (`item<N>-klaerung.teil1.md`, `…teil2.md`, …) und nennt die Reihenfolge; der
+> Orchestrator haengt sie dann genauso mit `cat` zusammen.
 >
 > Bricht ein Lauf trotzdem mittendrin ab: **nicht von vorn starten.** Vorhandene Teile sichern und
 > einen Fortsetzungslauf beauftragen, der sie liest und nur die fehlenden Abschnitte als neue
@@ -661,21 +803,30 @@ Auftrag:
 2. **Einseitige Punkte uebernehmen, nicht wegkuerzen:** was nur ein Dokument enthaelt, kommt mit
    `[nur Opus 5]` bzw. `[nur gpt-5.6-sol]` ins Enddokument. Das gilt fuer AK, Figma-Nodes,
    Varianten-Zeilen, Detailvorgaben, Scope-Kandidaten und offene Punkte gleichermassen.
-3. **Widersprueche zwischen den Dokumenten** in einen eigenen Abschnitt, mit beiden Aussagen im
+3. **Widersprueche zwischen den Dokumenten** in das Widerspruchsdokument, mit beiden Aussagen im
    Wortlaut, den jeweiligen Belegen (Node-ID / Issue-Stelle) und der Auswirkung. Jeder solche
    Widerspruch wird **zusaetzlich** als Klaerungspunkt `U…` gefuehrt — **der Nutzer muss ihn
    entscheiden**; der Merger entscheidet nicht selbst und mittelt nicht.
 4. **Klaerungsliste vereinen und durchnummerieren** (`U1`, `U2`, …), Duplikate zusammenfuehren, die
-   Herkunft je Punkt nennen. Diese Liste ist das Arbeitsergebnis fuer den Nutzer und steht
-   **zusaetzlich** ganz oben im Dokument als Kurzliste.
-5. **Vollstaendigkeit:** jede AK-Zeile, jede Node-ID und jeder offene Punkt aus beiden Dokumenten
-   muss im Enddokument wiederzufinden sein.
+   Herkunft je Punkt nennen. Diese Liste ist das Arbeitsergebnis fuer den Nutzer; sie steht
+   ausformuliert in `docs/item<N>-klaerung.md` und **zusaetzlich** als Kurzliste in Abschnitt 0b
+   des Hauptdokuments.
+5. **Vollstaendigkeit:** jede AK-Zeile, jede Node-ID, jede Bestandszeile aus 6b und jeder offene
+   Punkt aus beiden Dokumenten muss in einem der drei Enddokumente wiederzufinden sein. Stufen die
+   Analysten dasselbe AK unterschiedlich ein (etwa `neu` gegen `Erweiterung`), stehen **beide**
+   Einstufungen mit ihrem jeweiligen Beleg in der Zeile, und der Fall wird zusaetzlich als
+   Widerspruch 9.2 gefuehrt. Der Merger liest **keinen** Quellcode nach, um das zu entscheiden.
+6. **Die drei Dokumente verlinken:** das Hauptdokument verweist an den Stellen 9 und 10 auf die
+   ausgelagerten Dokumente, beide ausgelagerten Dokumente verweisen im Kopf zurueck auf das
+   Hauptdokument. Relative Links ohne Verzeichnisanteil (`item<N>-klaerung.md`), weil alle drei
+   Dateien in `docs/` liegen.
 
-Enddokument `docs/item<N>-final.md` mit dieser Gliederung:
+Hauptdokument `docs/item<N>-final.md` mit dieser Gliederung:
 
 ```markdown
 # Grundlagendokument (final) Work Item <N> — „<Titel>"
-> Status: ENTWURF — erst nach Klaerung aller Punkte in Abschnitt 10 Grundlage fuer den Implementierungsplan.
+> Status: ENTWURF — erst nach Klaerung aller Punkte in [item<N>-klaerung.md](item<N>-klaerung.md) Grundlage fuer den Implementierungsplan.
+> Ausgelagert: [Widersprueche (9)](item<N>-widersprueche.md) · [Offene Punkte (10)](item<N>-klaerung.md)
 
 ## 0. Kopf   (Quellen, Analysten + ob doppelt belegt, fileKey, Nodes, Datum, Zahlen)
 ## 0b. Klaerungsliste — Kurzform   (U1…Un als Checkliste, je eine Zeile)
@@ -685,31 +836,107 @@ Enddokument `docs/item<N>-final.md` mit dieser Gliederung:
 ## 4. Figma-Inventar (4.1 Frames · 4.2 Varianten-Disposition · 4.3 Design-Specs)
 ## 5. Zuordnung AK ↔ Figma                          (Status je AK; bei Uneinigkeit beide Status)
 ## 6. Detailspezifikation je AK
+## 6b. Bestandsanalyse — Neu, Wiederverwendung, Aenderung   (je AK eine Zeile; bei Uneinigkeit beide Einstufungen)
 ## 7. Im Figma vorhanden, im Issue nicht gefordert
 ## 8. Im Issue gefordert, im Figma nicht auffindbar
-## 9. Widersprueche
-### 9.1 Issue ↔ Figma / Issue ↔ Issue / Figma ↔ Figma   (aus beiden Analysen)
-### 9.2 Analyse ↔ Analyse — Opus 5 gegen gpt-5.6-sol    (vom Nutzer zu entscheiden)
-## 10. Offene Punkte — Klaerung durch den Nutzer     (U1…Un, ausformuliert)
+## 9. Widersprueche → [item<N>-widersprueche.md](item<N>-widersprueche.md)
+- Inhaltlich (9.1): <n> · Analyse ↔ Analyse (9.2): <n> · davon als Klaerungspunkt gefuehrt: <n>
+## 10. Offene Punkte — Klaerung durch den Nutzer → [item<N>-klaerung.md](item<N>-klaerung.md)
+- <n> Punkte (U1…Un); Kurzliste in Abschnitt 0b
 ## 11. Vollstaendigkeitspruefung und Annahmen
 ## 12. Uebersichtstabelle
 | AK-ID | Kurztext | Node-ID | Status | Opus 5 | gpt-5.6-sol | offen (U) |
+## 13. Aufgenommene TODOs (Phase 5b)
+| TODO | Quelle (Datei:Zeile) | Bezug (AK-ID) | Entscheidung des Nutzers |
 ```
+
+Die Abschnitte 9 und 10 bleiben als **Ueberschrift mit Kurzzahlen und Link** im Hauptdokument
+stehen — die Nummerierung 0–12 bleibt damit lueckenlos, und wer das Hauptdokument liest, sieht auf
+einen Blick, wie viele Widersprueche und offene Punkte es gibt.
+
+Ausgelagertes Dokument `docs/item<N>-widersprueche.md`:
+
+```markdown
+# Widersprueche — Grundlagendokument Work Item <N> — „<Titel>"
+> Abschnitt 9 des Grundlagendokuments [item<N>-final.md](item<N>-final.md). Stand: <YYYY-MM-DD>.
+
+## 9.1 Issue ↔ Figma / Issue ↔ Issue / Figma ↔ Figma   (aus beiden Analysen)
+| # | Art | Seite A (Beleg) | Seite B (Beleg) | Auswirkung | Klaerungspunkt |
+
+## 9.2 Analyse ↔ Analyse — Opus 5 gegen gpt-5.6-sol    (vom Nutzer zu entscheiden)
+| # | Aussage Opus 5 (Wortlaut + Beleg) | Aussage gpt-5.6-sol (Wortlaut + Beleg) | Auswirkung | Klaerungspunkt |
+```
+
+Ausgelagertes Dokument `docs/item<N>-klaerung.md`:
+
+```markdown
+# Offene Punkte — Klaerung durch den Nutzer — Work Item <N> — „<Titel>"
+> Abschnitt 10 des Grundlagendokuments [item<N>-final.md](item<N>-final.md). Kurzliste dort in
+> Abschnitt 0b; Widersprueche in [item<N>-widersprueche.md](item<N>-widersprueche.md).
+> Stand: <YYYY-MM-DD>.
+
+### U1 — <Frage>
+- **Bezug:** …   (AK-ID / Node-ID / Issue-Stelle; bei Analyse-Widerspruch die Nummer aus 9.2)
+- **Herkunft:** [beide] / [nur Opus 5] / [nur gpt-5.6-sol]
+- **Warum blockierend:** …
+- **Optionen:** …
+- **Empfehlung:** …
+```
+
+Die `U`-Nummerierung ist ueber alle drei Dokumente hinweg **dieselbe**: sie wird in Abschnitt 0b
+des Hauptdokuments vergeben, in `item<N>-klaerung.md` ausformuliert und aus dem
+Widerspruchsdokument nur referenziert.
+
+Abschnitt 13 entsteht erst in Phase 5b und bleibt mit dem Vermerk `kein passender TODO gefunden`
+stehen, wenn der Abgleich leer ausging — so ist belegt, dass er stattgefunden hat.
 
 Bei uneinheitlichem Status **beide Werte nennen** (z. B. `belegt (Opus5) / teilweise belegt
 (gpt5.6-sol)`) und **nicht** mitteln.
+
+### Phase 5b — TODO-Abgleich (Orchestrator, mit Rueckfrage)
+
+Im Repo liegen gesammelte, noch nicht eingeplante Punkte in `todo.md`-Dateien. Ein neues Work Item
+ist die Gelegenheit, die passenden davon mitzunehmen, statt sie ein weiteres Mal zu uebergehen.
+
+1. Alle Dateien einsammeln — auch kuenftige, deshalb suchen statt aufzaehlen:
+
+   ```bash
+   ls docs/todo.md backend/docs/todo.md frontend/docs/todo.md 2>/dev/null
+   ```
+
+2. Jede gefundene Datei **ganz** lesen und jeden offenen Eintrag (unerledigt, also kein `[x]`)
+   gegen das Enddokument halten. Passend ist ein TODO, wenn es **dieselbe Komponente, denselben
+   Endpunkt, denselben Screen oder dasselbe AK** betrifft wie das Work Item. Reine Themennaehe
+   („auch Frontend", „auch Tests") reicht nicht — solche Treffer gar nicht erst vorlegen.
+3. Gibt es Treffer, dem Nutzer **jeden einzeln** vorlegen: TODO-Text, `Datei:Zeile`, das AK, zu dem
+   er passt, und eine Empfehlung mit Begruendung. Dann per `AskUserQuestion` fragen, welche davon in
+   dieses Work Item aufgenommen werden sollen (Mehrfachauswahl, Optionen mindestens
+   `aufnehmen` / `nicht aufnehmen`). **Nicht selbst entscheiden und nicht stillschweigend
+   uebernehmen.**
+4. Abschnitt 13 an `docs/item<N>-final.md` anhaengen: je Treffer eine Zeile mit der Entscheidung.
+   Aufgenommene TODOs zusaetzlich beim zugehoerigen AK in Abschnitt 6 als
+   `Zusaetzlich aus todo.md (<Datei:Zeile>): …` vermerken; passt ein aufgenommener TODO zu keinem
+   AK, wird er als eigenes `AK-T<x>` gefuehrt.
+5. **Die `todo.md` selbst bleibt unveraendert.** Erledigt ist ein TODO erst, wenn der Code steht —
+   ausgetragen wird er dort, nicht hier.
+
+Keine Treffer: Abschnitt 13 mit `kein passender TODO gefunden` schreiben und weiter zu Phase 6.
 
 ### Phase 6 — Bericht an den Nutzer
 
 Kurz zusammenfassen, ohne das Enddokument abzuschreiben: Anzahl AK, davon `belegt` /
 `teilweise belegt` / `im Figma nicht gefunden`, Anzahl Widersprueche (getrennt nach inhaltlich und
 Analyse-gegen-Analyse), **die Klaerungsliste `U1…Un` als kompakte Aufzaehlung** — das ist der Punkt,
-an dem der Nutzer arbeitet — und die Dateipfade: `docs/item<N>-final.md` als Ergebnis, die beiden
-`tmp/item<N>-*.md` als Belege zum Nachschlagen.
+an dem der Nutzer arbeitet — und die Dateipfade: `docs/item<N>-final.md` als Hauptdokument,
+`docs/item<N>-widersprueche.md` und `docs/item<N>-klaerung.md` als die beiden ausgelagerten
+Arbeitslisten, dazu `tmp/item<N>-opus5.md` und `tmp/item<N>-gpt5.6-sol.md` als Belege zum
+Nachschlagen. Dazu eine Zeile zum TODO-Abgleich: welche TODOs
+aufgenommen wurden, welche der Nutzer abgelehnt hat — oder dass keiner passte.
 
 Dann **stoppen**. Kein Implementierungsplan, keine Codeaenderung, kein Commit. Erst wenn der Nutzer
-die offenen Punkte beantwortet hat, werden die Antworten in `docs/item<N>-final.md` eingearbeitet
-(Status `ENTWURF` im Kopf entfernen) — und erst danach entsteht daraus der Plan.
+die offenen Punkte beantwortet hat, werden die Antworten in `docs/item<N>-klaerung.md`
+eingearbeitet, die Kurzliste 0b im Hauptdokument abgehakt und der Status `ENTWURF` in dessen Kopf
+entfernt — und erst danach entsteht daraus der Plan.
 
 ## Zusammenspiel der Phasen
 
@@ -717,14 +944,18 @@ die offenen Punkte beantwortet hat, werden die Antworten in `docs/item<N>-final.
 Phase 0  <N> → Work Item + Tasks (GraphQL-Hierarchie) + alle Kommentare
          → Snapshot tmp/issue-grundlage/issue<N>.md; alte Ergebnisdateien bereinigen
 Phase 1  Figma-Link aus Snapshot; fehlt er → NACHFRAGEN (Screenshots gelten nicht)
-Phase 2  Opus 5 / High        ─┐  gleicher Snapshot, gleicher Katalog,
-Phase 3  codex gpt-5.6-sol/high ┘  Pflichtschritt F verpflichtend
-Phase 4  Barriere: beide Dateien da, Abschnitte 0–11 inkl. 4.2 vorhanden
+Phase 2  Opus 5 / Medium          ─┐  gleicher Snapshot, gleicher Katalog,
+Phase 3  codex gpt-5.6-sol / medium  ┘  Pflichtschritt F verpflichtend
+Phase 4  Barriere: beide Dateien da, Abschnitte 0–11 inkl. 4.2 und 6b vorhanden
 Phase 5  Merger-Subagent: tmp/item<N>-opus5.md + tmp/item<N>-gpt5.6-sol.md
-         → docs/item<N>-final.md  (einziges Artefakt in docs/)
+         → docs/item<N>-final.md          (Hauptdokument, 0-8 + 11-12 + Links auf 9/10)
+         → docs/item<N>-widersprueche.md  (Abschnitt 9)
+         → docs/item<N>-klaerung.md       (Abschnitt 10)
          (Gemeinsamkeiten · einseitige Punkte · Widersprueche → Klaerungsliste)
-Phase 6  Kurzbericht + Klaerungsliste an den Nutzer — ENDE
+Phase 5b docs/todo.md · backend/docs/todo.md · frontend/docs/todo.md gegen das Work Item
+         → passende TODOs dem Nutzer vorlegen (AskUserQuestion) → Abschnitt 13
+Phase 6  Kurzbericht + Klaerungsliste + TODO-Entscheidungen an den Nutzer — ENDE
 
-Kein Quellcode. Kein Plan. In docs/ landet nur item<N>-final.md; die beiden
+Bestand lesen ja (A6b), aendern nein. Kein Plan. In docs/ landen nur diese drei Dokumente; die beiden
 Analysen und der Snapshot bleiben unter tmp/ und werden nicht eingecheckt.
 ```

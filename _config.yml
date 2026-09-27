@@ -43,6 +43,7 @@ exclude:
   - vendor
   - "*.sh"
   - custom-reference.odt
+  - doc/powerpoints
 
 
 
