@@ -23,14 +23,26 @@ Zwei Dinge müssen stimmen, sonst bricht der Build:
 **1. Ruby 3.3** — nicht 3.4+/4.0. Das `github-pages`-Gem bringt Jekyll 3.x und
 Liquid 4.0.x mit; dort fehlen unter 3.4 Stdlib-Gems (`csv`, `base64`) und Liquid
 4.0.3 ruft noch `String#tainted?` auf. Auf diesem Rechner installiert als
-**Ruby 3.3.12 über rbenv**, im Projekt gepinnt via `.ruby-version`. Das
-macOS-System-Ruby (2.6.10 unter `/usr/bin/ruby`) wird nicht benutzt.
+**Ruby 3.3.12 über rbenv** (Homebrew `rbenv`, Versionen unter `~/.rbenv/versions`),
+im Projekt gepinnt via `.ruby-version`. Die Serve-Skripte rufen
+`eval "$(rbenv init - bash)"` auf und fallen nur ohne rbenv auf Homebrew
+`ruby@3.3` (3.3.11, `/opt/homebrew/opt/ruby@3.3/bin`) zurück. Das
+Standard-Homebrew-Ruby ist 4.0 und das macOS-System-Ruby 2.6.10 — beide nicht
+benutzen.
 
-> Hinweis: `localserve-only-published.sh` und `serve-unpublished.sh` setzen
-> `PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"` für eine Homebrew-Installation.
-> Dieser Pfad existiert hier **nicht** — das Prepend bleibt wirkungslos und der
-> rbenv-Shim greift, sodass trotzdem 3.3.12 läuft. Wer die Skripte anfasst:
-> beide Wege führen aktuell zum Ziel, aber nur rbenv ist real installiert.
+> Achtung: `~/.zshrc` stellt `/opt/homebrew/opt/ruby@3.3/bin` vor den PATH, und
+> ein `rbenv init` fehlt dort. In einer normalen Shell läuft darum Homebrew-Ruby
+> 3.3.11, nicht 3.3.12. Für manuelles `bundle exec …` vorher
+> `eval "$(rbenv init - zsh)"` ausführen oder `rbenv exec bundle exec …` benutzen.
+
+> Die nativen Gems in `vendor/bundle` (json, nokogiri, ffi, …) sind gegen die
+> `libruby` genau eines Rubys gelinkt. Beim Wechsel zwischen rbenv- und
+> Homebrew-Ruby kommt `LoadError: linked to incompatible …/libruby.3.3.dylib`.
+> Lösung: `bundle pristine` mit dem gewünschten Ruby.
+
+> Nach `bundle update` bzw. einem Renovate-Merge fehlen die neuen Gem-Versionen
+> in `vendor/bundle` — die Skripte scheitern dann mit `Bundler::GemNotFound`
+> („Could not find … in locally installed gems"). Lösung: `bundle install`.
 
 **2. Eine UTF-8-Locale.** `jekyll-sass-converter` 1.5.2 liest `.scss` sonst als
 US-ASCII und scheitert an den UTF-8-Partials des Themes:
