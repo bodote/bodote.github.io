@@ -11,25 +11,46 @@ toc: true
 classes: wide
 ---
 
-# Meine Hypothesen
+# Meine Grund-Hypothesen
 * Coding Agent sind inzwischen "schlau" genugt, um die komplette Produktion des Codes incl. Code-Review, Deployment etc. zu übernehmen
 * das geht aber nicht "einfach so"
 * Der Schlüssel ist die Orchestrierung, Guard Rails in Form von z.B.  Architekturvorgaben, prüfbaren Qualitätskritereien, die so engmaschig und zuverlässig sind, dass die Entwickler 100% vertrauen darin haben.
+* letztelich das Berufsbild des SW-Entwicklers löst sich auf. 
+  * was bleibt ist vieleicht der Systemarchitekt der technischen Context und technische Anforderungen zusammenstellt
+  * und mit Sicherheit der Produktplaner/Anforderungsanalyst/Anwenderversteher, der den fachlichen Context zusammenstellt. 
+
+# Mögliche Wege dorthin
+
 * Diese Architekturvorgaben, prüfbaren Qualitätskritereien sind als **Skills** realisiert, die aber NICHT von anderen Übernommen werden sondern werden von dem selben Entwicklerteam selbst entwickelt und immer weiter verfeinert.
 * zu "Fremden" Skills kann vieleicht noch ein einzelner Entwickler 100% vertrauen haben, aber was, wenn sich doch Fehler einschleichen? Wer fixed diesen nachhaltig , sodass die auch in Zukunft nicht mehr auftreten ?
-* "Fertige Skillsets" wie z.B. GSD oder BMAD sind beeindruckend, funktionieren für mich für kleinere Projekte, bei denen nicht viel auf dem Spiel steht. Aber für große Projekt habe ich keine 100% vertrauen 
-* Daher: Skill müssen (jedenfalls derzeit noch) selbst entwickelt werden.
+* Entwicklerteams sollen volle Verantwortung für erzeugten Code übernehmen, welche **fremden** Resourcen können sie guten Gewissens verantworten ?
+  * etablierte Programmiersprechen (z.B. Java, Typescipt ) sind ok, jahrelange gute Erfahrung
+  * etablierte Frameworks (Spring, Angular) ebenso 
+  * sonstige zusätzliche Libraries, teilweise auch je nach Reifegrad und Community support auch ok
+  * fremde Skillsets (GSD, BMAD, OpenSpec, etc. ) gibt es noch nicht lange genug um ähnliches Vertrauen zu rechtfertigen. Reifegrad muss als unzureichend bewertet werden. 
+  * "Fertige Skillsets" wie sind beeindruckend, funktionieren für mich für kleinere Projekte, bei denen nicht viel auf dem Spiel steht. Aber für große Projekt habe ich (noch) kein 100% vertrauen 
+* Daher: Skill müssen (jedenfalls derzeit noch) von Teams für größere längerfristige Projekte selbst entwickelt werden.
 * Skills werden inkrementell verbessert
+* Team sollte genau verstehen, was in den Skills drin steht.
 * Skills aus anderen Quellen sind [potentiell extrem gefährlich](https://www.artificialintelligence-news.com/news/ai-agents-are-becoming-a-new-malware-distribution-channel/) :
    * Roughly 7,600 fake GitHub repositories, 6,600 fraudulent profiles and more than 14 million downloads: that is the scale of FakeGit, a malware campaign documented by Island in July 2026. Over 800 repositories impersonated AI skills and MCP servers, distributing SmartLoader and the StealC infostealer.
   * Fake repositories are nothing new. The surprise was who recommended them.
   * Gemini and ChatGPT independently suggested the same malicious walmart-mcp repository. The agents found the attacker’s project and handed users installation instructions.
   * Attackers no longer need to deceive users directly. They can deceive the assistants users trust.
-* auch Codeview muss drastisch vereinfacht werden, z.B. durch
-  * coding agents selbst (mit review- skills)
-  * oder andere Ideen wie die von Viktor Rentea 
 
-# Korrekturschleifen vermeiden durch bessere Anforderungsanalyse
+# Skills im Projekt
+* wir haben viele Skills im Projekt, von unterschiedlichen Entwicklern, für die verschiedenen Entwicklungsstadien eines Features/Work-Item/Issues. 
+  * Anforderungsanalyse
+  * Planerstellung
+  * NICHT fürs eigentliche Coding: da reicht der Prompt : "setze Plan XY um"
+  * Qualitätssicherung und Code Review
+
+
+Im Folgenden besprechen wir nur den ... :
+# Skill zur Anforderungsanalyse
+der Skill heist bei uns "issue-grundlage"
+ 
+## Korrekturschleifen vermeiden durch bessere Anforderungsanalyse
 Um Korrekturschleifen zu vermeiden habe wir den "Issue-Grundlage" Skill iterativ entwickelt, der eine möglichst vollständige, umfassenden und widerspruchsfreie Grundlagen für die Planung eines Features (Workitem/Issue) liefern soll, sodass Planerstellung und Umsetzung ohne weitere Rückfragen vom Coding Agent durchgeführt werden können. 
 
 Vorraussetzung: Monorepo für BE **UND** FE, eine Trennung von beiden macht m.E. für Codings Agents keinen Sinn

@@ -17,3 +17,6 @@ classes: wide
   * ein Pullrequest von 5000 Zeilen in 1 Tag erzeugt benötigt, dann mind. 2 Tage zum Reviewen
   * Streng genommen sogar das doppelte, weil der Entwickler der den Code erzeugen lies UND ein weitere Entwickler müssen den Code reviewen , wenn man weiterhin traditionell arbeiten will , also brauchen wir fürs review 4 Tage. 
   * der Alltag eines Entwickler würden dann zu 80% nur noch aus Code reviews bestehen. -> unrealistisch.
+* also Codereview muss drastisch vereinfacht werden, z.B. durch
+  * coding agents selbst (mit review- skills)
+  * oder andere Ideen wie die von Viktor Rentea 
