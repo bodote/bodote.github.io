@@ -1,5 +1,5 @@
 ---
-title: "Der Issue Grundlage Skill: /issue-grundlage"
+title: "Der Issue-Grundlage-Skill: /issue-grundlage"
 date: 2026-09-27
 published: true
 visible: true
@@ -12,40 +12,40 @@ classes: wide
 ---
 
 # Meine Grund-Hypothesen
-* Coding Agent sind inzwischen "schlau" genugt, um die komplette Produktion des Codes incl. Code-Review, Deployment etc. zu übernehmen
+* Coding Agents sind inzwischen "schlau" genug, um die komplette Produktion des Codes inkl. Code-Review, Deployment etc. zu übernehmen
 * das geht aber nicht "einfach so"
-* Der Schlüssel ist die Orchestrierung, Guard Rails in Form von z.B.  Architekturvorgaben, prüfbaren Qualitätskritereien, die so engmaschig und zuverlässig sind, dass die Entwickler 100% vertrauen darin haben.
+* Der Schlüssel sind Orchestrierung und Guard Rails in Form von z. B. Architekturvorgaben und prüfbaren Qualitätskriterien, die so engmaschig und zuverlässig sind, dass die Entwickler 100 % Vertrauen darin haben.
 
 ![Agent arbeitet innerhalb von Leitplanken aus Skills](/assets/images/issue-grundlage/03-guardrails.svg){: .align-center}
 
-* letztelich das Berufsbild des SW-Entwicklers löst sich auf. 
-  * was bleibt ist vieleicht der Systemarchitekt der technischen Context und technische Anforderungen zusammenstellt
-  * und mit Sicherheit der Produktplaner/Anforderungsanalyst/Anwenderversteher, der den fachlichen Context zusammenstellt. 
+* letztlich löst sich das Berufsbild des SW-Entwicklers auf. 
+  * was bleibt, ist vielleicht der Systemarchitekt, der technischen Kontext und technische Anforderungen zusammenstellt
+  * und mit Sicherheit der Produktplaner/Anforderungsanalyst/Anwenderversteher, der den fachlichen Kontext zusammenstellt. 
 
 ![Das Berufsbild des SW-Entwicklers teilt sich in Systemarchitekt und Produktplaner](/assets/images/issue-grundlage/02b-berufsbild.svg){: .align-center}
 
 
 # Mögliche Wege dorthin
 
-* Diese Architekturvorgaben, prüfbaren Qualitätskritereien sind als **Skills** realisiert, die aber NICHT von anderen Übernommen werden sondern werden von dem selben Entwicklerteam selbst entwickelt und immer weiter verfeinert.
-* zu "Fremden" Skills kann vieleicht noch ein einzelner Entwickler 100% vertrauen haben, aber was, wenn sich doch Fehler einschleichen? Wer fixed diesen nachhaltig , sodass die auch in Zukunft nicht mehr auftreten ?
+* Diese Architekturvorgaben und prüfbaren Qualitätskriterien sind als **Skills** realisiert, die aber NICHT von anderen übernommen, sondern vom selben Entwicklerteam selbst entwickelt und immer weiter verfeinert werden.
+* in "fremde" Skills kann vielleicht noch ein einzelner Entwickler 100 % Vertrauen haben, aber was, wenn sich doch Fehler einschleichen? Wer fixt diese nachhaltig, sodass sie auch in Zukunft nicht mehr auftreten?
 
 ![Kreislauf eigener Skills gegenüber einem fremden Skill als Blackbox](/assets/images/issue-grundlage/04-eigene-skills.svg){: .align-center}
 
-* Entwicklerteams sollen volle Verantwortung für erzeugten Code übernehmen, welche **fremden** Resourcen können sie guten Gewissens verantworten ?
-  * etablierte Programmiersprechen (z.B. Java, Typescipt ) sind ok, jahrelange gute Erfahrung
+* Entwicklerteams sollen volle Verantwortung für erzeugten Code übernehmen. Welche **fremden** Ressourcen können sie guten Gewissens verantworten?
+  * etablierte Programmiersprachen (z. B. Java, TypeScript) sind ok, jahrelange gute Erfahrung
   * etablierte Frameworks (Spring, Angular) ebenso 
-  * sonstige zusätzliche Libraries, teilweise auch je nach Reifegrad und Community support auch ok
-  * fremde Skillsets (GSD, BMAD, OpenSpec, etc. ) gibt es noch nicht lange genug um ähnliches Vertrauen zu rechtfertigen. Reifegrad muss als unzureichend bewertet werden. 
-  * "Fertige Skillsets" wie sind beeindruckend, funktionieren für mich für kleinere Projekte, bei denen nicht viel auf dem Spiel steht. Aber für große Projekt habe ich (noch) kein 100% vertrauen 
+  * sonstige zusätzliche Libraries sind, je nach Reifegrad und Community-Support, teilweise auch ok
+  * fremde Skillsets (GSD, BMAD, OpenSpec etc.) gibt es noch nicht lange genug, um ähnliches Vertrauen zu rechtfertigen. Ihr Reifegrad muss als unzureichend bewertet werden. 
+  * "Fertige Skillsets" wie z. B. GSD, BMAD oder OpenSpec sind beeindruckend und funktionieren für mich bei kleineren Projekten, bei denen nicht viel auf dem Spiel steht. Aber für große Projekte habe ich (noch) kein hundertprozentiges Vertrauen. 
 
 ![Vertrauen in fremde Ressourcen: Sprachen, Frameworks, Libraries, Skillsets](/assets/images/issue-grundlage/03b-verantwortung.svg){: .align-center}
 
-* Daher: Skill müssen (jedenfalls derzeit noch) von Teams für größere längerfristige Projekte selbst entwickelt werden.
+* Daher: Skills müssen (jedenfalls derzeit noch) für größere, längerfristige Projekte von den Teams selbst entwickelt werden.
 * Skills werden inkrementell verbessert
-* Team sollte genau verstehen, was in den Skills drin steht.
-* Skills aus anderen Quellen sind [potentiell extrem gefährlich](https://www.artificialintelligence-news.com/news/ai-agents-are-becoming-a-new-malware-distribution-channel/) :
-   * Roughly 7,600 fake GitHub repositories, 6,600 fraudulent profiles and more than 14 million downloads: that is the scale of FakeGit, a malware campaign documented by Island in July 2026. Over 800 repositories impersonated AI skills and MCP servers, distributing SmartLoader and the StealC infostealer.
+* Das Team sollte genau verstehen, was in den Skills drinsteht.
+* Skills aus anderen Quellen sind [potentiell extrem gefährlich](https://www.artificialintelligence-news.com/news/ai-agents-are-becoming-a-new-malware-distribution-channel/):
+  * Roughly 7,600 fake GitHub repositories, 6,600 fraudulent profiles and more than 14 million downloads: that is the scale of FakeGit, a malware campaign documented by Island in July 2026. Over 800 repositories impersonated AI skills and MCP servers, distributing SmartLoader and the StealC infostealer.
   * Fake repositories are nothing new. The surprise was who recommended them.
   * Gemini and ChatGPT independently suggested the same malicious walmart-mcp repository. The agents found the attacker’s project and handed users installation instructions.
   * Attackers no longer need to deceive users directly. They can deceive the assistants users trust.
@@ -54,40 +54,40 @@ classes: wide
 
 
 # Skills im Projekt
-* wir haben viele Skills im Projekt, von unterschiedlichen Entwicklern, für die verschiedenen Entwicklungsstadien eines Features/Work-Item/Issues. 
+* wir haben viele Skills im Projekt, von unterschiedlichen Entwicklern, für die verschiedenen Entwicklungsstadien eines Features/Work Items/Issues. 
   * Anforderungsanalyse
   * Planerstellung
-  * NICHT fürs eigentliche Coding: da reicht der Prompt : "setze Plan XY um"
+  * NICHT fürs eigentliche Coding: da reicht der Prompt: "setze Plan XY um"
   * Qualitätssicherung und Code Review
 
 ![Skills je Entwicklungsstadium, Coding ohne Skill](/assets/images/issue-grundlage/05b-skills-projekt.svg){: .align-center}
 
 
 
-Im Folgenden besprechen wir nur den ... :
+Im Folgenden besprechen wir nur den ...:
 # Skill zur Anforderungsanalyse
-der Skill heist bei uns "issue-grundlage"
+der Skill heißt bei uns "issue-grundlage"
 
 ![Issue und Figma werden über den Skill zur Grundlage](/assets/images/issue-grundlage/01-titel.svg){: .align-center}
 
  
 ## Korrekturschleifen vermeiden durch bessere Anforderungsanalyse
-Um Korrekturschleifen zu vermeiden habe wir den "Issue-Grundlage" Skill iterativ entwickelt, der eine möglichst vollständige, umfassenden und widerspruchsfreie Grundlagen für die Planung eines Features (Workitem/Issue) liefern soll, sodass Planerstellung und Umsetzung ohne weitere Rückfragen vom Coding Agent durchgeführt werden können. 
+Um Korrekturschleifen zu vermeiden, haben wir den "Issue-Grundlage"-Skill iterativ entwickelt, der eine möglichst vollständige, umfassende und widerspruchsfreie Grundlage für die Planung eines Features (Work Item/Issue) liefern soll, sodass Planerstellung und Umsetzung ohne weitere Rückfragen vom Coding Agent durchgeführt werden können. 
 
-Vorraussetzung: Monorepo für BE **UND** FE, eine Trennung von beiden macht m.E. für Codings Agents keinen Sinn
+Voraussetzung: Monorepo für BE **UND** FE, eine Trennung von beiden macht m. E. für Coding Agents keinen Sinn
 
 ![Ziel: vom Issue zur Grundlage, zum Plan und Code – ohne Korrekturschleifen](/assets/images/issue-grundlage/06-ziel.svg){: .align-center}
 
 
 ## Ausgangssituation:
 
-ich kopiere den Issue Text aus Gitlab in den Prompt. Funktioniert für reine Backend Task ok-ish, aber nicht nicht für Frontend
+Ich kopiere den Issue-Text aus GitLab in den Prompt. Funktioniert für reine Backend-Tasks ok-ish, aber nicht für Frontend.
 
 ### Das Problem 
 
-1. warum selber Kopieren? kann doch der coding agent auch!
+1. Warum selber kopieren? Kann doch der Coding Agent auch!
 
-2. Problem :  Anforderungen für FE liegen größtenteils im Figma. Aber : wir haben (noch) kein fertiges Design System, sondern nur die Entscheidung "spartan-ng" zu verwenden. "Spartan-ng" ist ein "shadcn"-Componentenset für Angular.
+2. Problem: Anforderungen für FE liegen größtenteils im Figma. Aber: Wir haben (noch) kein fertiges Design System, sondern nur die Entscheidung, "spartan-ng" zu verwenden. "Spartan-ng" ist ein "shadcn"-Komponentenset für Angular.
 
 ### Einschub: Shadcn:
 
@@ -105,43 +105,43 @@ This is not a component library. It is how you build your component library.
 
 ### Iteration 1
 
-* Skill für gitlab , basierend auf der `glab`-CLI
-* Figma-Dev-mode + Figma MCP -Server + Figma "Besipiel-Prompt kopieren"  Prompt mit Link in meinen Prompt kopieren
+* Skill für GitLab, basierend auf der `glab`-CLI
+* Figma Dev Mode + Figma-MCP-Server + Figma-Funktion "Beispiel-Prompt kopieren": den Prompt mit Link in meinen Prompt kopieren
  
 #### Jedoch:
 
-* Skill für gitlab läuft
-* Aber : Figma-Bespielprompt bring noch nicht die Detais für FE wie gewünscht: FE hat viele Fehler die alle nachgebessert werden müsse, nicht manuell aber mit je einem Prompt pro Problem, was viel Arbeit macht
+* Skill für GitLab läuft
+* Aber: Der Figma-Beispielprompt bringt noch nicht die Details für FE wie gewünscht: FE hat viele Fehler, die alle nachgebessert werden müssen – zwar nicht manuell, aber mit je einem Prompt pro Problem, was viel Arbeit macht
 
 ![Iteration 1: GitLab-Skill für Backend, Figma-Beispielprompt für Frontend](/assets/images/issue-grundlage/09-iteration1.svg){: .align-center}
 
 
 ### Iteration 2
-* Figma Skill der den Agent anweist auf **KEINEN FALL** ein Design auf grund eines Figma-PNG-Screenshots zu machen, sondern der den Agent zwingt die Figma - Design-Properties zu lesen und diese zu verwenden
-* Figma - Design-Properties  sind im Figma jedoch verteilt: 
-    * verschiedenen Aspekte des Designs stehen auf  verschiedenen "Ebenen" 
-    * in verschiedenen "Objecten", 
-    * Zukünftige aber für dieses aktuelle Issue noch nicht relevante Details sind auch schon drin, müssen (noch) ignoriert werden
-    * Coding agent schaft es nicht sich aus einem einzigen Firma Link die relevanten Punkte rauszupicken
-* daher: alle relevanten Figma links (Typischerweise 10-20) manuell zusammensuchen und ins Issue reinkopieren, genau an die Stellen im Issue, wo die zugehörigen Akzeptanzkriterien stehen. 
+* Figma-Skill, der den Agenten anweist, auf **KEINEN FALL** ein Design aufgrund eines Figma-PNG-Screenshots zu machen, sondern ihn zwingt, die Figma-Design-Properties zu lesen und diese zu verwenden
+* Figma-Design-Properties sind im Figma jedoch verteilt: 
+    * verschiedene Aspekte des Designs stehen auf verschiedenen "Ebenen" 
+    * in verschiedenen "Objekten", 
+    * zukünftige, aber für das aktuelle Issue noch nicht relevante Details sind auch schon drin und müssen (noch) ignoriert werden
+    * der Coding Agent schafft es nicht, sich aus einem einzigen Figma-Link die relevanten Punkte rauszupicken
+* daher: alle relevanten Figma-Links (typischerweise 10–20) manuell zusammensuchen und ins Issue reinkopieren, genau an die Stellen im Issue, wo die zugehörigen Akzeptanzkriterien stehen. 
 
 #### Jedoch
-* viel manuelle recherche in Figma, Entwickler muss die passenden Stellen suchen, die Links erzeugen und manuell ins Issue kopieren-> viel Arbeit
-* Ergebniss besser, aber nicht überzeugend, Coding Agent übersieht nach wie vor viele wichtige Design-Details
+* viel manuelle Recherche in Figma: Der Entwickler muss die passenden Stellen suchen, die Links erzeugen und manuell ins Issue kopieren -> viel Arbeit
+* Ergebnis besser, aber nicht überzeugend: Der Coding Agent übersieht nach wie vor viele wichtige Design-Details
 
 ![Iteration 2: Design-Properties statt Screenshot, Links von Hand](/assets/images/issue-grundlage/10-iteration2.svg){: .align-center}
 
 
 ### Iteration 3
-* neuer Skill "Issue Grundlage"
-* Figma Entwürfe so anlegen, dass der Coding Agent sich selbstständig zurecht findet
+* neuer Skill "Issue-Grundlage"
+* Figma-Entwürfe so anlegen, dass der Coding Agent sich selbstständig zurechtfindet
 
-#### Konzept "Issue Grundlage": 
-* Issue inhalt zunächst ins Projekt unter tmp/issue<nr>.md kopieren lassen.
-* präzise Anweisungen, wie der Agent Figma-mcp und die Links zum Figma nutzen muss:
-    * siehe "Pflichtschritt F — Figma-Komponenten-Varianten" im "issue-grundlage" - Skill des Projekts
-* tmp/issue<nr>.md stark erweitern lassen um alle interessanten und auch impliziten Details, insb. bezüglich Design, aber auch alle fachlichen Definitionslücken rigoros aufdecken und per User - Rückfrage schließen. 
-* Ergebniss ist ein neues MD-File, das 3-4 mal so lang ist wie das ursprüngliche Issue im Gitlab 
+#### Konzept "Issue-Grundlage": 
+* Issue-Inhalt zunächst ins Projekt unter tmp/issue<nr>.md kopieren lassen.
+* präzise Anweisungen, wie der Agent den Figma-MCP und die Links zum Figma nutzen muss:
+    * siehe "Pflichtschritt F — Figma-Komponenten-Varianten" im "issue-grundlage"-Skill des Projekts
+* tmp/issue<nr>.md stark erweitern lassen um alle interessanten und auch impliziten Details, insb. bezüglich Design, aber auch alle fachlichen Definitionslücken rigoros aufdecken und per User-Rückfrage schließen. 
+* Ergebnis ist ein neues MD-File, das 3- bis 4-mal so lang ist wie das ursprüngliche Issue in GitLab 
 
 #### Jedoch
 * Funktioniert schon besser, aber immer noch Lücken und Missverständnisse
@@ -150,10 +150,10 @@ This is not a component library. It is how you build your component library.
 
 
 ### Iteration 4
-* mehrer Agenten (Claude und Codex) mit dem selben Skill auf das selbe Issue und die selben Figma links ansetzen.
+* mehrere Agenten (Claude und Codex) mit demselben Skill auf dasselbe Issue und dieselben Figma-Links ansetzen.
 * 2 konkurrierende Ergebnisse produzieren
-* Finaler Vergleich, Deduplication, aufdecken von Widersprüchen durch einen Coding Agent (hier: Claude weil größere Tokenbudget)
-* Ergebniss: Liste von "offene Punkte" die der Entwicker mit PO und UX-Designerin klären muss.
+* finaler Vergleich, Deduplizierung, Aufdecken von Widersprüchen durch einen Coding Agent (hier: Claude, wegen des größeren Tokenbudgets)
+* Ergebnis: eine Liste "offener Punkte", die der Entwickler mit PO und UX-Designerin klären muss.
 
 ![Iteration 4: zwei Analysten und ein Merger](/assets/images/issue-grundlage/12-iteration4.svg){: .align-center}
 
@@ -364,7 +364,7 @@ Beide arbeiten **genau diesen** Katalog ab — nur so sind die zwei Ergebnisse v
 ### A1 — Anforderungen und Akzeptanzkriterien vollstaendig erfassen
 
 Quelle ist **ausschliesslich** der Snapshot `tmp/issue-grundlage/issue<N>.md`: Beschreibung, **alle
-Tasks** und **alle Kommentare**, **nicht** jedoch die geanze "DoD" (definition of Done)-Liste, sondern nur diese 4 Punkte:
+Tasks** und **alle Kommentare**, **nicht** jedoch die ganze "DoD"-Liste (Definition of Done), sondern nur diese 4 Punkte:
 * DEV: Barrierefreiheit berücksichtigt und
   * DEV: Tests bei neuen Seiten und Zuständen mit 'testA11y()' hinzugefügt
 * DEV: Projektsetup muss dokumentiert und auf dem aktuellen Stand sein   
@@ -681,7 +681,7 @@ Analysekatalog, **Pflichtschritt F** und Berichtsstruktur vollstaendig in
 
 Der Server bleibt gelegentlich mitten im Lauf stehen. Beginnt die Abschlussmeldung des Subagenten
 mit `FIGMA-MCP HAENGT`, den Nutzer um den Neustart von Figma Desktop bitten (Text aus der Skill
-`figma-desktop`), nach seiner Bestaetigung den `curl`-Check wiederholen und den **selben**
+`figma-desktop`), nach seiner Bestaetigung den `curl`-Check wiederholen und **denselben**
 Subagenten per `SendMessage` fortsetzen („Figma Desktop ist neu gestartet, mach beim
 fehlgeschlagenen Aufruf weiter") — er behaelt dabei seinen bisherigen Kontext. Nicht auf den
 Rueckfallweg unten ausweichen: der ist fuer fehlendes MCP im Subagenten, nicht fuer einen
@@ -798,13 +798,13 @@ Mit `timeout: 900000`, `run_in_background: true` und — auf macOS/Windows —
 
 **`< /dev/null` ist Pflicht, nicht Kosmetik.** `codex exec` liest beim Start zusaetzlichen Input von
 stdin („Reading additional input from stdin..."). Wird es aus einem Tool-Aufruf gestartet und ist
-stdin ein offener Pipe oder Terminal-Handle, wartet es **unbegrenzt**: keine einzige Ausgabezeile,
+stdin eine offene Pipe oder ein Terminal-Handle, wartet es **unbegrenzt**: keine einzige Ausgabezeile,
 CPU-Zeit bleibt bei ~0,06 s, und der Lauf endet erst im Timeout. Das ist ein echter Haenger und
 sieht einem Modell-Stall zum Verwechseln aehnlich.
 
 **Ausgabe in eine Datei umleiten, niemals nach `| tail -n`.** Eine Pipe in `tail` puffert die
 gesamte Ausgabe bis EOF — die Logdatei bleibt waehrend des ganzen Laufs leer, der Fortschritt ist
-also nicht beobachtbar. Fortschritt statt dessen mit `tail` bzw. `grep -c "mcp:"` **auf der
+also nicht beobachtbar. Fortschritt stattdessen mit `tail` bzw. `grep -c "mcp:"` **auf der
 Logdatei** pruefen.
 
 So unterscheidet man Arbeit von Haenger: Ein laufender codex erzeugt stetig neue Zeilen in der
