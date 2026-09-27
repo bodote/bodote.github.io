@@ -18,7 +18,7 @@ classes: wide
 
 ![Agent arbeitet innerhalb von Leitplanken aus Skills](/assets/images/issue-grundlage/03-guardrails.svg){: .align-center}
 
-* letztlich löst sich das Berufsbild des SW-Entwicklers auf. 
+* provokante Hypothese: letztlich löst sich das Berufsbild des SW-Entwicklers auf. 
   * was bleibt, ist vielleicht der Systemarchitekt, der technischen Kontext und technische Anforderungen zusammenstellt
   * und mit Sicherheit der Produktplaner/Anforderungsanalyst/Anwenderversteher, der den fachlichen Kontext zusammenstellt. 
 
