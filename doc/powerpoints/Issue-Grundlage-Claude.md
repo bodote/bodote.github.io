@@ -4,6 +4,9 @@ lang: de
 title: "Der Issue-Grundlage-Skill"
 paginate: true
 size: 16:9
+backgroundImage: url(../../assets/images/BRANDAD_Logo.png)
+backgroundSize: 150px
+backgroundPosition: top 20px right 20px
 style: |
   section { font-family: Arial, sans-serif; font-size: 26px; padding: 36px 60px 30px; justify-content: flex-start; }
   h1 { color: #1f4e79; font-size: 54px; margin: 0; }
@@ -11,7 +14,8 @@ style: |
   p { margin: 0; text-align: center; }
   section.lead { justify-content: center; text-align: center; }
   section.lead p { color: #6b7280; margin-top: 12px; }
-  header { left: auto; right: 60px; top: 30px; background: #fdf0d9; color: #d68910; font-weight: bold; font-size: 20px; padding: 6px 16px; border-radius: 18px; border: 2px solid #d68910; }
+  header { left: auto; right: 200px; top: 30px; background: #fdf0d9; color: #d68910; font-weight: bold; font-size: 20px; padding: 6px 16px; border-radius: 18px; border: 2px solid #d68910; }
+  section:has(> header) { padding-top: 90px; }
 ---
 
 <!-- _class: lead -->
@@ -54,6 +58,7 @@ Meine Grund-Hypothesen (Post-Überschrift)
 • Coding Agents sind inzwischen "schlau" genug, um die komplette Produktion des Codes inkl. Code-Review, Deployment etc. zu übernehmen
 • das geht aber nicht "einfach so"
 • Der Schlüssel sind Orchestrierung und Guard Rails in Form von z. B. Architekturvorgaben und prüfbaren Qualitätskriterien, die so engmaschig und zuverlässig sind, dass die Entwickler 100 % Vertrauen darin haben.
+* solange dieses 100 % Vertrauen fehlt, müssen halt noch Code Reviews gemacht werden und die Skills und Guardrails verbessert werden
 -->
 
 ---

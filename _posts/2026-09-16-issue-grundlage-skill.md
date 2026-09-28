@@ -15,6 +15,7 @@ classes: wide
 * Coding Agents sind inzwischen "schlau" genug, um die komplette Produktion des Codes inkl. Code-Review, Deployment etc. zu übernehmen
 * das geht aber nicht "einfach so"
 * Der Schlüssel sind Orchestrierung und Guard Rails in Form von z. B. Architekturvorgaben und prüfbaren Qualitätskriterien, die so engmaschig und zuverlässig sind, dass die Entwickler 100 % Vertrauen darin haben.
+* solange dieses 100 % Vertrauen fehlt, müssen halt noch Code Reviews gemacht werden und die Skills und Guardrails verbessert werden 
 
 ![Agent arbeitet innerhalb von Leitplanken aus Skills](/assets/images/issue-grundlage/03-guardrails.svg){: .align-center}
 
