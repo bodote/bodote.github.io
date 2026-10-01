@@ -22,6 +22,7 @@ classes: wide
 * provokante Hypothese: letztlich löst sich das Berufsbild des SW-Entwicklers auf. 
   * was bleibt, ist vielleicht der Systemarchitekt, der technischen Kontext und technische Anforderungen zusammenstellt
   * und mit Sicherheit der Produktplaner/Anforderungsanalyst/Anwenderversteher, der den fachlichen Kontext zusammenstellt. 
+  * Aufgabe der Softwareentwickler wäre dann die Erstellung und Pflege des **Harness** (also der Skills, MCPs und alles womit der Coding Agent zusätzlichen Context bekommt) und der automatisierung des Entwicklungsprocesses
 
 ![Das Berufsbild des SW-Entwicklers teilt sich in Systemarchitekt und Produktplaner](/assets/images/issue-grundlage/02b-berufsbild.svg){: .align-center}
 
