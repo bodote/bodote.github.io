@@ -10,7 +10,7 @@ tags:
 toc: true
 classes: wide
 ---
-Datum: 27. Sept 2026
+Vom 27. Sept 2026
 # Meine Grund-Hypothesen
 * Coding Agents sind inzwischen "schlau" genug, um die komplette Produktion des Codes inkl. Code-Review, Deployment etc. zu übernehmen
 * das geht aber nicht "einfach so"
